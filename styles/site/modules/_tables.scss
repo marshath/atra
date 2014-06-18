@@ -1,0 +1,44 @@
+/////////////
+// Tables //
+/////////////
+
+
+/* ---------------------- */
+/* ------- Button ------- */
+/* ---------------------- */
+
+table {
+	width:100%;
+	text-align: left;
+	thead, tfoot {
+		border-top:1px solid $gray;
+		border-left:1px solid $gray-dark;
+		border-right: 1px solid $gray-dark;
+	}
+	thead {
+		background: $gray-dark;
+		color:white;
+	}
+	tfoot {
+		background: $gray-light;
+	}
+	tbody {
+		
+	}
+	tr {
+		border-bottom: 1px solid $gray;
+		&:nth-child(odd) td {
+			background: $tan;
+		}
+		&:nth-child(even) td {
+			background: lighten($tan,5);
+		}
+	}
+	td {
+		border-left:1px solid $gray-dark;
+		border-right: 1px solid $gray-dark;
+		:nth-child(odd) {
+			background: $tan;
+		}
+	}
+}

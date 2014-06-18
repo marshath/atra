@@ -1,0 +1,9 @@
+///////////////////
+// Corner Radius //
+///////////////////
+
+$cornerRadius: 6px;
+
+@mixin corner($cornerRadius) {
+	border-radius:$cornerRadius;
+}

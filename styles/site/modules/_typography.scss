@@ -1,0 +1,148 @@
+////////////////
+// Typography //
+////////////////
+
+
+/* ------------------------------------ */
+/* ------- Fonts and Font Sizes ------- */
+/* ------------------------------------ */
+
+@mixin sans-serif {
+	font-family: "HelveticaNeue", "Helvetica", "Arial", sans-serif;
+}
+
+@mixin serif {
+	font-family: Georgia, Times, "Times New Roman", serif;
+}
+
+$font8: 0.5em;  /* Pixel Font Sizes in EMs */
+$font10: 0.625em;
+$font11: 0.6875em;
+$font12: 0.75em;
+$font13: 0.8125em;
+$font14: 0.875em;
+$font16: 1em;
+$font18: 1.125em;
+$font20: 1.25em;
+
+
+/* -------------------------- */
+/* ------- Icon Fonts ------- */
+/* -------------------------- */
+
+// @font-face {
+//	font-family: '33-icons';
+//	src:url('fonts/33-icons.eot');
+//	src:url('fonts/33-icons.eot?#iefix') format('embedded-opentype'),
+//		url('fonts/33-icons.woff') format('woff'),
+//		url('fonts/33-icons.ttf') format('truetype'),
+//		url('fonts/33-icons.svg#33-icons') format('svg');
+//	font-weight: normal;
+//	font-style: normal;
+// }
+
+// [data-icon]:before {
+//	font-family: '33-icons';
+//	content: attr(data-icon);
+//	speak: none;
+//	font-weight: normal;
+//	line-height: 1;
+//	-webkit-font-smoothing: antialiased;
+// }
+
+
+/* ------------------------- */
+/* ------- Body Text ------- */
+/* ------------------------- */
+
+body {
+	background: lighten($gray-light,20);
+	color:$text;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	@include serif;
+	margin: ($base*1.5) 0;
+}
+h1 {
+	
+}
+h2 {
+	
+}
+h3 {
+	
+}
+h4 {
+	
+}
+h5 {
+	
+}
+h6 {
+	
+}
+
+p { 
+	
+}
+
+blockquote {
+	color: $gray;
+	font-style: italic;
+	margin-bottom: $base;
+	padding-left:1em;
+	padding-right:1em;
+	border-left: 2px solid $gray;
+	cite {
+		width: 100%;
+		text-align: right;
+		display: block;
+	}
+}
+
+dt { /* Definition List - Term */
+	font-weight: bold;
+}
+dd { /* Definition List - Defined */
+	
+}
+
+hr { /* Horizontal Rule */
+	border-bottom:4px solid $gray;
+}
+
+.uppercase { 
+	text-transform: uppercase; 
+}
+
+.font-secondary {
+	@include serif;
+}
+
+.intro {
+	font-size: $font20;
+	font-weight: bold;
+}
+
+
+/* ----------------------------- */
+/* ------- Selected Text ------- */
+/* ----------------------------- */
+
+::selection { 
+	background: $orange; 
+}
+::-moz-selection { 
+	background: $orange; 
+}
+
+
+/* ---------------------------------- */
+/* ------- Screen Reader Text ------- */
+/* ---------------------------------- */
+
+.screen-reader-text {
+	display: none;
+}

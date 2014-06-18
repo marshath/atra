@@ -1,0 +1,44 @@
+/////////////
+// Buttons //
+/////////////
+
+
+/* ---------------------- */
+/* ------- Button ------- */
+/* ---------------------- */
+
+.btn, .btn-alt, .btn-disabled {
+	color:white;
+	text-decoration: none;
+	margin: ($base*0.5) 0;
+	padding: ($base*0.5) 1em;
+	display: inline-block;
+	@include corner($cornerRadius);
+	&:hover {
+		color:white;
+	}
+}
+
+.btn { /* ------- Standard Button ------- */
+	background: $green;
+	&:hover {
+		background: lighten($green, 20%);
+	}
+	&:active {
+		background: lighten($green, 20%);
+	}
+}
+
+.btn-alt { /* ------- Alternate Button ------- */
+	background: $orange;
+	&:hover {
+		background-color: darken($orange, 20%);
+	}
+}
+
+.btn-disabled { /* ------- Disabled Button ------- */
+	background: $gray;
+	&:hover {
+		background-color: lighten($gray-light, 10);
+	}
+}

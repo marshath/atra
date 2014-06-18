@@ -1,0 +1,196 @@
+/////////////////
+// Form Styles //
+/////////////////
+
+
+/* ---------------------------- */
+/* ------- Contact Form ------- */
+/* ---------------------------- */
+
+form { 
+  @include corner($cornerRadius); 
+  width:100%;
+}
+
+input, select, textarea {
+	outline:none;
+}
+
+label { 
+	
+}
+
+label abbr { /* Required Form Fields */
+	color:$red;
+}
+
+/* Text Input */
+textarea, 
+input[type='text'], 
+input[type='password'], 
+input[type='url'], 
+input[type='email'], 
+input[type='search'], 
+input[type='number'],
+input[type='newsletter'], 
+input[type='color'], 
+input[type='date'], 
+input[type='month'], 
+input[type='week'], 
+input[type='datetime'], 
+input[type='datetime-local'] {
+  width:100%;
+  margin:.2em 0 1em;
+  padding: .25em;
+  @include corner($cornerRadius);
+}
+
+/* Newsletter */
+.inline-container {
+	position: relative;
+}
+.newsletter-field {
+	padding: ($base*0.5) 1em !Important;
+}
+.newsletter-submit {
+	position: absolute;
+	right:0;
+	top:-0.5em;
+}
+
+::placeholder {
+	color: $gray-light;
+}
+
+/* Text Input Error */
+.error { /* Label */
+	color: $red;
+}
+.is-error { /* Text field */
+	background: lighten($red, 65%);
+	border: 2px solid $red;
+}
+
+/* Text Input Valid */
+.valid { /* Label */
+	color: $green;
+}
+.is-valid {/* Text field */
+	border: 2px solid $green;
+}
+
+/* Text Area */
+textarea {
+  height:($base*8); 
+}
+
+/* Radio Buttons */
+fieldset {
+  @include corner($cornerRadius);
+}
+
+input[type='radio'] {
+  appearance:none;
+  cursor:pointer;
+  background-color:$gray-dark;
+  color:#f0f;
+  margin-top: 1em;
+  @include corner(50%);
+}
+
+input[type="radio"]:checked:after {
+  background-color:$gray-dark;
+  @include corner(50%);
+  content:"\00a0";
+  display:block;
+  height:1.5em;
+  width:1.5em;
+  margin:-.3em -.4em;
+}
+
+/* Dropdown Box */
+.styled-select {
+  background-color: blue;
+  color: $text;
+  margin-bottom:$base;
+  padding:.25em 0;
+  display:inline-block;
+  @include corner($cornerRadius);
+  cursor:pointer;
+}
+
+.styled-select:before {
+  content:'\f103';
+  padding-left:.25em;
+  border: solid 2px blue;
+  border-width: 0 0 0 1px;
+  pointer-events:none;
+  display:block;
+}
+
+select {
+    -webkit-appearance: none !important;
+    appearance:none;
+    width:100%;
+    background-color:$gray;
+    margin:0;
+    padding:0.5em;
+    display:inline-block;
+    border:none;
+    cursor:pointer;
+}
+
+/* Checkbox */
+input[type='checkbox'] {
+  -webkit-appearance: none !important;
+  appearance:none;
+  width:14px;
+  height:14px;
+  background-color:$gray-light;
+  margin-top: 1em;
+  @include corner($cornerRadius);
+  cursor:pointer;
+}
+
+input[type='checkbox']:checked:after {
+  content:"\00a0";
+  width:.5em;
+  height:1em;
+  display:block;
+  position:relative;
+  border:solid $text;
+  border-width:0 4px 4px 0;
+  transform:rotate(45deg); 
+}
+
+
+/* Submit Button */
+input[type='submit'] {
+  background-color:$gray-light;
+  font-size:$font20;
+  color:black;
+  padding: .25em 1em;
+  border: 3px solid $gray-dark;
+  @include corner($cornerRadius);
+  cursor:pointer;
+}
+input[type='submit']:hover {
+	background-color:$gray-dark;
+}
+
+
+/* Range Slider */
+input[type='range'] {
+	width: 100%;
+    -webkit-appearance: none !important;
+    background:$gray;
+    height:4px;
+	margin-bottom: $base;
+}
+input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none !important;
+    background:$gray-dark;
+	height:1.5em;
+	width:1.5em;
+	@include corner(50%);
+}

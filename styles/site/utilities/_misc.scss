@@ -1,0 +1,56 @@
+//////////////////
+// Declarations //
+//////////////////
+
+
+/* ------------------------------------ */
+/* ------- Gloval Star Selector ------- */
+/* ------------------------------------ */
+
+* {
+	background-repeat: no-repeat;
+	-webkit-box-sizing: border-box; 
+	-moz-box-sizing: border-box; 
+	box-sizing: border-box; 
+	/* -webkit-transition: all 1s ease; */
+}
+
+
+/* -------------------------- */
+/* ------- Visibility ------- */
+/* -------------------------- */
+
+
+@include bp(mobile-only) {
+	.hide-small {
+		display: none;
+	}
+	.hide-med {
+		display: block;
+	}
+	.hide-large {
+		display: block;
+	}
+}
+@include bp(tablet-only) {
+	.hide-small {
+		display: block;
+	}
+	.hide-med {
+		display: none;
+	}
+	.hide-large {
+		display: block;
+	}
+}
+@include bp(desktop-only) {
+	.hide-small {
+		display: block;
+	}
+	.hide-med {
+		display: block;
+	}
+	.hide-large {
+		display: none;
+	}
+}

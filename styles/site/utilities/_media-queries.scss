@@ -1,0 +1,58 @@
+///////////////////
+// Media Queries //
+///////////////////
+
+
+@mixin bp($point) {
+
+
+  /* ----------------------------------- */
+  /* ------- Break Points Values ------- */
+  /* ----------------------------------- */
+
+  $bp-mobile-v: "screen and (max-width: 321px)";
+  $bp-mobile-h: "screen and (max-width: 640px)";
+  $bp-tablet-v: "screen and (max-width: 765px)";
+  $bp-tablet-h: "screen and (max-width: 1024px)";
+  $bp-desktop: "screen and (max-width: 1224px)";
+  $bp-television: "screen and (max-width: 1824px)";
+  
+  $bp-mobile-only: "screen and (max-width: 640px)";
+  $bp-tablet-only: "screen and (min-width: 641px) and (max-width: 1024px)";
+  $bp-desktop-only: "screen and (min-width: 1025px)";
+
+
+  /* -------------------------------------- */
+  /* ------- Media Queries Includes ------- */
+  /* -------------------------------------- */
+
+  @if $point == mobile-v {
+    @media #{$bp-mobile-v} { @content; }
+  }
+  @else if $point == mobile-h {
+    @media #{$bp-mobile-h} { @content; }
+  }
+  @else if $point == tablet-v {
+    @media #{$bp-tablet-v}  { @content; }
+  }
+  @else if $point == tablet-h {
+    @media #{$bp-tablet-h}  { @content; }
+  }
+  @else if $point == desktop {
+    @media #{$bp-desktop}  { @content; }
+  }
+  @else if $point == television {
+    @media #{$bp-television}  { @content; }
+  }
+  
+  @else if $point == mobile-only {
+    @media #{$bp-mobile-only}  { @content; }
+  }
+  @else if $point == tablet-only {
+    @media #{$bp-tablet-only}  { @content; }
+  }
+  @else if $point == desktop-only {
+    @media #{$bp-desktop-only}  { @content; }
+  }
+
+}

@@ -1,0 +1,10 @@
+///////////
+// Links //
+///////////
+
+a {
+	color: $link;
+	&:hover {
+		color: lighten($link, 20);
+	}
+}

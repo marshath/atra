@@ -1,0 +1,47 @@
+///////////////////
+// Footer Styles //
+///////////////////
+
+
+.footer {
+	width:100%;
+	background: $tan;
+}
+
+
+/* ----------------------------- */
+/* ------- Social Footer ------- */
+/* ----------------------------- */
+
+
+
+/* -------------------------------- */
+/* ------- Parters Sponsors ------- */
+/* -------------------------------- */
+
+.partners-footer {
+	background: $gray;
+	text-align: center;
+	ul {
+		@extend .nav;
+		width:intrinsic;
+		margin: 0 auto;
+	}
+	li {
+		list-style: none;
+		float: left;
+		margin: 0 1em;
+		padding:$base 0.5em;
+	}
+}
+
+
+
+/* ------------------------- */
+/* ------- Copyright ------- */
+/* ------------------------- */
+.copyright {
+	color: white;
+	font-size: $font12;
+	text-align:center;
+}

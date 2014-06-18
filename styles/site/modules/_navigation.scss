@@ -1,0 +1,217 @@
+////////////////
+// Navigation //
+////////////////
+
+
+.nav {
+	list-style: none;
+	margin-top:0;
+	padding-left: 0;
+}
+
+
+/* --------------------------------- */
+/* ------- Header Navigation ------- */
+/* --------------------------------- */
+
+.header-nav {
+	float: right;
+	li {
+		background: $yellow;
+		float: left;
+		margin: ($base*1) 0;
+		a {
+			color:white;
+			text-decoration: none;
+			padding: 0.5em 1em;
+			display: inline-block;
+			&:hover {
+				color:white;
+				text-decoration: none;
+				background: $orange;
+			}
+		}
+		 > ul {
+			display: none;
+		}
+	}
+}
+
+#social-share {
+	@include clearfix;
+	ul {
+		list-style: none;
+		margin-top:0;
+		padding-left:0;
+		li {
+			background: $yellow;
+			float: left;
+			margin: 1em 0;
+			a {
+				width: 100%;
+				height: 100%;
+				color:white;
+				padding: 1em 1.5em;
+				display: inline-block;
+				&:hover {
+					text-decoration: none;
+					background: $orange;
+				}
+			}
+		}
+	}
+}
+
+/* --------------------------------- */
+/* ------- Footer Navigation ------- */
+/* --------------------------------- */
+
+.footer-nav {
+	width:intrinsic;
+	margin: 0 auto;
+	@include clearfix;
+	li {
+		float:left;
+		a {
+			width: 100%;
+			padding: $base 1em;
+			display: block;
+		}
+	}
+}
+
+
+/* -------------------------- */
+/* ------- Breadcrumb ------- */
+/* -------------------------- */
+
+.breadcrumbs {
+	list-style: none;
+	margin-top:0;
+	padding-left:0;
+	@include clearfix;
+	li {
+		float:left;
+		&:before {
+			content:' // ';
+			color:$orange;
+		}
+		a {
+			text-decoration: none;
+			&:hover {
+				color:$red;
+			}
+		}
+	}
+}
+
+
+/* -------------------------- */
+/* ------- Pagination ------- */
+/* -------------------------- */
+
+.pagination {
+	list-style: none;
+	margin-top:0;
+	padding-left:0;
+	@include clearfix;
+	li {
+		float: left;
+		margin: 1em 0;
+		border-right: 1px solid $gray;
+		&:last-child {
+			border-right: none;
+		}
+		a {
+			width: 100%;
+			height: 100%;
+			color:$orange;
+			text-decoration: none;
+			padding: 1em 1.5em;
+			display: inline-block;
+			&:hover {
+				background: $tan;
+			}
+		}
+	}
+}
+
+
+/* -------------------- */
+/* ------- Tabs ------- */
+/* -------------------- */
+
+.tabs, .accordion {
+	@include clearfix;
+	ul {
+		margin-top:0;
+		padding-left: 0;
+	}
+	li {
+		@include column(4);
+		text-align: center;
+		float: left;
+		a {
+			width: 100%;
+			height: 100%;
+			background: $orange;
+			color:white;
+			text-decoration: none;
+			padding: 1em 1.5em;
+			display: inline-block;
+			&:hover {
+				background: lighten($orange,20%);
+			}
+		}
+	}
+}
+.accordion li {
+	@include column(12);
+	text-align: left;
+	position: relative;
+	&:after {
+		content: '+';
+		color: white;
+		position: absolute;
+		right: 1em;
+		top:1em;
+	}
+}
+
+
+/* ------------------------------ */
+/* ------- Single Comment ------- */
+/* ------------------------------ */
+
+.comment-container {
+	list-style: none;
+	@include clearfix;
+	.comment-meta {
+		@include column(2);
+		float: left;
+		a {
+			color: black;
+			text-decoration: none;
+			&:hover {
+				color:$orange;
+			}
+		}
+	}
+	.comment-text {
+		@include column(10);
+		display: inline-block;
+		float: right;
+	}
+}
+
+
+/* --------------------- */
+/* ------- Alert ------- */
+/* --------------------- */
+
+.alert {
+	background: $tan;
+	text-align: center;
+	border: 1px solid $gray;
+	padding: 1em 1.5em;
+}

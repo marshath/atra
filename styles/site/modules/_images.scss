@@ -1,0 +1,21 @@
+//////////////////
+// Image Styles //
+//////////////////
+
+
+/* Handles responsive imagery 
+* Resizes all images to 100% until they reach their max width */
+img { 
+	max-width:100%;
+}
+
+
+/* -------------------- */
+/* ------- Logo ------- */
+/* -------------------- */
+
+.logo {
+	display: inline-block;
+	margin:($base*0.5) 0 0 1em;
+	float:left;
+}
