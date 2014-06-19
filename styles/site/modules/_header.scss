@@ -1,0 +1,127 @@
+///////////////////
+// Header Styles //
+///////////////////
+
+
+.headroom { // Provides the padding for the content in exchange for the fixed header
+	padding-top: ($base*8);
+}
+body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
+	background: url('') center top no-repeat $green;
+	width:100%;
+	height: ($base*20);
+	z-index: 0;
+}
+
+.event-search {
+	@include clearfix;
+	background: $orange;
+	width:100%;
+	margin-top: -($base*7);
+	display: block;
+	z-index: 1;
+	h1 {
+		font-size: 3em;
+		text-align: center;
+		color: white;
+		text-shadow: 2px 2px 2px black;
+		margin-bottom: 0;
+	}
+	fieldset {
+		width: 80%;
+		border: 0;
+		max-width: $width-max;
+		margin: $base auto 0;
+		padding-bottom: 0;
+	}
+	label {
+		display: none;
+	}
+	input[type='text'], .event-search-btn { 
+		font-size: $font20;
+		border: none;
+		padding: ($base*1) 1em;
+	}
+	.event-search-wrap {
+		position: relative;
+	}
+	.event-search-btn {
+		position: absolute;
+		top: -($base*0.3); 
+		right: 0;
+	}
+	p {
+		text-align: center;
+		color: white;
+		a {
+			color:white;
+			&:hover {
+				color: $green;
+			}
+		}
+	}
+}
+
+.featured-events, .trail-maps {
+	@include column(6);
+	@include clearfix;
+	margin-bottom: $base;
+}
+
+.member-list {
+	@include column(8);
+	margin-bottom: ($base*2);
+	ul {
+	}
+}
+.member-list-corp {
+	@include column(6);
+}
+.member-list-club {
+	@include column(6);
+}
+.member-list-race {
+	@include column(6);
+}
+
+.trail-maps-header {
+	width: 100%;
+	background: rgba(0,0,0,0.4);
+	color: white;
+	text-align: center;
+	text-shadow: 2px 2px 2px black;
+	margin-top: -($base*7.7);
+	margin-bottom: ($base*2);
+	padding: $base 0;
+	h1 {
+		margin-bottom: 0;
+	}
+	p {
+		margin-top: 0;
+	}
+}
+
+.half {
+	@include column(6);
+}
+
+/* ---------------------- */
+/* ------- Header ------- */
+/* ---------------------- */
+
+.header {
+	width:100%;
+	height:($base*5);
+	background: rgba(255,255,255,0.5);
+	position: fixed;
+	z-index: 10;
+}
+.inner-header {
+	max-width: $width-max;
+	margin: 0 auto;
+	.nav-toggle {
+		margin-top: -($base*1);
+		float: right;
+	}
+}
+
