@@ -4,7 +4,7 @@
 
 			<div id="inner-content" class="wrap">
 
-					<div id="main" class="" role="main">
+					<div id="main" class="wrap-main" role="main">
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 

@@ -55,12 +55,6 @@ $font20: 1.25em;
 /* ------- Body Text ------- */
 /* ------------------------- */
 
-body {
-	background: lighten($gray-light,20);
-	color:$text;
-	line-height: 1.5;
-}
-
 h1, h2, h3, h4, h5, h6 {
 	@include serif;
 	margin: ($base*1.5) 0;

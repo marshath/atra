@@ -6,7 +6,34 @@
 /* -------------------------------- */
 /* ------- Background Wraps ------- */
 /* -------------------------------- */
+body {
+	background: lighten($tan,5);
+	color:$text;
+	line-height: 1.5;
+	position: relative;
+	transition: all ease-out 0.3s;
+}
 
+.wrap {
+	max-width: $width-max;
+	@include clearfix;
+	margin: 0 auto;
+}
+
+.wrap-main {
+	@include column(8);
+	margin-bottom: ($base*2);
+}
+
+.wrap-full {
+	@include column(12);
+	margin-bottom: ($base*2);
+}
+
+.sidebar {
+	@include column(4);
+	float:right;
+}
 
 
 /* ---------------------- */

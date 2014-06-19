@@ -1,4 +1,4 @@
-			</div><footer class="footer" role="contentinfo">
+			<footer class="footer" role="contentinfo">
 
 				<div id="inner-footer" class="wrap">
 

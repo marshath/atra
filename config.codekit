@@ -280,6 +280,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/page-home.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/page-home.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/page.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -515,22 +524,6 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
-	"\/styles\/site\/modules\/_colors.scss": {
-		"createSourceMap": 1,
-		"debugStyle": 2,
-		"decimalPrecision": 5,
-		"fileType": 4,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/styles\/site\/modules\/_colors.scss",
-		"outputAbbreviatedPath": "\/styles\/site\/css\/_colors.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 0
-		},
 	"\/styles\/site\/modules\/_corner-radius.scss": {
 		"createSourceMap": 1,
 		"debugStyle": 2,
@@ -739,6 +732,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/styles\/site\/utilities\/_colors.scss": {
+		"createSourceMap": 1,
+		"debugStyle": 2,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/styles\/site\/utilities\/_colors.scss",
+		"outputAbbreviatedPath": "\/styles\/site\/style.css\/_colors.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/styles\/site\/utilities\/_containers.scss": {
 		"createSourceMap": 1,
 		"debugStyle": 2,
@@ -844,22 +853,6 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/styles\/site\/utilities\/_reset.scss",
 		"outputAbbreviatedPath": "\/styles\/site\/css\/_reset.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 0,
-		"shouldRunBless": 0,
-		"useLibsass": 0
-		},
-	"\/styles\/site\/utilities\/x\/_grid.scss": {
-		"createSourceMap": 1,
-		"debugStyle": 2,
-		"decimalPrecision": 5,
-		"fileType": 4,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/styles\/site\/utilities\/x\/_grid.scss",
-		"outputAbbreviatedPath": "\/styles\/site\/utilities\/css\/_grid.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,

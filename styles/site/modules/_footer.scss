@@ -23,7 +23,6 @@
 	background: $gray;
 	text-align: center;
 	ul {
-		@extend .nav;
 		width:intrinsic;
 		margin: 0 auto;
 	}
