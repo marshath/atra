@@ -1,53 +1,93 @@
 			<div id="sidebar1" class="sidebar" role="complementary">
 			
-				<?php if ( (is_page('resources')) ) { // ---- Connect with ATRA ?>
+				<?php 
+				//----------------------------------------
+				// ----------- About ATRA Menu -----------
+				//----------------------------------------
+				if ( (is_page('about-atra')) or (127 == $post->post_parent) ) {  ?>
 				
 					<div class="sidebar-connect">
-						<h3>Connect with ATRA</h3>
-						<p>and improve your performance</p>
+						<h3>More about ATRA</h3>
 						<ul>
-							<li class="facebook">F</li>
-							<li class="twitter">T</li>
-							<li class="google">G</li>
-							<li class="rss">R</li>
-						</ul>
+							<li><a href="/trailrunner.com/about-atra/">About ATRA</a></li>
+							<li><a href="/trailrunner.com/about-atra/board-members-and-meeting-minutes/">Board Members and Meeting Minutes</a></li>
+							<li><a href="/trailrunner.com/about-atra/events-standards-program/">Events Standards Program</a></li>
+							<li><a href="/trailrunner.com/about-atra/partner-organizations/">Partner Organizations</a></li>
+							<li><a href="/trailrunner.com/about-atra/contact-us/">Contact Us</a></li>
 					</div> <!-- end .sidebar-connect -->
-		
-				<?php } ?>
-			
-				<?php if ( (!is_page('find-a-trail')) ) { // ---- Become a Member ?>
-				
-					<div class="sidebar-member">
-						<h3>Benefits of being a Member</h3>
-						<p>By becoming a member, you help ensure we continue to grow as an organization. You get preferred access to this and special discounts on that. Find out about more of the benefits that come with your support.</p>
-						<p><a href="#" class="btn">I'll show my support</a></p>
-					</div> <!-- end .sidebar-member -->
-		
-				<?php } ?>
-			
-				<?php if ( (is_page('race-calendar')) or (119 == $post->post_parent) ) {  // ---- Join the Conversation ?>
-				
-					<div class="sidebar-social">
-						<h3>Join the Conversation</h3>
-						<p>Follow our conversation on social media to stay informed.</p>
-						<ul>
-							<li class="facebook">F</li>
-							<li class="twitter">T</li>
-							<li class="google">G</li>
-							<li class="rss">R</li>
-						</ul>
-					</div> <!-- end .sidebar-connect -->
-		
+
 				<?php } ?>
 			
 				<?php 
-				//----------------------------------------------
+				//-------------------------------------------------
+				// ----------- Social Marketing Sidebar -----------
+				//-------------------------------------------------
+				if ( (is_page('resources')) ) { 
+					if ( is_active_sidebar( 'sidebar-marketing' ) ) : ?>
+				
+					<div class="sidebar-connect">
+						<?php dynamic_sidebar( 'sidebar-marketing' ); ?>
+					</div> <!-- end .sidebar-connect -->
+						
+					<?php else : ?>
+
+						<div class="no-widgets">
+							<p><?php _e( 'SOCIAL MARKETING: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
+						</div>
+
+					<?php endif; 
+		
+				} ?>
+			
+				<?php 
+				//------------------------------------------------
+				// ----------- Become a Member Sidebar -----------
+				//------------------------------------------------
+				if ( (!is_page('find-a-trail')) ) { 
+					if ( is_active_sidebar( 'sidebar-members' ) ) : ?>
+				
+					<div class="sidebar-member">
+						<?php dynamic_sidebar( 'sidebar-members' ); ?>
+					</div> <!-- end .sidebar-member -->
+						
+					<?php else : ?>
+
+						<div class="no-widgets">
+							<p><?php _e( 'BECOME A MEMBER: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
+						</div>
+
+					<?php endif; 
+		
+				} ?>
+			
+				<?php 
+				//---------------------------------------------
+				// ----------- Social Media Sidebar -----------
+				//---------------------------------------------
+				if ( (is_page('race-calendar')) or (119 == $post->post_parent) ) {
+					if ( is_active_sidebar( 'sidebar-socials' ) ) : ?>
+				
+					<div class="sidebar-social">
+						<?php dynamic_sidebar( 'sidebar-socials' ); ?>
+					</div> <!-- end .sidebar-connect -->
+						
+					<?php else : ?>
+
+						<div class="no-widgets">
+							<p><?php _e( 'SOCIAL MEDIA: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
+						</div>
+
+					<?php endif; 
+		
+				} ?>
+			
+				<?php 
+				//-------------------------------------------------
 				// ----------- Race Calendar Sidebar AD -----------
-				//----------------------------------------------
+				//-------------------------------------------------
 				if ( (is_page('race-calendar')) or (119 == $post->post_parent) ) {
 					if ( is_active_sidebar( 'sidebar-events' ) ) : ?>
 					
-						<h3>Race Calendar Sidebar</h3>
 						<?php dynamic_sidebar( 'sidebar-events' ); ?>
 						
 					<?php else : ?>
@@ -60,14 +100,13 @@
 				} ?>
 			
 				<?php 
-				//-------------------------------------------
+				//----------------------------------------------
 				// ----------- Trail News Sidebar AD -----------
-				//-------------------------------------------
+				//----------------------------------------------
 				if ( (is_single()) ) { ?>
 				
 					<?php if ( is_active_sidebar( 'sidebar-news' ) ) : ?>
 					
-						<h3>Trail News Sidebar</h3>
 						<?php dynamic_sidebar( 'sidebar-news' ); ?>
 	
 					<?php else : ?>
@@ -80,13 +119,12 @@
 				}?>
 			
 				<?php 
-				//------------------------------------------
+				//---------------------------------------------
 				// ----------- Resources Sidebar AD -----------
-				//------------------------------------------
+				//---------------------------------------------
 				if ( (is_page('resources')) ) {
 					if ( is_active_sidebar( 'sidebar-resources' ) ) : ?>
 					
-						<h3>Resources Sidebar</h3>
 						<?php dynamic_sidebar( 'sidebar-resources' ); ?>
 	
 					<?php else : ?>
@@ -97,10 +135,14 @@
 	
 					<?php endif;
 				} ?>
-				
-				<?php if ( (!is_page('find-a-trail')) ) { // ---- Recent Trail News --Blog posts-- ?>
+			
+				<?php 
+				//---------------------------------------------
+				// ----------- Trail News Blog Roll -----------
+				//---------------------------------------------
+				if ( (!is_page('find-a-trail')) ) { ?>
 					<div class="sidebar-news">
-						<h3>Trail News</h3>
+						<h4>Trail News</h4>
 						<p>Keep up with the latest news and event information.</p>
 						<ul>
 						<?php

@@ -7,15 +7,19 @@
 				<div id="main" class="wrap-main" role="main">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
-					<?php 
-					//----------------------------------------
-					// ----------- Table of Events -----------
-					//---------------------------------------- ?>
-					<table>
-						<tr><td>Table</td><td>Table</td></tr>
-						<tr><td>Table</td><td>Table</td></tr>
-					</table>
+
+						<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+						<p>We appriciate your time in to fill out the form. </p>
+						
+						
+						<?php 
+						//----------------------------------------
+						// ----------- Table of Events -----------
+						//---------------------------------------- ?>
+						<table>
+							<tr><td>Table</td><td>Table</td></tr>
+							<tr><td>Table</td><td>Table</td></tr>
+						</table>
 					
 					<?php 
 					//---------------------------------------------

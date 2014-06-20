@@ -194,6 +194,45 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
+
+	// ***************************************
+	// Registering BECOMING A MEMBER - SIDEBAR 
+	// ***************************************
+	register_sidebar(array(
+		'id' => 'sidebar-members',
+		'name' => __( 'Become a Member', 'bonestheme' ),
+		'description' => __( 'The sidebar about becoming an ATRA member.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// **********************************
+	// Registering SOCIAL MEDIA - SIDEBAR 
+	// **********************************
+	register_sidebar(array(
+		'id' => 'sidebar-socials',
+		'name' => __( 'Social Media', 'bonestheme' ),
+		'description' => __( 'The sidebar area on for Social Media.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// ***************************************
+	// Registering MARKETING - SIDEBAR 
+	// ***************************************
+	register_sidebar(array(
+		'id' => 'sidebar-marketing',
+		'name' => __( 'Social Marketing', 'bonestheme' ),
+		'description' => __( 'The sidebar area on for Marketing.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
 	
 } // don't remove this bracket!
 

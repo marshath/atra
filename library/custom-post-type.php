@@ -40,7 +40,7 @@ function custom_post_boardmember() {
 			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
-			'menu_position' => 26, /* this is what order you want it to appear in on the left hand side menu */ 
+			'menu_position' => 22, /* this is what order you want it to appear in on the left hand side menu */ 
 			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-board.png', /* the icon for the custom post type menu */
 			'rewrite'	=> array( 'slug' => 'boardmember', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'boardmember', /* you can rename the slug here */
@@ -77,7 +77,7 @@ function custom_post_boardmember() {
 			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
-			'menu_position' => 27, /* this is what order you want it to appear in on the left hand side menu */ 
+			'menu_position' => 23, /* this is what order you want it to appear in on the left hand side menu */ 
 			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-partners.png', /* the icon for the custom post type menu */
 			'rewrite'	=> array( 'slug' => 'partner', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'partner', /* you can rename the slug here */
@@ -151,7 +151,7 @@ function custom_post_boardmember() {
 			'exclude_from_search' => false,
 			'show_ui' => true,
 			'query_var' => true,
-			'menu_position' => 27, /* this is what order you want it to appear in on the left hand side menu */ 
+			'menu_position' => 24, /* this is what order you want it to appear in on the left hand side menu */ 
 			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-splash.png', /* the icon for the custom post type menu */
 			'rewrite'	=> array( 'slug' => 'splash', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'splash', /* you can rename the slug here */
@@ -210,30 +210,32 @@ function custom_post_boardmember() {
 		)
 	);	
 	
+	
 	// **************************************
-	// Registering MEMBERSHIP TIERS -> Events
+	// Registering QUALIFICATIONS -> Events
 	// **************************************
-	register_taxonomy( 'memberships', 
+	register_taxonomy( 'qualifications', 
 		array('event'), /* if you change the name of register_post_type( 'boardmember', then you have to change this */
 		array('hierarchical' => true,     /* if this is true, it acts like categories */
 			'labels' => array(
-				'name' => __( 'Membership Tiers', 'bonestheme' ), /* name of the custom taxonomy */
-				'singular_name' => __( 'Membership Tier', 'bonestheme' ), /* single taxonomy name */
-				'search_items' =>  __( 'Search Membership Tiers', 'bonestheme' ), /* search title for taxomony */
-				'all_items' => __( 'All Membership Tiers', 'bonestheme' ), /* all title for taxonomies */
-				'parent_item' => __( 'Parent Membership Tier', 'bonestheme' ), /* parent title for taxonomy */
-				'parent_item_colon' => __( 'Parent Membership Tier:', 'bonestheme' ), /* parent taxonomy title */
-				'edit_item' => __( 'Edit Membership Tier', 'bonestheme' ), /* edit custom taxonomy title */
-				'update_item' => __( 'Update Membership Tier', 'bonestheme' ), /* update title for taxonomy */
-				'add_new_item' => __( 'Add New Membership Tier', 'bonestheme' ), /* add new title for taxonomy */
-				'new_item_name' => __( 'New Membership Tier Name', 'bonestheme' ) /* name title for taxonomy */
+				'name' => __( 'Qualifications', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Qualification', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Qualifications', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All Qualifications', 'bonestheme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Qualification', 'bonestheme' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Qualification:', 'bonestheme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Qualification', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Qualification', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Qualification', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Qualification Name', 'bonestheme' ) /* name title for taxonomy */
 			),
 			'show_admin_column' => true, 
 			'show_ui' => true,
 			'query_var' => true,
-			'rewrite' => array( 'slug' => 'membership' ),
+			'rewrite' => array( 'slug' => 'qualification' ),
 		)
 	);
+	
 	
 	// ************************************
 	// Registering LOCATION - Splash Images
