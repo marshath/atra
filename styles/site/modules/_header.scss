@@ -21,8 +21,10 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	margin-top: -($base*7);
 	display: block;
 	z-index: 1;
+	@include corner(200em);
 	h1 {
-		font-size: 3em;
+		@include script;
+		font-size: 4em;
 		text-align: center;
 		color: white;
 		text-shadow: 0 2px 1px black;
@@ -50,6 +52,9 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 		position: absolute;
 		top: -($base*0.3); 
 		right: 0;
+		padding: $base 4em;
+		border-top-left-radius: 0px; 
+		border-bottom-left-radius: 0px;
 	}
 	p {
 		text-align: center;
@@ -67,6 +72,9 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	@include column(6);
 	@include clearfix;
 	margin-bottom: $base;
+	@include bp(mobile-h) { /* mobile and below layout */
+		@include column(12);
+	}
 }
 
 .member-list {
@@ -74,15 +82,15 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	margin-bottom: ($base*2);
 	ul {
 	}
+	@include bp(tablet-v) { /* tablet V and below layout */
+		@include column(12);
+	}
 }
-.member-list-corp {
+.member-list-corp, .member-list-club, .member-list-race {
 	@include column(6);
-}
-.member-list-club {
-	@include column(6);
-}
-.member-list-race {
-	@include column(6);
+	@include bp(mobile-h) { /* mobile and below layout */
+		@include column(12);
+	}
 }
 
 .trail-maps-header {
@@ -104,6 +112,15 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 
 .half {
 	@include column(6);
+	@include bp(tablet-h) { /* tablet H and below layout */
+		@include column(12);
+	}
+	@include bp(tablet-v) { /* tablet V and below layout */
+		@include column(6);
+	}
+	@include bp(mobile-h) { /* mobile and below layout */
+		@include column(12);
+	}
 }
 
 /* ---------------------- */

@@ -25,3 +25,7 @@ function getCurrentScroll() {
     return window.pageYOffset || document.documentElement.scrollTop;
     }
 }); </script>
+
+
+<?php // Custom Fonts ?>
+<link href='http://fonts.googleapis.com/css?family=Raleway:700|Codystar|Graduate|Rye|' rel='stylesheet' type='text/css'>

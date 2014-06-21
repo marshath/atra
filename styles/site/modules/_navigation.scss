@@ -7,17 +7,20 @@
 /* ------- Header Navigation ------- */
 /* --------------------------------- */
 
+
 .header-nav {
 	float: right;
 	li {
 		float: left;
-		margin: 0 0.5em;
+		margin: 0 0.75em;
+		position: relative;
 		a {
-			height:($base*5);
+			@include sans;
+			font-size: $font14;
 			color:$text; 
 			font-weight: bold;
 			text-decoration: none;
-			padding: ($base*2) 0 0;
+			padding: ($base*2) 0;
 			display: inline-block;
 			border-top: 0px solid $orange;
 			transition: border-top 0.25s ease;
@@ -27,9 +30,54 @@
 				border-top: 6px solid $orange;
 			}
 		}
-		 > ul {
-			display: none;
-		}
+	 	ul {
+	 		opacity: 0;
+	 		margin-top:-($base*0.5);
+	 		transition: all 0.2s ease;
+	 		
+	 	}
+	 	&:hover ul {
+			opacity: 1;
+	 		margin-top:0;
+	 	}
+	}
+	.sub-menu {
+	 	width:200px;
+	 	background:lighten($gray,30);
+	 	padding: 0.25em;
+	 	border: 2px solid white;
+	 	@include corner($cornerRadius*0.25);
+	 	box-shadow: 3px 10px 20px rgba(0,0,0,0.5);
+	 	position: absolute;
+		left:-50%;
+	 	top:($base*5);
+	 	&:after {
+		 	content:'';
+			width: 0; 
+			height: 0; 
+			border-left: 20px solid transparent;
+			border-right: 20px solid transparent;
+			border-bottom: 20px solid lighten($gray,30);
+		 	position: absolute;
+		 	top:-20px;
+		 	left:41%;
+	 	}
+	 	li {
+	 		width:100%;
+	 		padding: 0;
+	 		margin: 0;
+	 	}
+	 	a {
+	 		width:100%;
+	 		background: white;
+			padding: ($base*0.5);
+	 		border:none;
+	 		&:hover {
+	 			background: $orange;
+	 			color:white;
+		 		border:none;
+	 		}
+	 	}
 	}
 	@include bp(tablet-h) { /* tablet and below layout */
 		@include column(8);
@@ -46,6 +94,9 @@
 		float: right;
 	}
 }
+
+
+
 
 #social-share {
 	@include clearfix;
@@ -80,9 +131,10 @@
 	@include clearfix;
 	li {
 		float:left;
-		margin: 0 0.5em;
+		margin: 0 1em;
 		a {
 			height: ($base*3);
+			@include sans;
 			text-decoration: none;
 			padding: $base 0;
 			display: block;

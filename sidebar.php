@@ -7,7 +7,7 @@
 				if ( (is_page('about-atra')) or (127 == $post->post_parent) ) {  ?>
 				
 					<div class="sidebar-about-us">
-						<h3>More about ATRA</h3>
+						<h4>More about ATRA</h4>
 						<ul>
 						<?php
 							wp_list_pages("title_li=&include=127"); // About ATRA link

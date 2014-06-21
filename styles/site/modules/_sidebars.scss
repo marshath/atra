@@ -2,7 +2,12 @@
 // Sidebar Styles //
 ////////////////////
 
-
+.sidebar {
+	margin-bottom: ($base*2);
+	@include bp(tablet-v) { /* tablet V and below layout */
+		@include column(12);
+	}
+}
 /* ------------------------------- */
 /* ------- Become a Member ------- */
 /* ------------------------------- */

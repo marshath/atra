@@ -277,15 +277,5 @@ function bones_comments( $comment, $args, $depth ) {
 } // don't remove this bracket!
 
 
-/************* CUSTOM FONTS *********************/
-
-function bones_fonts() {
-//  wp_register_style('googleFonts', 'http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic');
-//  wp_enqueue_style( 'googleFonts');
-}
-
-add_action('wp_print_styles', 'bones_fonts');
-
-
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
