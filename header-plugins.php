@@ -5,4 +5,23 @@
 <script type="text/javascript">try{Typekit.load();}catch(e){}</script> -->
 		
 <?php // Loads jQuery Minified 1.9.1 ?>
-<!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+
+  
+<?php /* Shrinks the header and navigation */ ?>
+<script>  $(function(){
+ var shrinkHeader = 170;
+  $(window).scroll(function() {
+    var scroll = getCurrentScroll();
+      if ( scroll >= shrinkHeader ) {
+           $('.header').addClass('shrink');
+        }
+        else {
+            $('.header').removeClass('shrink');
+        }
+  });
+function getCurrentScroll() {
+    return window.pageYOffset || document.documentElement.scrollTop;
+    }
+}); </script>

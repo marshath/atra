@@ -5,7 +5,7 @@
 
 .footer {
 	width:100%;
-	background: $tan;
+	background: white;
 }
 
 
@@ -20,7 +20,7 @@
 /* -------------------------------- */
 
 .partners-footer {
-	background: $gray;
+	background: $text;
 	text-align: center;
 	ul {
 		width:intrinsic;
@@ -43,4 +43,6 @@
 	color: white;
 	font-size: $font12;
 	text-align:center;
+	margin-bottom: 0;
+	padding-bottom: $base;
 }

@@ -10,18 +10,21 @@
 .header-nav {
 	float: right;
 	li {
-		background: $yellow;
 		float: left;
-		margin: ($base*1) 0;
+		margin: 0 0.5em;
 		a {
-			color:white;
+			height:($base*5);
+			color:$text; 
+			font-weight: bold;
 			text-decoration: none;
-			padding: 1em 1.5em;
+			padding: ($base*2) 0 0;
 			display: inline-block;
+			border-top: 0px solid $orange;
+			transition: border-top 0.25s ease;
 			&:hover {
-				color:white;
+				color:$orange;
 				text-decoration: none;
-				background: $orange;
+				border-top: 6px solid $orange;
 			}
 		}
 		 > ul {
@@ -53,7 +56,7 @@
 		li {
 			background: $yellow;
 			float: left;
-			margin: 1em 0;
+			margin: 0;
 			a {
 				color:white;
 				padding: 1em 1.5em;
@@ -77,10 +80,18 @@
 	@include clearfix;
 	li {
 		float:left;
+		margin: 0 0.5em;
 		a {
-			width: 100%;
-			padding: $base 1em;
+			height: ($base*3);
+			text-decoration: none;
+			padding: $base 0;
 			display: block;
+			border-bottom: 0px solid $orange;
+			transition: border-bottom 0.25s ease;
+			&:hover {
+				color:$orange;
+				border-bottom: 6px solid $orange;
+			}
 		}
 	}
 }

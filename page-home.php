@@ -46,117 +46,31 @@
 					<h2>ATRA MEMBERS</h2>
 					<p>We love all our members. Without whom, things wouldn't be possible.<br>
 					<a href="#">Interested in becoming a member?</a></p>
+						<?php $bems = new WP_Query( 'is_page=117' );
+							while ( $bems->have_posts() ) : $bems->the_post(); ?>
 					
-					<ul class="member-list-corp">
-						<h3>Corporate Members</h3>
-						<li>Acidotic Racing</li>
-						<li>Active at Altitude</li>
-						<li>Atlas Snow-Shoe</li>
-						<li>AZ Trail Race</li>
-						<li>Badwater&reg;</li>
-						<li>Basno</li>
-						<li>Beach Running Championships</li>
-						<li>Brazen Racing</li>
-						<li>Desert Dash</li>
-						<li>Fire Tool</li>
-						<li>Fleet Feet-Boulder, CO</li>
-						<li>GECKO</li>
-						<li>Great Lakes Endurance</li>
-						<li>Greater Omaha Area Trail Runners (G.O.A.T.z)</li>
-						<li>ICESPIKE</li>
-						<li>Injinji</li>
-						<li>Inov-8</li>
-						<li>International Mountain Biking Association </li>
-						<li>International Skyrunning Federation</li>
-						<li>iRunFar.com</li>
-						<li>Junction 311 Endurance Sports</li>
-						<li>La Sportiva</li>
-						<li>LIVEALITY</li>
-						<li>Marathon Majic, LLC</li>
-						<li>Milt's Stop and Eat</li>
-						<li>Monkey Races, LLC</li>
-						<li>Mountain Ultra Trail Blog (Richard Bolt)</li>
-						<li>OrthoLite</li>
-						<li>Pikes Peak Marathon, Inc.</li>
-						<li>PikesPeakSports.US</li>
-						<li>Project Athena</li>
-						<li>Ragnar Events LLC</li>
-						<li>Rainshadow Running Club LLC</li>
-						<li>Recover-Ease</li>
-						<li>Run the Alps</li>
-						<li>Runner's World</li>
-						<li>RunningShoes.com</li>
-						<li>Running Times</li>
-						<li>Running USA</li>
-						<li>Sage to Summit</li>
-						<li>Salomon Running </li>
-						<li>Shadowcliff Lodge</li>
-						<li>Skelton Law Racing Series</li>
-						<li>Snowshoe Magazine</li>
-						<li>Switch Vision</li>
-						<li>TCR Race Productions</li>
-						<li>Tejas Trails</li>
-						<li>Trail Runner Magazine</li>
-						<li>UltraRunning Magazine</li>
-						<li>Ultraspire</li>
-						<li>Vail Mountain Running Series</li>
-						<li>Vasque</li>
-						<li>VFuel</li>
-						<li>Wicked Fast Sports Nutrition</li>
-						<li>Wilkes Barre Racing</li>
-					</ul>
-					
-					<ul class="member-list-club">
-						<h3>Club Members</h3>
-						<li>Estes Park Running Club</li>
-						<li>Gadsden Runners Club</li>
-						<li>Greater Long Island Running Club</li>
-						<li>Houston Area Trail Runners </li>
-						<li>Mountain Divas</li>
-						<li>Northern Arizona Trailrunners Assoc</li>
-						<li>Project Athena Foundation</li>
-						<li>Run Momma Run</li>
-						<li>Sterling College</li>
-						<li>Trailhead Running</li>
-						<li>Trail Runner</li>
-						<li>Trail Runners Club</li>
-						<li>Trail WhipAss</li>
-					</ul>
-					
-					<ul class="member-list-race">
-						<h3>Race Members</h3>
-						<li>A Spring Beauty Ultra Run</li>
-						<li>Andes Adventures</li>
-						<li>Angel Fire Endurance Run</li>
-						<li>Angry Tortoise 25K</li>
-						<li>Autumn Trail Series</li>
-						<li>Bear Chase Race</li>
-						<li>Chesebro5030</li>
-						<li>Cheyenne Creek Trails "Driftless"1/2 Marathon</li>
-						<li>Cow Pie Trail Run</li>
-						<li>Dirt Devil Race Series</li>
-						<li>Green Lakes Endurance Runs</li>
-						<li>Hampshire 100</li>
-						<li>Hardscrabble Mountain Trail Run</li>
-						<li>Moab Trail Marathon</li>
-						<li>Mt Ashland Hill Climb Run</li>
-						<li>Quadzilla 15K</li>
-						<li>River, Roots & Ruts Trail Half-Marathon</li>
-						<li>River Valley Run</li>
-						<li>Ruidoso Grindstone Trail Runs</li>
-						<li>Run at the Rock</li>
-						<li>Running DAVENTURA</li>
-						<li>Save the Wildlife 5K</li>
-						<li>South Shore Trail Series</li>
-						<li>Taos Ski Valley Up and Over 10K</li>
-						<li>Teva Paint Mines 6K</li>
-						<li>TransRockies</li>
-						<li>Vail Victory Races / Trail Marathon</li>
-						<li>Vasque Golden Leaf Half Marathon</li>
-						<li>WRUT 'n Run</li>
-						<li>XTERRA SoCal Trail Run Series</li>
-					
-					</ul>
+								<div id="member-all-terrain" class="resource-item">
+									<?php the_field('members_all-terrain'); ?>
+								</div>
+								
+								<div id="member-steep-rocky" class="resource-item">
+									<?php the_field('members_steep-rocky'); ?>
+								</div>
+								
+								<div id="member-single-track" class="resource-item">
+									<?php the_field('members_single-track'); ?>
+								</div>
+								
+								<div id="member-race" class="resource-item">
+									<?php the_field('members_race'); ?>
+								</div>
+								
+								<div id="member-club" class="resource-item">
+									<?php the_field('members_club'); ?>
+								</div>
+								
+							<?php endwhile; ?>
+						<?php wp_reset_postdata(); // end Display Board Members ?>
 					
 				</div> <!-- end #member-list .hm-member-list -->
 

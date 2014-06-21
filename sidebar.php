@@ -6,15 +6,14 @@
 				//----------------------------------------
 				if ( (is_page('about-atra')) or (127 == $post->post_parent) ) {  ?>
 				
-					<div class="sidebar-connect">
+					<div class="sidebar-about-us">
 						<h3>More about ATRA</h3>
 						<ul>
-							<li><a href="/trailrunner.com/about-atra/">About ATRA</a></li>
-							<li><a href="/trailrunner.com/about-atra/board-members-and-meeting-minutes/">Board Members and Meeting Minutes</a></li>
-							<li><a href="/trailrunner.com/about-atra/events-standards-program/">Events Standards Program</a></li>
-							<li><a href="/trailrunner.com/about-atra/partner-organizations/">Partner Organizations</a></li>
-							<li><a href="/trailrunner.com/about-atra/contact-us/">Contact Us</a></li>
-					</div> <!-- end .sidebar-connect -->
+						<?php
+							wp_list_pages("title_li=&include=127"); // About ATRA link
+							wp_list_pages("title_li=&child_of=127"); // About ATRA children links ?>
+						</ul>
+					</div> <!-- end .sidebar-about-us -->
 
 				<?php } ?>
 			
