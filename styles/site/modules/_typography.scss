@@ -84,28 +84,6 @@ h5 {
 h6 {
 	
 }
-.article-header {
-	text-align: center;
-	padding: $base 2em;
-	position: relative;
-	&:before, &:after {
-		content: '';
-		position: absolute;
-		height:2px;
-		width: 100%;
-		display: block;
-		background: $gray-light;
-		z-index: -10;
-	}
-	&:before {
-		top:46%;
-		left:0;
-	}
-	&:after {
-		top:54%;
-		right:0;
-	}
-}
 h1.page-title {
 	width: intrinsic;
 	background: lighten($tan,5);;
@@ -161,10 +139,10 @@ hr { /* Horizontal Rule */
 /* ----------------------------- */
 
 ::selection { 
-	background: $orange; 
+	background: saturate($yellow,10); 
 }
 ::-moz-selection { 
-	background: $orange; 
+	background: saturate($yellow,10); 
 }
 
 

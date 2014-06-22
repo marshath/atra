@@ -95,7 +95,25 @@
 	}
 }
 
-
+.header.shrink li { /* shrunk navigation menu */
+	a {
+		height:($base*3);
+		padding-top: $base;
+	}
+	li a {
+		height:intrinsic;
+		padding-top: ($base*0.5);
+		border-top: 1px solid $gray-light;
+		border-bottom: 1px solid lighten($gray-light,10);
+		&:hover {
+			border-top: 1px solid $gray-light;
+			border-bottom: 1px solid lighten($gray-light,10);
+		}
+	}
+	.sub-menu {
+	 	top:($base*3);
+	}
+}
 
 
 #social-share {

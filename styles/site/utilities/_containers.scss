@@ -16,13 +16,13 @@ body {
 
 .wrap {
 	max-width: $width-max;
-	@include clearfix;
 	margin: 0 auto;
+	@include clearfix;
 }
 
 .wrap-main {
 	@include column(8);
-	margin-bottom: ($base*2);
+	margin-bottom: ($base*4);
 	@include bp(tablet-v) { /* tablet V and below layout */
 		@include column(12);
 	}
@@ -36,6 +36,7 @@ body {
 .sidebar {
 	@include column(4);
 	float:right;
+	margin-bottom: ($base*4);
 }
 
 

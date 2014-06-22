@@ -11,8 +11,9 @@
 						<?php if ( (is_page('resources')) ) { // ----------- Resources Banner Ad -----------
 							if ( is_active_sidebar( 'banner-resources' ) ) : ?>
 						
-								<h3>Resources Banner</h3>
-								<?php dynamic_sidebar( 'banner-resources' ); ?>
+								<div class="banner-ad">
+									<?php dynamic_sidebar( 'banner-resources' ); ?>
+								</div>
 								
 							<?php else : ?>
 		
@@ -85,7 +86,6 @@
 							// ----------- Board Members Page -----------
 							//-------------------------------------------
 							if ( (is_page('board-members-and-meeting-minutes')) ) { ?>
-						
 								<div class="board-members-wrap">
 									<h1>Board Member Profiles</h1>
 									<ul>
@@ -96,12 +96,12 @@
 									$boards = new WP_Query( $boardies );
 									while ( $boards->have_posts() ) : $boards->the_post(); ?>
 										<li>
-											<img src="<?php $bm = get_field('board-pic'); echo $bm['url']; ?>" alt="<?php echo $bm['alt']; ?>"/>
+											<figure><?php the_post_thumbnail("full"); ?></figure>
 											<h3><?php the_title(); ?></h3>
 											<div class="board-social">
 													
 												<?php // Display the Facebook account, if available
-												$socialFace = get_post_meta($post->ID, 'facebook_profile', false);
+												$socialFace = get_post_meta($post->ID, 'facebook_profile', true);
 							                	if ($socialFace) {
 													echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'facebook_profile', true ) ); echo "'>Facebook</a>";
 												} else {
@@ -109,41 +109,33 @@
 												} // end Facebook account ?>
 													
 												<?php // Display the Twitter account, if available
-												$socialTwitter = get_post_meta($post->ID, 'twitter_profile', false);
+												$socialTwitter = get_post_meta($post->ID, 'twitter_profile', true);
 							                	if ($socialTwitter) {
-													foreach ($socialTwitter as $stweet) {
 							                        	echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'twitter_profile', true ) ); echo "'>Twitter</a>";
-													}
 												} else {
 													echo "";
 												} // end Twitter account ?>
 													
 												<?php // Display the Google Plus account, if available
-												$socialGoog = get_post_meta($post->ID, 'google_plus_profile', false);
+												$socialGoog = get_post_meta($post->ID, 'google_plus_profile', true);
 							                	if ($socialGoog) {
-													foreach ($socialGoog as $ponet) {
 							                        	echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'google_plus_profile', true ) ); echo "'>Google+</a>";
-													}
 												} else {
 													echo "";
 												} // end Google Plus account ?>
 													
 												<?php // Display the Instagram account, if available
-												$socialInsta = get_post_meta($post->ID, 'instagram_profile', false);
+												$socialInsta = get_post_meta($post->ID, 'instagram_profile', true);
 							                	if ($socialInsta) {
-													foreach ($socialInsta as $instet) {
 							                        	echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'instagram_profile', true ) ); echo "'>Instagram</a>";
-													}
 												} else {
 													echo "";
 												} // end Instagram account ?>
 													
 												<?php // Display the Email account, if available
-												$socialEmail = get_post_meta($post->ID, 'email_address', false);
+												$socialEmail = get_post_meta($post->ID, 'email_address', true);
 							                	if ($socialEmail) {
-													foreach ($socialEmail as $emailet) {
 							                        	echo "<a href='mailto:"; echo esc_html( get_post_meta( get_the_ID(), 'email_address', true ) ); echo "'>Email</a>";
-													}
 												} else {
 													echo "";
 												} // end Email account ?>
@@ -165,56 +157,45 @@
 									$advises = new WP_Query( $adviseries );
 									while ( $advises->have_posts() ) : $advises->the_post(); ?>
 										<li>
-											<img src="<?php $am = get_field('board-pic'); echo $am['url']; ?>" alt="<?php echo $bm['alt']; ?>"/>
 											<h3><?php the_title(); ?></h3>
-											<div class="advisor-social">
+											<div class="board-social">
 													
 												<?php // Display the Facebook account, if available
-												$socialFace2 = get_post_meta($post->ID, 'facebook_profile', false);
-							                	if ($socialFace2) {
-													foreach ($socialFace2 as $reacdt2) {
-							                        	echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'facebook_profile', true ) ); echo "'>Facebook</a>";
-													}
+												$socialFace = get_post_meta($post->ID, 'facebook_profile', true);
+							                	if ($socialFace) {
+													echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'facebook_profile', true ) ); echo "'>Facebook</a>";
 												} else {
 													echo "";
 												} // end Facebook account ?>
 													
 												<?php // Display the Twitter account, if available
-												$socialTwitter2 = get_post_meta($post->ID, 'twitter_profile', false);
-							                	if ($socialTwitter2) {
-													foreach ($socialTwitter2 as $stweet2) {
+												$socialTwitter = get_post_meta($post->ID, 'twitter_profile', true);
+							                	if ($socialTwitter) {
 							                        	echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'twitter_profile', true ) ); echo "'>Twitter</a>";
-													}
 												} else {
 													echo "";
 												} // end Twitter account ?>
 													
 												<?php // Display the Google Plus account, if available
-												$socialGoog2 = get_post_meta($post->ID, 'google_plus_profile', false);
-							                	if ($socialGoog2) {
-													foreach ($socialGoog2 as $ponet2) {
+												$socialGoog = get_post_meta($post->ID, 'google_plus_profile', true);
+							                	if ($socialGoog) {
 							                        	echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'google_plus_profile', true ) ); echo "'>Google+</a>";
-													}
 												} else {
 													echo "";
 												} // end Google Plus account ?>
 													
 												<?php // Display the Instagram account, if available
-												$socialInsta2 = get_post_meta($post->ID, 'instagram_profile', false);
-							                	if ($socialInsta2) {
-													foreach ($socialInsta2 as $instet2) {
+												$socialInsta = get_post_meta($post->ID, 'instagram_profile', true);
+							                	if ($socialInsta) {
 							                        	echo "<a href='"; echo esc_html( get_post_meta( get_the_ID(), 'instagram_profile', true ) ); echo "'>Instagram</a>";
-													}
 												} else {
 													echo "";
 												} // end Instagram account ?>
 													
 												<?php // Display the Email account, if available
-												$socialEmail2 = get_post_meta($post->ID, 'email_address', false);
-							                	if ($socialEmail2) {
-													foreach ($socialEmail2 as $emailet2) {
+												$socialEmail = get_post_meta($post->ID, 'email_address', true);
+							                	if ($socialEmail) {
 							                        	echo "<a href='mailto:"; echo esc_html( get_post_meta( get_the_ID(), 'email_address', true ) ); echo "'>Email</a>";
-													}
 												} else {
 													echo "";
 												} // end Email account ?>

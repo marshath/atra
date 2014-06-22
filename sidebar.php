@@ -95,7 +95,9 @@
 				if ( (is_page('race-calendar')) or (119 == $post->post_parent) ) {
 					if ( is_active_sidebar( 'sidebar-events' ) ) : ?>
 					
-						<?php dynamic_sidebar( 'sidebar-events' ); ?>
+						<div class="sidebar-ad">
+							<?php dynamic_sidebar( 'sidebar-events' ); ?>
+						</div>
 						
 					<?php else : ?>
 
@@ -114,7 +116,9 @@
 				
 					<?php if ( is_active_sidebar( 'sidebar-news' ) ) : ?>
 					
-						<?php dynamic_sidebar( 'sidebar-news' ); ?>
+						<div class="sidebar-ad">
+							<?php dynamic_sidebar( 'sidebar-news' ); ?>
+						</div>
 	
 					<?php else : ?>
 	
@@ -132,7 +136,9 @@
 				if ( (is_page('resources')) ) {
 					if ( is_active_sidebar( 'sidebar-resources' ) ) : ?>
 					
-						<?php dynamic_sidebar( 'sidebar-resources' ); ?>
+						<div class="sidebar-ad">
+							<?php dynamic_sidebar( 'sidebar-resources' ); ?>
+						</div>
 	
 					<?php else : ?>
 	

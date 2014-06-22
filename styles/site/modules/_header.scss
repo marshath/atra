@@ -123,6 +123,88 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	}
 }
 
+
+.article-header {
+	text-align: center;
+	padding: $base 2em;
+	position: relative;
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		height:2px;
+		width: 100%;
+		background: $gray-light;
+		display: block;
+		z-index: -10;
+	}
+	&:before {
+		top:46%;
+		left:0;
+	}
+	&:after {
+		top:54%;
+		right:0;
+	}
+}
+
+
+.board-members-wrap, .advisors-wrap {
+	@include row;
+	text-align: center;
+	h3 {
+		@include sans-serif;
+	}
+	li {
+		@include column(4);
+	}
+	p {
+		text-align: left;
+	}
+	@include bp(tablet-h) { /* tablet H and below layout */
+		li {
+			@include column(6);
+		}
+	}
+	@include bp(mobile-h) { /* mobile H and below layout */
+		li {
+			@include column(12);
+		}
+	}
+}
+.advisors-wrap li {
+	h3 {
+		@include sans-serif;
+	}
+	text-align: left;
+	@include column(6);
+	@include bp(mobile-h) { /* mobile H and below layout */
+		@include column(12);
+	}
+}
+
+
+
+.banner-ad .widget, .sidebar-ad .widget {
+	width:100%;
+	height: 97px;
+	background: darken($tan,1);
+	position: relative;
+	h4 {
+		@include sans-serif;
+		font-weight: normal;
+		font-size: $font12;
+		color: $gray-light;
+		margin: 0;
+		position: absolute;
+		right: 4px;
+		top:100%;
+	}
+}
+.sidebar-ad .widget {
+	height: 320px;
+}
+
+
 /* ---------------------- */
 /* ------- Header ------- */
 /* ---------------------- */
@@ -149,9 +231,5 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	    height:($base*2);
 	    margin-top: ($base*0.25);
     }
-    .header-nav li a {
-			height:($base*3);
-			padding-top: $base;
-	}
 }
 
