@@ -46,31 +46,26 @@
 					<h2>ATRA MEMBERS</h2>
 					<p>We love all our members. Without whom, things wouldn't be possible.<br>
 					<a href="#">Interested in becoming a member?</a></p>
-						<?php $bems = new WP_Query( 'is_page=117' );
-							while ( $bems->have_posts() ) : $bems->the_post(); ?>
 					
-								<div id="member-all-terrain" class="resource-item">
-									<?php the_field('members_all-terrain'); ?>
-								</div>
-								
-								<div id="member-steep-rocky" class="resource-item">
-									<?php the_field('members_steep-rocky'); ?>
-								</div>
-								
-								<div id="member-single-track" class="resource-item">
-									<?php the_field('members_single-track'); ?>
-								</div>
-								
-								<div id="member-race" class="resource-item">
-									<?php the_field('members_race'); ?>
-								</div>
-								
-								<div id="member-club" class="resource-item">
-									<?php the_field('members_club'); ?>
-								</div>
-								
-							<?php endwhile; ?>
-						<?php wp_reset_postdata(); // end Display Board Members ?>
+					<div id="member-all-terrain" class="resource-item">
+						<?php the_field('members_all-terrain', 114); // ------- All-terrain Members ?>
+					</div>
+					
+					<div id="member-steep-rocky" class="resource-item">
+						<?php the_field('members_steep-rocky', 114); // ------- Steep Rocky Members  ?>
+					</div>
+					
+					<div id="member-single-track" class="resource-item">
+						<?php the_field('members_single-track', 114); // ------- Singel Track Members  ?>
+					</div>
+					
+					<div id="member-race" class="resource-item">
+						<?php the_field('members_race', 114); // ------- Race Members ?>
+					</div>
+					
+					<div id="member-club" class="resource-item">
+						<?php the_field('members_club', 114); // ------- Club Members  ?>
+					</div>
 					
 				</div> <!-- end #member-list .hm-member-list -->
 

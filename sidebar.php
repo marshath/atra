@@ -155,8 +155,10 @@
 				//---------------------------------------------
 				if ( (!is_page('find-a-trail')) ) { ?>
 					<div class="sidebar-news">
-						<h4>Trail News</h4>
-						<p>Keep up with the latest news and event information.</p>
+						<div class="news-header">
+							<h4>Trail News</h4>
+							<p>The latest news and event information.</p>
+						</div>
 						<ul>
 						<?php
 							$args = array( 'numberposts' => '4', 'post_status' => 'publish' );

@@ -225,8 +225,9 @@
 									<li>
 										<a href="<?php the_field('partner_website'); ?>" target="_blank">
 											<img src="<?php $image = get_field('parter_logo'); echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
-											<p><?php the_field('partner_description'); ?></p>
 										</a>
+										<p><?php the_field('partner_description'); ?><br>
+										<a href="<?php the_field('partner_website'); ?>" target="_blank"><?php the_field('partner_website'); ?></a></p>
 									</li>
 								<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>

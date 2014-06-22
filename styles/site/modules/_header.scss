@@ -14,6 +14,19 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	z-index: 0;
 }
 
+.partner-wrap {
+	li {
+		@include clearfix;
+		margin-bottom: $base;
+	}
+	a {
+		@include column(2);
+	}
+	p {
+		@include column(10);
+	}
+}
+
 .event-search {
 	@include clearfix;
 	background: $orange;
@@ -202,6 +215,10 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 }
 .sidebar-ad .widget {
 	height: 320px;
+}
+
+.member-list {
+	
 }
 
 

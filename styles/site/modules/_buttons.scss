@@ -7,7 +7,7 @@
 /* ------- Button ------- */
 /* ---------------------- */
 
-.btn, .btn-alt, .btn-disabled {
+.btn, .btn-alt, .btn-disabled, .gform_footer input[type='submit'] {
 	color:white;
 	text-decoration: none;
 	margin: ($base*0.5) 0;
@@ -19,7 +19,7 @@
 	}
 }
 
-.btn { /* ------- Standard Button ------- */
+.btn, .gform_footer input[type='submit'] { /* ------- Standard Button ------- */
 	background: lighten($yellow,10);
 	text-shadow: -1px -1px 2px rgba(0,0,0,1);
 	box-shadow: 4px 2px 2px rgba(0,0,0,0.2), inset 1px 2px 1px lighten($yellow,20), inset -1px -2px 1px rgba(0,0,0,0.4);
@@ -31,6 +31,11 @@
 		background: saturate($yellow,10);
 		box-shadow: 0px 0px 0px rgba(0,0,0,0.2), inset -1px -2px 1px lighten($yellow,20), inset 1px 2px 1px rgba(0,0,0,0.4);
 	}
+}
+
+.gform_footer input[type='submit'] {
+	padding: 1em;
+	border: none;
 }
 
 .btn-alt { /* ------- Alternate Button ------- */

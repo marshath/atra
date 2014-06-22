@@ -8,6 +8,27 @@
 		@include column(12);
 	}
 }
+
+.sidebar-news {
+	.news-header {
+		@include clearfix;
+	}
+	li {
+		p {
+			@include column(8);
+			float: right;
+		}
+		a {
+			@include clearfix;
+		}
+	}
+	figure {
+		@include column(4);
+		float: left;
+	}
+	
+}
+
 /* ------------------------------- */
 /* ------- Become a Member ------- */
 /* ------------------------------- */

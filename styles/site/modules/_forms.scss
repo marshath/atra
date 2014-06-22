@@ -20,9 +20,23 @@ label {
 	
 }
 
-label abbr { /* Required Form Fields */
-	color:$red;
+label abbr, span.gfield_required { /* Required Form Fields */
+	color:$red !important;
 }
+.gform_fields input[type='text'], .gform_fields textarea {
+	font-size: $font18 !important;
+	padding: $base !important;
+	margin-bottom: 0;
+	border: none;
+	box-shadow: inset 2px 1px 3px rgba(0,0,0,0.2);
+}
+.ginput_container label {
+		width: 100%;
+		color:$gray;
+		display:block;
+		padding-left: 2em;
+		text-transform: uppercase;
+	}
 
 /* Text Input */
 textarea, 
