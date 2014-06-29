@@ -43,12 +43,14 @@
 					
 				</div>
 
-				<p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'name' ); ?>. All rights reserved.</p>
+				<p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'description' ); ?>. All rights reserved.</p>
 
 			</div>
 
 		</div><!-- end .page-wrap -->
-
+		
+		<?php get_template_part('footer-plugins'); ?>
+		
 		<?php // Insert Google Analytics Here ?>
 		<?php // end analytics ?>
 

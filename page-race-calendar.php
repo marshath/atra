@@ -33,13 +33,8 @@
 					if ( (is_page('race-calendar')) ) {
 						if ( is_active_sidebar( 'sidebar-events' ) ) : ?>
 						
-							<h3>Race Calendar Banner</h3>
-							<?php dynamic_sidebar( 'sidebar-events' ); ?>
-							
-						<?php else : ?>
-	
-							<div class="no-widgets">
-								<p><?php _e( 'SIDEBAR - EVENTS: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
+							<div class="banner-ad">
+								<?php dynamic_sidebar( 'banner-events' ); ?>
 							</div>
 	
 						<?php endif; 

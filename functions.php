@@ -121,7 +121,7 @@ function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'banner-events',
 		'name' => __( 'Events – Banner', 'bonestheme' ),
-		'description' => __( 'Member banner ad space (728x90px) on all Event pages.', 'bonestheme' ),
+		'description' => __( 'Member banner ad space (728x90 px) on all Event pages.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -135,7 +135,7 @@ function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar-events',
 		'name' => __( 'Events – Sidebar', 'bonestheme' ),
-		'description' => __( 'The sidebar area on all Event pages. Ad space (300x600px)', 'bonestheme' ),
+		'description' => __( 'The sidebar area on all Event pages. Ad space (336x280 px)', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -148,7 +148,7 @@ function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'banner-news',
 		'name' => __( 'Trail News – Banner', 'bonestheme' ),
-		'description' => __( 'Member banner ad space (728x90px) on all Trail News (blog) pages.', 'bonestheme' ),
+		'description' => __( 'Member banner ad space (728x90 px) on all Trail News (blog) pages.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -162,7 +162,7 @@ function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar-news',
 		'name' => __( 'Trail News – Sidebar', 'bonestheme' ),
-		'description' => __( 'The sidebar area on all Trial News (blog) pages. Ad space (300x600px)', 'bonestheme' ),
+		'description' => __( 'The sidebar area on all Trial News (blog) pages. Ad space (336x280 px)', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -175,7 +175,7 @@ function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'banner-resources',
 		'name' => __( 'Resources – Banner', 'bonestheme' ),
-		'description' => __( 'Member banner ad space (728x90px) on all Resource pages.', 'bonestheme' ),
+		'description' => __( 'Member banner ad space (728x90 px) on all Resource pages.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -188,7 +188,7 @@ function bones_register_sidebars() {
 	register_sidebar(array(
 		'id' => 'sidebar-resources',
 		'name' => __( 'Resources – Sidebar', 'bonestheme' ),
-		'description' => __( 'The sidebar area on all Resource pages. Ad space (300x600px)', 'bonestheme' ),
+		'description' => __( 'The sidebar area on all Resource pages. Ad space (336x280 px)', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -228,6 +228,19 @@ function bones_register_sidebars() {
 		'id' => 'sidebar-marketing',
 		'name' => __( 'Social Marketing', 'bonestheme' ),
 		'description' => __( 'The sidebar area on for Marketing.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// ***************************************
+	// Registering CONTACT US - SIDEBAR 
+	// ***************************************
+	register_sidebar(array(
+		'id' => 'sidebar-contact',
+		'name' => __( 'Contact Us', 'bonestheme' ),
+		'description' => __( 'The sidebar area on for Contact Us.', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',

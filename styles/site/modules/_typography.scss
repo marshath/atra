@@ -58,10 +58,13 @@ $font20: 1.25em;
 /* ------------------------- */
 /* ------- Body Text ------- */
 /* ------------------------- */
+body {
+	font-size: $font18;
+}
 
 h1, h2, h3, h4, h5, h6 {
 	@include sans;
-	margin: ($base*1.5) 0;
+	margin: ($base*1.5) 0 0;
 }
 h1 {
 	
@@ -84,12 +87,6 @@ h5 {
 h6 {
 	
 }
-h1.page-title {
-	width: intrinsic;
-	background: lighten($tan,5);;
-	padding: 0 0.5em;
-	margin: 0 auto;
-}
 
 p { 
 	
@@ -108,6 +105,11 @@ blockquote {
 		display: block;
 	}
 }
+
+.resource-item ul {
+	margin-left: 1em;
+	 list-style: disc;
+ }
 
 dt { /* Definition List - Term */
 	font-weight: bold;

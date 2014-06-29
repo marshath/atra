@@ -4,34 +4,31 @@
 
 			<div id="inner-content" class="wrap">
 
-				<div id="main" class="" role="main">
+				<div id="main" class="wrap-main" role="main">
 					<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<article id="post-<?php the_ID(); ?>" <?php post_class('cf'); ?> role="article">
+						<article id="post-<?php the_ID(); ?>" <?php post_class('news-list'); ?> role="article">
+	
+							<header class="entry-header">
 
-							<header class="article-header">
+								<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+								<p class="byline">
+									Posted <?php the_time('F j, Y'); ?> by <?php the_author_posts_link('author') ?>
+								</p>
 
-								<h3 class="search-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-
-					            <p class="byline">
-					            	<?php printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>', 'bonestheme' ), get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
-					            </p>
-
-							</header> <?php // end .article-header ?>
+							</header>
+						
+							<figure>
+								<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+								  the_post_thumbnail('large');
+								} ?>
+							</figure>
 
 							<section class="entry-content">
-									<?php the_excerpt( '<span class="read-more">' . __( 'Read more &raquo;', 'bonestheme' ) . '</span>' ); ?>
-							</section> <?php // end .entry-content ?>
-
-							<footer class="article-footer">
-
-					            <?php printf( __( 'Filed under: %1$s', 'bonestheme' ), get_the_category_list(', ') ); ?>
-					
-					            <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
-
-							</footer> <!-- end .article-footer -->
+								<?php the_excerpt(); ?>
+							</section>
 
 						</article>
 
@@ -57,7 +54,7 @@
 
 				</div> <?php // end #main ?>
 
-				<?php get_sidebar(); ?>
+				<?php get_sidebar('single'); ?>
 
 			</div> <?php // end #inner-content ?>
 

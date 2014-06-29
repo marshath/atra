@@ -4,6 +4,9 @@
 
 .sidebar {
 	margin-bottom: ($base*2);
+	p:first-child {
+		margin-top: 0;
+	}
 	@include bp(tablet-v) { /* tablet V and below layout */
 		@include column(12);
 	}
@@ -30,11 +33,26 @@
 }
 
 /* ------------------------------- */
-/* ------- Become a Member ------- */
+/* ------- About ATRA links ------- */
 /* ------------------------------- */
+.sidebar-about-us ul {
+	list-style: disc;
+	margin-left: 1.25em;
+}
 
 
-
-/* ---------------------------------- */
-/* ------- Social Media Links ------- */
-/* ---------------------------------- */
+/* ----------------------------------------------------- */
+/* ------- Social media - Conversation - Connect ------- */
+/* ----------------------------------------------------- */
+.sidebar-connect, .sidebar-social {
+	ul {
+		@include clearfix;
+	}
+	li {
+		@include column(4);
+	}
+}
+.sidebar-connect {
+	background: $tan;
+	padding: 0.1em 1em;
+}

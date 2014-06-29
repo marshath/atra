@@ -20,17 +20,26 @@
 /* -------------------------------- */
 
 .partners-footer {
-	background: $text;
+	background: darken($tan,10);
 	text-align: center;
 	ul {
 		width:intrinsic;
 		margin: 0 auto;
 	}
 	li {
+		width:13.66%;
+		margin: $base 1.5%;
 		list-style: none;
 		float: left;
-		margin: 0 1em;
-		padding:$base 0.5em;
+		img {
+			max-width:60%;
+			height: inherit;
+		}
+	}
+	@include bp(mobile-h) { /* mobile H and below layout */
+		li {
+			width:30.33%;
+		}
 	}
 }
 
@@ -40,9 +49,10 @@
 /* ------- Copyright ------- */
 /* ------------------------- */
 .copyright {
+	background: $text;
 	color: white;
-	font-size: $font12;
+	font-size: $font11;
 	text-align:center;
 	margin-bottom: 0;
-	padding-bottom: $base;
+	padding: $base 0;
 }

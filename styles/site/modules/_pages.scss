@@ -63,6 +63,76 @@ figure {
 /* ------- Blog ------- */
 /* -------------------- */
 
+
+h1.page-title, h1.entry-title { /* Post titles on Trail News */
+	width: intrinsic;
+	background: lighten($tan,5);
+	text-align: center;
+	padding: 0 0.5em;
+	margin: 0 auto;
+}
+
+.entry-header { /* Post titles spacing on the margin bottom */
+	margin-bottom:$base;
+	h2 {
+		margin-bottom: 0;
+	}
+}
+.byline-figure { /* Author image */
+	 width:50px;
+	 height: 50px;
+	 margin-right:1em;
+	 margin-left: -1em;
+	 float:left;
+	 border-radius: 50%;
+	 border: 2px dotted $yellow;
+	 overflow: hidden;
+}
+.byline, .footer-category { /* Author name and Category */
+	font-size: $font14;
+	margin: 0;
+	padding: 0;
+}
+.byline-group {
+	@include column(6);
+	float: left;
+}
+.byline-cat {
+	float: right;
+	text-align: right;
+	display: block;
+	height: $base;
+	@include column(6);
+}
+@include bp(mobile-h) { /* mobile H format and below */
+	.byline-group, .byline-cat {
+		@include column(12);
+	}
+}
+
+.news-list {
+	@include clearfix;
+	figure {
+		@include column(5);
+		@include bp(mobile-h) { /* mobile H format and below */
+			@include column(12);
+		}
+	}
+}
+
+.featured-posts {
+	h4 {
+		margin-top: 0;
+	}
+	li {
+		@include column(6);
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}
+
+
 /* Blog Archive List */
 .block-thumb {
 	.b-inner {
@@ -102,11 +172,6 @@ figure {
 	}
 }
 
-/* Author Information */
-.byline { /* Author name */
-	font-size: $font14;
-}
-
 /* Company information */
 .vcard {
 	font-size: $font14;
@@ -120,5 +185,7 @@ figure {
 	
 	}
 }
+
+
 
 

@@ -11,6 +11,14 @@ form {
   @include corner($cornerRadius); 
   width:100%;
 }
+.searchform {
+	margin-bottom: ($base*2);
+	input[type='submit'] {
+		color: white;
+		border: none;
+		height: ($base*2);
+	}
+}
 
 input, select, textarea {
 	outline:none;
@@ -23,9 +31,9 @@ label {
 label abbr, span.gfield_required { /* Required Form Fields */
 	color:$red !important;
 }
-.gform_fields input[type='text'], .gform_fields textarea {
-	font-size: $font18 !important;
-	padding: $base !important;
+.gform_fields input[type='text'], .gform_fields textarea, .searchform input[type='text'] {
+	font-size: $font16 !important;
+	padding: ($base*0.5 1em) !important;
 	margin-bottom: 0;
 	border: none;
 	box-shadow: inset 2px 1px 3px rgba(0,0,0,0.2);
@@ -37,6 +45,11 @@ label abbr, span.gfield_required { /* Required Form Fields */
 		padding-left: 2em;
 		text-transform: uppercase;
 	}
+@include bp(mobile-h) { /* mobile H and below layout */
+	.ginput_left, .ginput_right {
+		width: 100% !Important;
+	}
+}
 
 /* Text Input */
 textarea, 
@@ -59,11 +72,11 @@ input[type='datetime-local'] {
   @include corner($cornerRadius);
 }
 
-/* Newsletter */
-.inline-container {
+/* Pill Button Design*/
+.inline-container, .searchform {
 	position: relative;
 }
-.newsletter-field {
+.newsletter-field, .searchform input[type="text"] {
 	padding: ($base*0.5) 1em !Important;
 }
 .newsletter-submit {
@@ -71,7 +84,13 @@ input[type='datetime-local'] {
 	right:0;
 	top:-0.5em;
 }
-
+.searchform input[type="submit"] {
+	position: absolute;
+	right:0;
+	top:0.2em;
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+}
 ::placeholder {
 	color: $gray-light;
 }

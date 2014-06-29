@@ -4,8 +4,26 @@
 
 			<div id="inner-content" class="wrap">
 
-					<div id="main" class="" role="main">
-
+					<div id="main" class="wrap-main" role="main">
+			
+						<?php 
+						//----------------------------------------------
+						// ----------- Trail News Banner AD -----------
+						//----------------------------------------------
+						
+						if ( is_active_sidebar( 'banner-news' ) ) : ?>
+						
+							<div class="banner-ad">
+								<?php dynamic_sidebar( 'banner-news' ); ?>
+							</div>
+		
+						<?php endif; ?>
+			
+						<?php 
+						//------------------------------------------------
+						// ----------- Determine archive title -----------
+						//------------------------------------------------ ?>
+						
 						<?php if (is_category()) { ?>
 							<h1 class="archive-title">
 								<span><?php _e( 'Posts Categorized:', 'bonestheme' ); ?></span> <?php single_cat_title(); ?>
@@ -43,28 +61,26 @@
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-						<article id="post-<?php the_ID(); ?>" <?php post_class( 'cf' ); ?> role="article">
-
-							<header class="article-header">
-
-								<h3 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-								<p class="byline"><?php
-									printf(__( 'Posted', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time> ' . __('by', 'bonestheme' ) . ' <span class="author">%3$s</span> <span class="amp">&</span> ' . __('filed under', 'bonestheme') .  ' %4$s.', get_the_time('Y-m-j'), get_the_time(__( 'F jS, Y', 'bonestheme' )), get_the_author_link( get_the_author_meta( 'ID' ) ), get_the_category_list(', '));
-								?></p>
-
+						<article id="post-<?php the_ID(); ?>" <?php post_class( 'news-list' ); ?> role="article">
+	
+							<header class="entry-header">
+	
+								<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+								<p class="byline">
+									<p class="byline">Posted <?php the_time('F j, Y'); ?> by <?php the_author_posts_link('author') ?></p>
+								</p>
+	
 							</header>
-
+						
+							<figure>
+								<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+								  the_post_thumbnail('medium');
+								} ?>
+							</figure>
+	
 							<section class="entry-content">
-
-								<?php the_post_thumbnail( 'bones-thumb-300' ); ?>
-
 								<?php the_excerpt(); ?>
-
 							</section>
-
-							<footer class="article-footer">
-
-							</footer>
 
 						</article>
 
@@ -90,7 +106,7 @@
 
 					</div> <?php // end #main ?>
 
-				<?php get_sidebar(); ?>
+				<?php get_sidebar('single'); ?>
 
 			</div> <?php // end #inner-content ?>
 

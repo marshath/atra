@@ -14,12 +14,6 @@
 								<div class="banner-ad">
 									<?php dynamic_sidebar( 'banner-resources' ); ?>
 								</div>
-								
-							<?php else : ?>
-		
-								<div class="no-widgets">
-									<p><?php _e( 'BANNER - RESOURCES: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-								</div>
 		
 							<?php endif; 
 						} // end RESOURCES BANNER ?>
@@ -58,7 +52,7 @@
 								</div>
 								
 								<div class="half">
-									<div id="books" class="resource-item">
+									<div id="books" class="resource-item books">
 										<?php the_field('book_links'); ?>
 									</div>
 									
@@ -224,8 +218,9 @@
 									$partners->the_post(); ?>
 									<li>
 										<a href="<?php the_field('partner_website'); ?>" target="_blank">
-											<img src="<?php $image = get_field('parter_logo'); echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+											<img src="<?php $image = get_field('parter_logo'); echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 										</a>
+										<h3><?php the_title(); ?></h3>
 										<p><?php the_field('partner_description'); ?><br>
 										<a href="<?php the_field('partner_website'); ?>" target="_blank"><?php the_field('partner_website'); ?></a></p>
 									</li>
@@ -242,25 +237,43 @@
 							// ----------- Membership Page -----------
 							//----------------------------------------
 							if ( (is_page('membership')) ) { ?>
-									<div id="member-all-terrain" class="resource-item">
-										<?php the_field('members_all-terrain'); ?>
-									</div>
-									
-									<div id="member-steep-rocky" class="resource-item">
-										<?php the_field('members_steep-rocky'); ?>
-									</div>
-									
-									<div id="member-single-track" class="resource-item">
-										<?php the_field('members_single-track'); ?>
-									</div>
-									
-									<div id="member-race" class="resource-item">
-										<?php the_field('members_race'); ?>
-									</div>
-									
-									<div id="member-club" class="resource-item">
-										<?php the_field('members_club'); ?>
-									</div>
+        
+						        <!--Horizontal Tab-->
+						        <div id="horizontalTab">
+						        
+						            <ul class="resp-tabs-list">
+						                <li>All-terrain</li>
+						                <li>Steep &amp; Rocky</li>
+						                <li>Single-track</li>
+						                <li>Race</li>
+						                <li>Club</li>
+						            </ul>
+						            
+						            <div class="resp-tabs-container">
+						            
+						                <div id="member-all-terrain" class="resource-item">
+											<?php the_field('members_all-terrain'); ?>
+						                </div>
+						                
+						                <div id="member-steep-rocky" class="resource-item">
+											<?php the_field('members_steep-rocky'); ?>
+						                </div>
+						                
+						                <div id="member-single-track" class="resource-item">
+											<?php the_field('members_single-track'); ?>
+						                </div>
+						                
+						                <div id="member-race" class="resource-item">
+											<?php the_field('members_race'); ?>
+						                </div>
+						                
+						                <div id="member-club" class="resource-item">
+											<?php the_field('members_club'); ?>
+						                </div>
+						                
+						            </div>
+						            
+						        </div>
 								
 							<?php } // end MEMBERSHIP Page ?>
 					
@@ -271,8 +284,8 @@
 					<?php endwhile; ?>
 
 				</div> <?php // end #main .wrap-main ?>
-
-				<?php get_sidebar(); ?>
+				
+				<?php get_sidebar();?>
 
 			</div> <?php // end #inner-content .wrap ?>
 
