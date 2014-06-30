@@ -81,7 +81,7 @@
 							//-------------------------------------------
 							if ( (is_page('board-members-and-meeting-minutes')) ) { ?>
 								<div class="board-members-wrap">
-									<h1>Board Member Profiles</h1>
+									<h2>Board Member Profiles</h2>
 									<ul>
 									
 									
@@ -92,6 +92,7 @@
 										<li>
 											<figure><?php the_post_thumbnail("full"); ?></figure>
 											<h3><?php the_title(); ?></h3>
+											<h5><?php the_field('board_title'); ?></h5>
 											<div class="board-social">
 													
 												<?php // Display the Facebook account, if available
@@ -143,7 +144,7 @@
 									</ul>
 								</div> <?php // end #board-members .entry-content ?>
 								<div class="advisors-wrap">
-									<h1>Advisors</h1>
+									<h2>Advisors</h2>
 									<ul>
 									
 									<?php  // ******** Display Advisors ******** 

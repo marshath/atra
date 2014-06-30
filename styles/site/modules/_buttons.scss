@@ -19,7 +19,7 @@
 	}
 }
 
-.btn, .gform_footer input[type='submit'], .searchform input[type="submit"] { /* ------- Standard Button ------- */
+.btn, .gform_footer input[type='submit'] { /* ------- Standard Button ------- */
 	background: lighten($yellow,10);
 	text-shadow: -1px -1px 2px rgba(0,0,0,1);
 	box-shadow: 4px 2px 2px rgba(0,0,0,0.2), inset 1px 2px 1px lighten($yellow,20), inset -1px -2px 1px rgba(0,0,0,0.4);
@@ -38,13 +38,16 @@
 	border: none;
 }
 
-.btn-alt { /* ------- Alternate Button ------- */
-	background: $orange;
+.btn-alt, .searchform input[type="submit"] { /* ------- Alternate Button ------- */
+	background: darken($orange, 15%);
+	transition: all 0.2s ease;
 	&:hover {
-		background-color: darken($orange, 20%);
+		background: $yellow;
 	}
 }
-
+.sidebar .btn-alt {
+	margin-top: 0;
+}
 .btn-disabled { /* ------- Disabled Button ------- */
 	background: $gray;
 	&:hover {

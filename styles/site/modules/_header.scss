@@ -39,13 +39,14 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 }
 
 .event-search {
-	@include clearfix;
-	background: $orange;
 	width:100%;
+	background: $orange;
 	margin-top: -($base*7);
+	margin-bottom: ($base*2);
 	display: block;
+	@include corner(($cornerRadius*0.70));
+	@include clearfix;
 	z-index: 1;
-	@include corner(200em);
 	h1 {
 		@include script;
 		font-size: 4em;
@@ -71,6 +72,10 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	.event-search-wrap {
 		position: relative;
 	}
+	input[type='text'] {
+		box-shadow: inset 4px 2px 3px rgba(0,0,0,0.2);
+		background: linear-gradient(#e3e3e3 0%, #ffffff 50%)
+	}
 	.event-search-btn {
 		position: absolute;
 		top: -($base*0.3); 
@@ -82,11 +87,16 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	p {
 		text-align: center;
 		color: white;
-		a {
-			color:white;
-			&:hover {
-				color: $green;
-			}
+	}
+	a {
+		color:white;
+		&:hover {
+			color: lighten($yellow,20);
+			text-decoration: none;
+		}
+		&:active {
+			color: $yellow;
+			text-decoration: none;
 		}
 	}
 }
@@ -175,14 +185,29 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 .board-members-wrap, .advisors-wrap {
 	@include row;
 	text-align: center;
+	h2{
+		margin-bottom: $base;
+	}
 	h3 {
 		@include sans-serif;
 	}
-	li {
-		@include column(4);
-	}
 	p {
 		text-align: left;
+	}
+	h3, h4, h5 {
+		margin-top: 0;
+	}
+	h5 {
+		margin-bottom: $base;
+	}
+}
+.board-members-wrap {
+	li {
+		@include column(4);
+		height: ($base*24);
+		img {
+			width: 100%;
+		}
 	}
 	@include bp(tablet-h) { /* tablet H and below layout */
 		li {
@@ -192,6 +217,8 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	@include bp(mobile-h) { /* mobile H and below layout */
 		li {
 			@include column(12);
+			height:intrinsic;
+			margin-bottom: ($base*2);
 		}
 	}
 }
@@ -206,7 +233,10 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	}
 }
 
-
+.sidebar-meeting-minutes ul {
+	list-style: circle;
+	margin-left: 1.5em;
+}
 
 .banner-ad .widget, .sidebar-ad .widget {
 	width:100%;
@@ -238,6 +268,32 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
 	@include sans-serif;
 }
 
+.member-links {
+	@include clearfix;
+	li {
+		width:31%;
+		margin: 0 1%;
+		padding-left: 0;
+		padding-right: 0;
+		float: left;
+	}
+	a {
+		width: 100%;
+		text-align: center;
+	}
+	@include bp(mobile-h) { /* mobile H and below layout */
+		li {
+			width:46%;
+			margin: 0 2%;
+		}
+	}
+	@include bp(mobile-v) { /* mobile V and below layout */
+		li {
+			width:100%;
+			margin: 0%;
+		}
+	}
+}
 
 /* ---------------------- */
 /* ------- Header ------- */

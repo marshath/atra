@@ -250,6 +250,32 @@ function bones_register_sidebars() {
 } // don't remove this bracket!
 
 
+/************* ORDER RACE EVENTS *********************/
+add_action('pre_get_posts', 'my_pre_get_posts');
+ 
+function my_pre_get_posts( $query )
+{
+	// validate
+	if( is_admin() )
+	{
+		return $query;
+	}
+ 
+    // project example
+    if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event' )
+    {
+    	$query->set('orderby', 'meta_value_num');  
+    	$query->set('meta_key', 'event_date');  
+    	$query->set('order', 'ASC'); 
+    }   
+ 
+	// always return
+	return $query;
+ 
+}
+
+
+
 /************* COMMENT LAYOUT *********************/
 
 // Comment Layout

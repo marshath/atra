@@ -8,7 +8,7 @@
 				
 					<div class="sidebar-about-us">
 						<h4>More about ATRA</h4>
-						<ul>
+						<ul class="bullets">
 						<?php
 							wp_list_pages("title_li=&include=127"); // About ATRA link
 							wp_list_pages("title_li=&child_of=127"); // About ATRA children links ?>
@@ -43,7 +43,9 @@
 				// ----------- Board Meeting Minutes -----------
 				//----------------------------------------------
 				if (is_page('board-members-and-meeting-minutes')) { ?>
-					<?php the_field('meeting_minute_links'); ?>
+					<div class="sidebar-meeting-minutes">
+						<?php the_field('meeting_minute_links'); ?>
+					</div>
 				<?php } ?>
 			
 				<?php 
