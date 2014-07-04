@@ -76,7 +76,7 @@
 											 // end Event Date ?>
 										</td>
 										<td><?php // Display the Event Name and Link ?>
-											<p><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title(); ?></a></p>
+											<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 										</td><?php // end Event Name and Link ?>
 										<td>
 											<ul><?php // Display the Event Distance ?>

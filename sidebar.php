@@ -27,12 +27,6 @@
 					<div class="sidebar-connect">
 						<?php dynamic_sidebar('sidebar-marketing'); ?>
 					</div> <!-- end .sidebar-connect -->
-						
-					<?php else : ?>
-
-						<div class="no-widgets">
-							<p><?php _e( 'SOCIAL MARKETING: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-						</div>
 
 					<?php endif; 
 		
@@ -58,12 +52,6 @@
 					<div class="sidebar-member">
 						<?php dynamic_sidebar('sidebar-members'); ?>
 					</div> <!-- end .sidebar-member -->
-						
-					<?php else : ?>
-
-						<div class="no-widgets">
-							<p><?php _e( 'BECOME A MEMBER: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-						</div>
 
 					<?php endif; 
 		
@@ -79,12 +67,6 @@
 					<div class="sidebar-social">
 						<?php dynamic_sidebar('sidebar-socials'); ?>
 					</div> <!-- end .sidebar-connect -->
-						
-					<?php else : ?>
-
-						<div class="no-widgets">
-							<p><?php _e( 'SOCIAL MEDIA: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-						</div>
 
 					<?php endif; 
 		
@@ -100,12 +82,6 @@
 						<div class="sidebar-ad">
 							<?php dynamic_sidebar('sidebar-events'); ?>
 						</div>
-						
-					<?php else : ?>
-
-						<div class="no-widgets">
-							<p><?php _e( 'SIDEBAR - EVENTS: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-						</div>
 
 					<?php endif; 
 				} ?>
@@ -119,12 +95,6 @@
 					
 						<div class="sidebar-ad">
 							<?php dynamic_sidebar('sidebar-resources'); ?>
-						</div>
-	
-					<?php else : ?>
-	
-						<div class="no-widgets">
-							<p><?php _e( 'SIDEBAR - RESOURCES: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
 						</div>
 	
 					<?php endif;
@@ -161,13 +131,7 @@
 						<div class="sidebar-contact">
 							<?php dynamic_sidebar('sidebar-contact'); ?>
 						</div>
-	
-					<?php else : ?>
-	
-						<div class="no-widgets">
-							<p><?php _e( 'SIDEBAR - CONTACT US: This is a widget ready area. Add some and they will appear here.', 'bonestheme' ); ?></p>
-						</div>
-	
+						
 					<?php endif;
 				} ?>
 

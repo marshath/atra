@@ -6,5 +6,9 @@ a {
 	color: $link;
 	&:hover {
 		color: lighten($link, 20);
+		text-decoration: none;
+	}
+	&:active {
+		color: darken($link,10);
 	}
 }

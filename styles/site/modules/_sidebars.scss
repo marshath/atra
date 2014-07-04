@@ -33,9 +33,20 @@
 }
 
 
+/* ----------------------------------------------- */
+/* ------- Board Members - Meeting Minutes ------- */
+/* ----------------------------------------------- */
+
+.sidebar-meeting-minutes ul {
+	list-style: circle;
+	margin-left: 1.5em;
+}
+
+
 /* ----------------------------------------------------- */
 /* ------- Social media - Conversation - Connect ------- */
 /* ----------------------------------------------------- */
+
 .sidebar-connect, .sidebar-social {
 	ul {
 		@include clearfix;

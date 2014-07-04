@@ -33,27 +33,30 @@ body {
 	margin-bottom: ($base*2);
 }
 
-.sidebar {
-	@include column(4);
-	float:right;
-	margin-bottom: ($base*4);
-}
-
-
-/* ---------------------- */
-/* ------- Header ------- */
-/* ---------------------- */
-
 
 
 /* ----------------------------- */
 /* ------- Body Articles ------- */
 /* ----------------------------- */
+.half {
+	@include column(6);
+	@include bp(tablet-h) { /* tablet H and below layout */
+		@include column(12);
+	}
+	@include bp(tablet-v) { /* tablet V and below layout */
+		@include column(6);
+	}
+	@include bp(mobile-h) { /* mobile and below layout */
+		@include column(12);
+	}
+}
 
 
-
-
-/* ---------------------- */
-/* ------- Footer ------- */
-/* ---------------------- */
-
+/* ----------------------- */
+/* ------- Sidebar ------- */
+/* ----------------------- */
+.sidebar {
+	@include column(4);
+	float:right;
+	margin-bottom: ($base*4);
+}

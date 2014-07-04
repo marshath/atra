@@ -48,13 +48,231 @@
 
 
 /* ---------------------- */
-/* ------- Figure ------- */
+/* ------- Global ------- */
 /* ---------------------- */
 
 figure {
 	figcaption {
 		color: $gray-light;
 		font-style: italic;
+	}
+}
+
+.article-header, .page-header, .event-header {
+	padding: $base 2em;
+	position: relative;
+	&:before, &:after {
+		content: '';
+		position: absolute;
+		height:2px;
+		width: 100%;
+		background: $gray-light;
+		display: block;
+		z-index: -10;
+	}
+	&:before {
+		top:46%;
+		left:0;
+	}
+	&:after {
+		top:54%;
+		right:0;
+	}
+}
+.single-title .article-header {
+	margin-bottom: ($base*3);
+}
+.single-title .event-header {
+	margin-bottom: ($base*0.5);
+}
+
+
+/* ------------------------- */
+/* ------- Home Page ------- */
+/* ------------------------- */
+.event-search {
+	width:100%;
+	background: $orange;
+	margin-top: -($base*7);
+	margin-bottom: ($base*2);
+	display: block;
+	@include corner(($cornerRadius*0.70));
+	@include clearfix;
+	z-index: 1;
+	h1 {
+		@include script;
+		font-size: 4em;
+		text-align: center;
+		color: white;
+		text-shadow: 0 2px 1px black;
+	}
+	fieldset {
+		width: 80%;
+		border: 0;
+		max-width: $width-max;
+		margin: $base auto 0;
+		padding-bottom: 0;
+	}
+	label {
+		display: none;
+	}
+	input[type='text'], .event-search-btn { 
+		font-size: $font20;
+		border: none;
+		padding: ($base*1) 1em;
+	}
+	.event-search-wrap {
+		position: relative;
+	}
+	input[type='text'] {
+		box-shadow: inset 4px 2px 3px rgba(0,0,0,0.2);
+		background: linear-gradient(#e3e3e3 0%, #ffffff 50%)
+	}
+	.event-search-btn {
+		position: absolute;
+		top: -($base*0.3); 
+		right: 0;
+		padding: $base 4em;
+		border-top-left-radius: 0px; 
+		border-bottom-left-radius: 0px;
+	}
+	p {
+		text-align: center;
+		color: white;
+	}
+	a {
+		color:white;
+		&:hover {
+			color: lighten($yellow,20);
+			text-decoration: none;
+		}
+		&:active {
+			color: $yellow;
+			text-decoration: none;
+		}
+	}
+}
+
+.featured-events, .trail-maps {
+	@include column(6);
+	@include clearfix;
+	margin-bottom: $base;
+	@include bp(mobile-h) { /* mobile and below layout */
+		@include column(12);
+	}
+}
+
+.member-list {
+	@include column(8);
+	margin-bottom: ($base*2);
+	ul {
+	}
+	@include bp(tablet-v) { /* tablet V and below layout */
+		@include column(12);
+	}
+}
+.member-list-corp, .member-list-club, .member-list-race {
+	@include column(6);
+	@include bp(mobile-h) { /* mobile and below layout */
+		@include column(12);
+	}
+}
+
+
+/* --------------------------- */
+/* ------- Event Pages ------- */
+/* --------------------------- */
+
+.content-top { /* maps, date, time and social media sharing */
+	width:100%;
+	p {
+		margin: ($base*0.5) 0;
+	}
+	@include clearfix;
+	.event-date {
+		@include column(6);
+		font-size: 1.5em;
+	}
+	.event-smedia {
+		@include column(6);
+		float: right;
+	}
+}
+.event-map { /* google maps */
+	width: 100%;
+	height: 300px;
+	border: #ccc solid 1px;
+	margin: 0;
+}
+
+.content-venue {
+	@include clearfix;
+	border-top: 2px solid lighten($gray-light,5);
+	border-bottom: 2px solid lighten($gray-light,5);
+	margin-bottom: $base;
+	padding: ($base*0.5) 0;
+	p {
+		margin: 0;
+	}
+}
+
+.content-details {
+	@include clearfix;
+	p {
+		margin: 0;
+	}
+	.btn {
+		width: 100%;
+		text-align: center;
+	}
+}
+.content-desc {
+	@include column(12);
+}
+
+.content-photos {
+	@include clearfix;
+	margin-bottom: $base;
+	img {
+		@include column(4);
+		transition: box-shadow 0.2s ease;
+		&:hover {
+			border: 2px solid $orange;
+			box-shadow: 4px 2px 3px rgba(0,0,0,0.2);
+		}
+		&:active {
+			border: 2px solid $yellow;
+			box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+		}
+	}
+}
+
+.content-archive {
+	@include clearfix;
+	margin-bottom: $base;
+	p {
+		margin: 0;
+	}
+}
+
+
+/* -------------------------- */
+/* ------- Trail Maps ------- */
+/* -------------------------- */
+.trail-maps-header {
+	width: 100%;
+	background: rgba(32,32,32,0.8);
+	color: white;
+	text-align: center;
+	text-shadow: 0 -2px 1px black;
+	margin-top: -($base*8.2);
+	margin-bottom: ($base*2);
+	padding: $base 0;
+	h1 {
+		margin-bottom: 0;
+	}
+	p {
+		margin-top: 0;
 	}
 }
 
@@ -187,5 +405,134 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 }
 
 
+/* ------------------------- */
+/* ------- Resources ------- */
+/* ------------------------- */
+
+.featured-book {
+	img {
+		float: left;
+		margin-right: 1em;
+	}
+}
+
+.books h4 {
+	@include sans-serif;
+}
 
 
+/* ----------------------------- */
+/* ------- Board Members ------- */
+/* ----------------------------- */
+
+.board-members-wrap, .advisors-wrap {
+	@include row;
+	text-align: center;
+	h2{
+		margin-bottom: $base;
+	}
+	h3 {
+		@include sans-serif;
+	}
+	p {
+		text-align: left;
+	}
+	h3, h4, h5 {
+		margin-top: 0;
+	}
+	h5 {
+		margin-bottom: $base;
+	}
+}
+.board-members-wrap {
+	li {
+		@include column(4);
+		height: ($base*24);
+		img {
+			width: 100%;
+		}
+	}
+	@include bp(tablet-h) { /* tablet H and below layout */
+		li {
+			@include column(6);
+		}
+	}
+	@include bp(mobile-h) { /* mobile H and below layout */
+		li {
+			@include column(12);
+			height:intrinsic;
+			margin-bottom: ($base*2);
+		}
+	}
+}
+.advisors-wrap li {
+	h3 {
+		@include sans-serif;
+	}
+	text-align: left;
+	@include column(6);
+	@include bp(mobile-h) { /* mobile H and below layout */
+		@include column(12);
+	}
+}
+
+
+/* ------------------------------------- */
+/* ------- Partner Organizations ------- */
+/* ------------------------------------- */
+
+.partner-wrap {
+	li {
+		@include clearfix;
+		padding-bottom: $base;
+		margin-bottom: $base;
+		border-bottom: 1px solid $gray-light;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	h3 {
+		@include column(10);
+	}
+	img {
+		height: inherit;
+	}
+	a {
+		@include column(2);
+	}
+	p {
+		@include column(10);
+	}
+}
+
+
+/* -------------------------- */
+/* ------- Membership ------- */
+/* -------------------------- */
+
+.member-links { /* ------- Membership Option Buttons ------- */
+	@include clearfix;
+	li {
+		width:31%;
+		margin: 0 1%;
+		padding-left: 0;
+		padding-right: 0;
+		float: left;
+	}
+	a {
+		width: 100%;
+		text-align: center;
+	}
+	@include bp(mobile-h) { /* mobile H and below layout */
+		li {
+			width:46%;
+			margin: 0 2%;
+		}
+	}
+	@include bp(mobile-v) { /* mobile V and below layout */
+		li {
+			width:100%;
+			margin: 0%;
+		}
+	}
+}
