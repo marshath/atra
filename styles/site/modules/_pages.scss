@@ -157,8 +157,9 @@ figure {
 	@include column(6);
 	@include clearfix;
 	margin-bottom: $base;
-	@include bp(mobile-h) { /* mobile and below layout */
+	@include bp(tablet-v) { /* tablet V and below layout */
 		@include column(12);
+		margin-bottom: ($base*2);
 	}
 }
 

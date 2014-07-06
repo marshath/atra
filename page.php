@@ -250,11 +250,13 @@
 						                <li>Club</li>
 						            </ul>
 						            
-						            <div class="resp-tabs-container">
+						            <div class="resp-tabs-container half">
 						            
 						                <div id="member-all-terrain" class="resource-item">
 											<?php the_field('members_all-terrain'); ?>
 						                </div>
+						            </div>
+						            <div class="resp-tabs-container half">
 						                
 						                <div id="member-steep-rocky" class="resource-item">
 											<?php the_field('members_steep-rocky'); ?>

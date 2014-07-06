@@ -50,6 +50,7 @@
 					if ( is_active_sidebar('sidebar-members') ) : ?>
 				
 					<div class="sidebar-member">
+						<img src="<?php echo get_template_directory_uri(); ?>/library/images/img-stars.svg" class="bene-icon">
 						<?php dynamic_sidebar('sidebar-members'); ?>
 					</div> <!-- end .sidebar-member -->
 
