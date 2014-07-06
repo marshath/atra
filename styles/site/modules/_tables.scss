@@ -68,15 +68,4 @@ table {
 			width:14%;
 		}
 	}
-	li { /* creates the commas after each distance */
-		margin-right: 0.5em;
-		display: inline-block;
-		float: left;
-		&:after {
-			content:',';
-		}
-		&:last-child:after{
-			display: none;
-		}
-	}
 }

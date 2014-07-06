@@ -11,7 +11,7 @@ form {
   @include corner($cornerRadius); 
   width:100%;
 }
-.searchform {
+.search-form {
 	margin-bottom: ($base*2);
 	input[type='submit'] {
 		color: white;
@@ -24,39 +24,20 @@ input, select, textarea {
 	outline:none;
 }
 
-label { 
-	
+label abbr, span.gfield_required, .validation_message { /* Required Form Fields */
+	color:$red !important;
+	font-weight: bold;
 }
 
-label abbr, span.gfield_required { /* Required Form Fields */
-	color:$red !important;
-}
-.gform_fields input[type='text'], .gform_fields textarea, .searchform input[type='text'] {
-	font-size: $font16 !important;
-	padding: ($base*0.5 1em) !important;
-	margin-bottom: 0;
-	border: none;
-	box-shadow: inset 2px 1px 3px rgba(0,0,0,0.2);
-}
-.ginput_container label {
-		width: 100%;
-		color:$gray;
-		display:block;
-		padding-left: 2em;
-		text-transform: uppercase;
-	}
-@include bp(mobile-h) { /* mobile H and below layout */
-	.ginput_left, .ginput_right {
-		width: 100% !Important;
-	}
-}
 
 /* Text Input */
 textarea, 
+select, 
 input[type='text'], 
 input[type='password'], 
 input[type='url'], 
-input[type='email'], 
+input[type='email'],
+input[type='tel'],  
 input[type='search'], 
 input[type='number'],
 input[type='newsletter'], 
@@ -73,157 +54,322 @@ input[type='datetime-local'] {
 }
 
 /* Pill Button Design*/
-.inline-container, .searchform {
+.inline-container, .search-form {
 	position: relative;
 }
-.newsletter-field, .searchform input[type="text"] {
-	padding: ($base*0.5) 1em !Important;
+
+.search-form input[type="search"] {
+	width: 85%;
 }
-.newsletter-submit {
+
+.search-form input[type="submit"] {
 	position: absolute;
 	right:0;
-	top:-0.5em;
-}
-.searchform input[type="submit"] {
-	position: absolute;
-	right:0;
-	top:0.2em;
+	top:-0.4em;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
+
 ::placeholder {
 	color: $gray-light;
 }
 
 /* Text Input Error */
-.error { /* Label */
-	color: $red;
+.validation_error { /* Label */
+	background:$red;
+	color: white;
+	padding: ($base*0.5) 1em;
 }
-.is-error { /* Text field */
+.gfield_error { /* Text field */
 	background: lighten($red, 65%);
-	border: 2px solid $red;
-}
-
-/* Text Input Valid */
-.valid { /* Label */
-	color: $green;
-}
-.is-valid {/* Text field */
-	border: 2px solid $green;
 }
 
 /* Text Area */
 textarea {
-  height:($base*8); 
+  height:($base*8);
+  @include corner($cornerRadius*0.5);
 }
 
-/* Radio Buttons */
-fieldset {
-  @include corner($cornerRadius);
-}
-
-input[type='radio'] {
-  appearance:none;
-  cursor:pointer;
-  background-color:$gray-dark;
-  color:#f0f;
-  margin-top: 1em;
-  @include corner(50%);
-}
-
-input[type="radio"]:checked:after {
-  background-color:$gray-dark;
-  @include corner(50%);
-  content:"\00a0";
-  display:block;
-  height:1.5em;
-  width:1.5em;
-  margin:-.3em -.4em;
-}
-
-/* Dropdown Box */
-.styled-select {
-  background-color: blue;
-  color: $text;
-  margin-bottom:$base;
-  padding:.25em 0;
-  display:inline-block;
-  @include corner($cornerRadius);
-  cursor:pointer;
-}
-
-.styled-select:before {
-  content:'\f103';
-  padding-left:.25em;
-  border: solid 2px blue;
-  border-width: 0 0 0 1px;
-  pointer-events:none;
-  display:block;
-}
-
-select {
-    -webkit-appearance: none !important;
-    appearance:none;
-    width:100%;
-    background-color:$gray;
-    margin:0;
-    padding:0.5em;
-    display:inline-block;
-    border:none;
-    cursor:pointer;
-}
-
-/* Checkbox */
-input[type='checkbox'] {
-  -webkit-appearance: none !important;
-  appearance:none;
-  width:14px;
-  height:14px;
-  background-color:$gray-light;
-  margin-top: 1em;
-  @include corner($cornerRadius);
-  cursor:pointer;
-}
-
-input[type='checkbox']:checked:after {
-  content:"\00a0";
-  width:.5em;
-  height:1em;
-  display:block;
-  position:relative;
-  border:solid $text;
-  border-width:0 4px 4px 0;
-  transform:rotate(45deg); 
+.gfield_checkbox input, .gfield_checkbox label {
+	width: intrinsic;
 }
 
 
-/* Submit Button */
-input[type='submit'] {
-  background-color:$gray-light;
-  font-size:$font20;
-  color:black;
-  padding: .25em 1em;
-  border: 3px solid $gray-dark;
-  @include corner($cornerRadius);
-  cursor:pointer;
+/* ----------------------------------- */
+/* ------- Gravity Form Styles ------- */
+/* ----------------------------------- */
+
+.gf_page_steps {
+	font-size: $font12;
+	margin: $base 0 0;
+	color: $gray-dark;
+	@include clearfix;
+	.gf_step {
+		@include column(4);
+		padding: ($base*0.5) 1em;
+		background: $tan;
+	}
+	.gf_step_active {
+		font-weight: bold;
+		background: darken($tan,38);
+		color: $tan;
+		.gf_step_number {
+			color: $tan;
+		}
+	}
+	.gf_step_number {
+		font-size: 2em;
+		margin-right: 0.25em;
+	}
 }
-input[type='submit']:hover {
-	background-color:$gray-dark;
+
+.ginput_container, .gfield_select {
+	@include column(12);
+	margin-bottom: ($base*0.5);
+	position: relative;
+	@include clearfix;
+}
+.gfield_select {
+	height: ($base*1.5);
+}
+
+.event-half {
+	width:50%;
+	float: left;
+	input {
+		@include column(12);
+	}
+}
+.event-half-row {
+	@extend .event-half;
+	margin-right: 50%;
+}
+
+.ginput_complex span {
+	width:49%;
+	display: block;
+	float: left;
+	&:nth-child(even) {
+		float: right;
+	}
+}
+
+.gform_page li {
+	margin-bottom: ($base*0.5);
+	@include clearfix;
+}
+
+.gfield_checkbox {
+	margin-left: 1em;
+}
+
+.gform_fields input[type='text'], .gform_fields input[type='email'], .gform_fields input[type='tel'], .gform_fields input[type='url'], .gform_fields textarea, .search-form input[type='text'], .gform_fields input[type='number'], .search-form input[type="search"] {
+	padding: ($base*0.5 1em);
+	margin-bottom: 0;
+	border: none;
+	box-shadow: inset 2px 1px 3px rgba(0,0,0,0.2);
+}
+
+.ginput_container label, .gfield_description {
+	font-size: $font11;
+	color:$gray;
+	text-transform: uppercase;
+}
+.gfield_checkbox label {
+	color: $text;
+}
+.ginput_container label {
+	padding-left: 1.3em;
+}
+
+.gfield_description {
+	padding-left: 2em;
+}
+
+@include bp(mobile-h) { /* mobile H and below layout */
+	.ginput_left, .ginput_right {
+		width: 100% !Important;
+	}
+	.event-half {
+		width:100%;
+		input {
+			width:100%;
+		}
+	}
 }
 
 
-/* Range Slider */
-input[type='range'] {
-	width: 100%;
-    -webkit-appearance: none !important;
-    background:$gray;
-    height:4px;
-	margin-bottom: $base;
+
+/* ---------------------------------- */
+/* ------- Date Picker Styles ------- */
+/* ---------------------------------- */
+
+.ui-datepicker-trigger { /* Date Picker field icon */
+	position: absolute;
+	right:1em;
+	top:35%;
+	width: intrinsic;
+	height: intrinsic;
 }
-input[type='range']::-webkit-slider-thumb {
-    -webkit-appearance: none !important;
-    background:$gray-dark;
-	height:1.5em;
-	width:1.5em;
-	@include corner(50%);
+
+/* ------- Date Picker ------- */
+.ui-datepicker {
+    width: 216px;
+    height: auto;
+    font-size: $font12;
+    margin: -($base*2) auto 0;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
 }
+
+.ui-datepicker a {
+    text-decoration: none;
+}
+
+.ui-datepicker table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.ui-datepicker-header {
+    background-color: $gray-dark; /* set the header background color */
+    color: #e0e0e0;
+    font-weight: bold;
+    text-shadow: 1px -1px 0px black;
+    line-height: 30px;
+    min-height: 30px !important;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: $gray-dark;
+}
+
+.ui-datepicker-title {
+    text-align: center;
+}
+
+.ui-datepicker-title select {
+    margin-top: 2.5%;
+}
+
+.ui-datepicker-prev, .ui-datepicker-next {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-image: url('library/images/arrow.png');
+    background-repeat: no-repeat;
+    line-height: 600%;
+    overflow: hidden;
+    &:hover {
+	    background-color: lighten($gray-dark,5);
+    }
+}
+
+.ui-datepicker-prev {
+    float: left;
+    background-position: center -30px;
+}
+
+.ui-datepicker-next {
+    float: right;
+    background-position: center 0px;
+}
+
+.ui-datepicker thead {
+    background: #f7f7f7;
+    background: linear-gradient(to bottom, #f7f7f7 0%, #f1f1f1 100%);
+    border-bottom: 1px solid #bbb;
+}
+
+.ui-datepicker th {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 6pt;
+    padding: 5px 0;
+    color: #666666;
+    text-shadow: 1px 0px 0px #fff;
+}
+
+.ui-datepicker tbody td {
+    padding: 0;
+    border-top: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+}
+
+.ui-datepicker tbody td:last-child {
+    border-right: 0px;
+}
+
+.ui-datepicker tbody tr {
+    border-bottom: 1px solid #bbb;
+}
+
+.ui-datepicker tbody tr:last-child {
+    border-bottom: 0px;
+}
+.ui-datepicker-month, .ui-datepicker-year {
+	width:70px;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #666666;
+    text-shadow: 1px 1px 0px #fff;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+    background: #ededed;
+    background: linear-gradient(to bottom, #ededed 0%, #dedede 100%);
+    box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+}
+
+.ui-datepicker-calendar .ui-state-hover {
+    background: #f7f7f7;
+}
+
+.ui-datepicker-calendar .ui-state-active {
+    background: #FFF2AA; /* set the active date background color */
+    border: 1px solid #c19163; /* set the active date border color */
+    color: #666; /* set the active date font color */
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    text-shadow: 0px 1px 0px #FFF;
+    position: relative;
+    margin: -1px;
+}
+
+.ui-datepicker-unselectable .ui-state-default {
+    background: #f4f4f4;
+    color: #b4b3b3;
+}
+
+.ui-datepicker-calendar td:first-child .ui-state-active {
+    width: 29px;
+    margin-left: 0;
+}
+
+.ui-datepicker-calendar td:last-child .ui-state-active {
+    width: 29px;
+    margin-right: 0;
+}
+
+.ui-datepicker-calendar tr:last-child .ui-state-active {
+    height: 29px;
+    margin-bottom: 0;
+}
+
+td.ui-datepicker-unselectable.ui-state-disabled {
+    background-color: #d7d7d7;
+}
+
+table.ui-datepicker-calendar {
+    margin: 0 0 0 0 !important;
+}
+
+body div#ui-datepicker-div[style] {
+    z-index: 9999 !important;
+}
+

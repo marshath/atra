@@ -48,14 +48,83 @@
 /* ----------------------------------------------------- */
 
 .sidebar-connect, .sidebar-social {
+	p {
+		margin-bottom: 0;
+	}
 	ul {
 		@include clearfix;
+		margin-bottom: ($base*1);
 	}
 	li {
-		@include column(4);
+		@include column(3);
 	}
 }
 .sidebar-connect {
 	background: $tan;
 	padding: 0.1em 1em;
+}
+
+
+
+li.twitter, li.facebook, li.google, li.rss { /* social media icons */
+	width:23%;
+	text-align: center;
+	margin: 0 1%;
+	a {
+		text-decoration: none;
+		width: 100%;
+		display: block;
+		color: $gray;
+		padding-top: ($base*1.25);
+		transition: all 0.2s ease;
+		&:hover {
+			background: $orange;
+		}
+	}
+}
+li.twitter a:hover {
+	background: $twitter-blue;
+	color: white;
+}
+li.facebook a:hover {
+	background: $facebook-blue;
+	color: white;
+}
+li.google a:hover {
+	background: $google-red;
+	color: white;
+}
+li.rss a:hover {
+	background: $rss-orange;
+	color: white;
+}
+.social-text {
+	text-indent: -9999px;
+	display: block;
+	height: 0px;
+}
+
+.twitter a:before, .facebook a:before, .google a:before, .rss a:before {
+	font: {
+		family: 'social';
+		style: normal;
+		size: 2em;
+		weight: normal;
+	}
+	line-height: 1;
+	font-smoothing:(antialiased);
+	speak: none;
+	display: block;
+}
+.twitter a:before {
+	content: '\e606';
+}
+.facebook a:before {
+	content: '\e605';
+}
+.google a:before {
+	content: '\e604';
+}
+.rss a:before {
+	content: '\e607';
 }

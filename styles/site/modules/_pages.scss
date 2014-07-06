@@ -235,6 +235,7 @@ figure {
 	margin-bottom: $base;
 	img {
 		@include column(4);
+		border: 2px solid $tan;
 		transition: box-shadow 0.2s ease;
 		&:hover {
 			border: 2px solid $orange;
@@ -243,6 +244,18 @@ figure {
 		&:active {
 			border: 2px solid $yellow;
 			box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+		}
+	}
+	@include bp(tablet-h) { /* tablet H and below layout */
+		img { 
+			@include column(6);
+			margin-bottom: $base;
+		}
+	}
+	@include bp(mobile-h) { /* mobile H and below layout */
+		img { 
+			@include column(12);
+			margin-bottom: $base;
 		}
 	}
 }

@@ -9,12 +9,6 @@
 					<div class="sidebar-connect">
 						<?php dynamic_sidebar( 'sidebar-marketing' ); ?>
 					</div> <!-- end .sidebar-connect -->
-						
-				<?php else : ?>
-
-					<div class="no-widgets">
-						<p><?php _e( 'SOCIAL MARKETING: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-					</div>
 
 				<?php endif; ?>
 			
@@ -39,12 +33,6 @@
 				
 					<div class="sidebar-ad">
 						<?php dynamic_sidebar( 'sidebar-news' ); ?>
-					</div>
-
-				<?php else : ?>
-
-					<div class="no-widgets">
-						<p><?php _e( 'SIDEBAR - NEWS: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
 					</div>
 
 				<?php endif; ?>

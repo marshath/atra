@@ -1,10 +1,3 @@
-<?php
-//----------------------------------- //
-// ------- Footer Plug-ins ---------- //
-// ---------------------------------- // ?>
-
-
-<?php //---------- Toggle Menu ---------// ?>
 <script type="text/javascript">
 jQuery(document).ready(function($){
 

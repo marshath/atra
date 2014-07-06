@@ -15,12 +15,12 @@
 							<label for="screen-reader">Sign up for our newsletter</label>
 							<div class="event-search-wrap">
 								<input type="text" placeholder="Search for a Trail Race" id="search-field" class="event-search-input">
-								<button type="submit" class="btn event-search-btn">Go!</button>
+								<button type="submit" class="btn event-search-btn"><span class="search-icon" aria-hidden="true" data-icon="&#xe602;"></span> <span class="search-text">Search</span></button>
 							</div>
 						</fieldset>
 					</form> <!-- end .hm-event-search-form -->
 					
-					<p>You can also find <a href="#">a complete list of events</a>, <a href="#">international races</a> or <a href="#">submit a race</a>.</p>
+					<p>You can also find <a href="http://localhost:8888/trailrunner.com/race-calendar/">a complete list of events</a>, <a href="http://localhost:8888/trailrunner.com/archive/international/">international races</a> or <a href="http://localhost:8888/trailrunner.com/race-calendar/submit-a-race/">submit a race</a>.</p>
 					
 				</div> <!-- end #event-search .hm-event-search -->
 				<div id="featured" class="featured-events">

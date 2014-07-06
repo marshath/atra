@@ -82,38 +82,37 @@
 									} // end Twitter feed ?>
 									<p><b>Entry Fee:</b> <span itemprop="price"><?php echo the_field('entry_fee'); ?></span></p>
 									<p><b>Type:</b> <?php echo the_field('event_type'); ?></p>
-									<p><b>Distance:</b>
-										<ul>
-											<?php // Display the Race Distances, if available
-											$rdist = get_post_meta($post->ID, 'race_distance', true);
-						                	if ($rdist) {
-												echo '<li>'; echo implode('</li><li>', get_field('race_distance')); echo '</li>';
-											} else {
-												echo "";
-											} // end Race Distances
-											// Display the Marathon Distances, if available
-											$mdist = get_post_meta($post->ID, 'marathon_distance', true);
-						                	if ($mdist) {
-												echo '<li>'; echo implode('</li><li>', get_field('marathon_distance')); echo '</li>'; 
-											} else {
-												echo "";
-											} // end Marathon Distances 
-											// Display the Other Distances 1, if available
-											$o1dist = get_post_meta($post->ID, 'other_distance1', true);
-						                	if ($o1dist) {
-												echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance1', true ) ); echo "</li>";
-											} else {
-												echo "";
-											} // end Other Distances 1
-											// Display the Other Distances 2, if available
-											$o2dist = get_post_meta($post->ID, 'other_distance2', true);
-						                	if ($o2dist) {
-												echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance2', true ) ); echo "</li>"; 
-											} else {
-												echo "";
-											} // end Other Distances 2 ?>
-										</ul>
-									</p>
+									<p><b>Distance(s):</b></p>
+									<ul class="list-commas">
+										<?php // Display the Race Distances, if available
+										$rdist = get_post_meta($post->ID, 'race_distance', true);
+					                	if ($rdist) {
+											echo '<li>'; echo implode('</li><li>', get_field('race_distance')); echo '</li>';
+										} else {
+											echo "";
+										} // end Race Distances
+										// Display the Marathon Distances, if available
+										$mdist = get_post_meta($post->ID, 'marathon_distance', true);
+					                	if ($mdist) {
+											echo '<li>'; echo implode('</li><li>', get_field('marathon_distance')); echo '</li>'; 
+										} else {
+											echo "";
+										} // end Marathon Distances 
+										// Display the Other Distances 1, if available
+										$o1dist = get_post_meta($post->ID, 'other_distance1', true);
+					                	if ($o1dist) {
+											echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance1', true ) ); echo "</li>";
+										} else {
+											echo "";
+										} // end Other Distances 1
+										// Display the Other Distances 2, if available
+										$o2dist = get_post_meta($post->ID, 'other_distance2', true);
+					                	if ($o2dist) {
+											echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance2', true ) ); echo "</li>"; 
+										} else {
+											echo "";
+										} // end Other Distances 2 ?>
+									</ul> <!-- end .list-commas -->
 								</div>
 								<div class="half">
 									<?php // Display the Course Map, if available
@@ -180,10 +179,42 @@
 							</div> <!-- end .content-desc -->
 							
 							<div class="content-photos">
-								<h3>Photos</h3> 
-								<div itemprop="image"><img src="http://placehold.it/240x240" /><?php echo the_field('event_photo_1'); ?></div>
-								<div itemprop="image"><img src="http://placehold.it/240x240" /><?php echo the_field('event_photo_2'); ?></div>
-								<div itemprop="image"><img src="http://placehold.it/240x240" /><?php echo the_field('event_photo_3'); ?></div>
+								<h3>Photos</h3>
+								
+								<?php // Display the first photo, if available
+								$eventpic1 = get_post_meta($post->ID, 'event_photo_1', true);
+								if ($eventpic1) { ?>
+								
+								<div itemprop="image">
+									<?php $image1 = get_field('event_photo_1'); ?><a href="<?php echo $image1['url']; ?>"><img src="<?php echo $image1['url']; ?>" alt="<?php echo $image1['alt']; ?>" /></a>
+								</div>
+								
+								<?php } else {
+									echo "";
+								} // end first photo 
+								// Display the second photo, if available
+								$eventpic2 = get_post_meta($post->ID, 'event_photo_2', true);
+								if ($eventpic2) { ?>
+								
+								<div itemprop="image">
+									<?php $image2 = get_field('event_photo_2'); ?><a href="<?php echo $image2['url']; ?>"><img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" /></a>
+								</div>
+								
+								<?php } else {
+									echo "";
+								} // end second photo 
+								// Display the third photo, if available
+								$eventpic3 = get_post_meta($post->ID, 'event_photo_3', true);
+								if ($eventpic3) { ?>
+								
+								<div itemprop="image">
+									<?php $image3 = get_field('event_photo_3'); ?><a href="<?php echo $image3['url']; ?>"><img src="<?php echo $image3['url']; ?>" alt="<?php echo $image3['alt']; ?>" /></a>
+								</div>
+								
+								<?php } else {
+									echo "";
+								} // end third photo ?>
+								
 							</div> <!-- end .content-photos -->
 							
 							<div class="content-archive">

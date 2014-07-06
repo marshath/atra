@@ -7,7 +7,7 @@
 /* ------- Button ------- */
 /* ---------------------- */
 
-.btn, .btn-alt, .btn-disabled, .gform_footer input[type='submit'] {
+.btn, .btn-alt, .btn-disabled, .gform_footer input[type='submit'], .gform_next_button, .gform_previous_button, .gform_button {
 	color:white;
 	text-decoration: none;
 	margin: ($base*0.5) 0;
@@ -19,7 +19,7 @@
 	}
 }
 
-.btn, .gform_footer input[type='submit'] { /* ------- Standard Button ------- */
+.btn, .gform_footer input[type='submit'], .gform_button { /* ------- Standard Button ------- */
 	background: lighten($yellow,10);
 	text-shadow: -1px -1px 2px rgba(0,0,0,1);
 	box-shadow: 4px 2px 2px rgba(0,0,0,0.2), inset 1px 2px 1px lighten($yellow,20), inset -1px -2px 1px rgba(0,0,0,0.4);
@@ -33,8 +33,9 @@
 	}
 }
 
-.gform_footer input[type='submit'] {
-	padding: 1em;
+.gform_footer input[type='submit'], .gform_next_button, .gform_previous_button, .gform_button {
+	font-size: $font16;
+	padding: 0.75em 1em;
 	border: none;
 }
 
@@ -48,9 +49,9 @@
 .sidebar .btn-alt {
 	margin-top: 0;
 }
-.btn-disabled { /* ------- Disabled Button ------- */
-	background: $gray;
+.gform_next_button, .gform_previous_button,  { /* ------- Next/Previous Button ------- */
+	background: lighten($yellow,10);
 	&:hover {
-		background-color: lighten($gray-light, 10);
+		background-color: $yellow;
 	}
 }

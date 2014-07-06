@@ -22,7 +22,7 @@
 							</fieldset>
 						</form> <!-- end .event-search-form -->
 						
-						<p>You can also find <a href="#">a complete list of events</a>, <a href="#">international races</a> or <a href="#">submit a race</a>.</p>
+						<p>You can also find <a href="http://localhost:8888/trailrunner.com/archive/international/">international races</a> or <a href="http://localhost:8888/trailrunner.com/race-calendar/submit-a-race/">submit a race</a>.</p>
 					
 					</div> <!-- end #event-search .event-search -->
 					
@@ -79,7 +79,7 @@
 											<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 										</td><?php // end Event Name and Link ?>
 										<td>
-											<ul><?php // Display the Event Distance ?>
+											<ul class="list-commas"><?php // Display the Event Distance ?>
 												<li><?php echo implode('</li><li>', get_field('race_distance')); echo '</li><li>'; echo implode(', ', get_field('marathon_distance'));  echo '</li><li>'; echo get_field('other_distance1');  echo '</li><li>'; echo get_field('other_distance2'); ?>
 												</li>
 											</ul><?php // end Event Distance ?>
@@ -116,7 +116,7 @@
 								</tr>
 							</tfoot>
 						</table>
-					</div> <?php // end #board-members .entry-content ?>
+					</div> <?php // end .events-wrap ?>
 
 					<?php endwhile; else : ?>
 

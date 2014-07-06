@@ -1,3 +1,7 @@
+<?php /*
+* EVENT SUBMISSION FORM
+*/ ?>
+
 <?php get_header(); ?>
 
 		<div id="content">
@@ -9,37 +13,11 @@
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 						<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-						<p>We appriciate your time in to fill out the form. </p>
 						
+						<div class="event-form-wrap">
+							<?php the_content(); ?>
+						</div> <?php // end .event-form-wrap ?>
 						
-						<?php 
-						//----------------------------------------
-						// ----------- Table of Events -----------
-						//---------------------------------------- ?>
-						<table>
-							<tr><td>Table</td><td>Table</td></tr>
-							<tr><td>Table</td><td>Table</td></tr>
-						</table>
-					
-					<?php 
-					//---------------------------------------------
-					// ----------- Race Calendar Banner -----------
-					//---------------------------------------------
-					if ( (is_page('race-calendar')) ) {
-						if ( is_active_sidebar( 'sidebar-events' ) ) : ?>
-						
-							<h3>Race Calendar Banner</h3>
-							<?php dynamic_sidebar( 'sidebar-events' ); ?>
-							
-						<?php else : ?>
-	
-							<div class="no-widgets">
-								<p><?php _e( 'SIDEBAR - EVENTS: This is a widget ready area. Add some and they will appear here.', 'bonestheme' );  ?></p>
-							</div>
-	
-						<?php endif; 
-					} ?>
-
 					<?php endwhile; else : ?>
 
 							<article id="post-not-found" class="hentry">
