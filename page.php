@@ -90,7 +90,7 @@
 									$boards = new WP_Query( $boardies );
 									while ( $boards->have_posts() ) : $boards->the_post(); ?>
 										<li>
-											<figure><?php the_post_thumbnail("full"); ?></figure>
+											<figure><?php the_post_thumbnail("medium"); ?></figure>
 											<h3><?php the_title(); ?></h3>
 											<h5><?php the_field('board_title'); ?></h5>
 											<div class="board-social">

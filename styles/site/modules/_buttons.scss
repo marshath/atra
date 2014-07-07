@@ -40,10 +40,12 @@
 }
 
 .btn-alt, .searchform input[type="submit"] { /* ------- Alternate Button ------- */
-	background: darken($orange, 15%);
-	transition: all 0.2s ease;
+	background: lighten($tan,7);
+	color: $text;
+	border: 2px solid darken($tan, 20%);
 	&:hover {
 		background: $yellow;
+		border: 2px solid $yellow;
 	}
 }
 .sidebar .btn-alt {

@@ -62,8 +62,12 @@ body {
 	font-size: $font18;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
 	@include sans;
+	margin: ($base*1.5) 0 0;
+}
+h3, h4, h5, h6 {
+	@include sans-serif;
 	margin: ($base*1.5) 0 0;
 }
 h1 {
@@ -79,6 +83,7 @@ h4 {
 	
 }
 .sidebar h4 {
+	font-size: 1.2em;
 	@include sans-serif;
 }
 h5 {
