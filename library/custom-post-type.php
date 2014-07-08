@@ -84,7 +84,7 @@ function custom_post_boardmember() {
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'sticky')
+			'supports' => array( 'title', 'thumbnail', 'sticky')
 		) /* end of options */
 	); /* end of register Partners */
 	

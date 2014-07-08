@@ -34,7 +34,7 @@
 						$partners->the_post(); ?>
 						<li>
 							<a href="<?php the_field('partner_website'); ?>" target="_blank">
-								<img src="<?php $image = get_field('parter_logo'); echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"/>
+								<?php the_post_thumbnail("thumbnail"); ?>
 							</a>
 						</li>
 					<?php endwhile; ?>

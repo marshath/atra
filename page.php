@@ -90,7 +90,7 @@
 									$boards = new WP_Query( $boardies );
 									while ( $boards->have_posts() ) : $boards->the_post(); ?>
 										<li>
-											<figure><?php the_post_thumbnail("medium"); ?></figure>
+											<figure><?php the_post_thumbnail("atra-300"); ?></figure>
 											<h3><?php the_title(); ?></h3>
 											<h5><?php the_field('board_title'); ?></h5>
 											<div class="board-social">
@@ -219,7 +219,7 @@
 									$partners->the_post(); ?>
 									<li>
 										<a href="<?php the_field('partner_website'); ?>" target="_blank">
-											<img src="<?php $image = get_field('parter_logo'); echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+											<figure><?php the_post_thumbnail("thumbnail"); ?></figure>
 										</a>
 										<h3><?php the_title(); ?></h3>
 										<p><?php the_field('partner_description'); ?><br>

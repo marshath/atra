@@ -43,7 +43,7 @@
 								 
 								<figure class="featured-image">
 									<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-										the_post_thumbnail("large");
+										the_post_thumbnail("atra-700");
 										} ?>
 								</figure>
 									
@@ -94,7 +94,7 @@
 											$args = array( 'numberposts' => '2', 'post_status' => 'publish', 'post__not_in' => array($this_post) );
 											$recent_posts = wp_get_recent_posts( $args );
 											foreach( $recent_posts as $recent ){
-												echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Read ' . esc_attr($recent["post_title"]).'" ><figure>' .  get_the_post_thumbnail($recent["ID"], "medium") . '</figure><h4>' . $recent["post_title"] . '</h4><p>' . '</p></a></li>';
+												echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Read ' . esc_attr($recent["post_title"]).'" ><figure>' .  get_the_post_thumbnail($recent["ID"], "atra-300") . '</figure><h4>' . $recent["post_title"] . '</h4><p>' . '</p></a></li>';
 											}
 										?>
 									</ul>
