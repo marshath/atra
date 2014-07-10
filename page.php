@@ -238,45 +238,36 @@
 							// ----------- Membership Page -----------
 							//----------------------------------------
 							if ( (is_page('membership')) ) { ?>
-        
-						        <!--Horizontal Tab-->
-						        <div id="horizontalTab">
-						        
-						            <ul class="resp-tabs-list">
-						                <li>All-terrain</li>
-						                <li>Steep &amp; Rocky</li>
-						                <li>Single-track</li>
-						                <li>Race</li>
-						                <li>Club</li>
-						            </ul>
+					
+								<h2>ATRA Members</h2>
+								<p>We love all our members. Without whom, things wouldn't be possible.</p>
 						            
-						            <div class="resp-tabs-container half">
-						            
-						                <div id="member-all-terrain" class="resource-item">
-											<?php the_field('members_all-terrain'); ?>
-						                </div>
-						            </div>
-						            <div class="resp-tabs-container half">
-						                
-						                <div id="member-steep-rocky" class="resource-item">
-											<?php the_field('members_steep-rocky'); ?>
-						                </div>
-						                
-						                <div id="member-single-track" class="resource-item">
-											<?php the_field('members_single-track'); ?>
-						                </div>
-						                
-						                <div id="member-race" class="resource-item">
-											<?php the_field('members_race'); ?>
-						                </div>
-						                
-						                <div id="member-club" class="resource-item">
-											<?php the_field('members_club'); ?>
-						                </div>
-						                
-						            </div>
-						            
-						        </div>
+					            <div class="half">
+					            
+					                <div id="member-all-terrain" class="resource-item">
+										<?php the_field('members_all-terrain'); ?>
+					                </div>
+					                
+					                <div id="member-steep-rocky" class="resource-item">
+										<?php the_field('members_steep-rocky'); ?>
+					                </div>
+					                
+					                <div id="member-single-track" class="resource-item">
+										<?php the_field('members_single-track'); ?>
+					                </div>
+					                
+					            </div>
+					            <div class="half">
+					                
+					                <div id="member-race" class="resource-item">
+										<?php the_field('members_race'); ?>
+					                </div>
+					                
+					                <div id="member-club" class="resource-item">
+										<?php the_field('members_club'); ?>
+					                </div>
+					                
+					            </div>
 								
 							<?php } // end MEMBERSHIP Page ?>
 					

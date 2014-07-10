@@ -35,7 +35,6 @@
 					<table>
 						<thead>
 							<tr>
-								<th>*</th>
 								<th>Date</th>
 								<th>Name/Link</th>
 								<th>Distance(s)</th>
@@ -46,14 +45,11 @@
 						<tbody>
 					
 						<?php // ******** Display Events ******** 
-							$boardies = array('post_type' => 'event', 'orderby' => rand, 'posts_per_page' => 5); 
+							$boardies = array('post_type' => 'event', 'orderby' => rand, 'posts_per_page' => 3); 
 							$boards = new WP_Query( $boardies );
 							while ( $boards->have_posts() ) : $boards->the_post();
 							 ?>
 								<tr>
-									<td>
-										<?php // Display the ATRA Approved Event ?>
-									</td>
 									<td>
 										<?php // Display the Event Date
 										$date = DateTime::createFromFormat('Ymd', get_field('event_date'));
@@ -86,7 +82,6 @@
 						</tbody>
 						<tfoot>
 							<tr>
-								<th>*</th>
 								<th>Date</th>
 								<th>Name/Link</th>
 								<th>Distance(s)</th>
@@ -107,7 +102,7 @@
 				</div> <!-- end #trail-maps .hm-trail-maps -->
 				<div id="members" class="member-list">
 					
-					<h2>ATRA MEMBERS</h2>
+					<h2>ATRA Members</h2>
 					<p>We love all our members. Without whom, things wouldn't be possible.<br>
 					<a href="#">Interested in becoming a member?</a></p>
 					

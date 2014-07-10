@@ -35,7 +35,7 @@ function custom_post_boardmember() {
 			'parent_item_colon' => ''
 			), /* end of arrays */
 			'description' => __( 'These are the board members and advisors', 'bonestheme' ), /* Board Member Description */
-			'public' => true,
+			'public' => false,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
 			'show_ui' => true,
@@ -72,7 +72,7 @@ function custom_post_boardmember() {
 			'parent_item_colon' => ''
 			), /* end of arrays */
 			'description' => __( 'These are ATRAs partner organizations', 'bonestheme' ), /* Partner Description */
-			'public' => true,
+			'public' => false,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
 			'show_ui' => true,
@@ -121,7 +121,7 @@ function custom_post_boardmember() {
 			'capability_type' => 'post',
 			'hierarchical' => false,
 			/* the next one is important, it tells what's enabled in the post editor */
-			'supports' => array( 'title', 'editor', 'thumbnail', 'sticky')
+			'supports' => array( 'title', 'editor', 'sticky')
 		) /* end of options */
 	); /* end of register Events */
 	
@@ -146,7 +146,7 @@ function custom_post_boardmember() {
 			'parent_item_colon' => ''
 			), /* end of arrays */
 			'description' => __( 'These are the splash images for the homepage and events', 'bonestheme' ), /* Splash Image Description */
-			'public' => true,
+			'public' => false,
 			'publicly_queryable' => true,
 			'exclude_from_search' => false,
 			'show_ui' => true,

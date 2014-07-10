@@ -93,10 +93,10 @@ figure {
 .event-search {
 	width:100%;
 	background: $orange;
-	margin-top: -($base*7);
+	margin-top: -($base*4.5);
 	margin-bottom: ($base*2);
 	display: block;
-	@include corner(($cornerRadius*0.70));
+	@include corner(($cornerRadius*4));
 	box-shadow: 0px 4px 3px rgba(45,30,25,0.7);
 	@include clearfix;
 	z-index: 1;
@@ -106,21 +106,22 @@ figure {
 		text-align: center;
 		color: white;
 		text-shadow: 0 2px 1px black;
+		margin-top: $base;
 	}
 	fieldset {
 		width: 80%;
 		border: 0;
 		max-width: $width-max;
-		margin: $base auto 0;
+		margin: ($base*0.5) auto 0;
 		padding-bottom: 0;
 	}
 	label {
 		display: none;
 	}
 	input[type='text'], .event-search-btn { 
-		font-size: $font20;
+		font-size: $font18;
 		border: none;
-		padding: ($base*1) 1em;
+		padding: ($base*0.75) 1em;
 	}
 	.event-search-wrap {
 		position: relative;
@@ -133,7 +134,7 @@ figure {
 		position: absolute;
 		top: -($base*0.3); 
 		right: 0;
-		padding: $base 4em;
+		padding: ($base*0.75) 4em ;
 		border-top-left-radius: 0px; 
 		border-bottom-left-radius: 0px;
 	}
@@ -169,8 +170,13 @@ figure {
 	}
 }
 
-.featured-events h2 {
-	margin-top: $base;
+.featured-events {
+	h2 {
+		margin-top: $base;
+	}
+	table {
+		font-size:0.8em;
+	}
 }
 
 .trail-maps {
@@ -300,7 +306,7 @@ figure {
 	color: white;
 	text-align: center;
 	text-shadow: 0 -2px 1px black;
-	margin-top: -($base*8.2);
+	margin-top: -($base*7.7);
 	margin-bottom: ($base*2);
 	padding: $base 0;
 	h1 {
@@ -338,7 +344,7 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 	 margin-left: -1em;
 	 float:left;
 	 border-radius: 50%;
-	 border: 2px dotted $yellow;
+	 border: 2px solid darken($tan,10);
 	 overflow: hidden;
 }
 .byline, .footer-category { /* Author name and Category */
