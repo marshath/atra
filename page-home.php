@@ -52,8 +52,8 @@
 								<tr>
 									<td>
 										<?php // Display the Event Date
-										$date = DateTime::createFromFormat('Ymd', get_field('event_date'));
-										echo $date->format('d/m/Y');
+										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
+										echo $endDateText;
 										 // end Event Date ?>
 									</td>
 									<td><?php // Display the Event Name and Link ?>
@@ -61,8 +61,7 @@
 									</td><?php // end Event Name and Link ?>
 									<td>
 										<ul class="list-commas"><?php // Display the Event Distance ?>
-											<li><?php echo implode('</li><li>', get_field('race_distance')); echo '</li><li>'; echo implode(', ', get_field('marathon_distance'));  echo '</li><li>'; echo get_field('other_distance1');  echo '</li><li>'; echo get_field('other_distance2'); ?>
-											</li>
+											<li><?php echo implode(get_field('race_distance'), '</li><li>'); echo '</li><li>'; echo implode(get_field('marathon_distance'), '</li><li>'); echo '</li><li>'; echo get_field('other_distance1');  echo '</li><li>'; echo get_field('other_distance2'); ?></li>
 										</ul><?php // end Event Distance ?>
 									</td>
 									<td>
