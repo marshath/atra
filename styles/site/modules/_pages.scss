@@ -218,12 +218,9 @@ figure {
 	}
 	@include clearfix;
 	.event-date {
-		@include column(6);
 		font-size: 1.5em;
 	}
 	.event-smedia {
-		@include column(6);
-		float: right;
 	}
 }
 .event-map { /* google maps */

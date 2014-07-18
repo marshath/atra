@@ -216,7 +216,6 @@ h3#menu-toggle {
 .footer-nav {
 	width:intrinsic;
 	margin: 0 auto;
-	font-size: $font14;
 	@include clearfix;
 	li {
 		float:left;
@@ -237,12 +236,12 @@ h3#menu-toggle {
 	}
 	@include bp(tablet-h) { /* tablet H and below layout */
 		li {
-			font-size: $font13;
+			font-size: 0.82em;
 		}
 	}
 	@include bp(tablet-v) { /* tablet V and below layout */
 		li {
-			font-size: $font12;
+			font-size: 0.72em;
 			margin: 0 0.75em;
 		}
 	}
@@ -322,6 +321,13 @@ h3#menu-toggle {
 				background: $tan;
 			}
 		}
+	}
+	.current {
+		height: 100%;
+		background: $tan;
+		font-weight: bold;
+		padding: 1em 1.5em;
+		display: inline-block;
 	}
 }
 

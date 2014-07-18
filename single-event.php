@@ -41,13 +41,13 @@
 									<?php endif; ?>
 								</figure>
 
-								<div class="event-date" itemprop="startDate" <? // -------- content="2013-09-14T21:30" -------- ?>>
+								<div class="event-date half" itemprop="startDate" <? // -------- content="2013-09-14T21:30" -------- ?>>
 									<p><?php // Display the Event Date
 										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
 										echo $endDateText;
 										 // end Event Date ?> at <?php echo the_field('start_time'); ?></p>
 								</div>
-								<div class="event-smedia">
+								<div class="event-smedia half">
 									<!-- Go to www.addthis.com/dashboard to customize your tools -->
 									<div class="share-text">Share: </div><div class="addthis_sharing_toolbox"></div>
 								</div>
@@ -63,7 +63,7 @@
 								</div> <!-- end .event-location -->
 								<div class="half">
 									<p><a href="<?php echo the_field('event_website'); ?>" target="_blank"><?php echo the_field('event_website'); ?></a></p>
-									<p><a href="mailto:<?php echo the_field('rd_email'); ?>">E-mail Race Director</a></p>
+									<p><a href="mailto:<?php echo the_field('rd_email'); ?>">Contact Race Director</a></p>
 								</div> <!-- end .event-contact -->
 							</div> <!-- end .content-venue -->
 							
@@ -83,8 +83,10 @@
 									} else {
 										echo "";
 									} // end Twitter feed ?>
-									<p><b>Entry Fee:</b> <span itemprop="price"><?php echo the_field('entry_fee'); ?></span></p>
-									<p><b>Type:</b> <?php echo the_field('event_type'); ?></p>
+									<p><b>Entry Fee</b> <span itemprop="price">$<?php echo the_field('entry_fee'); ?></span><br>
+									<small>(Lowest or Early Registration)</small></p>
+									<p><b>Entry Fee 2</b> <span itemprop="price">$<?php echo the_field('entry_fee_2'); ?></span><br>
+									<small>(Highest or Late Registration)</small></p>
 									<p><b>Distance(s):</b></p>
 									<ul class="list-commas">
 										<?php // Display the Race Distances, if available
@@ -118,6 +120,7 @@
 									</ul> <!-- end .list-commas -->
 								</div>
 								<div class="half">
+									<p><b>Type:</b> <?php echo the_field('event_type'); ?></p>
 									<?php // Display the Course Map, if available
 										$couse_map = get_post_meta($post->ID, 'course_map', true);
 					                	if ($couse_map) {
@@ -142,7 +145,7 @@
 									// Display the Course Trail Percentage, if available
 										$elevation_percent = get_post_meta($post->ID, 'course_trail_percentage', true);
 					                	if ($elevation_percent) {
-											echo "<p><b>Unpaved Trails on Course:</b> "; echo esc_html( get_post_meta( get_the_ID(), 'course_trail_percentage', true ) ); echo "</p>";
+											echo "<p><b>Percent of the course on un-paved trails:</b> "; echo esc_html( get_post_meta( get_the_ID(), 'course_trail_percentage', true ) ); echo "</p>";
 										} else {
 											echo "";
 									} // end Course Trail Percentage 
