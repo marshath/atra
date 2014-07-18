@@ -12,11 +12,17 @@
 	}
 }
 
+
+/* -------------------------- */
+/* ------- Trail News ------- */
+/* -------------------------- */
+
 .sidebar-news {
 	.news-header {
 		@include clearfix;
 	}
 	li {
+			vertical-align: middle;
 		p {
 			@include column(8);
 			float: right;
@@ -24,12 +30,21 @@
 		a {
 			@include clearfix;
 		}
+		&:hover figure img {
+			border: 2px solid $orange;
+			box-shadow: 4px 2px 3px rgba(0,0,0,0.2);
+		}
+		&:active figure img {
+			border: 2px solid $yellow;
+			box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+		}
 	}
-	figure {
+	figure img {
 		@include column(4);
+		border: 2px solid $tan;
+		transition: box-shadow 0.2s ease;
 		float: left;
 	}
-	
 }
 
 

@@ -62,7 +62,7 @@
 			<div id="inner-header" class="inner-header">
 
 				<?php // to use a image just replace the bloginfo('name') with your img src and remove the surrounding <p> ?>
-				<div id="logo" class="logo"><a href="<?php echo home_url(); ?>" rel="nofollow"><img src="<?php echo get_template_directory_uri(); ?>/library/images/logo.png" class="logo" alt="Logo Alt Text" /></a></div>
+				<div id="logo" class="logo"><a href="<?php echo home_url(); ?>" rel="nofollow">American Trail Running Association (ATRA)</a></div>
 
 				<?php // Need to look at replacing with the customizable navigation ?>
 				<nav role="navigation">

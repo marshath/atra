@@ -15,14 +15,14 @@
 		position: relative;
 		a {
 			@include sans;
-			font-size: $font16;
+			font-size: 0.95em;
 			color:$text; 
 			font-weight: bold;
 			text-decoration: none;
 			padding: ($base*2) 0;
 			display: inline-block;
 			border-top: 0px solid $orange;
-			transition: border-top 0.25s ease;
+			transition: border-top 0.25s ease, padding-top 0.2s ease;
 			&:hover {
 				color:$orange;
 				text-decoration: none;
@@ -43,15 +43,14 @@
 	}
 	.sub-menu {
 	 	width:220px;
-	 	background:lighten($gray,30);
+		background: rgba(255,255,255,0.3);
 	 	color: $text;
 	 	padding: 0 0.25em 0.25em;
-	 	border: 2px solid white;
 	 	@include corner($cornerRadius*0.25);
 	 	border-top-left-radius: 0;
 	 	border-top-right-radius: 0;
 	 	border-top: 0;
-	 	box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+	 	box-shadow: 0px 2px 2px rgba(0,0,0,0.6);
 	 	position: absolute;
 	 	top:($base*5);
 	 	left: -1em;
@@ -62,7 +61,7 @@
 	 	}
 	 	a {
 	 		width:100%;
-	 		background: white;
+			background: rgba(255,255,255,0.78);
 			padding: ($base*0.5);
 	 		border:none;
 	 		&:hover {
@@ -77,45 +76,20 @@
 		}
 	}
 	@include bp(tablet-h) { /* tablet H and below layout */
-		width: 80%;
-		float: right;
-		li {
-			margin:0 1.5%;
-			&:first-child {
-				margin-left: 0;
-			}
-			&:last-child {
-				margin-right: 0;
-			}
-			a {
-				font-size: 0.65em;
-			}
-		}
-	}
-	@include bp(tablet-v) { /* tablet V and below layout */
+		width: 100%;
 		background: white;
-		width:100%;
-		margin-top: ($base*1.25);
-		float: left;
+		text-align: center;
 		box-shadow: 0 6px 8px rgba(0,0,0,0.5);
+		display: none;
 		li {
+			width:16.66%;
 			margin: 0;
 			padding: 0;
-			display: block;
-			width: 100%;
-			border-top:1px solid $gray-light;
-			&:last-child {
-				border-bottom:1px solid $gray-light;
-			}
-			&:hover ul {
-				display: none;
-			}
+			border:none;
 			a {
-				background: white;
+				width:100%;
 				font-size: $font14;
-				padding: 1em 2em;
-				display: block;
-				width: 100%;
+				padding: 1.5em 0;
 				&:hover {
 					background: $orange;
 					color: white;
@@ -124,12 +98,32 @@
 			}
 		}
 		.sub-menu {
-			display: none;
+			top:($base*3);
+		 	left: 0em;
+			text-align: left;
+		}
+		.current_page_item, .current_page_parent {
+			background:$orange;
 		}
 		.current_page_item a, .current_page_parent a {
-			color:white;
-			background:$orange;
 			border-top: none;
+		}
+	}
+	@include bp(mobile-h) { /* mobile H and below layout */
+		li {
+			display: block;
+			width: 100%;
+			border-bottom:1px solid $gray;
+			border-top:1px solid white;
+			&:hover ul {
+				display: none;
+			}
+			a {
+				display: block;
+			}
+		}
+		.sub-menu {
+			display: none;
 		}
 	}
 }
@@ -153,6 +147,10 @@
 		.menu-icon {
 			font-size: 2em;
 		}
+	}
+	.logo {
+		margin-top: ($base*0.5);
+		width:105px;
 	}
 }
 
@@ -182,7 +180,7 @@
 /* --------- Mobile Navigation --------- */
 h3#menu-toggle { 
 	display: none;
-	@include bp(tablet-v) { /* tablet V and below layout */
+	@include bp(tablet-h) { /* mobile H and below layout */
 		width: 2.3em;
 		display: inline-block;
 		position: absolute;

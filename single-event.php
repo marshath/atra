@@ -41,11 +41,15 @@
 									<?php endif; ?>
 								</figure>
 
-								<div class="event-date" itemprop="startDate" content="2013-09-14T21:30">
-									<p><?php echo the_field('event_date'); ?> at <?php echo the_field('start_time'); ?></p>
+								<div class="event-date" itemprop="startDate" <? // -------- content="2013-09-14T21:30" -------- ?>>
+									<p><?php // Display the Event Date
+										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
+										echo $endDateText;
+										 // end Event Date ?> at <?php echo the_field('start_time'); ?></p>
 								</div>
 								<div class="event-smedia">
-									<p><b>Social Sharing</b></p>
+									<!-- Go to www.addthis.com/dashboard to customize your tools -->
+									<div class="share-text">Share: </div><div class="addthis_sharing_toolbox"></div>
 								</div>
 							</div> <!-- end .content-top -->
 							
@@ -60,7 +64,6 @@
 								<div class="half">
 									<p><a href="<?php echo the_field('event_website'); ?>" target="_blank"><?php echo the_field('event_website'); ?></a></p>
 									<p><a href="mailto:<?php echo the_field('rd_email'); ?>">E-mail Race Director</a></p>
-									<p><?php echo the_field('rd_phone'); ?></p>
 								</div> <!-- end .event-contact -->
 							</div> <!-- end .content-venue -->
 							
@@ -130,16 +133,16 @@
 											echo "";
 									} // end Starting Elevation 
 									// Display the Highest Elevation, if available
-										$elevation_start = get_post_meta($post->ID, 'high_point', true);
-					                	if ($elevation_start) {
+										$elevation_high = get_post_meta($post->ID, 'high_point', true);
+					                	if ($elevation_high) {
 											echo "<p><b>High Point:</b> "; echo esc_html( get_post_meta( get_the_ID(), 'high_point', true ) ); echo "</p>";
 										} else {
 											echo "";
 									} // end Highest Elevation 
 									// Display the Course Trail Percentage, if available
-										$elevation_high = get_post_meta($post->ID, 'course_trail_percentage', true);
-					                	if ($elevation_high) {
-											echo "<p><b>Course Trail Percentage:</b> "; echo esc_html( get_post_meta( get_the_ID(), 'course_trail_percentage', true ) ); echo "</p>";
+										$elevation_percent = get_post_meta($post->ID, 'course_trail_percentage', true);
+					                	if ($elevation_percent) {
+											echo "<p><b>Unpaved Trails on Course:</b> "; echo esc_html( get_post_meta( get_the_ID(), 'course_trail_percentage', true ) ); echo "</p>";
 										} else {
 											echo "";
 									} // end Course Trail Percentage 
@@ -223,161 +226,161 @@
 								<?php // Display the Event Date 2018, if available
 								$event_date2018 = get_post_meta($post->ID, 'event_date_2018', true);
 			                	if ($event_date2018) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2018')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2018Text = date_i18n("M d, Y", strtotime(get_field('event_date_2018'))); echo $date2018Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2018 
 								// Display the Event Date 2017, if available
 								$event_date2017 = get_post_meta($post->ID, 'event_date_2017', true);
 			                	if ($event_date2017) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2017')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2017Text = date_i18n("M d, Y", strtotime(get_field('event_date_2017'))); echo $date2017Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2017 
 								// Display the Event Date 2016, if available
 								$event_date2016 = get_post_meta($post->ID, 'event_date_2016', true);
 			                	if ($event_date2016) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2016')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2016Text = date_i18n("M d, Y", strtotime(get_field('event_date_2016'))); echo $date2016Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2016 
 								// Display the Event Date 2015, if available
 								$event_date2015 = get_post_meta($post->ID, 'event_date_2015', true);
 			                	if ($event_date2015) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2015')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2015Text = date_i18n("M d, Y", strtotime(get_field('event_date_2015'))); echo $date2015Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2015 
 								// Display the Event Date 2014, if available
 								$event_date2014 = get_post_meta($post->ID, 'event_date_2014', true);
 			                	if ($event_date2014) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2014')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2014Text = date_i18n("M d, Y", strtotime(get_field('event_date_2014'))); echo $date2014Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2014 
 								// Display the Event Date 2013, if available
 								$event_date2013 = get_post_meta($post->ID, 'event_date_2013', true);
 			                	if ($event_date2013) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2013')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2013Text = date_i18n("M d, Y", strtotime(get_field('event_date_2013'))); echo $date2013Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2013 
 								// Display the Event Date 2012, if available
 								$event_date2012 = get_post_meta($post->ID, 'event_date_2012', true);
 			                	if ($event_date2012) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2012')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2012Text = date_i18n("M d, Y", strtotime(get_field('event_date_2012'))); echo $date2012Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2012 
 								// Display the Event Date 2011, if available
 								$event_date2011 = get_post_meta($post->ID, 'event_date_2011', true);
 			                	if ($event_date2011) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2011')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2011Text = date_i18n("M d, Y", strtotime(get_field('event_date_2011'))); echo $date2011Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2011 
 								// Display the Event Date 2010, if available
 								$event_date2010 = get_post_meta($post->ID, 'event_date_2010', true);
 			                	if ($event_date2010) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2010')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2010Text = date_i18n("M d, Y", strtotime(get_field('event_date_2010'))); echo $date2010Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2010 
 								// Display the Event Date 2009, if available
 								$event_date2009 = get_post_meta($post->ID, 'event_date_2009', true);
 			                	if ($event_date2009) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2009')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2009Text = date_i18n("M d, Y", strtotime(get_field('event_date_2009'))); echo $date2009Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2009 
 								// Display the Event Date 2008, if available
 								$event_date2008 = get_post_meta($post->ID, 'event_date_2008', true);
 			                	if ($event_date2008) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2008')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2008Text = date_i18n("M d, Y", strtotime(get_field('event_date_2008'))); echo $date2008Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2008 
 								// Display the Event Date 2007, if available
 								$event_date2007 = get_post_meta($post->ID, 'event_date_2007', true);
 			                	if ($event_date2007) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2007')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2007Text = date_i18n("M d, Y", strtotime(get_field('event_date_2007'))); echo $date2007Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2007 
 								// Display the Event Date 2006, if available
 								$event_date2006 = get_post_meta($post->ID, 'event_date_2006', true);
 			                	if ($event_date2006) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2006')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2006Text = date_i18n("M d, Y", strtotime(get_field('event_date_2006'))); echo $date2006Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2006 
 								// Display the Event Date 2005, if available
 								$event_date2005 = get_post_meta($post->ID, 'event_date_2005', true);
 			                	if ($event_date2005) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2005')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2005Text = date_i18n("M d, Y", strtotime(get_field('event_date_2005'))); echo $date2005Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2005 
 								// Display the Event Date 2004, if avai dlable
 								$event_date2004 = get_post_meta($post->ID, 'event_date_2004', true);
 			                	if ($event_date2004) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2004')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2004Text = date_i18n("M d, Y", strtotime(get_field('event_date_2004'))); echo $date2004Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2004 
 								// Display the Event Date 2003, if available
 								$event_date2003 = get_post_meta($post->ID, 'event_date_2003', true);
 			                	if ($event_date2003) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2003')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2003Text = date_i18n("M d, Y", strtotime(get_field('event_date_2003'))); echo $date2003Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2003 
 								// Display the Event Date 2002, if available
 								$event_date2002 = get_post_meta($post->ID, 'event_date_2002', true);
 			                	if ($event_date2002) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2002')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2002Text = date_i18n("M d, Y", strtotime(get_field('event_date_2002'))); echo $date2002Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2002 
 								// Display the Event Date 2001, if available
 								$event_date2001 = get_post_meta($post->ID, 'event_date_2001', true);
 			                	if ($event_date2001) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2001')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2001Text = date_i18n("M d, Y", strtotime(get_field('event_date_2001'))); echo $date2001Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2001 
 								// Display the Event Date 2000, if available
 								$event_date2000 = get_post_meta($post->ID, 'event_date_2000', true);
 			                	if ($event_date2000) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_2000')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date2000Text = date_i18n("M d, Y", strtotime(get_field('event_date_2000'))); echo $date2000Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 2000 
 								// Display the Event Date 1999, if available
 								$event_date1999 = get_post_meta($post->ID, 'event_date_1999', true);
 			                	if ($event_date1999) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_1999')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date1999Text = date_i18n("M d, Y", strtotime(get_field('event_date_1999'))); echo $date1999Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 1999 
 								// Display the Event Date 1998, if available
 								$event_date1998 = get_post_meta($post->ID, 'event_date_1998', true);
 			                	if ($event_date1998) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_1998')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date1998Text = date_i18n("M d, Y", strtotime(get_field('event_date_1998'))); echo $date1998Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 1998 
 								// Display the Event Date 1997, if available
 								$event_date1997 = get_post_meta($post->ID, 'event_date_1997', true);
 			                	if ($event_date1997) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_1997')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date1997Text = date_i18n("M d, Y", strtotime(get_field('event_date_1997'))); echo $date1997Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 1997 
 								// Display the Event Date 1996, if available
 								$event_date1996 = get_post_meta($post->ID, 'event_date_1996', true);
 			                	if ($event_date1996) {
-									echo "<p>Held on "; $date = DateTime::createFromFormat('Ymd', get_field('event_date_1996')); echo $date->format('M. d, Y'); echo "</p>";
+									echo "<p>Held on "; $date1996Text = date_i18n("M d, Y", strtotime(get_field('event_date_1996'))); echo $date1996Text; echo "</p>";
 								} else {
 									echo "";
 								} // end Event Date 1996 ?>

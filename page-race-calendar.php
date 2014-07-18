@@ -49,7 +49,7 @@
 						<table>
 							<thead>
 								<tr>
-									<th>*</th>
+									<th>ESP</th>
 									<th>Date</th>
 									<th>Name/Link</th>
 									<th>Distance(s)</th>
@@ -65,9 +65,13 @@
 								$boards = new WP_Query( $boardies );
 								while ( $boards->have_posts() ) : $boards->the_post();
 								 ?>
-									<tr>
+									<tr class="<?php // Display the ATRA Approved Event
+											$terms = get_the_terms( $post->ID , 'qualifications' );
+											foreach ( $terms as $term ) {
+												echo $term->slug; echo " ";
+											} ?>">
 										<td>
-											<?php // Display the ATRA Approved Event ?>
+											
 										</td>
 										<td>
 											<?php // Display the Event Date
@@ -105,7 +109,7 @@
 							</tbody>
 							<tfoot>
 								<tr>
-									<th>*</th>
+									<th>ESP</th>
 									<th>Date</th>
 									<th>Name/Link</th>
 									<th>Distance(s)</th>
@@ -115,6 +119,7 @@
 								</tr>
 							</tfoot>
 						</table>
+						<p><b>ESP</b> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
 					</div> <?php // end .events-wrap ?>
 
 					<?php endwhile; else : ?>

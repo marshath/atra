@@ -11,9 +11,6 @@ table {
 	width:100%;
 	text-align: left;
 	thead, tfoot {
-		border-top:1px solid $gray;
-		border-left:1px solid $gray-dark;
-		border-right: 1px solid $gray-dark;
 	}
 	thead {
 		background: $gray-dark;
@@ -33,6 +30,9 @@ table {
 		&:nth-child(even) td {
 			background: lighten($tan,5);
 		}
+		&:hover td {
+			background: lighten($tan,7);
+		}
 	}
 	td {
 	}
@@ -47,7 +47,7 @@ table {
 	font-size: $font12;
 	th {
 		&:first-child {
-			width:3%;
+			width:4%;
 		}
 		&:nth-child(2) {
 			width:11%;
@@ -62,10 +62,28 @@ table {
 			width:18%;
 		}
 		&:nth-child(6) {
-			width:6%;
+			width:5%;
 		}
 		&:last-child {
 			width:14%;
+		}
+	}
+	.featured-race td { /* -------- Event List Qualifications Styling -------- */
+		background: lighten(gold,35);
+	}
+	.atra-race-member {
+		font-weight: bold;
+	}
+	.meets-atra-event-standards td:first-child:before {
+		content: 'Meets ATRA Event Standards';
+		width:31px;
+		height:14px;
+		background: url(library/images/icon-eventsStandards.png) no-repeat center top;
+		text-indent: -9999px;
+		display: block;
+		@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+			background: url(library/images/icon-eventsStandards-2x.png) no-repeat center top;
+			background-size: 31px 14px;
 		}
 	}
 }
