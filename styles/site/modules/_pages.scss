@@ -180,8 +180,11 @@ figure {
 }
 
 .trail-maps {
+	background: url('http://trailrunner.com/atra14/wp-content/uploads/2014/07/home-maps.jpg') no-repeat top center;
+	padding-top: ($base*5);
+	overflow: hidden;
 	h2 {
-		margin-top: -($base*2.5);
+		margin-top: ($base*2.5);
 		color: white;
 		text-shadow: 0 0 4px black;
 	}
