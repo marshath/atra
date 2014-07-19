@@ -86,4 +86,27 @@
 			</div>
 
 		</header>
-		<div class="headroom"></div>
+		<div class="headroom"<?php
+		
+			// Custom header backgrounds via Splash Images post type
+			if (is_page('home')) {
+				$bgimages=array('post_type'=>'splash', 'locations' => 'home-page', 'orderby'=>'rand', 'posts_per_page'=>'1');
+				$bgimg=new WP_Query($bgimages);
+				while ($bgimg->have_posts()) : $bgimg->the_post();
+			        $page_bg_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+			        $page_bg_image_url = $page_bg_image[0]; // this returns just the URL of the image
+				endwhile; ?>
+			 style="background: url('<?php echo $page_bg_image_url; ?>') center center;	background-size: cover;"
+			<?php } // Closing homepage background
+			
+			if (is_page(array('119', '123')) ) {
+				$bgimages=array('post_type'=>'splash', 'locations' => 'event-page', 'orderby'=>'rand', 'posts_per_page'=>'1');
+				$bgimg=new WP_Query($bgimages);
+				while ($bgimg->have_posts()) : $bgimg->the_post();
+			        $page_bg_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+			        $page_bg_image_url = $page_bg_image[0]; // this returns just the URL of the image
+				endwhile; ?>
+			 style="background: url('<?php echo $page_bg_image_url; ?>') center center;	background-size: cover;"
+			<?php } // Closing Race Calendar and Find a Trail background 
+			
+		?>></div><?php // Leave empty carrot to close opening div ?>

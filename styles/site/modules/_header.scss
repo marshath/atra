@@ -3,15 +3,12 @@
 ///////////////////
 
 
-.headroom { // Provides the padding for the content in exchange for the fixed header
+.headroom { // Provides the head padding for the content
 	padding-top: ($base*8);
 }
-body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom {
-	background: url('http://trailrunner.com/atra14//test.jpg') center center no-repeat;
-	background-size: cover;
-	width:100%;
-	height: ($base*20);
-	z-index: -1;
+body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom { // Provides the head padding for the content when splash images are present
+	height: ($base*20);	
+	padding-top: ($base*0);
 }
 
 .banner-ad .widget, .sidebar-ad .widget {

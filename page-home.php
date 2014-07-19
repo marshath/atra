@@ -45,7 +45,7 @@
 						<tbody>
 					
 						<?php // ******** Display Events ******** 
-							$boardies = array('post_type' => 'event', 'orderby' => rand, 'posts_per_page' => 3); 
+							$boardies = array('post_type' => 'event', 'qualifications' => 'meets-atra-event-standards', 'orderby' => rand, 'posts_per_page' => 3); 
 							$boards = new WP_Query( $boardies );
 							while ( $boards->have_posts() ) : $boards->the_post();
 							 ?>
