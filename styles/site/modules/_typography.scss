@@ -124,7 +124,7 @@ ul.bullets { /* Add bullets to a list */
 		content: ',';
 	}
 	&:last-child:after {
-		display: none;
+		display:none;
 	}
 }
 

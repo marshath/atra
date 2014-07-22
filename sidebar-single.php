@@ -19,7 +19,7 @@
 				
 				<div id="news-search" class="news-search">
 				
-					<h4>Find a Trail Race</h4>
+					<h4>Search for Trail News</h4>
 					<?php get_search_form(); ?>
 					
 				</div> <!-- end #event-search .hm-event-search -->

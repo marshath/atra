@@ -31,7 +31,8 @@ function getCurrentScroll() {
 <link href='http://fonts.googleapis.com/css?family=Raleway:700|Codystar|Graduate|Rye|' rel='stylesheet' type='text/css'>
 
 
-<?php // Event Google Maps ?>
+<?php if ( $post->post_type == 'event') { // ------- load google map code only if page is a child of Event
+// Event Google Maps ?>
 <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
 <script type="text/javascript">
 (function($) {
@@ -151,3 +152,4 @@ $(document).ready(function(){
  
 })(jQuery);
 </script>
+<?php } //------- end load google map ------- ?>

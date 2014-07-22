@@ -8,52 +8,160 @@
 
 			<div id="inner-content" class="wrap">
 
-					<div id="main" class="wrap-main" role="main">
+				<div id="main" class="wrap-main" role="main">
 
-					<h1 class="archive-title"><?php post_type_archive_title(); ?></h1>
+					<div id="event-search" class="event-search">
+						
+						<h1>Find a Trail Race</h1>
+						
+				        <form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
+							<fieldset>
+								<input type="hidden" value="1" name="sentence" />
+								<label for="screen-reader">Search for a trail race.</label>
+								<div class="event-search-wrap">
+									<input type="text" placeholder="<?php the_search_query(); ?>" id="s" name="s" class="event-search-input" value="">
+									<button type="submit" class="btn event-search-btn">
+										<span class="search-icon" aria-hidden="true" data-icon="&#xe602;"></span>  
+										<span class="search-text">Search</span>
+									</button>
+								</div>
+							</fieldset>
+						</form><!-- end .event-search-form -->
+						
+						<p>You can also <!-- find <a href="http://localhost:8888/trailrunner.com/archive/international/">international races</a> or --> <a href="http://localhost:8888/trailrunner.com/race-calendar/submit-a-race/">submit a race</a>.</p>
+					
+					</div> <!-- end #event-search .event-search -->
+						
+					<?php 
+					//---------------------------------------------
+					// ----------- Race Calendar Banner -----------
+					//---------------------------------------------
+					if ( is_active_sidebar( 'sidebar-events' ) ) : ?>
+					
+						<div class="banner-ad">
+							<?php dynamic_sidebar( 'banner-events' ); ?>
+						</div>
 
-						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+					<?php endif; ?>
+						
+						<?php 
+						//----------------------------------------
+						// ----------- Table of Events -----------
+						//---------------------------------------- ?>
+						<div class="events-wrap">
+							<h2>Complete Event Catalog</h2>
+							<table>
+								<thead>
+									<tr>
+										<th>ESP</th>
+										<th>Date</th>
+										<th>Name/Link</th>
+										<th>Distance(s)</th>
+										<th>Type</th>
+										<th>State</th>
+										<th>Country</th>
+									</tr>
+								</thead>
+								<tbody>
+						
+									<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+								
+									<?php // ******** Display Events ******** ?>
+									<tr class="<?php // Display the ATRA Approved Event
+											$terms = get_the_terms( $post->ID , 'qualifications' );
+											foreach ( $terms as $term ) {
+												echo $term->slug; echo " ";
+											} ?>">
+										<td>
+											
+										</td>
+										<td>
+											<?php // Display the Event Date
+											$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
+											echo $endDateText;
+											 // end Event Date ?>
+										</td>
+										<td><?php // Display the Event Name and Link ?>
+											<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+										</td><?php // end Event Name and Link ?>
+										<td>
+											<ul class="list-commas">
+												<?php $terms = get_the_terms( $post->ID , 'distances' ); // Display the Event Distance
+													foreach ( $terms as $term ) {
+														echo '<li>'; echo $term->name; echo '</li>';
+												} // end Event Distance ?>
+											</ul><?php // end Event Distance ?>
+										</td>
+										<td>
+											<?php // Display the Event Type
+											echo "<p>"; echo get_field('event_type'); echo "</p>";
+											// end Event Type ?>
+										</td>
+										<td>
+											<span class="uppercase"><?php // Make the State Slug Uppercase
+												$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
+											    if ($terms) {
+											        $terms_slugs = array();
+											        foreach ( $terms as $term ) {
+											            $terms_slugs[] = $term->slug;
+											        }
+											        $series = $terms_slugs[0];      
+											        echo "{$series}";
+											    } else {
+											        echo "";
+											   } // end Display State?>
+										   </span>
+										</td>
+										<td>
+											<?php // Display the Event Country
+											echo "<p>"; echo get_field('event_country');
+											 // end Event Country ?>
+										</td>
+									</tr>
+								
+									<?php endwhile; ?>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>ESP</th>
+										<th>Date</th>
+										<th>Name/Link</th>
+										<th>Distance(s)</th>
+										<th>Type</th>
+										<th>State</th>
+										<th>Country</th>
+									</tr>
+								</tfoot>
+							</table>
+							<p><b>ESP</b> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
+						</div> <?php // end .events-wrap ?>
+						
+						<?php bones_page_navi(); ?>
+						<?php else : // do not delete - closes table from above ?>
+								</tbody>
+								<tfoot>
+									<tr>
+										<th>ESP</th>
+										<th>Date</th>
+										<th>Name/Link</th>
+										<th>Distance(s)</th>
+										<th>Type</th>
+										<th>State</th>
+										<th>Country</th>
+									</tr>
+								</tfoot>
+							</table>
+							<p><b>ESP</b> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
+						</div> <?php // end .events-wrap ?>
 
-						<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article">
-
-							<header class="article-header">
-
-								<h3><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h3>
-								<p class="byline"><?php
-									printf( __( 'Posted <time class="updated" datetime="%1$s" pubdate>%2$s</time> by <span class="author">%3$s</span>.', 'bonestheme' ), get_the_time( 'Y-m-j' ), get_the_time( __( 'F jS, Y', 'bonestheme' ) ), get_author_posts_url( get_the_author_meta( 'ID' ) ));
-								?></p>
-
+						<article id="post-not-found" class="hentry">
+							<header class="page-title">
+								<h1><?php _e( 'Oops, no post found!', 'bonestheme' ); ?></h1>
 							</header>
-
 							<section class="entry-content">
-
-								<?php the_excerpt(); ?>
-
+								<p><?php _e( 'Uh Oh. Try double checking things or search for something different.', 'bonestheme' ); ?></p>
 							</section>
-
-							<footer class="article-footer">
-
-							</footer>
-
 						</article>
-
-						<?php endwhile; ?>
-
-								<?php bones_page_navi(); ?>
-
-						<?php else : ?>
-
-								<article id="post-not-found" class="hentry">
-									<header class="article-header">
-										<h1><?php _e( 'Oops, Post Not Found!', 'bonestheme' ); ?></h1>
-									</header>
-									<section class="entry-content">
-										<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-									</section>
-									<footer class="article-footer">
-											<p><?php _e( 'This is the error message in the custom posty type archive template.', 'bonestheme' ); ?></p>
-									</footer>
-								</article>
 
 						<?php endif; ?>
 

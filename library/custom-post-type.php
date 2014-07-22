@@ -237,6 +237,58 @@ function custom_post_boardmember() {
 	);
 	
 	
+	// **************************************
+	// Registering STATES -> Events
+	// **************************************
+	register_taxonomy( 'states', 
+		array('event'), /* if you change the name of register_post_type( 'boardmember', then you have to change this */
+		array('hierarchical' => true,     /* if this is true, it acts like categories */
+			'labels' => array(
+				'name' => __( 'States', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'State', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search States', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All States', 'bonestheme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent State', 'bonestheme' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent State:', 'bonestheme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit State', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update State', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New State', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New State Name', 'bonestheme' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true, 
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'state' ),
+		)
+	);
+	
+	
+	// **************************************
+	// Registering DISTANCES -> Events
+	// **************************************
+	register_taxonomy( 'distances', 
+		array('event'), /* if you change the name of register_post_type( 'boardmember', then you have to change this */
+		array('hierarchical' => true,     /* if this is true, it acts like categories */
+			'labels' => array(
+				'name' => __( 'Distances', 'bonestheme' ), /* name of the custom taxonomy */
+				'singular_name' => __( 'Distance', 'bonestheme' ), /* single taxonomy name */
+				'search_items' =>  __( 'Search Distances', 'bonestheme' ), /* search title for taxomony */
+				'all_items' => __( 'All Distances', 'bonestheme' ), /* all title for taxonomies */
+				'parent_item' => __( 'Parent Distance', 'bonestheme' ), /* parent title for taxonomy */
+				'parent_item_colon' => __( 'Parent Distance:', 'bonestheme' ), /* parent taxonomy title */
+				'edit_item' => __( 'Edit Distance', 'bonestheme' ), /* edit custom taxonomy title */
+				'update_item' => __( 'Update Distance', 'bonestheme' ), /* update title for taxonomy */
+				'add_new_item' => __( 'Add New Distance', 'bonestheme' ), /* add new title for taxonomy */
+				'new_item_name' => __( 'New Distance Name', 'bonestheme' ) /* name title for taxonomy */
+			),
+			'show_admin_column' => true, 
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array( 'slug' => 'distance' ),
+		)
+	);
+	
+	
 	// ************************************
 	// Registering LOCATION - Splash Images
 	// ************************************

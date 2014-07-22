@@ -9,16 +9,7 @@
 				<div id="event-search" class="event-search">
 				
 					<h1>Find a Trail Race</h1>
-					
-					<form action="#" method="post" class="event-search-form">
-						<fieldset>
-							<label for="screen-reader">Sign up for our newsletter</label>
-							<div class="event-search-wrap">
-								<input type="text" placeholder="Search for a Trail Race" id="search-field" class="event-search-input">
-								<button type="submit" class="btn event-search-btn"><span class="search-icon" aria-hidden="true" data-icon="&#xe602;"></span> <span class="search-text">Search</span></button>
-							</div>
-						</fieldset>
-					</form> <!-- end .hm-event-search-form -->
+					<?php get_search_form(); ?>
 					
 					<p>You can also find <a href="<?php echo home_url(); ?>/race-calendar/">a complete list of events</a><!--, <a href="http://localhost:8888/trailrunner.com/archive/international/">international races</a>--> or <a href="<?php echo home_url(); ?>/race-calendar/submit-a-race/">submit a race</a>.</p>
 					
@@ -60,8 +51,11 @@
 										<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 									</td><?php // end Event Name and Link ?>
 									<td>
-										<ul class="list-commas"><?php // Display the Event Distance ?>
-											<li><?php echo implode(get_field('race_distance'), '</li><li>'); echo '</li><li>'; echo implode(get_field('marathon_distance'), '</li><li>'); echo '</li><li>'; echo get_field('other_distance1');  echo '</li><li>'; echo get_field('other_distance2'); ?></li>
+										<ul class="list-commas">
+											<?php $terms = get_the_terms( $post->ID , 'distances' ); // Display the Event Distances
+												foreach ( $terms as $term ) {
+													echo '<li>'; echo $term->name; echo '</li>';
+											} // end Event Distance ?>
 										</ul><?php // end Event Distance ?>
 									</td>
 									<td>
@@ -70,9 +64,19 @@
 										// end Event Type ?>
 									</td>
 									<td>
-										<?php // Display the Event State
-										echo "<p>"; echo get_field('event_state'); echo "</p>";
-										// end Event State ?>
+										<span class="uppercase"><?php // Make the State Slug Uppercase
+											$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
+										    if ($terms) {
+										        $terms_slugs = array();
+										        foreach ( $terms as $term ) {
+										            $terms_slugs[] = $term->slug;
+										        }
+										        $series = $terms_slugs[0];      
+										        echo "{$series}";
+										    } else {
+										        echo "";
+										   } // end Display State?>
+									   </span>
 									</td>
 								</tr>
 							<?php endwhile; ?>

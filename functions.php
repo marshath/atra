@@ -14,7 +14,6 @@ require_once( 'library/custom-post-type.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 require_once( 'library/admin.php' );
 
-
 /*********************
 LAUNCH BONES
 Let's get everything up and running.
@@ -314,7 +313,6 @@ function bones_comments( $comment, $args, $depth ) {
   <?php // </li> is added by WordPress automatically ?>
 <?php
 } // don't remove this bracket!
-
 
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
