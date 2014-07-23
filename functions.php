@@ -249,6 +249,7 @@ function bones_register_sidebars() {
 } // don't remove this bracket!
 
 
+
 /************* ORDER RACE EVENTS *********************/
 add_action('pre_get_posts', 'my_pre_get_posts');
  

@@ -57,7 +57,18 @@
 								<div class="half" itemprop="location" itemscope itemtype="http://schema.org/Place">
 									<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 										<p><span itemprop="streetAddress"><?php echo the_field('event_street'); ?></span></p>
-										<p><span itemprop="addressLocality"><?php echo the_field('event_city'); ?></span>, <span itemprop="addressRegion"><?php echo the_field('event_state'); ?></span> <span itemprop="postalCode"><?php echo the_field('event_zip'); ?></span></p>
+										<p><span itemprop="addressLocality"><?php echo the_field('event_city'); ?></span>, <span itemprop="addressRegion" class="uppercase"><?php // Make the State Slug Uppercase
+												$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
+											    if ($terms) {
+											        $terms_slugs = array();
+											        foreach ( $terms as $term ) {
+											            $terms_slugs[] = $term->slug;
+											        }
+											        $series = $terms_slugs[0];      
+											        echo "{$series}";
+											    } else {
+											        echo "";
+											   } // end Display State?></span> <span itemprop="postalCode"><?php echo the_field('event_zip'); ?></span></p>
 										<p><?php echo the_field('event_country'); ?></p>
 									</div>
 								</div> <!-- end .event-location -->
@@ -89,20 +100,10 @@
 									<small>(Highest or Late Registration)</small></p>
 									<p><b>Distance(s):</b></p>
 									<ul class="list-commas">
-										<?php // Display the Race Distances, if available
-										$rdist = get_post_meta($post->ID, 'race_distance', true);
-					                	if ($rdist) {
-											echo '<li>'; echo implode('</li><li>', get_field('race_distance')); echo '</li>';
-										} else {
-											echo "";
-										} // end Race Distances
-										// Display the Marathon Distances, if available
-										$mdist = get_post_meta($post->ID, 'marathon_distance', true);
-					                	if ($mdist) {
-											echo '<li>'; echo implode('</li><li>', get_field('marathon_distance')); echo '</li>'; 
-										} else {
-											echo "";
-										} // end Marathon Distances 
+										<?php $terms = get_the_terms( $post->ID , 'distances' ); // Display the Event Distance
+											foreach ( $terms as $term ) {
+												echo '<li>'; echo $term->name; echo '</li>';
+											} // end Event Distance
 										// Display the Other Distances 1, if available
 										$o1dist = get_post_meta($post->ID, 'other_distance1', true);
 					                	if ($o1dist) {
@@ -192,7 +193,7 @@
 								if ($eventpic1) { ?>
 								
 								<div itemprop="image">
-									<?php $image1 = get_field('event_photo_1'); ?><a href="<?php echo $image1['url']; ?>"><img src="<?php echo $image1['url']; ?>" alt="<?php echo $image1['alt']; ?>" /></a>
+									<a href="<?php echo get_field('event_photo_1'); ?>"><img src="<?php echo get_field('event_photo_1'); ?>" alt="Race event photo" /></a>
 								</div>
 								
 								<?php } else {
@@ -203,7 +204,7 @@
 								if ($eventpic2) { ?>
 								
 								<div itemprop="image">
-									<?php $image2 = get_field('event_photo_2'); ?><a href="<?php echo $image2['url']; ?>"><img src="<?php echo $image2['url']; ?>" alt="<?php echo $image2['alt']; ?>" /></a>
+									<a href="<?php echo get_field('event_photo_2'); ?>"><img src="<?php echo get_field('event_photo_2'); ?>" alt="Race event photo" /></a>
 								</div>
 								
 								<?php } else {
@@ -214,7 +215,7 @@
 								if ($eventpic3) { ?>
 								
 								<div itemprop="image">
-									<?php $image3 = get_field('event_photo_3'); ?><a href="<?php echo $image3['url']; ?>"><img src="<?php echo $image3['url']; ?>" alt="<?php echo $image3['alt']; ?>" /></a>
+									<a href="<?php echo get_field('event_photo_3'); ?>"><img src="<?php echo get_field('event_photo_3'); ?>" alt="Race event photo" /></a>
 								</div>
 								
 								<?php } else {
