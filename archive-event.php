@@ -14,7 +14,7 @@
 						
 						<h1>Find a Trail Race</h1>
 						<?php // Display the advanced search form -- also in searchform.php ?>
-				         <form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
+						<form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
 							<fieldset>
 								<input type="hidden" value="1" name="sentence" />
 								<label for="screen-reader">Search for a trail race.</label>
@@ -24,9 +24,9 @@
 									<h4 id="search-toggle" class="search-toggle"><a href="#">Advanced Search</a></h4>
 									<div id="search-filter" class="search-filter">
 										<?php $taxonomies = get_object_taxonomies('event');
-										    foreach($taxonomies as $tax){
-										        echo buildSelect($tax);
-										    }
+											foreach($taxonomies as $tax){
+												echo buildSelect($tax);
+											}
 										?>
 									</div>
 									
@@ -109,17 +109,17 @@
 										<td>
 											<span class="uppercase"><?php // Make the State Slug Uppercase
 												$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
-											    if ($terms) {
-											        $terms_slugs = array();
-											        foreach ( $terms as $term ) {
-											            $terms_slugs[] = $term->slug;
-											        }
-											        $series = $terms_slugs[0];      
-											        echo "{$series}";
-											    } else {
-											        echo "";
-											   } // end Display State?>
-										   </span>
+												if ($terms) {
+													$terms_slugs = array();
+													foreach ( $terms as $term ) {
+														$terms_slugs[] = $term->slug;
+													}
+													$series = $terms_slugs[0];
+													echo "{$series}";
+												} else {
+													echo "";
+												} // end Display State?>
+											</span>
 										</td>
 										<td>
 											<?php // Display the Event Country

@@ -8,22 +8,21 @@
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
 
-  
+
 <?php /* Shrinks the header and navigation */ ?>
 <script>  $(function(){
- var shrinkHeader = 170;
-  $(window).scroll(function() {
-    var scroll = getCurrentScroll();
-      if ( scroll >= shrinkHeader ) {
-           $('.header').addClass('shrink');
-        }
-        else {
-            $('.header').removeClass('shrink');
-        }
-  });
-function getCurrentScroll() {
-    return window.pageYOffset || document.documentElement.scrollTop;
-    }
+	var shrinkHeader = 170;
+	$(window).scroll(function() {
+		var scroll = getCurrentScroll();
+		if ( scroll >= shrinkHeader ) {
+			$('.header').addClass('shrink');
+		} else {
+			$('.header').removeClass('shrink');
+		}
+	});
+	function getCurrentScroll() {
+		return window.pageYOffset || document.documentElement.scrollTop;
+	}
 }); </script>
 
 
@@ -45,7 +44,7 @@ function getCurrentScroll() {
 *  @param	$el (jQuery element)
 *  @return	n/a
 */
- 
+
 function render_map( $el ) {
 	// var
 	var $markers = $el.find('.marker');
@@ -61,12 +60,12 @@ function render_map( $el ) {
 	map.markers = [];
 	// add markers
 	$markers.each(function(){
-    	add_marker( $(this), map );
+		add_marker( $(this), map );
 	});
 	// center map
 	center_map( map );
 }
- 
+
 /*
 *  add_marker
 *  This function will add a marker to the selected Google Map
@@ -77,7 +76,7 @@ function render_map( $el ) {
 *  @param	map (Google Map object)
 *  @return	n/a
 */
- 
+
 function add_marker( $marker, map ) {
 	// var
 	var latlng = new google.maps.LatLng( $marker.attr('data-lat'), $marker.attr('data-lng') );
@@ -101,7 +100,7 @@ function add_marker( $marker, map ) {
 		});
 	}
 }
- 
+
 /*
 *  center_map
 *  This function will center the map, showing all markers attached to this map
@@ -111,7 +110,7 @@ function add_marker( $marker, map ) {
 *  @param	map (Google Map object)
 *  @return	n/a
 */
- 
+
 function center_map( map ) {
 	// vars
 	var bounds = new google.maps.LatLngBounds();
@@ -124,8 +123,8 @@ function center_map( map ) {
 	if( map.markers.length == 1 )
 	{
 		// set center of map
-	    map.setCenter( bounds.getCenter() );
-	    map.setZoom( 16 );
+		map.setCenter( bounds.getCenter() );
+		map.setZoom( 16 );
 	}
 	else
 	{
@@ -133,7 +132,7 @@ function center_map( map ) {
 		map.fitBounds( bounds );
 	}
 }
- 
+
 /*
 *  document ready
 *  This function will render each map when the document is ready (page has loaded)
@@ -149,7 +148,7 @@ $(document).ready(function(){
 		render_map( $(this) );
 	});
 });
- 
+
 })(jQuery);
 </script>
 <?php } //------- end load google map ------- ?>

@@ -9,12 +9,12 @@
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
 					<div id="event-search" class="event-search">
-					
+
 						<h1>Find a Trail Race</h1>
 						<?php get_search_form(); ?>
-					
+
 					</div> <!-- end #event-search .event-search -->
-					
+
 					<?php 
 					//---------------------------------------------
 					// ----------- Race Calendar Banner -----------
@@ -28,7 +28,7 @@
 	
 						<?php endif; 
 					} ?>
-					
+
 					<?php 
 					//----------------------------------------
 					// ----------- Table of Events -----------
@@ -48,7 +48,7 @@
 								</tr>
 							</thead>
 							<tbody>
-							
+
 							<?php // ******** Display Events ******** 
 								$boardies = array('post_type' => 'event'); 
 								$boards = new WP_Query( $boardies );
@@ -105,7 +105,7 @@
 									</tr>
 								<?php endwhile; ?>
 							<?php wp_reset_postdata(); // end Display Events ?>
-							
+
 							</tbody>
 							<tfoot>
 								<tr>

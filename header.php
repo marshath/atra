@@ -32,7 +32,7 @@
 	<link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css">	
 	<?php // Loads IE Styles and HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 	<!--[if lt IE 9]>
-		    <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style-ie.css" type="text/css" media="screen" />
+			<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style-ie.css" type="text/css" media="screen" />
 			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 	<![endif]-->
 
@@ -74,10 +74,10 @@
 					'menu_id' => 'nav-menu',      					// adding custom nav id
 					'theme_location' => 'main-nav',                 // where it's located in the theme
 					'before' => '',                                 // before the menu
-    				'after' => '',                                  // after the menu
-    				'link_before' => '',                            // before each link
-    				'link_after' => '',                             // after each link
-    				'depth' => 0,                                   // limit the depth of the nav
+					'after' => '',                                  // after the menu
+					'link_before' => '',                            // before each link
+					'link_after' => '',                             // after each link
+					'depth' => 0,                                   // limit the depth of the nav
 					'fallback_cb' => ''                             // fallback function (if there is one)
 					)); ?>
 					
@@ -93,8 +93,8 @@
 				$bgimages=array('post_type'=>'splash', 'locations' => 'home-page', 'orderby'=>'rand', 'posts_per_page'=>'1');
 				$bgimg=new WP_Query($bgimages);
 				while ($bgimg->have_posts()) : $bgimg->the_post();
-			        $page_bg_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-			        $page_bg_image_url = $page_bg_image[0]; // this returns just the URL of the image
+					$page_bg_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+					$page_bg_image_url = $page_bg_image[0]; // this returns just the URL of the image
 				endwhile; ?>
 			 style="background: url('<?php echo $page_bg_image_url; ?>') center center;	background-size: cover;"
 			<?php } // Closing homepage background
@@ -103,8 +103,8 @@
 				$bgimages=array('post_type'=>'splash', 'locations' => 'event-page', 'orderby'=>'rand', 'posts_per_page'=>'1');
 				$bgimg=new WP_Query($bgimages);
 				while ($bgimg->have_posts()) : $bgimg->the_post();
-			        $page_bg_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
-			        $page_bg_image_url = $page_bg_image[0]; // this returns just the URL of the image
+					$page_bg_image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'large' );
+					$page_bg_image_url = $page_bg_image[0]; // this returns just the URL of the image
 				endwhile; ?>
 			 style="background: url('<?php echo $page_bg_image_url; ?>') center center;	background-size: cover;"
 			<?php } // Closing Race Calendar and Find a Trail background 

@@ -97,7 +97,7 @@
 														
 													<?php // Display the Facebook account, if available
 													$socialFace = get_post_meta($post->ID, 'facebook_profile', true);
-								                	if ($socialFace) {
+													if ($socialFace) {
 														echo "<li class='facebook'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'facebook_profile', true ) ); echo "'><span class='social-text'>Facebook</span></a></li>";
 													} else {
 														echo "";
@@ -105,32 +105,32 @@
 														
 													<?php // Display the Twitter account, if available
 													$socialTwitter = get_post_meta($post->ID, 'twitter_profile', true);
-								                	if ($socialTwitter) {
-								                        	echo "<li class='twitter'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'twitter_profile', true ) ); echo "'><span class='social-text'>Twitter</span></a></li>";
+													if ($socialTwitter) {
+														echo "<li class='twitter'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'twitter_profile', true ) ); echo "'><span class='social-text'>Twitter</span></a></li>";
 													} else {
 														echo "";
 													} // end Twitter account ?>
 														
 													<?php // Display the Google Plus account, if available
 													$socialGoog = get_post_meta($post->ID, 'google_plus_profile', true);
-								                	if ($socialGoog) {
-								                        	echo "<li class='google'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'google_plus_profile', true ) ); echo "'><span class='social-text'>Google+</span></a></li>";
+													if ($socialGoog) {
+														echo "<li class='google'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'google_plus_profile', true ) ); echo "'><span class='social-text'>Google+</span></a></li>";
 													} else {
 														echo "";
 													} // end Google Plus account ?>
 														
 													<?php // Display the Instagram account, if available
 													$socialInsta = get_post_meta($post->ID, 'instagram_profile', true);
-								                	if ($socialInsta) {
-								                        	echo "<li class='instagram'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'instagram_profile', true ) ); echo "'><span class='social-text'>Instagram</span></a></li>";
+													if ($socialInsta) {
+														echo "<li class='instagram'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'instagram_profile', true ) ); echo "'><span class='social-text'>Instagram</span></a></li>";
 													} else {
 														echo "";
 													} // end Instagram account ?>
 														
 													<?php // Display the Email account, if available
 													$socialEmail = get_post_meta($post->ID, 'email_address', true);
-								                	if ($socialEmail) {
-								                        	echo "<li class='email'><a href='mailto:"; echo esc_html( get_post_meta( get_the_ID(), 'email_address', true ) ); echo "'><span class='social-text'>Email</span></a></li>";
+													if ($socialEmail) {
+														echo "<li class='email'><a href='mailto:"; echo esc_html( get_post_meta( get_the_ID(), 'email_address', true ) ); echo "'><span class='social-text'>Email</span></a></li>";
 													} else {
 														echo "";
 													} // end Email account ?>
@@ -148,7 +148,7 @@
 									<h2>Advisors</h2>
 									<ul>
 									
-									<?php  // ******** Display Advisors ******** 
+									<?php // ******** Display Advisors ******** 
 									$adviseries = array('post_type' => 'boardmember', 'roles' => 'advisor');
 									$advises = new WP_Query( $adviseries );
 									while ( $advises->have_posts() ) : $advises->the_post(); ?>
@@ -158,7 +158,7 @@
 												<ul>	
 													<?php // Display the Facebook account, if available
 													$socialFace = get_post_meta($post->ID, 'facebook_profile', true);
-								                	if ($socialFace) {
+													if ($socialFace) {
 														echo "<li class='facebook'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'facebook_profile', true ) ); echo "'><span class='social-text'>Facebook</a></span></li>";
 													} else {
 														echo "";
@@ -166,32 +166,32 @@
 														
 													<?php // Display the Twitter account, if available
 													$socialTwitter = get_post_meta($post->ID, 'twitter_profile', true);
-								                	if ($socialTwitter) {
-								                        	echo "<li class='twitter'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'twitter_profile', true ) ); echo "'><span class='social-text'>Twitter</a></span></li>";
+													if ($socialTwitter) {
+														echo "<li class='twitter'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'twitter_profile', true ) ); echo "'><span class='social-text'>Twitter</a></span></li>";
 													} else {
 														echo "";
 													} // end Twitter account ?>
 														
 													<?php // Display the Google Plus account, if available
 													$socialGoog = get_post_meta($post->ID, 'google_plus_profile', true);
-								                	if ($socialGoog) {
-								                        	echo "<li class='google'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'google_plus_profile', true ) ); echo "'><span class='social-text'>Google+</a></span></li>";
+													if ($socialGoog) {
+														echo "<li class='google'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'google_plus_profile', true ) ); echo "'><span class='social-text'>Google+</a></span></li>";
 													} else {
 														echo "";
 													} // end Google Plus account ?>
 														
 													<?php // Display the Instagram account, if available
 													$socialInsta = get_post_meta($post->ID, 'instagram_profile', true);
-								                	if ($socialInsta) {
-								                        	echo "<li class='instagram'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'instagram_profile', true ) ); echo "'><span class='social-text'>Instagram</a></span></li>";
+													if ($socialInsta) {
+														echo "<li class='instagram'><a href='"; echo esc_html( get_post_meta( get_the_ID(), 'instagram_profile', true ) ); echo "'><span class='social-text'>Instagram</a></span></li>";
 													} else {
 														echo "";
 													} // end Instagram account ?>
 														
 													<?php // Display the Email account, if available
 													$socialEmail = get_post_meta($post->ID, 'email_address', true);
-								                	if ($socialEmail) {
-								                        	echo "<li class='email'><a href='mailto:"; echo esc_html( get_post_meta( get_the_ID(), 'email_address', true ) ); echo "'><span class='social-text'>Email</span></a></li>";
+													if ($socialEmail) {
+														echo "<li class='email'><a href='mailto:"; echo esc_html( get_post_meta( get_the_ID(), 'email_address', true ) ); echo "'><span class='social-text'>Email</span></a></li>";
 													} else {
 														echo "";
 													} // end Email account ?>
@@ -242,33 +242,33 @@
 					
 								<h2>ATRA Members</h2>
 								<p>We love all our members. Without whom, things wouldn't be possible.</p>
-						            
-					            <div class="half">
-					            
-					                <div id="member-all-terrain" class="resource-item">
+
+								<div class="half">
+
+									<div id="member-all-terrain" class="resource-item">
 										<?php the_field('members_all-terrain'); ?>
-					                </div>
-					                
-					                <div id="member-steep-rocky" class="resource-item">
+									</div>
+
+									<div id="member-steep-rocky" class="resource-item">
 										<?php the_field('members_steep-rocky'); ?>
-					                </div>
-					                
-					                <div id="member-single-track" class="resource-item">
+									</div>
+
+									<div id="member-single-track" class="resource-item">
 										<?php the_field('members_single-track'); ?>
-					                </div>
-					                
-					            </div>
-					            <div class="half">
-					                
-					                <div id="member-race" class="resource-item">
+									</div>
+
+								</div>
+								<div class="half">
+
+									<div id="member-race" class="resource-item">
 										<?php the_field('members_race'); ?>
-					                </div>
-					                
-					                <div id="member-club" class="resource-item">
+									</div>
+
+									<div id="member-club" class="resource-item">
 										<?php the_field('members_club'); ?>
-					                </div>
-					                
-					            </div>
+									</div>
+
+								</div>
 								
 							<?php } // end MEMBERSHIP Page ?>
 					

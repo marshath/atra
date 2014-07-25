@@ -5,7 +5,7 @@
 	
 	if (is_page( array('home', '119')) or (is_page_template('archive-event')) ) { // display advanced search form -- also in archive-event.php ?>
 		
-         <form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
+		<form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
 			<fieldset>
 				<input type="hidden" value="1" name="sentence" />
 				<label for="screen-reader">Search for a trail race.</label>

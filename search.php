@@ -1,6 +1,6 @@
  <?php if($_GET['post_type']=='post'){ ?>
- 
-         <?php get_header(); ?>
+
+		<?php get_header(); ?>
 
 				<div id="content">
 		
@@ -66,7 +66,7 @@
 				</div> <?php // end #content ?>
 		
 		<?php get_footer(); ?>
-		
-    <?  } else {
-         include('archive-event.php'); // Event search results
-      }; // use custom archive template  ?>
+
+	<? } else {
+		include('archive-event.php'); // Event search results
+	}; // use custom archive template  ?>
