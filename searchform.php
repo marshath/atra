@@ -3,20 +3,30 @@
 	// ----------- Race Calendar Callout Search -----------
 	//-----------------------------------------------------
 	
-	if (is_page( array('home', '119')) or (is_page_template('archive-event')) ) { ?>
+	if (is_page( array('home', '119')) or (is_page_template('archive-event')) ) { // display advanced search form -- also in archive-event.php ?>
 		
-		<?php get_template_part ('http://localhost:8888/trailrunner.com/atra14/wp-content/themes/bones/searchform-event.php'); ?>
          <form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
 			<fieldset>
 				<input type="hidden" value="1" name="sentence" />
 				<label for="screen-reader">Search for a trail race.</label>
 				<div class="event-search-wrap">
 					<input type="text" placeholder="<?php the_search_query(); ?>" id="s" name="s" class="event-search-input" value="">
+					
+					<h4 id="search-toggle" class="search-toggle"><a href="#">Advanced Search</a></h4>
+					<div id="search-filter" class="search-filter">
+						<?php $taxonomies = get_object_taxonomies('event');
+						    foreach($taxonomies as $tax){
+						        echo buildSelect($tax);
+						    }
+						?>
+					</div>
+					
 					<button type="submit" class="btn event-search-btn">
 						<span class="search-icon" aria-hidden="true" data-icon="&#xe602;"></span>  
 						<span class="search-text">Search</span>
 					</button>
 				</div>
+				<p><a href="<?php echo home_url(); ?>/race-calendar/submit-a-race/">Submit a race &raquo;</a></p>
 			</fieldset>
 		</form> <!-- end .event-search-form -->
 		

@@ -33,19 +33,21 @@
 							<div class="content-top">
 							
 								<figure>
-									<?php $location = get_field('event_google_map');
-									if( !empty($location) ): ?>
-									<div class="event-map">
-										<div class="marker" data-lat="<?php echo $location['lat']; ?>" data-lng="<?php echo $location['lng']; ?>"></div>
+									<div class="event-map"> <!-- delete to remove over-riding map -->
+										<iframe
+										  width=""
+										  height="300"
+										  frameborder="0" style="border:0"
+										  src="https://www.google.com/maps/embed/v1/place?key=API_KEY
+										    &q=Space+Needle,Seattle+WA">
+										</iframe>
 									</div>
-									<?php endif; ?>
 								</figure>
 
-								<div class="event-date half" itemprop="startDate" <? // -------- content="2013-09-14T21:30" -------- ?>>
+								<div class="event-date half" itemprop="startDate" content="<?php $sDateText = date_i18n('m-d-y', strtotime(get_field('event_date'))); echo $sDateText; echo 'T'; echo the_field('start_time'); // echo mm-dd-yyyyT00:00:00 for semantic search ?>">
 									<p><?php // Display the Event Date
 										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
-										echo $endDateText;
-										 // end Event Date ?> at <?php echo the_field('start_time'); ?></p>
+										echo $endDateText; // end Event Date ?> at <?php echo the_field('start_time'); ?></p>
 								</div>
 								<div class="event-smedia half">
 									<!-- Go to www.addthis.com/dashboard to customize your tools -->

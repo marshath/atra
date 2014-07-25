@@ -274,6 +274,18 @@ function my_pre_get_posts( $query )
  
 }
 
+/************* RACE CALENDAR SEARCH FILTERING *********************/
+
+function buildSelect($tax){	
+	$terms = get_terms($tax);
+	$x = '<select name="'. $tax .'">';
+	$x .= '<option value="">Select '. ucfirst($tax) .'</option>';
+	foreach ($terms as $term) {
+	   $x .= '<option value="' . $term->slug . '">' . $term->name . '</option>';	
+	}
+	$x .= '</select>';
+	return $x;
+}
 
 
 /************* COMMENT LAYOUT *********************/

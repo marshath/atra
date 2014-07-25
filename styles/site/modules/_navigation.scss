@@ -38,7 +38,7 @@
 	 		display: block;
 	 	}
 	}
-	.current_page_item a, .current_page_parent a {
+	.current_page_item a  {
 		border-top: 6px solid $orange;
 	}
 	.sub-menu {
@@ -70,7 +70,7 @@
 		 		border:none;
 	 		}
 	 	}
-		.current_page_item, .current_page_parent {
+		.current_page_item a, .current_page_parent a {
 			color:$text;
 			border-top: none;
 		}
@@ -128,8 +128,29 @@
 	}
 }
 
+/* Bookmarking for header navigation */
+.header-nav .current_page_item a, /* Single level menu items */
+body.single-event .header-nav .menu-item-172 a, /* Race Event pages */
+body.post-type-archive-event .header-nav .menu-item-172 a, /* Race Event search */
+body.parent-pageid-119 .header-nav .current_page_parent a, /* Submit a Race */
+body.single-post .header-nav .current_page_parent a, /* Trail News pages */
+/* body.search-results .header-nav .current_page_parent a, */ /* Trail News search results - conflict with race search results */
+body.author .header-nav .current_page_parent a, /* Trail News author */
+body.category .header-nav .current_page_parent a, /* Trail News category search */
+body.tag .header-nav .current_page_parent a, /* Trail News tag search */
+body.parent-pageid-127 .header-nav .current_page_parent a { /* About ATRA children */
+	border-top: 6px solid $orange;
+}
+.header-nav .sub-menu a {
+	border-top:none !important;
+}
+
+
+
+
+/* shrunk navigation menu when scrolling */
 .header.shrink {
-	li { /* shrunk navigation menu when scrolling */
+	li {
 		a {
 			height:($base*3);
 			padding-top: $base;

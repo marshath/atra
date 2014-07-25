@@ -7,7 +7,10 @@
 					<div id="inner-content" class="wrap">
 		
 						<div id="main" class="wrap-main" role="main">
-							<h1 class="archive-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+						
+						<header class="article-header">
+							<h1 class="page-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>
+						</header>
 		
 							<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		
@@ -41,8 +44,8 @@
 							<?php else : ?>
 		
 								<article id="post-not-found" class="hentry">
-									<header class="article-header">
-										<h1><?php _e( 'Sorry, No Results.', 'bonestheme' ); ?></h1>
+									<header class="article-title">
+										<h2 class="entry-title"><?php _e( 'Sorry, No Results.', 'bonestheme' ); ?></h2>
 									</header>
 									<section class="entry-content">
 										<p><?php _e( 'Try your search again.', 'bonestheme' ); ?></p>

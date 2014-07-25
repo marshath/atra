@@ -11,8 +11,6 @@
 					<h1>Find a Trail Race</h1>
 					<?php get_search_form(); ?>
 					
-					<p>You can also find <a href="<?php echo home_url(); ?>/race-calendar/">a complete list of events</a><!--, <a href="http://localhost:8888/trailrunner.com/archive/international/">international races</a>--> or <a href="<?php echo home_url(); ?>/race-calendar/submit-a-race/">submit a race</a>.</p>
-					
 				</div> <!-- end #event-search .hm-event-search -->
 				<div id="featured" class="featured-events">
 				
@@ -43,7 +41,7 @@
 								<tr>
 									<td>
 										<?php // Display the Event Date
-										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
+										$endDateText = date_i18n("M d", strtotime(get_field('event_date')));
 										echo $endDateText;
 										 // end Event Date ?>
 									</td>

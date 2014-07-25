@@ -13,22 +13,31 @@
 					<div id="event-search" class="event-search">
 						
 						<h1>Find a Trail Race</h1>
-						
-				        <form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
+						<?php // Display the advanced search form -- also in searchform.php ?>
+				         <form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
 							<fieldset>
 								<input type="hidden" value="1" name="sentence" />
 								<label for="screen-reader">Search for a trail race.</label>
 								<div class="event-search-wrap">
 									<input type="text" placeholder="<?php the_search_query(); ?>" id="s" name="s" class="event-search-input" value="">
+									
+									<h4 id="search-toggle" class="search-toggle"><a href="#">Advanced Search</a></h4>
+									<div id="search-filter" class="search-filter">
+										<?php $taxonomies = get_object_taxonomies('event');
+										    foreach($taxonomies as $tax){
+										        echo buildSelect($tax);
+										    }
+										?>
+									</div>
+									
 									<button type="submit" class="btn event-search-btn">
 										<span class="search-icon" aria-hidden="true" data-icon="&#xe602;"></span>  
 										<span class="search-text">Search</span>
 									</button>
 								</div>
+								<p><a href="<?php echo home_url(); ?>/race-calendar/submit-a-race/">Submit a race &raquo;</a></p>
 							</fieldset>
-						</form><!-- end .event-search-form -->
-						
-						<p>You can also <!-- find <a href="http://localhost:8888/trailrunner.com/archive/international/">international races</a> or --> <a href="http://localhost:8888/trailrunner.com/race-calendar/submit-a-race/">submit a race</a>.</p>
+						</form> <!-- end .event-search-form -->
 					
 					</div> <!-- end #event-search .event-search -->
 						

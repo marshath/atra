@@ -12,7 +12,6 @@
 					
 						<h1>Find a Trail Race</h1>
 						<?php get_search_form(); ?>
-						<p>You can also <!-- find <a href="http://localhost:8888/trailrunner.com/archive/international/">international races</a> or --> <a href="http://localhost:8888/trailrunner.com/race-calendar/submit-a-race/">submit a race</a>.</p>
 					
 					</div> <!-- end #event-search .event-search -->
 					
