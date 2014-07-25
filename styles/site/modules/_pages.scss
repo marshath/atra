@@ -443,7 +443,7 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 		margin-top: 0;
 	}
 	h5 {
-		margin-bottom: $base;
+		margin-bottom: 0;
 	}
 }
 .board-members-wrap {
@@ -467,17 +467,51 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 		}
 	}
 }
-.advisors-wrap li {
-	h3 {
-		@include sans-serif;
+.board-social { /* Board Member and Advisor - Social Icons */
+	ul {
+		height: $base;
+		width: intrinsic;
+		margin: 0 auto;
 	}
-	text-align: left;
-	@include column(6);
-	@include bp(mobile-h) { /* mobile H and below layout */
-		@include column(12);
+	.twitter a:before, .facebook a:before, .google a:before, .rss a:before, .instagram a:before, .email a:before {
+		font: {
+			family: 'social';
+			style: normal;
+			size: 1em;
+			weight: normal;
+		}
+	}
+	li.twitter, li.facebook, li.google, li.instagram, li.email { /* social media icons */
+		width:2em;
+		height: 2em;
+		margin: 0 auto;
+		display: inline-block;
+	}
+	a {
+		padding: ($base*0.5) 0 !important;
 	}
 }
 
+.advisors-wrap {
+	li {
+		text-align: left;
+		@include column(6);
+		@include bp(mobile-h) { /* mobile H and below layout */
+			@include column(12);
+		}
+	}
+	h3 {
+		@include sans-serif;
+		width:intrinsic;
+		float: left;
+	}
+	.board-social {
+		ul { /* social media icons */
+			margin: 0;
+			float: left;
+		}
+	}
+}
 
 /* ------------------------------------- */
 /* ------- Partner Organizations ------- */

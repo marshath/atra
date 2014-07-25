@@ -81,13 +81,14 @@
 
 
 
-li.twitter, li.facebook, li.google, li.rss { /* social media icons */
+li.twitter, li.facebook, li.google, li.rss, li.instagram, li.email { /* social media icons */
 	width:23%;
 	text-align: center;
 	margin: 0 1%;
 	a {
 		text-decoration: none;
 		width: 100%;
+		height:($base*4);
 		display: block;
 		color: $gray;
 		padding-top: ($base*1.25);
@@ -113,13 +114,21 @@ li.rss a:hover {
 	background: $rss-orange;
 	color: white;
 }
+li.instagram a:hover {
+	background: $instagram-blue;
+	color: white;
+}
+li.email a:hover {
+	background: $gray;
+	color: white;
+}
 .social-text {
 	text-indent: -9999px;
 	display: block;
 	height: 0px;
 }
 
-.twitter a:before, .facebook a:before, .google a:before, .rss a:before {
+.twitter a:before, .facebook a:before, .google a:before, .rss a:before, .instagram a:before, .email a:before {
 	font: {
 		family: 'social';
 		style: normal;
@@ -142,4 +151,10 @@ li.rss a:hover {
 }
 .rss a:before {
 	content: '\e607';
+}
+.instagram a:before {
+	content: '\e609';
+}
+.email a:before {
+	content: '\e600';
 }

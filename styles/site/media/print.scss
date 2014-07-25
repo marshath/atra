@@ -1,3 +1,21 @@
 //////////////////
 // Print Styles //
 //////////////////
+
+@media print {
+	body, .copyright { color:black; }
+	.headroom {	height: $base !important; }
+	.wrap-main { @include column(12); }
+	.logo {	width:100%;	text-indent: 0;	font-size: 2em;	margin: 0; }
+	
+	/* Links */
+	a:link, a:visited {background: transparent; color:black; text-decoration:none;}
+	a:link[href^="http://"]:after, a[href^="http://"]:visited:after {content: " (" attr(href) ") "; }
+	a[href^="http://"] {color:black;} 
+	
+	/* Image */
+	img {border:none;}
+	
+	/* Remove Element */
+	.header-nav, .banner-ad, .event-search, .sidebar, .footer, .footer-partner, .event-search-form { display:none; }
+}

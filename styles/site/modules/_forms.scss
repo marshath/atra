@@ -65,7 +65,7 @@ input[type='datetime-local'] {
 .search-form input[type="submit"] {
 	position: absolute;
 	right:0;
-	top:-0.4em;
+	top:-0.5em;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
@@ -220,6 +220,21 @@ textarea {
 		display: block;
 	}
 }
+
+
+
+
+/* ------------------------ */
+/* ------- 404 Page ------- */
+/* ------------------------ */
+
+.search-404 .search-form {
+	input[type="submit"] {
+		padding-left: 3.5em;
+		padding-right: 3.5em;
+	}
+}
+
 
 /* ----------------------------------- */
 /* ------- Gravity Form Styles ------- */

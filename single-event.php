@@ -38,13 +38,12 @@
 										  width=""
 										  height="300"
 										  frameborder="0" style="border:0"
-										  src="https://www.google.com/maps/embed/v1/place?key=API_KEY
-										    &q=Space+Needle,Seattle+WA">
+										  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC9cvNE5qB0ZeGAaxaHEAOnV8ynEebTASw&q=<?php echo the_field('event_city'); ?>+<?php echo the_field('event_zip'); ?>">
 										</iframe>
 									</div>
 								</figure>
 
-								<div class="event-date half" itemprop="startDate" content="<?php $sDateText = date_i18n('m-d-y', strtotime(get_field('event_date'))); echo $sDateText; echo 'T'; echo the_field('start_time'); // echo mm-dd-yyyyT00:00:00 for semantic search ?>">
+								<div class="event-date half" itemprop="startDate" content="<?php $sDateText = date_i18n('m-d-y', strtotime(get_field('event_date'))); echo $sDateText; // echo mm-dd-yyyyT00:00:00 for semantic search ?>">
 									<p><?php // Display the Event Date
 										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
 										echo $endDateText; // end Event Date ?> at <?php echo the_field('start_time'); ?></p>
