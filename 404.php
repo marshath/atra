@@ -21,7 +21,7 @@
 						</div>
 
 						<footer class="article-footer">
-							<p><img src="http://localhost:8888/trailrunner.com/atra14/wp-content/uploads/2014/07/bg-print.png" /></p>
+							<p><img src="<?php echo home_url( '/' ); ?>wp-content/uploads/2014/07/bg-print.png" /></p>
 						</footer>
 
 					</article>

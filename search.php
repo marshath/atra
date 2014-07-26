@@ -7,6 +7,20 @@
 					<div id="inner-content" class="wrap">
 		
 						<div id="main" class="wrap-main" role="main">
+			
+						<?php 
+						//----------------------------------------------
+						// ----------- Trail News Banner AD -----------
+						//---------------------------------------------- ?>
+						
+						<div class="banner-ad">
+							<?php dynamic_sidebar( 'banner-news' ); ?>
+						</div>
+			
+						<?php 
+						//-------------------------------------
+						// ----------- Main Content -----------
+						//------------------------------------- ?>
 						
 						<header class="article-header">
 							<h1 class="page-title"><span><?php _e( 'Search Results for:', 'bonestheme' ); ?></span> <?php echo esc_attr(get_search_query()); ?></h1>

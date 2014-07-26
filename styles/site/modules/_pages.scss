@@ -486,6 +486,9 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 		height: 2em;
 		margin: 0 auto;
 		display: inline-block;
+		a {
+			height: 36px;
+		}
 	}
 	a {
 		padding: ($base*0.5) 0 !important;
@@ -496,6 +499,7 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 	li {
 		text-align: left;
 		@include column(6);
+		margin-bottom: ($base*0.5);
 		@include bp(mobile-h) { /* mobile H and below layout */
 			@include column(12);
 		}
