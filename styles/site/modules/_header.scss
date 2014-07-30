@@ -59,4 +59,19 @@ body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom, bod
 	    margin-top: ($base*0.25);
     }
 }
+@include bp(mobile-h) { /* mobile H and below layout */
+	.headroom { // Provides the head padding for the content
+		padding-top: ($base*4);
+	}
+	body.home .headroom, body.page-id-119 .headroom, body.page-id-123 .headroom, body.post-type-archive-event .headroom { // Provides the head padding for the content when splash images are present
+	  	height: ($base*16);	
+	}
+	.header {
+	    height: ($base*3);
+	    .logo {
+		    height:($base*1.8);
+		    margin-top: ($base*0.25);
+	    }
+	}
+}
 

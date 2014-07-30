@@ -213,15 +213,12 @@ figure {
 	margin-bottom: $base;
 	img {
 		@include column(4);
-		border: 2px solid $tan;
-		transition: box-shadow 0.2s ease;
+		@include img_style;
 		&:hover {
-			border: 2px solid $orange;
-			box-shadow: 4px 2px 3px rgba(0,0,0,0.2);
+			@include img_style_hover;
 		}
 		&:active {
-			border: 2px solid $yellow;
-			box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+			@include img_style_active;
 		}
 	}
 	@include bp(tablet-h) { /* tablet H and below layout */
@@ -264,12 +261,15 @@ figure {
 	p {
 		margin-top: 0;
 	}
+	@include bp(mobile-h) { /* mobile H and below layout */
+		background: rgba(32,32,32,1);
+	}
 }
 
 
-/* -------------------- */
-/* ------- Blog ------- */
-/* -------------------- */
+/* --------------------------------- */
+/* ------- Trail News - Blog ------- */
+/* --------------------------------- */
 
 
 h1.page-title, h1.entry-title { /* Post titles on Trail News */
@@ -309,13 +309,16 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 .byline-cat {
 	float: right;
 	text-align: right;
-	display: block;
 	height: $base;
-	@include column(6);
+	@include column(5);
 }
 @include bp(mobile-h) { /* mobile H format and below */
+	h1 {
+		font-size: 1.4em;
+	}
 	.byline-group, .byline-cat {
 		@include column(12);
+		@include clearfix;
 	}
 }
 
@@ -339,16 +342,13 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 			margin-left: 0;
 		}
 		img {
-			border: 2px solid $tan;
-			transition: box-shadow 0.2s ease;
+			@include img_style;
 		}
 		&:hover img {
-			border: 2px solid $orange;
-			box-shadow: 4px 2px 3px rgba(0,0,0,0.2);
+			@include img_style_hover;
 		}
 		&:active img {
-			border: 2px solid $yellow;
-			box-shadow: 0px 0px 0px rgba(0,0,0,0.2);
+			@include img_style_active;
 		}
 	}
 }
@@ -512,7 +512,7 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 	}
 	.board-social {
 		ul { /* social media icons */
-			margin: 0;
+			margin: -($base*0.15) 0 0 0.5em;
 			float: left;
 		}
 	}
