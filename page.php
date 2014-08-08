@@ -241,7 +241,7 @@
 							if ( (is_page('membership')) ) { ?>
 					
 								<h2>ATRA Members</h2>
-								<p>We love all our members. Without whom, things wouldn't be possible.</p>
+								<?php the_field('membership_description'); ?>
 
 								<div class="half">
 

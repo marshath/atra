@@ -15,7 +15,7 @@
 				<div id="featured" class="featured-events">
 
 					<h2>Featured Events</h2>
-					<p>Races that meet the <a href="#">ATRA events standards</a>.</p>
+					<p>Races that meet the <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">ATRA events standards</a>.</p>
 
 					<?php 
 					//----------------------------------------
@@ -104,16 +104,15 @@
 				<div id="members" class="member-list">
 
 					<h2>ATRA Members</h2>
-					<p>We love all our members. Without whom, things wouldn't be possible.<br>
-					<a href="#">Interested in becoming a member?</a></p>
+					<?php the_field('membership_description', 114); // ------- Membership Description ?>
+					<p><a href="<?php echo home_url(); ?>/membership/">Interested in becoming a member?</a></p>
 
 					<div class="half">
+					
 						<div id="member-all-terrain" class="resource-item">
 							<?php the_field('members_all-terrain', 114); // ------- All-terrain Members ?>
 						</div>
-					</div>
-
-					<div class="half">
+						
 						<div id="member-steep-rocky" class="resource-item">
 							<?php the_field('members_steep-rocky', 114); // ------- Steep Rocky Members  ?>
 						</div>
@@ -121,6 +120,9 @@
 						<div id="member-single-track" class="resource-item">
 							<?php the_field('members_single-track', 114); // ------- Singel Track Members  ?>
 						</div>
+						
+					</div>
+					<div class="half">
 
 						<div id="member-race" class="resource-item">
 							<?php the_field('members_race', 114); // ------- Race Members ?>
@@ -129,6 +131,7 @@
 						<div id="member-club" class="resource-item">
 							<?php the_field('members_club', 114); // ------- Club Members  ?>
 						</div>
+						
 					</div>
 
 				</div> <!-- end #member-list .hm-member-list -->
