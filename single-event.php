@@ -123,7 +123,14 @@
 								</div>
 								<div class="half">
 									<p><b>Type:</b> <?php echo the_field('event_type'); ?></p>
-									<?php // Display the Course Map, if available
+									<?php // Display the Participant Limit, if available
+										$couse_map = get_post_meta($post->ID, 'event_participant_limit', true);
+										if ($couse_map) {
+											echo "<p><b>Participant Limit:</b> "; echo esc_html( get_post_meta( get_the_ID(), 'event_participant_limit', true ) ); echo "</p>";
+										} else {
+											echo "";
+										} // end Participant Limit 
+										 // Display the Course Map, if available
 										$couse_map = get_post_meta($post->ID, 'course_map', true);
 										if ($couse_map) {
 											echo "<p><b>Course Map:</b> <a href='"; echo esc_html( get_post_meta( get_the_ID(), 'course_map', true ) ); echo "'>Download Map</a></p>";
