@@ -30,19 +30,14 @@
 						</header><?php // end .event-header ?>
 						
 						<section class="entry-content">
+								 
+							<figure class="featured-image">
+								<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+									the_post_thumbnail("atra-700");
+									} ?>
+							</figure>
+						
 							<div class="content-top">
-							
-								<figure>
-									<div class="event-map"> <!-- delete to remove over-riding map -->
-										<iframe
-										  width=""
-										  height="300"
-										  frameborder="0" style="border:0"
-										  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC9cvNE5qB0ZeGAaxaHEAOnV8ynEebTASw&q=<?php echo the_field('event_city'); ?>+<?php echo the_field('event_zip'); ?>">
-										</iframe>
-									</div>
-								</figure>
-
 								<div class="event-date half" itemprop="startDate" content="<?php $sDateText = date_i18n('m-d-y', strtotime(get_field('event_date'))); echo $sDateText; // echo mm-dd-yyyyT00:00:00 for semantic search ?>">
 									<p><?php // Display the Event Date
 										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
@@ -97,8 +92,12 @@
 									} // end Twitter feed ?>
 									<p><b>Entry Fee</b> <span itemprop="price">$<?php echo the_field('entry_fee'); ?></span><br>
 									<small>(Lowest or Early Registration)</small></p>
-									<p><b>Entry Fee 2</b> <span itemprop="price">$<?php echo the_field('entry_fee_2'); ?></span><br>
-									<small>(Highest or Late Registration)</small></p>
+									<?php $entryfee2 = get_post_meta($post->ID, 'entry_fee_2', true); // Display the Entry Fee 2, if available
+										if ($entryfee2) { ?>
+											<p><b>Entry Fee 2</b> $<?php echo the_field('entry_fee_2'); ?><br>
+										<small>(Highest or Late Registration)</small></p>
+									<?php } ?>
+									<p><b>Prize Money:</b> <span class="capitalize"><?php echo get_field('prize_money'); ?></span></p>
 									<p><b>Distance(s):</b></p>
 									<ul class="list-commas">
 										<?php $terms = get_the_terms( $post->ID , 'distances' ); // Display the Event Distance
@@ -122,10 +121,18 @@
 									</ul> <!-- end .list-commas -->
 								</div>
 								<div class="half">
+									<?php // Display the Event Series, if available
+										$eseries = get_post_meta($post->ID, 'event_series', true);
+										if ($eseries) {
+											echo "<p><b>Series:</b> "; echo esc_html( get_post_meta( get_the_ID(), 'event_series', true ) ); echo "</p>";
+										} else {
+											echo "";
+										}
+									// end Event Series ?>
 									<p><b>Type:</b> <?php echo the_field('event_type'); ?></p>
 									<?php // Display the Participant Limit, if available
-										$couse_map = get_post_meta($post->ID, 'event_participant_limit', true);
-										if ($couse_map) {
+										$eplimit = get_post_meta($post->ID, 'event_participant_limit', true);
+										if ($eplimit) {
 											echo "<p><b>Participant Limit:</b> "; echo esc_html( get_post_meta( get_the_ID(), 'event_participant_limit', true ) ); echo "</p>";
 										} else {
 											echo "";
@@ -231,7 +238,21 @@
 								} // end third photo ?>
 								
 							</div> <!-- end .content-photos -->
+							<div class="content-googlemap">
 							
+								<h3>Map</h3>
+								<figure>
+									<div class="event-map"> <!-- delete to remove over-riding map -->
+										<iframe
+										  width="100%"
+										  height="300"
+										  frameborder="0" style="border:0"
+										  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC9cvNE5qB0ZeGAaxaHEAOnV8ynEebTASw&q=<?php echo the_field('event_city'); ?>+<?php echo the_field('event_zip'); ?>&maptype=satellite">
+										</iframe>
+									</div>
+								</figure>
+								
+							</div> <!-- end .content-googlemap -->
 							<div class="content-archive">
 							
 								<h3>Event Dates &amp; Results</h3>

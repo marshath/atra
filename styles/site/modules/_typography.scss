@@ -143,6 +143,10 @@ hr { /* Horizontal Rule */
 	text-transform: uppercase; 
 }
 
+.capitalize { 
+	text-transform:  capitalize; 
+}
+
 .font-secondary {
 	@include sans;
 }

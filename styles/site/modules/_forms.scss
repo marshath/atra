@@ -306,8 +306,17 @@ textarea {
 	@include clearfix;
 }
 
-.gfield_checkbox {
+.gfield_checkbox, .gfield_radio {
 	margin-left: 1em;
+	li{
+		width:12%;
+		font-size: 1.2em;
+		float:left;
+		display: inline-block;
+		label {
+			padding-left: 0.5em;
+		}
+	}
 }
 
 .gform_fields input[type='text'], .gform_fields input[type='email'], .gform_fields input[type='tel'], .gform_fields input[type='url'], .gform_fields textarea, .search-form input[type='text'], .gform_fields input[type='number'], .search-form input[type="search"] {
@@ -333,6 +342,13 @@ textarea {
 	padding-left: 2em;
 }
 
+@include bp(tablet-h) { /* mobile H and below layout */
+	.gfield_checkbox, .gfield_radio {
+		li {
+			width: 25%;
+		}
+	}
+}
 @include bp(mobile-h) { /* mobile H and below layout */
 	.ginput_left, .ginput_right {
 		width: 100% !Important;
@@ -342,6 +358,11 @@ textarea {
 		input {
 			width:100%;
 		}
+	}
+}
+@include bp(mobile-v) { /* mobile H and below layout */
+	.gfield_checkbox li {
+		width: 50%;
 	}
 }
 
