@@ -15,8 +15,8 @@ require_once( 'library/custom-post-type.php' );
 require_once( 'library/admin.php' );
 
 // LOAD ADVANCED CUSTOM FIELDS PLUGIN
-define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
-include_once('library/advanced-custom-fields/acf.php'); // load ACF from the theme's library folder
+// define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
+// include_once('library/advanced-custom-fields/acf.php'); // load ACF from the theme's library folder
 
 /*********************
 LAUNCH BONES
@@ -457,6 +457,17 @@ if(function_exists("register_field_group"))
 				'key' => 'field_53a382b73f401',
 				'label' => 'Steep & Rocky Members',
 				'name' => 'members_steep-rocky',
+				'type' => 'textarea',
+				'default_value' => '',
+				'placeholder' => '',
+				'maxlength' => '',
+				'rows' => '',
+				'formatting' => 'html',
+			),
+			array (
+				'key' => 'field_540e70bc3769c',
+				'label' => 'Switchback',
+				'name' => 'members_switchback',
 				'type' => 'textarea',
 				'default_value' => '',
 				'placeholder' => '',

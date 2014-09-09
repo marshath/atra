@@ -116,6 +116,10 @@
 						<div id="member-steep-rocky" class="resource-item">
 							<?php the_field('members_steep-rocky', 114); // ------- Steep Rocky Members  ?>
 						</div>
+						
+						<div id="member-switchback" class="resource-item">
+							<?php the_field('members_switchback', 114); // ------- Switchback Members  ?>
+						</div>
 
 						<div id="member-single-track" class="resource-item">
 							<?php the_field('members_single-track', 114); // ------- Singel Track Members  ?>
