@@ -50,15 +50,22 @@
 							<tbody>
 
 							<?php // ******** Display Events ******** 
-								$boardies = array('post_type' => 'event'); 
+								$boardies = array('post_type' => 'event', 'posts_per_page' => 50); 
 								$boards = new WP_Query( $boardies );
 								while ( $boards->have_posts() ) : $boards->the_post();
 								 ?>
 									<tr class="<?php // Display the ATRA Approved Event
-											$terms = get_the_terms( $post->ID , 'qualifications' );
-											foreach ( $terms as $term ) {
-												echo $term->slug; echo " ";
-											} ?>">
+										$terms = get_the_terms( $post->ID, 'qualifications'); // Display the Qualifications
+									    if ($terms) {
+									        $terms_slugs = array();
+									        foreach ( $terms as $term ) {
+									            $terms_slugs[] = $term->slug;
+									        }
+									        $series = $terms_slugs[0];      
+									        echo "{$series} ";
+									    } else {
+									        echo "";
+									    } // end Qualifications ?>">
 										<td></td> <?php // leave blank cell for ATRA badge ?>
 										<td>
 											<?php // Display the Event Date
@@ -71,10 +78,31 @@
 										</td><?php // end Event Name and Link ?>
 										<td>
 											<ul class="list-commas">
-												<?php $terms = get_the_terms( $post->ID , 'distances' ); // Display the Event Distance
-													foreach ( $terms as $term ) {
-														echo '<li>'; echo $term->name; echo '</li>';
-												} // end Event Distance ?>
+												<?php $terms = get_the_terms( $post->ID, 'distances'); // Display the Event Distance
+											    if ($terms) {
+											        $terms_slugs = array();
+											        foreach ( $terms as $term ) {
+											            $terms_slugs[] = $term->name;
+											        }
+											        $series = $terms_slugs[0];      
+											        echo "<li>{$series}</li>";
+											    } else {
+											        echo "";
+												} // end Event Distance
+												// Display the Other Distances 1, if available
+												$o1dist = get_post_meta($post->ID, 'other_distance1', true);
+												if ($o1dist) {
+													echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance1', true ) ); echo "</li>";
+												} else {
+													echo "";
+												} // end Other Distances 1
+												// Display the Other Distances 2, if available
+												$o2dist = get_post_meta($post->ID, 'other_distance2', true);
+												if ($o2dist) {
+													echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance2', true ) ); echo "</li>"; 
+												} else {
+													echo "";
+												} // end Other Distances 2 ?>
 											</ul><?php // end Event Distance ?>
 										</td>
 										<td>
@@ -104,8 +132,7 @@
 										</td>
 									</tr>
 								<?php endwhile; ?>
-							<?php wp_reset_postdata(); // end Display Events ?>
-
+							<?php bones_page_navi(); ?>
 							</tbody>
 							<tfoot>
 								<tr>
@@ -120,21 +147,23 @@
 							</tfoot>
 						</table>
 						<p><b>ESP</b> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
+					
+					<?php wp_reset_postdata(); // end Display Events ?>
 					</div> <?php // end .events-wrap ?>
 
 					<?php endwhile; else : ?>
 
-							<article id="post-not-found" class="hentry">
-								<header class="article-header">
-									<h1><?php _e( 'Oops, Event Not Found!', 'bonestheme' ); ?></h1>
-								</header> <?php // end .article-header ?>
-								<section class="entry-content">
-									<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
-								</section> <?php // end .entry-content ?>
-								<footer class="article-footer">
-										<p><?php _e( 'This is the error message in the page.php template.', 'bonestheme' ); ?></p>
-								</footer> <?php // end .article-footer ?>
-							</article>
+						<article id="post-not-found" class="hentry">
+							<header class="article-header">
+								<h1><?php _e( 'Oops, Event Not Found!', 'bonestheme' ); ?></h1>
+							</header> <?php // end .article-header ?>
+							<section class="entry-content">
+								<p><?php _e( 'Uh Oh. Something is missing. Try double checking things.', 'bonestheme' ); ?></p>
+							</section> <?php // end .entry-content ?>
+							<footer class="article-footer">
+									<p><?php _e( 'This is the error message in the page.php template.', 'bonestheme' ); ?></p>
+							</footer> <?php // end .article-footer ?>
+						</article>
 
 					<?php endif; ?>
 

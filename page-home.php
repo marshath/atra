@@ -34,7 +34,7 @@
 						<tbody>
 
 						<?php // ******** Display Events ******** 
-							$boardies = array('post_type' => 'event', 'qualifications' => 'meets-atra-event-standards', 'orderby' => rand, 'posts_per_page' => 3); 
+							$boardies = array('post_type' => 'event', 'qualifications' => 'meets-atra-event-standards', 'posts_per_page' => 5); 
 							$boards = new WP_Query( $boardies );
 							while ( $boards->have_posts() ) : $boards->the_post();
 							?>
@@ -50,10 +50,31 @@
 									</td><?php // end Event Name and Link ?>
 									<td>
 										<ul class="list-commas">
-											<?php $terms = get_the_terms( $post->ID , 'distances' ); // Display the Event Distances
-												foreach ( $terms as $term ) {
-													echo '<li>'; echo $term->name; echo '</li>';
-											} // end Event Distance ?>
+											<?php $terms = get_the_terms( $post->ID, 'distances'); // Display the Event Distance
+										    if ($terms) {
+										        $terms_slugs = array();
+										        foreach ( $terms as $term ) {
+										            $terms_slugs[] = $term->name;
+										        }
+										        $series = $terms_slugs[0];      
+										        echo "<li>{$series}</li>";
+										    } else {
+										        echo "";
+											} // end Event Distance
+											// Display the Other Distances 1, if available
+											$o1dist = get_post_meta($post->ID, 'other_distance1', true);
+											if ($o1dist) {
+												echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance1', true ) ); echo "</li>";
+											} else {
+												echo "";
+											} // end Other Distances 1
+											// Display the Other Distances 2, if available
+											$o2dist = get_post_meta($post->ID, 'other_distance2', true);
+											if ($o2dist) {
+												echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance2', true ) ); echo "</li>"; 
+											} else {
+												echo "";
+											} // end Other Distances 2 ?>
 										</ul><?php // end Event Distance ?>
 									</td>
 									<td>
@@ -81,15 +102,6 @@
 						<?php wp_reset_postdata(); // end Display Events ?>
 
 						</tbody>
-						<tfoot>
-							<tr>
-								<th>Date</th>
-								<th>Name/Link</th>
-								<th>Distance(s)</th>
-								<th>Type</th>
-								<th>State</th>
-							</tr>
-						</tfoot>
 					</table>
 
 				</div> <!-- end #events-featured .hm-event-featured -->
@@ -105,10 +117,9 @@
 
 					<h2>ATRA Members</h2>
 					<?php the_field('membership_description', 114); // ------- Membership Description ?>
-					<p><a href="<?php echo home_url(); ?>/membership/">Interested in becoming a member?</a></p>
+					<!-- <p><a href="<?php echo home_url(); ?>/membership/">Interested in becoming a member?</a></p> -->
 
 					<div class="half">
-					
 						<div id="member-all-terrain" class="resource-item">
 							<?php the_field('members_all-terrain', 114); // ------- All-terrain Members ?>
 						</div>
@@ -124,10 +135,9 @@
 						<div id="member-single-track" class="resource-item">
 							<?php the_field('members_single-track', 114); // ------- Singel Track Members  ?>
 						</div>
-						
 					</div>
-					<div class="half">
 
+					<div class="half">
 						<div id="member-race" class="resource-item">
 							<?php the_field('members_race', 114); // ------- Race Members ?>
 						</div>
@@ -135,7 +145,6 @@
 						<div id="member-club" class="resource-item">
 							<?php the_field('members_club', 114); // ------- Club Members  ?>
 						</div>
-						
 					</div>
 
 				</div> <!-- end #member-list .hm-member-list -->

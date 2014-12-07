@@ -95,10 +95,31 @@
 										</td><?php // end Event Name and Link ?>
 										<td>
 											<ul class="list-commas">
-												<?php $terms = get_the_terms( $post->ID , 'distances' ); // Display the Event Distance
-													foreach ( $terms as $term ) {
-														echo '<li>'; echo $term->name; echo '</li>';
-												} // end Event Distance ?>
+												<?php $terms = get_the_terms( $post->ID, 'distances'); // Display the Event Distance
+											    if ($terms) {
+											        $terms_slugs = array();
+											        foreach ( $terms as $term ) {
+											            $terms_slugs[] = $term->name;
+											        }
+											        $series = $terms_slugs[0];      
+											        echo "<li>{$series}</li>";
+											    } else {
+											        echo "";
+												} // end Event Distance
+												// Display the Other Distances 1, if available
+												$o1dist = get_post_meta($post->ID, 'other_distance1', true);
+												if ($o1dist) {
+													echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance1', true ) ); echo "</li>";
+												} else {
+													echo "";
+												} // end Other Distances 1
+												// Display the Other Distances 2, if available
+												$o2dist = get_post_meta($post->ID, 'other_distance2', true);
+												if ($o2dist) {
+													echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance2', true ) ); echo "</li>"; 
+												} else {
+													echo "";
+												} // end Other Distances 2 ?>
 											</ul><?php // end Event Distance ?>
 										</td>
 										<td>

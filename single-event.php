@@ -53,7 +53,7 @@
 								<div class="half" itemprop="location" itemscope itemtype="http://schema.org/Place">
 									<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 										<p><span itemprop="streetAddress"><?php echo the_field('event_street'); ?></span></p>
-										<p><span itemprop="addressLocality"><?php echo the_field('event_city'); ?></span>, <span itemprop="addressRegion" class="uppercase"><?php // Make the State Slug Uppercase
+										<p><span itemprop="addressLocality"><?php echo the_field('event_city'); ?></span><?php // Make the State Slug Uppercase
 												$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
 												if ($terms) {
 													$terms_slugs = array();
@@ -61,10 +61,10 @@
 														$terms_slugs[] = $term->slug;
 													}
 													$series = $terms_slugs[0];      
-													echo "{$series}";
+													echo ", <span itemprop='addressRegion' class='uppercase'>{$series}</span>";
 												} else {
 													echo "";
-												} // end Display State?></span> <span itemprop="postalCode"><?php echo the_field('event_zip'); ?></span></p>
+												} // end Display State?> <span itemprop="postalCode"><?php echo the_field('event_zip'); ?></span></p>
 										<p><?php echo the_field('event_country'); ?></p>
 									</div>
 								</div> <!-- end .event-location -->
@@ -100,10 +100,17 @@
 									<p><b>Prize Money:</b> <span class="capitalize"><?php echo get_field('prize_money'); ?></span></p>
 									<p><b>Distance(s):</b></p>
 									<ul class="list-commas">
-										<?php $terms = get_the_terms( $post->ID , 'distances' ); // Display the Event Distance
-											foreach ( $terms as $term ) {
-												echo '<li>'; echo $term->name; echo '</li>';
-											} // end Event Distance
+										<?php $termsd = get_the_terms( $post->ID, 'distances'); // Display the Event Distance
+									    if ($termsd) {
+									        $termsd_slugs = array();
+									        foreach ( $termsd as $termd ) {
+									            $termsd_slugs[] = $termd->name;
+									        }
+									        $seriesd = $termsd_slugs[0];      
+									        echo "<li>{$seriesd}</li>";
+									    } else {
+									        echo "";
+										} // end Event Distance
 										// Display the Other Distances 1, if available
 										$o1dist = get_post_meta($post->ID, 'other_distance1', true);
 										if ($o1dist) {
@@ -212,7 +219,7 @@
 								</div>
 								
 								<?php } else {
-									echo "";
+									echo "<p>No photos available.</p>";
 								} // end first photo 
 								// Display the second photo, if available
 								$eventpic2 = get_post_meta($post->ID, 'event_photo_2', true);
