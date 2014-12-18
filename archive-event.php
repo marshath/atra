@@ -23,13 +23,14 @@
 									
 									<h4 id="search-toggle" class="search-toggle"><a href="#">Advanced Search</a></h4>
 									<div id="search-filter" class="search-filter">
+										<p>Filter by:</p>
 										<?php $taxonomies = get_object_taxonomies('event');
 											foreach($taxonomies as $tax){
 												echo buildSelect($tax);
 											}
 										?>
 									</div>
-									
+					
 									<button type="submit" class="btn event-search-btn">
 										<span class="search-icon" aria-hidden="true" data-icon="&#xe602;"></span>  
 										<span class="search-text">Search</span>

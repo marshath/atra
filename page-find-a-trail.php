@@ -15,10 +15,9 @@
 					
 					</div> <!-- end #trail-maps .trail-maps-header -->
 					
-					<table>
-						<tr><td>Table</td><td>Table</td></tr>
-						<tr><td>Table</td><td>Table</td></tr>
-					</table>
+					<article class="trail-space">
+						<h3>Coming soon.</h3>
+					</article>
 
 					<?php endwhile; else : ?>
 
