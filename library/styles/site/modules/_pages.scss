@@ -266,6 +266,18 @@ figure {
 	}
 }
 
+.trail-space {
+	width:90%;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: ($base*4);
+	h3 {
+		background: $tan;
+		padding: $base 1em;
+		border: 4px dotted darken($tan,5);
+		
+	}
+}
 
 /* --------------------------------- */
 /* ------- Trail News - Blog ------- */
