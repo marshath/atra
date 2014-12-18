@@ -36,7 +36,6 @@
 										<span class="search-text">Search</span>
 									</button>
 								</div>
-								<p><a href="<?php echo home_url(); ?>/race-calendar/submit-a-race/">Submit a race &raquo;</a></p>
 							</fieldset>
 						</form> <!-- end .event-search-form -->
 					
@@ -63,7 +62,6 @@
 							<table>
 								<thead>
 									<tr>
-										<th>ESP</th>
 										<th>Date</th>
 										<th>Name/Link</th>
 										<th>Distance(s)</th>
@@ -83,16 +81,22 @@
 												echo $term->slug; echo " ";
 											} ?>">
 										<td>
-											
-										</td>
-										<td>
 											<?php // Display the Event Date
-											$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
-											echo $endDateText;
-											 // end Event Date ?>
+											$endDateText = get_post_meta($post->ID, 'event_date', true);
+											    if ($endDateText) {
+													$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
+													echo $endDateText;
+												} else {
+													echo "";
+												}
+											// end Event Date ?>
 										</td>
 										<td><?php // Display the Event Name and Link ?>
-											<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+											<p class="<?php // Display the ATRA Approved Event
+											$certs = get_the_terms( $post->ID , 'qualifications' );
+											foreach ( $certs as $cert ) {
+												echo $cert->slug; echo "-icon ";
+											} ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 										</td><?php // end Event Name and Link ?>
 										<td>
 											<ul class="list-commas">
@@ -154,7 +158,6 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<th>ESP</th>
 										<th>Date</th>
 										<th>Name/Link</th>
 										<th>Distance(s)</th>
@@ -172,7 +175,6 @@
 								</tbody>
 								<tfoot>
 									<tr>
-										<th>ESP</th>
 										<th>Date</th>
 										<th>Name/Link</th>
 										<th>Distance(s)</th>

@@ -297,8 +297,7 @@ function my_pre_get_posts( $query )
 
 	// project example
 	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event' ) {
-		$query->set('orderby', 'meta_value_num');  
-		$query->set('meta_key', 'event_date');  
+		$query->set('orderby', 'title');  
 		$query->set('order', 'ASC'); 
 	}
 

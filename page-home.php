@@ -34,16 +34,21 @@
 						<tbody>
 
 						<?php // ******** Display Events ******** 
-							$boardies = array('post_type' => 'event', 'qualifications' => 'meets-atra-event-standards', 'posts_per_page' => 5); 
+							$boardies = array('post_type' => 'event', 'qualifications' => 'meets-atra-event-standards', 'posts_per_page' => 5, 'order_by' => 'rand'); 
 							$boards = new WP_Query( $boardies );
 							while ( $boards->have_posts() ) : $boards->the_post();
 							?>
 								<tr>
 									<td>
 										<?php // Display the Event Date
-										$endDateText = date_i18n("M d", strtotime(get_field('event_date')));
-										echo $endDateText;
-										 // end Event Date ?>
+										$endDateText = get_post_meta($post->ID, 'event_date', true);
+										    if ($endDateText) {
+												$endDateText = date_i18n("M d", strtotime(get_field('event_date')));
+												echo $endDateText;
+											} else {
+													echo "";
+											}
+										// end Event Date ?>
 									</td>
 									<td><?php // Display the Event Name and Link ?>
 										<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>

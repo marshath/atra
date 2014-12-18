@@ -25,13 +25,12 @@ table {
 	tr {
 		border-bottom: 2px solid $gray-light;
 		&:nth-child(odd) td {
-			background: $tan;
+			background: lighten($tan,2);
 		}
 		&:nth-child(even) td {
-			background: lighten($tan,5);
 		}
 		&:hover td {
-			background: lighten($tan,7);
+			background: lighten($tan,8);
 		}
 	}
 	td {
@@ -47,26 +46,29 @@ table {
 	font-size: $font12;
 	th {
 		&:first-child {
-			width:4%;
+			width:13%;
 		}
 		&:nth-child(2) {
-			width:11%;
+			width:44%;
 		}
 		&:nth-child(3) {
-			width:32%;
+			width:10%;
 		}
 		&:nth-child(4) {
-			width:16%;
+			width:17%;
 		}
 		&:nth-child(5) {
-			width:18%;
-		}
-		&:nth-child(6) {
 			width:5%;
 		}
 		&:last-child {
-			width:14%;
+			width:11%;
 		}
+	}
+	td {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		position: relative;
+		z-index: -2;
 	}
 	.featured-race td { /* -------- Event List Qualifications Styling -------- */
 		background: lighten(gold,35);
@@ -74,16 +76,20 @@ table {
 	.atra-race-member {
 		font-weight: bold;
 	}
-	.meets-atra-event-standards td:first-child:before {
-		content: 'Meets ATRA Event Standards';
-		width:31px;
-		height:14px;
-		background: url(library/images/icon-eventsStandards.png) no-repeat center top;
-		text-indent: -9999px;
-		display: block;
-		@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
-			background: url(library/images/icon-eventsStandards-2x.png) no-repeat center top;
-			background-size: 31px 14px;
-		}
+}
+
+.meets-atra-event-standards-icon:before {
+	content: 'Meets ATRA Event Standards';
+	width:31px;
+	height:14px;
+	background: url(library/images/icon-eventsStandards.png) no-repeat center top;
+	text-indent: -9999px;
+	margin: 0 0.75em 0 0;
+	display: inline-block;
+	float: left;
+	box-shadow: 0 0 1em white;
+	@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
+		background: url(library/images/icon-eventsStandards-2x.png) no-repeat center top;
+		background-size: 31px 14px;
 	}
 }
