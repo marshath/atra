@@ -77,7 +77,7 @@
 				//-------------------------------------------------
 				// ----------- Race Calendar Sidebar AD -----------
 				//-------------------------------------------------
-				if ( (is_page('race-calendar')) or (119 == $post->post_parent) ) {
+				if ( (is_page('race-calendar')) or (119 == $post->post_parent) or (is_post_type_archive('event')) ) {
 					if ( is_active_sidebar('sidebar-events') ) : ?>
 					
 						<div class="sidebar-ad">

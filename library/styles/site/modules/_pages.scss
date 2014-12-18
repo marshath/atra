@@ -93,8 +93,8 @@ figure {
 
 .featured-events, .trail-maps {
 	@include column(6);
-	text-align: center;
 	@include clearfix;
+	text-align: center;
 	margin-bottom: $base;
 	border: 8px solid lighten($tan,7);
 	box-shadow: 0 0 6px rgba(45,30,25,0.2);
@@ -266,6 +266,18 @@ figure {
 	}
 }
 
+.trail-space {
+	width:90%;
+	text-align: center;
+	margin: 0 auto;
+	margin-bottom: ($base*4);
+	h3 {
+		background: $tan;
+		padding: $base 1em;
+		border: 4px dotted darken($tan,5);
+		
+	}
+}
 
 /* --------------------------------- */
 /* ------- Trail News - Blog ------- */

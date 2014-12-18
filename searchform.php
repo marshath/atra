@@ -14,6 +14,7 @@
 					
 					<h4 id="search-toggle" class="search-toggle"><a href="#">Advanced Search</a></h4>
 					<div id="search-filter" class="search-filter">
+						<p>Filter by:</p>
 						<?php $taxonomies = get_object_taxonomies('event');
 						    foreach($taxonomies as $tax){
 						        echo buildSelect($tax);
@@ -26,7 +27,7 @@
 						<span class="search-text">Search</span>
 					</button>
 				</div>
-				<p><a href="<?php echo home_url(); ?>/race-calendar/submit-a-race/">Submit a race &raquo;</a></p>
+				<!-- <div class="submit-race"><p><a href="<?php echo home_url(); ?>/race-calendar/submit-a-race/">Submit a race &raquo;</a></p></div> -->
 			</fieldset>
 		</form> <!-- end .event-search-form -->
 		
