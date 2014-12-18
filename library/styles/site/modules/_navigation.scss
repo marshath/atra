@@ -354,30 +354,39 @@ h3#menu-toggle {
 	margin-top:0;
 	padding-left:0;
 	@include clearfix;
+	ul {
+		width: 100%;
+		display: block;
+	}
 	li {
 		float: left;
-		margin: 1em 0;
+		margin: $base 0;
 		border-right: 1px solid $gray;
 		&:last-child {
 			border-right: none;
 		}
-		a {
+		a, .dots {
 			width: 100%;
 			height: 100%;
 			color:$orange;
 			text-decoration: none;
-			padding: 1em 1.5em;
+			padding: ($base*0.5) 1em;
 			display: inline-block;
+		}
+		a {
 			&:hover {
 				background: $tan;
 			}
+		}
+		.dots {
+			color: $gray;
 		}
 	}
 	.current {
 		height: 100%;
 		background: $tan;
 		font-weight: bold;
-		padding: 1em 1.5em;
+		padding: ($base*0.5) 1em;
 		display: inline-block;
 	}
 }
