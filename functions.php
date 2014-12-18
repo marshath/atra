@@ -285,26 +285,23 @@ function bones_register_sidebars() {
 /*************************************************/
 /************* ORDER RACE EVENTS *****************/
 /*************************************************/
+
 add_action('pre_get_posts', 'my_pre_get_posts');
 
-function my_pre_get_posts( $query )
-{
+function my_pre_get_posts( $query ) {
 	// validate
-	if( is_admin() )
-	{
+	if( is_admin() ) {
 		return $query;
 	}
-
 	// project example
 	if( isset($query->query_vars['post_type']) && $query->query_vars['post_type'] == 'event' ) {
 		$query->set('orderby', 'title');  
 		$query->set('order', 'ASC'); 
 	}
-
 	// always return
 	return $query;
- 
 }
+
 
 
 /************************************************************/

@@ -34,6 +34,10 @@ table {
 		}
 	}
 	td {
+		padding-left: 0.5em;
+		padding-right: 0.5em;
+		position: relative;
+		z-index: -2;
 	}
 }
 
@@ -63,12 +67,6 @@ table {
 		&:last-child {
 			width:11%;
 		}
-	}
-	td {
-		padding-left: 0.5em;
-		padding-right: 0.5em;
-		position: relative;
-		z-index: -2;
 	}
 	.featured-race td { /* -------- Event List Qualifications Styling -------- */
 		background: lighten(gold,35);
