@@ -79,15 +79,13 @@ table {
 }
 
 .meets-atra-event-standards-icon:before {
-	content: 'Meets ATRA Event Standards';
+	content: '';
 	width:31px;
 	height:14px;
 	background: url(library/images/icon-eventsStandards.png) no-repeat center top;
-	text-indent: -9999px;
 	margin: 0 0.75em 0 0;
 	display: inline-block;
 	float: left;
-	box-shadow: 0 0 1em white;
 	@media screen and (-webkit-min-device-pixel-ratio: 1.5), screen and (min-device-pixel-ratio: 1.5) {
 		background: url(library/images/icon-eventsStandards-2x.png) no-repeat center top;
 		background-size: 31px 14px;
