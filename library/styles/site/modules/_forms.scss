@@ -151,13 +151,7 @@ textarea {
 		border-bottom-left-radius: 0px;
 	}
 	p {
-		text-align: right;
-		float: right;
-		color: white;
-		margin-top: -($base*1);
-		margin-bottom: ($base*1.5);
-		position:relative;
-		z-index: 50;
+		margin: 0;
 	}
 	a {
 		color:white;
@@ -196,8 +190,7 @@ textarea {
 .search-toggle { /* ------- Advanced Search Toggle ------- */
 	width:100%;
 	font-weight: normal;
-	margin-top: 0;
-	margin-left: ($base*0.6);
+	margin: -($base*0.5) 0 $base ($base*0.6);
 	&:before {
 		content: '';
 		width:1px;
@@ -215,7 +208,15 @@ textarea {
 }
 
 .search-filter {
+	background: lighten($yellow,10);
+	padding: ($base*0.5) 1em;
+	margin: $base 0;
+	@include corner($cornerRadius);
+	box-shadow: inset 4px 2px 2px rgba(0,0,0,0.2), inset -1px -2px 1px lighten($yellow,20), inset 1px 2px 1px rgba(0,0,0,0.2);
 	display: none;
+	select:last-child {
+		margin-bottom: ($base*0);
+	}
 	.active {
 		display: block;
 	}
