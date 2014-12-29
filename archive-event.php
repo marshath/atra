@@ -71,10 +71,12 @@
 									</tr>
 								</thead>
 								<tbody>
-						
-									<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-								
-									<?php // ******** Display Events ******** ?>
+									
+									<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=asc&posts_per_page=50'); // event archive sorting ?>
+									
+									<?php if (have_posts()) : while (have_posts()) : the_post();
+									
+									// ******** Display Events ******** ?>
 									<tr class="<?php // Display the ATRA Approved Event
 											$terms = get_the_terms( $post->ID , 'qualifications' );
 											foreach ( $terms as $term ) {
@@ -167,7 +169,7 @@
 									</tr>
 								</tfoot>
 							</table>
-							<p><b>ESP</b> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
+							<p><img src="<?php bloginfo('template_url'); ?>/library/images/icon-eventsStandards.png" alt="Event Standards Program"> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
 						</div> <?php // end .events-wrap ?>
 						
 						<?php bones_page_navi(); ?>

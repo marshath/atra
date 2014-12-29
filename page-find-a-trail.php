@@ -16,7 +16,8 @@
 					</div> <!-- end #trail-maps .trail-maps-header -->
 					
 					<article class="trail-space">
-						<h3>Coming soon.</h3>
+						<h2>Our trail finder is coming soon.</h2>
+						<h3>In the meantime, you might like using the <a href="http://labs.strava.com/heatmap/#4/-109.54014/39.35239/blue/run">Strava Heat Map</a> to find popular running routes on and off road.</h3>
 					</article>
 
 					<?php endwhile; else : ?>
