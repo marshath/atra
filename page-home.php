@@ -51,7 +51,11 @@
 										// end Event Date ?>
 									</td>
 									<td><?php // Display the Event Name and Link ?>
-										<p><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+										<p class="<?php // Display the ATRA Approved Event
+											$certs = get_the_terms( $post->ID , 'qualifications' );
+											foreach ( $certs as $cert ) {
+												echo $cert->slug; echo "-icon ";
+											} ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
 									</td><?php // end Event Name and Link ?>
 									<td>
 										<ul class="list-commas">
