@@ -332,6 +332,10 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 		@include column(12);
 		@include clearfix;
 	}
+	.byline-cat {
+		text-align: left;
+		padding-left: 50px;
+	}
 }
 
 .news-list {
