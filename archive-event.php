@@ -72,7 +72,7 @@
 								</thead>
 								<tbody>
 									
-									<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=asc&posts_per_page=50'); // event archive sorting ?>
+									<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=desc&posts_per_page=50'); // event archive sorting ?>
 									
 									<?php if (have_posts()) : while (have_posts()) : the_post();
 									
