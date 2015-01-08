@@ -1407,6 +1407,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/library\/styles\/site\/modules\/_pages.scss": {
+		"createSourceMap": 1,
+		"debugStyle": 2,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/styles\/site\/modules\/_pages.scss",
+		"outputAbbreviatedPath": "\/library\/styles\/site\/style.css\/_pages.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/library\/styles\/site\/modules\/_sidebars.scss": {
 		"createSourceMap": 1,
 		"debugStyle": 2,
@@ -1756,6 +1772,15 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
@@ -1770,7 +1795,7 @@
 	"iconImageName": "compass_orange"
 	},
 "projectSettings": {
-	"alwaysUseExternalServer": 0,
+	"alwaysUseExternalServer": 1,
 	"animateCSSInjections": 1,
 	"autoApplyPSLanguageSettingsStyle": 0,
 	"autoprefixerBrowserString": "> 5%, last 4 versions, ff 17, opera 12.1",
