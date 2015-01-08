@@ -12,3 +12,7 @@ a {
 		color: darken($link,10);
 	}
 }
+
+.event-links .current-page {
+		@extend a:hover;
+}
