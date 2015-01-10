@@ -119,7 +119,7 @@
 									    } // end Qualifications ?>">
 										<td>
 											<?php // Display the Event Date
-											$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
+											$endDateText = date_i18n("M d, Y", strtotime(get_field($eventdate)));
 											echo $endDateText;
 											 // end Event Date ?>
 										</td>
