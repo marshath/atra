@@ -13,7 +13,7 @@
 					<div id="event-search" class="event-search">
 						
 						<h1>Find a Trail Race</h1>
-						<?php // Display the advanced search form -- also in searchform.php ?>
+						<?php // ---- Display searchform.php ----- ?>
 						<form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
 							<fieldset>
 								<input type="hidden" value="1" name="sentence" />
@@ -57,8 +57,11 @@
 						//----------------------------------------
 						// ----------- Table of Events -----------
 						//---------------------------------------- ?>
+					<div class="event-links">
+						<p>View: <a href="/race-calendar/">Upcoming Events</a> | <a href="/race-calendar/future-events/"><?php $todayear = date("Y"); $dateyear = date("Y", strtotime($todayear . "+1 Year")); echo $dateyear; ?> Events</a> | <a href="/event/" class="current-page">Historical Events Archive</a></p>
+					</div> <!-- end .event-links -->
 						<div class="events-wrap">
-							<h2>Complete Event Catalog</h2>
+							<h2>Historical Events Archive</h2>
 							<table>
 								<thead>
 									<tr>
@@ -72,7 +75,7 @@
 								</thead>
 								<tbody>
 									
-									<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=desc&posts_per_page=50'); // event archive sorting ?>
+									<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=desc&posts_per_page=100'); // event archive sorting ?>
 									
 									<?php if (have_posts()) : while (have_posts()) : the_post();
 									
@@ -186,7 +189,7 @@
 									</tr>
 								</tfoot>
 							</table>
-							<p><b>ESP</b> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
+							<p><img src="<?php bloginfo('template_url'); ?>/library/images/icon-eventsStandards.png" alt="Event Standards Program"> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
 						</div> <?php // end .events-wrap ?>
 
 						<article id="post-not-found" class="hentry">
