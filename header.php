@@ -46,7 +46,7 @@
 	<?php // end of wordpress head ?>
 
 </head>
-<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+
 <body <?php body_class(); ?>>
 
 	<?php // Insert Google Tag Manager Here ?>
@@ -55,7 +55,6 @@
 	<div id="container" class="page-wrap">
 
 		<header class="header" role="banner">
-		
 		
 		<h3 id="menu-toggle"><a href="#"><span class="menu-icon" aria-hidden="true" data-icon="&#xe603;"></span> <span class="menu-text">Menu</span></a></h3>
 
