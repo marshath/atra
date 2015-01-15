@@ -62,11 +62,14 @@
 					// ----------- Table of Events -----------
 					//---------------------------------------- ?>
 					<div class="event-links">
-						<p>View: <a href="/race-calendar/">Upcoming Events</a> | <a href="/race-calendar/future-events/" class="current-page"><?php $todayear = date("Y"); $dateyear = date("Y", strtotime($todayear . "+1 Year")); echo $dateyear; ?> Events</a> | <a href="/event/">Historical Events Archive</a></p>
+						<p>View: <a href="/race-calendar/">Upcoming Events</a> | <a href="/race-calendar/future-events/" class="current-page"><?php $todayear = date("Y"); $dateyear = date("Y", strtotime($todayear . "+1 Year")); echo $dateyear; ?> Events</a> | <a href="/race-calendar/historical-events-archive/">Historical Events Archive</a></p>
 					</div> <!-- end .event-links -->
 					
 					<div class="events-wrap">
+						
 						<h2><?php echo $dateyear; ?> Events</h2>
+						<?php get_template_part('content', 'race-legend'); // include the race legend ?>
+					
 						<table>
 							<thead>
 								<tr>
@@ -200,7 +203,7 @@
 							</tfoot>
 						</table>
 						
-						<p><img src="<?php bloginfo('template_url'); ?>/library/images/icon-eventsStandards.png" alt="Event Standards Program"> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
+						<?php get_template_part('content', 'race-legend'); // include the race legend ?>
 					
 					<?php wp_reset_postdata(); // end Display Events ?>
 					</div> <?php // end .events-wrap ?>

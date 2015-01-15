@@ -1,5 +1,5 @@
 <?php /*
-* EVENT CALENDAR PAGE
+* HISTORICAL EVENTS CALENDAR PAGE
 */ ?>
 
 <?php get_header(); ?>
@@ -11,10 +11,34 @@
 				<div id="main" class="wrap-main" role="main">
 
 					<div id="event-search" class="event-search">
-
+						
 						<h1>Find a Trail Race</h1>
-						<?php get_search_form(); ?>
-
+						<?php // ---- Display searchform.php ----- ?>
+						<form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
+							<fieldset>
+								<input type="hidden" value="1" name="sentence" />
+								<label for="screen-reader">Search for a trail race.</label>
+								<div class="event-search-wrap">
+									<input type="text" placeholder="<?php the_search_query(); ?>" id="s" name="s" class="event-search-input" value="">
+									
+									<h4 id="search-toggle" class="search-toggle"><a href="#">Advanced Search</a></h4>
+									<div id="search-filter" class="search-filter">
+										<p>Filter by:</p>
+										<?php $taxonomies = get_object_taxonomies('event');
+											foreach($taxonomies as $tax){
+												echo buildSelect($tax);
+											}
+										?>
+									</div>
+					
+									<button type="submit" class="btn event-search-btn">
+										<span class="search-icon" aria-hidden="true" data-icon="&#xe602;"></span>  
+										<span class="search-text">Search</span>
+									</button>
+								</div>
+							</fieldset>
+						</form> <!-- end .event-search-form -->
+					
 					</div> <!-- end #event-search .event-search -->
 
 					<?php 
@@ -36,12 +60,12 @@
 					// ----------- Table of Events -----------
 					//---------------------------------------- ?>
 					<div class="event-links">
-						<p>View: <a href="/race-calendar/" class="current-page">Upcoming Events</a> | <a href="/race-calendar/future-events/"><?php $todayear = date("Y"); $dateyear = date("Y", strtotime($todayear . "+1 Year")); echo $dateyear; ?> Events</a> | <a href="/race-calendar/historical-events-archive/">Historical Events Archive</a></p>
+						<p>View: <a href="/race-calendar/">Upcoming Events</a> | <a href="/race-calendar/future-events/"><?php $todayear = date("Y"); $dateyear = date("Y", strtotime($todayear . "+1 Year")); echo $dateyear; ?> Events</a> | <a href="/race-calendar/historical-events-archive/" class="current-page">Historical Events Archive</a></p>
 					</div> <!-- end .event-links -->
 					
 					<div class="events-wrap">
 						
-						<h2>Upcoming Events</h2>
+						<h2>Historical Events Archive</h2>
 						<?php get_template_part('content', 'race-legend'); // include the race legend ?>
 						<table>
 							<thead>
@@ -64,8 +88,8 @@
 							$today = date("Ymd");
 							//'BETWEEN' comparison with 'type' date only works with dates in format Ymd. 
 							//See http://codex.wordpress.org/Class_Reference/WP_Query#Custom_Field_Parameters 
-							$date1 = date("Ymd", strtotime($today . "-1 Week")); 
-							$date2 = date("Ymd", strtotime($today . "+51 Weeks"));
+							$date1 = date("Ymd", strtotime($today . "-50 Years")); 
+							$date2 = date("Ymd", strtotime($today . "-1 Week"));
 							
 							$query_args = array( 
 								'post_type' => 'event',
@@ -82,7 +106,7 @@
 									)
 								)
 							);
-							  
+							
 							//**********************************
 							// create a new instance of WP_Query
 							//**********************************
@@ -199,7 +223,7 @@
 					</div> <?php // end .events-wrap ?>
 
 					<?php if ($the_query->max_num_pages > 1) { // check if the max number of pages is greater than 1  ?>
-					  <?php bones_page_navi('','',$the_query); ?>
+					  <?php bones_page_navi(); ?>
 					<?php } ?>
 
 				</div> <?php // end #main .wrap-main ?>

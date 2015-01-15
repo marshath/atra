@@ -15,7 +15,7 @@
 				<div id="featured" class="featured-events">
 
 					<h2>Featured Events</h2>
-					<p>Races that meet the <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">ATRA events standards</a>.</p>
+					<?php get_template_part('content', 'race-legend'); // include the race legend ?>
 
 					<?php 
 					//----------------------------------------
@@ -34,11 +34,49 @@
 						<tbody>
 
 						<?php // ******** Display Events ******** 
-							$boardies = array('post_type' => 'event', 'qualifications' => 'meets-atra-event-standards', 'posts_per_page' => 5, 'orderby' => 'rand'); 
+							$today = date("Ymd");
+							//'BETWEEN' comparison with 'type' date only works with dates in format Ymd. 
+							//See http://codex.wordpress.org/Class_Reference/WP_Query#Custom_Field_Parameters 
+							$date1 = date("Ymd", strtotime($today . "+3 Weeks")); 
+							$date2 = date("Ymd", strtotime($today . "+26 Weeks"));
+							
+							$boardies = array( 
+								'post_type' => 'event',
+								'posts_per_page' => 5,
+								'orderby' => 'meta_value',
+								'order' => 'ASC',
+								'meta_query' => array( 
+									array( 
+										'key' => 'event_date',
+										'value' => array($date1,$date2),
+										'type' => 'date',
+										'compare' => 'BETWEEN'
+									)
+								),
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'qualifications',
+										'field' => 'slug',
+										'terms' => array('meets-atra-event-standards','atra-race-member')
+									)
+								)
+							);
+							
 							$boards = new WP_Query( $boardies );
 							while ( $boards->have_posts() ) : $boards->the_post();
 							?>
-								<tr>
+								<tr class="<?php // Display the ATRA Approved Event
+										$terms = get_the_terms( $post->ID, 'qualifications'); // Display the Qualifications
+									    if ($terms) {
+									        $terms_slugs = array();
+									        foreach ( $terms as $term ) {
+									            $terms_slugs[] = $term->slug;
+									        }
+									        $series = $terms_slugs[0];      
+									        echo "{$series} ";
+									    } else {
+									        echo "";
+									    } // end Qualifications ?>">
 									<td>
 										<?php // Display the Event Date
 										$endDateText = get_post_meta($post->ID, 'event_date', true);

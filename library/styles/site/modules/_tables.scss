@@ -68,12 +68,17 @@ table {
 			width:11%;
 		}
 	}
-	.featured-race td { /* -------- Event List Qualifications Styling -------- */
-		background: lighten(gold,35);
-	}
-	.atra-race-member {
-		font-weight: bold;
-	}
+}
+
+.featured-events .race-legend {
+	font-size: $font12;
+}
+
+.featured-race td { /* -------- Event List Qualifications Styling -------- */
+	background: lighten(gold,35);
+}
+.atra-race-member {
+	font-weight: bold;
 }
 
 .meets-atra-event-standards-icon:before {

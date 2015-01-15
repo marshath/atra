@@ -240,24 +240,90 @@ PAGE NAVI
 *********************/
 
 // Numeric Page Navi (built into the theme by default)
-function bones_page_navi() {
-  global $wp_query;
-  $bignum = 999999999;
-  if ( $wp_query->max_num_pages <= 1 )
-    return;
-  echo '<nav class="pagination">';
-  echo paginate_links( array(
-    'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
-    'format'       => '',
-    'current'      => max( 1, get_query_var('paged') ),
-    'total'        => $wp_query->max_num_pages,
-    'prev_text'    => '&larr;',
-    'next_text'    => '&rarr;',
-    'type'         => 'list',
-    'end_size'     => 3,
-    'mid_size'     => 3
-  ) );
-  echo '</nav>';
+//function bones_page_navi() {
+//  global $wp_query;
+//  $bignum = 999999999;
+//  if ( $wp_query->max_num_pages <= 1 )
+//    return;
+//  echo '<nav class="pagination">';
+//  echo paginate_links( array(
+//    'base'         => str_replace( $bignum, '%#%', esc_url( get_pagenum_link($bignum) ) ),
+//    'format'       => '',
+//    'current'      => max( 1, get_query_var('paged') ),
+//    'total'        => $wp_query->max_num_pages,
+//    'prev_text'    => '&larr;',
+//    'next_text'    => '&rarr;',
+//    'type'         => 'list',
+//    'end_size'     => 3,
+//    'mid_size'     => 3
+//  ) );
+//  echo '</nav>';
+//} /* end page navi */
+
+
+
+function bones_page_navi($before = '', $after = '', $custom_query = "") {
+    global $wpdb, $wp_query;
+
+    //Check for custom query variable, if set, assign to navi_query, if not, assign main wp_query to navi_query
+    if (isset($custom_query) && $custom_query != '') {
+        $navi_query = $custom_query;
+    } else {
+        $navi_query = $wp_query;
+    }
+
+    //change $posts_per_page variable to be set with the new navi_query
+    $posts_per_page = intval($navi_query->query_vars['posts_per_page']);
+    $paged = intval(get_query_var('paged'));
+    $numposts = $navi_query->found_posts; //update with navi_query
+    $max_page = $navi_query->max_num_pages; //update with navi_query
+    if ( $numposts <= $posts_per_page ) { return; }
+    if(empty($paged) || $paged == 0) {
+        $paged = 1;
+    }
+    $pages_to_show = 7;
+    $pages_to_show_minus_1 = $pages_to_show-1;
+    $half_page_start = floor($pages_to_show_minus_1/2);
+    $half_page_end = ceil($pages_to_show_minus_1/2);
+    $start_page = $paged - $half_page_start;
+    if($start_page <= 0) {
+        $start_page = 1;
+    }
+    $end_page = $paged + $half_page_end;
+    if(($end_page - $start_page) != $pages_to_show_minus_1) {
+        $end_page = $start_page + $pages_to_show_minus_1;
+    }
+    if($end_page > $max_page) {
+        $start_page = $max_page - $pages_to_show_minus_1;
+        $end_page = $max_page;
+    }
+    if($start_page <= 0) {
+        $start_page = 1;
+    }
+
+    echo $before.'<nav class="pagination"><ul class="page_numbers">'."";
+    if ($start_page >= 2 && $pages_to_show < $max_page) {
+        $first_page_text = __( "First", 'bonestheme' );
+        echo '<li><a class="page-numbers" href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
+    }
+    echo '<li>';
+	previous_posts_link('&laquo;');
+    echo '</li>';
+    for($i = $start_page; $i  <= $end_page; $i++) {
+        if($i == $paged) {
+            echo '<li><span class="page-numbers current">'.$i.'</span></li>';
+        } else {
+            echo '<li><a class="page-numbers" href="'.get_pagenum_link($i).'">'.$i.'</a></li>';
+        }
+    }
+    echo '<li>';
+	next_posts_link('&raquo;');
+    echo '</li>';
+    if ($end_page < $max_page) {
+        $last_page_text = __( "Last", 'bonestheme' );
+        echo '<li><a class="next page-numbers" href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
+    }
+    echo '</ul></nav>'.$after."";
 } /* end page navi */
 
 
