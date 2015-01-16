@@ -262,7 +262,7 @@ PAGE NAVI
 
 
 
-function bones_page_navi($before = '', $after = '', $custom_query = "") {
+function bones_page_navi($before = '', $after = '', $custom_query = '') {
     global $wpdb, $wp_query;
 
     //Check for custom query variable, if set, assign to navi_query, if not, assign main wp_query to navi_query
@@ -282,9 +282,9 @@ function bones_page_navi($before = '', $after = '', $custom_query = "") {
         $paged = 1;
     }
     $pages_to_show = 7;
-    $pages_to_show_minus_1 = $pages_to_show-1;
-    $half_page_start = floor($pages_to_show_minus_1/2);
-    $half_page_end = ceil($pages_to_show_minus_1/2);
+    $pages_to_show_minus_1 = $pages_to_show - 1;
+    $half_page_start = floor($pages_to_show_minus_1 / 2);
+    $half_page_end = ceil($pages_to_show_minus_1 / 2);
     $start_page = $paged - $half_page_start;
     if($start_page <= 0) {
         $start_page = 1;
@@ -301,15 +301,15 @@ function bones_page_navi($before = '', $after = '', $custom_query = "") {
         $start_page = 1;
     }
 
-    echo $before.'<nav class="pagination"><ul class="page_numbers">'."";
+    echo $before.'<nav class="pagination"><ul class="page_numbers">'.'';
     if ($start_page >= 2 && $pages_to_show < $max_page) {
-        $first_page_text = __( "First", 'bonestheme' );
+        $first_page_text = __( 'First', 'bonestheme' );
         echo '<li><a class="page-numbers" href="'.get_pagenum_link().'" title="'.$first_page_text.'">'.$first_page_text.'</a></li>';
     }
     echo '<li>';
 	previous_posts_link('&laquo;');
     echo '</li>';
-    for($i = $start_page; $i  <= $end_page; $i++) {
+    for($i = $start_page; $i <= $end_page; $i++) {
         if($i == $paged) {
             echo '<li><span class="page-numbers current">'.$i.'</span></li>';
         } else {
@@ -317,13 +317,13 @@ function bones_page_navi($before = '', $after = '', $custom_query = "") {
         }
     }
     echo '<li>';
-	next_posts_link('&raquo;');
+	next_posts_link('&raquo;', $max_page);
     echo '</li>';
     if ($end_page < $max_page) {
-        $last_page_text = __( "Last", 'bonestheme' );
+        $last_page_text = __( 'Last', 'bonestheme' );
         echo '<li><a class="next page-numbers" href="'.get_pagenum_link($max_page).'" title="'.$last_page_text.'">'.$last_page_text.'</a></li>';
     }
-    echo '</ul></nav>'.$after."";
+    echo '</ul></nav>'.$after.'';
 } /* end page navi */
 
 
@@ -342,7 +342,5 @@ function bones_excerpt_more($more) {
 	// edit here if you like
 	return '...  <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __( 'Read ', 'bonestheme' ) . get_the_title($post->ID).'">'. __( 'Read more &raquo;', 'bonestheme' ) .'</a>';
 }
-
-
 
 ?>
