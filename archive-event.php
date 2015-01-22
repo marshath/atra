@@ -13,31 +13,7 @@
 					<div id="event-search" class="event-search">
 						
 						<h1>Find a Trail Race</h1>
-						<?php // ---- Display searchform.php ----- ?>
-						<form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
-							<fieldset>
-								<input type="hidden" value="1" name="sentence" />
-								<label for="screen-reader">Search for a trail race.</label>
-								<div class="event-search-wrap">
-									<input type="text" placeholder="<?php the_search_query(); ?>" id="s" name="s" class="event-search-input" value="">
-									
-									<h4 id="search-toggle" class="search-toggle"><a href="#">Advanced Search</a></h4>
-									<div id="search-filter" class="search-filter">
-										<p>Filter by:</p>
-										<?php $taxonomies = get_object_taxonomies('event');
-											foreach($taxonomies as $tax){
-												echo buildSelect($tax);
-											}
-										?>
-									</div>
-					
-									<button type="submit" class="btn event-search-btn">
-										<span class="search-icon" aria-hidden="true" data-icon="&#xe602;"></span>  
-										<span class="search-text">Search</span>
-									</button>
-								</div>
-							</fieldset>
-						</form> <!-- end .event-search-form -->
+						<?php get_search_form(); ?>
 					
 					</div> <!-- end #event-search .event-search -->
 						
@@ -46,162 +22,66 @@
 					// ----------- Race Calendar Banner -----------
 					//---------------------------------------------
 					if ( is_active_sidebar( 'sidebar-events' ) ) : ?>
-					
 						<div class="banner-ad">
 							<?php dynamic_sidebar( 'banner-events' ); ?>
 						</div>
-
 					<?php endif; ?>
 						
 						<?php 
 						//----------------------------------------
 						// ----------- Table of Events -----------
 						//---------------------------------------- ?>
-					<div class="event-links">
-						<p>View: <a href="/race-calendar/">Upcoming Events</a> | <a href="/race-calendar/future-events/"><?php $todayear = date("Y"); $dateyear = date("Y", strtotime($todayear . "+1 Year")); echo $dateyear; ?> Events</a> | <a href="/event/" class="current-page">Historical Events Archive</a></p>
-					</div> <!-- end .event-links -->
+						
+						<?php get_template_part('content', 'event-breadcrumb'); // include the event breadcrumb trail ?>
+						
 						<div class="events-wrap">
-							<h2>Historical Events Archive</h2>
+							<h2><?php get_template_part('content', 'event-title'); // include the event list title ?></h2>
+							<?php get_template_part('content', 'event-legend'); // include the event legend ?>
+							
 							<table>
 								<thead>
-									<tr>
-										<th>Date</th>
-										<th>Name/Link</th>
-										<th>Distance(s)</th>
-										<th>Type</th>
-										<th>State</th>
-										<th>Country</th>
-									</tr>
+									<?php get_template_part('content', 'event-table-head'); // include the event table head row ?>
 								</thead>
 								<tbody>
 									
-									<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=desc&posts_per_page=100'); // event archive sorting ?>
-									
-									<?php if (have_posts()) : while (have_posts()) : the_post();
-									
-									// ******** Display Events ******** ?>
-									<tr class="<?php // Display the ATRA Approved Event
-											$terms = get_the_terms( $post->ID , 'qualifications' );
-											foreach ( $terms as $term ) {
-												echo $term->slug; echo " ";
-											} ?>">
-										<td>
-											<?php // Display the Event Date
-											$endDateText = get_post_meta($post->ID, 'event_date', true);
-											    if ($endDateText) {
-													$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
-													echo $endDateText;
-												} else {
-													echo "";
-												}
-											// end Event Date ?>
-										</td>
-										<td><?php // Display the Event Name and Link ?>
-											<p class="<?php // Display the ATRA Approved Event
-											$certs = get_the_terms( $post->ID , 'qualifications' );
-											foreach ( $certs as $cert ) {
-												echo $cert->slug; echo "-icon ";
-											} ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-										</td><?php // end Event Name and Link ?>
-										<td>
-											<ul class="list-commas">
-												<?php $terms = get_the_terms( $post->ID, 'distances'); // Display the Event Distance
-											    if ($terms) {
-											        $terms_slugs = array();
-											        foreach ( $terms as $term ) {
-											            $terms_slugs[] = $term->name;
-											        }
-											        $series = $terms_slugs[0];      
-											        echo "<li>{$series}</li>";
-											    } else {
-											        echo "";
-												} // end Event Distance
-												// Display the Other Distances 1, if available
-												$o1dist = get_post_meta($post->ID, 'other_distance1', true);
-												if ($o1dist) {
-													echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance1', true ) ); echo "</li>";
-												} else {
-													echo "";
-												} // end Other Distances 1
-												// Display the Other Distances 2, if available
-												$o2dist = get_post_meta($post->ID, 'other_distance2', true);
-												if ($o2dist) {
-													echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance2', true ) ); echo "</li>"; 
-												} else {
-													echo "";
-												} // end Other Distances 2 ?>
-											</ul><?php // end Event Distance ?>
-										</td>
-										<td>
-											<?php // Display the Event Type
-											echo "<p>"; echo get_field('event_type'); echo "</p>";
-											// end Event Type ?>
-										</td>
-										<td>
-											<span class="uppercase"><?php // Make the State Slug Uppercase
-												$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
-												if ($terms) {
-													$terms_slugs = array();
-													foreach ( $terms as $term ) {
-														$terms_slugs[] = $term->slug;
-													}
-													$series = $terms_slugs[0];
-													echo "{$series}";
-												} else {
-													echo "";
-												} // end Display State?>
-											</span>
-										</td>
-										<td>
-											<?php // Display the Event Country
-											echo "<p>"; echo get_field('event_country');
-											 // end Event Country ?>
-										</td>
-									</tr>
+								<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=asc&posts_per_page=100'); // event archive sorting ?>
 								
-									<?php endwhile; ?>
+								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+									<?php get_template_part('content', 'event-table'); // include the repeatable event list table rows ?>
+								<?php endwhile; ?>
+									
 								</tbody>
 								<tfoot>
-									<tr>
-										<th>Date</th>
-										<th>Name/Link</th>
-										<th>Distance(s)</th>
-										<th>Type</th>
-										<th>State</th>
-										<th>Country</th>
-									</tr>
+									<?php get_template_part('content', 'event-table-head'); // include the event table head row ?>
 								</tfoot>
 							</table>
-							<p><img src="<?php bloginfo('template_url'); ?>/library/images/icon-eventsStandards.png" alt="Event Standards Program"> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
+							
+							<?php get_template_part('content', 'event-legend'); // include the event legend ?>
 						</div> <?php // end .events-wrap ?>
 						
 						<?php bones_page_navi(); ?>
-						<?php else : // do not delete - closes table from above ?>
+						
+								<?php else : // do not delete - closes table from above ?>
+									
 								</tbody>
 								<tfoot>
-									<tr>
-										<th>Date</th>
-										<th>Name/Link</th>
-										<th>Distance(s)</th>
-										<th>Type</th>
-										<th>State</th>
-										<th>Country</th>
-									</tr>
+									<?php get_template_part('content', 'event-table-head'); // include the event table head row ?>
 								</tfoot>
 							</table>
-							<p><img src="<?php bloginfo('template_url'); ?>/library/images/icon-eventsStandards.png" alt="Event Standards Program"> = Meets ATRA's <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">Event Standards Program</a> requirements.</p>
+							
+							<?php get_template_part('content', 'event-legend'); // include the event legend ?>
 						</div> <?php // end .events-wrap ?>
 
 						<article id="post-not-found" class="hentry">
 							<header class="page-title">
-								<h1><?php _e( 'Oops, no post found!', 'bonestheme' ); ?></h1>
+								<h1><?php _e( 'Oops, no events were found!', 'bonestheme' ); ?></h1>
 							</header>
 							<section class="entry-content">
 								<p><?php _e( 'Uh Oh. Try double checking things or search for something different.', 'bonestheme' ); ?></p>
 							</section>
 						</article>
 
-						<?php endif; ?>
+								<?php endif; ?>
 
 					</div> <?php // end #main ?>
 

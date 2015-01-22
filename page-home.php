@@ -15,7 +15,7 @@
 				<div id="featured" class="featured-events">
 
 					<h2>Featured Events</h2>
-					<p>Races that meet the <a href="<?php echo home_url(); ?>/about-atra/events-standards-program/">ATRA events standards</a>.</p>
+					<?php get_template_part('content', 'event-legend'); // include the race legend ?>
 
 					<?php 
 					//----------------------------------------
@@ -23,90 +23,44 @@
 					//---------------------------------------- ?>
 					<table>
 						<thead>
-							<tr>
-								<th>Date</th>
-								<th>Name/Link</th>
-								<th>Distance(s)</th>
-								<th>Type</th>
-								<th>State</th>
-							</tr>
+							<?php get_template_part('content', 'event-table-head'); // include the event list table head ?>
 						</thead>
 						<tbody>
 
 						<?php // ******** Display Events ******** 
-							$boardies = array('post_type' => 'event', 'qualifications' => 'meets-atra-event-standards', 'posts_per_page' => 5, 'orderby' => 'rand'); 
+							$today = date("Ymd");
+							//'BETWEEN' comparison with 'type' date only works with dates in format Ymd. 
+							//See http://codex.wordpress.org/Class_Reference/WP_Query#Custom_Field_Parameters 
+							$date1 = date("Ymd", strtotime($today . "+3 Weeks")); 
+							$date2 = date("Ymd", strtotime($today . "+26 Weeks"));
+							
+							$boardies = array( 
+								'post_type' => 'event',
+								'posts_per_page' => 5,
+								'orderby' => 'meta_value',
+								'order' => 'ASC',
+								'meta_query' => array( 
+									array( 
+										'key' => 'event_date',
+										'value' => array($date1,$date2),
+										'type' => 'date',
+										'compare' => 'BETWEEN'
+									)
+								),
+								'tax_query' => array(
+									array(
+										'taxonomy' => 'qualifications',
+										'field' => 'slug',
+										'terms' => array('meets-atra-event-standards','atra-race-member')
+									)
+								)
+							);
+							
 							$boards = new WP_Query( $boardies );
-							while ( $boards->have_posts() ) : $boards->the_post();
-							?>
-								<tr>
-									<td>
-										<?php // Display the Event Date
-										$endDateText = get_post_meta($post->ID, 'event_date', true);
-										    if ($endDateText) {
-												$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
-												echo $endDateText;
-											} else {
-													echo "";
-											}
-										// end Event Date ?>
-									</td>
-									<td><?php // Display the Event Name and Link ?>
-										<p class="<?php // Display the ATRA Approved Event
-											$certs = get_the_terms( $post->ID , 'qualifications' );
-											foreach ( $certs as $cert ) {
-												echo $cert->slug; echo "-icon ";
-											} ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
-									</td><?php // end Event Name and Link ?>
-									<td>
-										<ul class="list-commas">
-											<?php $terms = get_the_terms( $post->ID, 'distances'); // Display the Event Distance
-										    if ($terms) {
-										        $terms_slugs = array();
-										        foreach ( $terms as $term ) {
-										            $terms_slugs[] = $term->name;
-										        }
-										        $series = $terms_slugs[0];      
-										        echo "<li>{$series}</li>";
-										    } else {
-										        echo "";
-											} // end Event Distance
-											// Display the Other Distances 1, if available
-											$o1dist = get_post_meta($post->ID, 'other_distance1', true);
-											if ($o1dist) {
-												echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance1', true ) ); echo "</li>";
-											} else {
-												echo "";
-											} // end Other Distances 1
-											// Display the Other Distances 2, if available
-											$o2dist = get_post_meta($post->ID, 'other_distance2', true);
-											if ($o2dist) {
-												echo "<li>"; echo esc_html( get_post_meta( get_the_ID(), 'other_distance2', true ) ); echo "</li>"; 
-											} else {
-												echo "";
-											} // end Other Distances 2 ?>
-										</ul><?php // end Event Distance ?>
-									</td>
-									<td>
-										<?php // Display the Event Type
-										echo "<p>"; echo get_field('event_type'); echo "</p>";
-										// end Event Type ?>
-									</td>
-									<td>
-										<span class="uppercase"><?php // Make the State Slug Uppercase
-											$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
-											if ($terms) {
-												$terms_slugs = array();
-												foreach ( $terms as $term ) {
-													$terms_slugs[] = $term->slug;
-												}
-												$series = $terms_slugs[0];      
-												echo "{$series}";
-											} else {
-												echo "";
-											} // end Display State?>
-										</span>
-									</td>
-								</tr>
+							while ( $boards->have_posts() ) : $boards->the_post(); ?>
+							
+								<?php get_template_part('content', 'event-table'); // include the event list table head ?>
+								
 							<?php endwhile; ?>
 						<?php wp_reset_postdata(); // end Display Events ?>
 

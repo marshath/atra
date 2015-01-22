@@ -3,7 +3,7 @@
 	// ----------- Race Calendar Callout Search -----------
 	//-----------------------------------------------------
 	
-	if (is_page( array('home', '119')) or (is_page_template('archive-event')) ) { // display advanced search form -- also in archive-event.php ?>
+	if (is_page( array('home', 'race-calendar', 'future-events', 'historical-events-archive')) or (is_post_type_archive('event')) ) { // display advanced search form -- also in archive-event.php ?>
 		
 		<form role="search" method="get" class="event-search-form" action="<?php echo home_url( '/event/' ); ?>">
 			<fieldset>
