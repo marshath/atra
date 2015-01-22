@@ -97,7 +97,7 @@
 			 style="background: url('<?php echo $page_bg_image_url; ?>') center center;	background-size: cover;"
 			<?php } // Closing homepage background
 			
-			if (is_page(array('home', 'race-calendar', 'future-events', 'historical-events-archive')) or (is_post_type_archive('event')) ) {
+			if (is_page(array('home', 'race-calendar', 'future-events', 'historical-events-archive', 'find-a-trail')) or (is_post_type_archive('event')) ) {
 				$bgimages=array('post_type'=>'splash', 'locations' => 'event-page', 'orderby'=>'rand', 'posts_per_page'=>'1');
 				$bgimg=new WP_Query($bgimages);
 				while ($bgimg->have_posts()) : $bgimg->the_post();

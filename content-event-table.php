@@ -18,9 +18,21 @@
 								    } // end Qualifications ?>">
 									<td>
 										<?php // Display the Event Date
-										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
-										echo $endDateText;
-										 // end Event Date ?>
+										if ( (is_page('future-events')) ) {
+											
+											$today = date("Y"); // get the date and format for next years column title
+											$date1 = date("Y", strtotime($today . "+1 Year"));
+											$eventdate = 'event_date_' . $date1;
+											
+											$endDateText = date_i18n("M d, Y", strtotime(get_field($eventdate)) );
+											echo $endDateText;
+											
+										} else {
+											
+											$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
+											echo $endDateText;
+											
+										} // end Event Date ?>
 									</td>
 									<td><?php // Display the Event Name and Link ?>
 										<p class="<?php // Display the ATRA Approved Event

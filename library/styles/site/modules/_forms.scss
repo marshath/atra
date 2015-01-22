@@ -343,6 +343,14 @@ textarea {
 	padding-left: 2em;
 }
 
+.gfield_date_dropdown_month, .gfield_date_dropdown_day, .gfield_date_dropdown_year {
+	width:30%;
+	.ginput_container {
+		margin-right: 3%;
+		float: left;
+	}
+}
+
 @include bp(tablet-h) { /* mobile H and below layout */
 	.gfield_checkbox, .gfield_radio {
 		li {

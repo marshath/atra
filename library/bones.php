@@ -261,8 +261,7 @@ PAGE NAVI
 //} /* end page navi */
 
 
-
-function bones_page_navi($before = '', $after = '', $custom_query = '') {
+function bones_page_navi() {
     global $wpdb, $wp_query;
 
     //Check for custom query variable, if set, assign to navi_query, if not, assign main wp_query to navi_query
@@ -271,7 +270,6 @@ function bones_page_navi($before = '', $after = '', $custom_query = '') {
     } else {
         $navi_query = $wp_query;
     }
-
     //change $posts_per_page variable to be set with the new navi_query
     $posts_per_page = intval($navi_query->query_vars['posts_per_page']);
     $paged = intval(get_query_var('paged'));

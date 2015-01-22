@@ -29,8 +29,8 @@
 							// // is current page the Historical Events Archive
 							//*********************************************** ?>
 							<? // <a href="/race-calendar/historical-events-archive/" ?>
-							<a href="/event/"
-								<?php if (is_page(array('historical-events-archive')) or (is_post_type_archive('event')) ) {
+							<a href="/race-calendar/historical-events-archive/"
+								<?php if (is_page('historical-events-archive')) {
 									echo 'class="current-page"';
 								} ?>
 							>Historical Events Archive</a>

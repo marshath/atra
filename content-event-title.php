@@ -23,11 +23,11 @@ elseif (is_page('future-events')) {
 // is current page the Historical Events Archive
 //***********************************************
 elseif (is_page('historical-events-archive')) {
-	echo 'Search Results';
+	echo 'Historical Events Archive';
 }
 //*******************************************
 // else the page is the Event Archives
 //***********************************************
 else {
-	echo 'Historical Events Archive';
+	echo 'Search Results';
 } ?>

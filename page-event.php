@@ -59,7 +59,7 @@ Template Name: Event Calendar Pages
 									
 									$query_args = array( 
 										'post_type' => 'event',
-										'posts_per_page' => -1,
+										'posts_per_page' => 100,
 										'orderby' => 'meta_value',
 										'order' => 'ASC',
 										'paged' => $paged,
@@ -82,7 +82,7 @@ Template Name: Event Calendar Pages
 									
 									$query_args= array( 
 										'post_type' => 'event',
-										'posts_per_page' => -1,
+										'posts_per_page' => 100,
 										'orderby' => 'meta_value',
 										'order' => 'ASC',
 										'paged' => $paged,
@@ -104,7 +104,7 @@ Template Name: Event Calendar Pages
 									
 									$query_args = array( 
 										'post_type' => 'event',
-										'posts_per_page' => 2,
+										'posts_per_page' => 100,
 										'orderby' => 'meta_value',
 										'order' => 'ASC',
 										'paged' => $paged,
@@ -146,10 +146,28 @@ Template Name: Event Calendar Pages
 						<?php get_template_part('content', 'event-legend'); // include the event legend ?>
 					
 					</div> <?php // end .events-wrap ?>
-
-                    <?php if (function_exists('bones_page_navi')) { ?>
-                            <?php bones_page_navi('','',$the_query); ?>
-                    <?php }  ?>
+                    
+                    <?php if ($the_query->max_num_pages > 1) { // check if the max number of pages is greater than 1 ?>
+                        <?php global $the_query; // Add pagination to the list
+							
+						$big = 999999999; // need an unlikely integer
+						
+						echo '<nav class="pagination">
+							<ul class="page_numbers">';
+							echo paginate_links( array(
+								'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+								'format' => '?paged=%#%',
+								'current' => max( 1, get_query_var('paged') ),
+								'total' => $the_query->max_num_pages,
+								'prev_text'    => '&larr;',
+								'next_text'    => '&rarr;',
+								'end_size'     => 3,
+								'mid_size'     => 3,
+								'type'         => 'list'
+							) );
+						echo '</ul>
+						</nav>'; ?>
+					<?php } ?>
 
 				</div> <?php // end #main .wrap-main ?>
 
