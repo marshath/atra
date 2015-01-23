@@ -254,7 +254,7 @@
 										  width="100%"
 										  height="300"
 										  frameborder="0" style="border:0"
-										  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC9cvNE5qB0ZeGAaxaHEAOnV8ynEebTASw&q=<?php echo the_field('event_city'); ?>+<?php echo the_field('event_zip'); ?>&maptype=satellite">
+										  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC9cvNE5qB0ZeGAaxaHEAOnV8ynEebTASw&q=<?php echo the_field('event_city'); ?>+<?php echo $series; ?>+<?php echo the_field('event_zip'); ?>&maptype=satellite">
 										</iframe>
 									</div>
 								</figure>
