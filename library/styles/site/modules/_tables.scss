@@ -20,7 +20,6 @@ table {
 		background: $gray-light;
 	}
 	tbody {
-		
 	}
 	tr {
 		border-bottom: 2px solid $gray-light;
@@ -36,8 +35,8 @@ table {
 	td {
 		padding-left: 0.5em;
 		padding-right: 0.5em;
-		position: relative;
-		z-index: -2;
+		// position: relative;
+		// z-index: -2;
 	}
 }
 
