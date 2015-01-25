@@ -47,10 +47,8 @@
 										    if ($terms) {
 										        $terms_slugs = array();
 										        foreach ( $terms as $term ) {
-										            $terms_slugs[] = $term->name;
+										        	echo "<li>$term->name</li>";
 										        }
-										        $series = $terms_slugs[0];      
-										        echo "<li>{$series}</li>";
 										    } else {
 										        echo "";
 											} // end Event Distance

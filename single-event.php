@@ -104,10 +104,8 @@
 									    if ($termsd) {
 									        $termsd_slugs = array();
 									        foreach ( $termsd as $termd ) {
-									            $termsd_slugs[] = $termd->name;
+										        echo "<li>$termd->name</li>";
 									        }
-									        $seriesd = $termsd_slugs[0];      
-									        echo "<li>{$seriesd}</li>";
 									    } else {
 									        echo "";
 										} // end Event Distance
