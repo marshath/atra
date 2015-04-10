@@ -4,8 +4,8 @@
 	- Sidebar widgets
 	- Custom fonts
 */
-// update_option('siteurl','http://trailrunner.com/atra14/');
-// update_option('home','http://trailrunner.com/atra14/');
+// update_option('siteurl','http://localhost:8888/trailrunner.com/atra14/');
+// update_option('home','http://localhost:8888/trailrunner.com/atra14/');
 
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
@@ -17,7 +17,7 @@ require_once( 'library/custom-post-type.php' );
 require_once( 'library/admin.php' );
 
 // LOAD ADVANCED CUSTOM FIELDS PLUGIN
-define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
+// define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
 // include_once('library/advanced-custom-fields/acf.php'); // load ACF from the theme's library folder
 
 

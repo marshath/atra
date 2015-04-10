@@ -8,7 +8,7 @@
 
 					<?php while (have_posts()) : the_post(); ?>
 					
-						<?php if ( (is_page('resources')) ) { // ----------- Resources Banner Ad -----------
+						<?php if ( (is_page('resources')) or (is_page('find-a-trail')) ) { // ----------- Resources Banner Ad -----------
 							if ( is_active_sidebar( 'banner-resources' ) ) : ?>
 						
 								<div class="banner-ad">
@@ -26,6 +26,14 @@
 						
 						<section class="entry-content" itemprop="articleBody">
 							<?php the_content(); ?>
+
+							<?php 
+							//---------------------------------------
+							// ----------- Find a Trail Page -----------
+							//---------------------------------------
+							if ( (is_page('find-a-trail')) ) { ?>
+								
+							<?php } // end FIND A TRAIL Page ?>
 
 							<?php 
 							//---------------------------------------
