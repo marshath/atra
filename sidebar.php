@@ -89,9 +89,23 @@
 			
 				<?php 
 				//---------------------------------------------
+				// ----------- Find a Trail Sidebar AD -----------
+				//---------------------------------------------
+				if ( (is_page('find-a-trail')) ) {
+					if ( is_active_sidebar('sidebar-trail') ) : ?>
+					
+						<div class="sidebar-ad">
+							<?php dynamic_sidebar('sidebar-trail'); ?>
+						</div>
+	
+					<?php endif;
+				} ?>
+			
+				<?php 
+				//---------------------------------------------
 				// ----------- Resources Sidebar AD -----------
 				//---------------------------------------------
-				if ( (is_page(array('find-a-trail', 'resources')) ) ) {
+				if ( (is_page('resources')) ) {
 					if ( is_active_sidebar('sidebar-resources') ) : ?>
 					
 						<div class="sidebar-ad">

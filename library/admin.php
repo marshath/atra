@@ -8,26 +8,76 @@
 
 /************* DASHBOARD WIDGETS *****************/
 
-// disable default dashboard widgets
+// LOAD ADVANCED CUSTOM FIELDS PLUGIN
+define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
+
+
 function disable_default_dashboard_widgets() {
-	// remove_meta_box( 'dashboard_right_now', 'dashboard', 'core' );    // Right Now Widget
-	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'core' ); // Comments Widget
-	remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'core' );  // Incoming Links Widget
-	remove_meta_box( 'dashboard_plugins', 'dashboard', 'core' );         // Plugins Widget
-
-	remove_meta_box( 'dashboard_quick_press', 'dashboard', 'core' );   // Quick Press Widget
-	// remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'core' );   // Recent Drafts Widget
-	// remove_meta_box( 'dashboard_primary', 'dashboard', 'core' );         //
-	// remove_meta_box( 'dashboard_secondary', 'dashboard', 'core' );       //
-
-	// removing plugin dashboard boxes
-	remove_meta_box( 'yoast_db_widget', 'dashboard', 'normal' );         // Yoast's SEO Plugin Widget
+	
+	/************* DISABLE DEFAULT DASHBOARD WIDGETS *************/
+	remove_meta_box('dashboard_primary', 'dashboard', 'side'); // wordpress news
+	// remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal'); // incoming links
+	remove_meta_box('dashboard_quick_press', 'dashboard', 'side'); // quick press
+	remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side'); // drafts
+	// remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal'); // comments
+	// remove_meta_box('dashboard_activity', 'dashboard', 'normal'); // recent activity
+	
+	/************* DISABLE WELCOME PANEL *************/
+	remove_action('welcome_panel', 'wp_welcome_panel');
+	
+	/************* DISABLE SIDEBAR MENU ITEMS *************/
+	// remove_menu_page('index.php'); // dashboard
+	// remove_menu_page('edit.php'); // posts
+	// remove_menu_page('edit-comments.php'); // comments
+	// remove_menu_page('themes.php'); // appearance
+	remove_menu_page('plugins.php'); // plugins
+	// remove_menu_page('users.php'); //users
+	remove_menu_page('tools.php'); //tools
+	// remove_menu_page('options-general.php'); // settings
+	remove_menu_page('wpseo_dashboard'); // Yoast SEO
 }
+// removing the dashboard widgets
+add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
+
+
+// REMOVE APPEARANCE SUBMENU ITEMS
+function remove_theme_submenus() {
+    global $submenu; 
+    unset($submenu['themes.php'][5]); // appearance > themes
+    unset($submenu['themes.php'][6]); // appearance > customize
+    // unset($submenu['themes.php'][7]); // appearance > widgets
+    // unset($submenu['themes.php'][10]); // appearance > menus
+    unset($submenu['themes.php'][11]); // appearance > editor
+    // unset($submenu['themes.php'][20]); // appearance > background
+}
+// removing appearance submenu items
+add_action('admin_init', 'remove_theme_submenus');
+
+
+// REMOVE ADMIN BAR MENU ITEMS
+function my_remove_admin_bar_links() {
+	global $wp_admin_bar;
+	$wp_admin_bar->remove_menu('themes'); // view sites > themes
+	$wp_admin_bar->remove_menu('customize'); // view sites > customize
+	// $wp_admin_bar->remove_menu('widgets'); // view sites > widgets
+	// $wp_admin_bar->remove_menu('menus'); // view sites > menus
+	$wp_admin_bar->remove_menu('customize-background'); // view sites > background
+	$wp_admin_bar->remove_menu('updates'); // updates
+	// $wp_admin_bar->remove_menu('comments'); // comments
+	$wp_admin_bar->remove_menu('new-content'); // new post
+	// $wp_admin_bar->remove_menu('edit'); // edit post 
+	// $wp_admin_bar->remove_menu('wpseo-menu'); // Yoast SEO 
+}
+// removing admin bar links
+add_action('wp_before_admin_bar_render', 'my_remove_admin_bar_links');
 
 /*
 For more information on creating Dashboard Widgets, view:
 http://digwp.com/2010/10/customize-wordpress-dashboard/
 */
+
+
+/************* CUSTOM DASHBOARD WIDGETS *****************/
 
 // calling all custom dashboard widgets
 function bones_custom_dashboard_widgets() {
@@ -35,9 +85,6 @@ function bones_custom_dashboard_widgets() {
 	* in this function and they will all load. */
 }
 
-
-// removing the dashboard widgets
-add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
 // adding any custom widgets
 add_action( 'wp_dashboard_setup', 'bones_custom_dashboard_widgets' );
 

@@ -16,10 +16,6 @@ require_once( 'library/custom-post-type.php' );
 // CUSTOMIZE THE WORDPRESS ADMIN (off by default)
 require_once( 'library/admin.php' );
 
-// LOAD ADVANCED CUSTOM FIELDS PLUGIN
-// define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
-// include_once('library/advanced-custom-fields/acf.php'); // load ACF from the theme's library folder
-
 
 /*********************
 LAUNCH BONES
@@ -64,31 +60,6 @@ function bones_ahoy() {
 // let's get this party started
 add_action( 'after_setup_theme', 'bones_ahoy' );
 
-
-/****************************************************/
-/************* HIDE ADMIN SUBMENU ITEMS *************/
-/****************************************************/
-	
-// HIDE ADMIN SUBMENU -- CUSTOMIZE
-function remove_customize_page(){
-	global $submenu;
-	unset($submenu['themes.php'][6]); // remove customize link
-}
-add_action( 'admin_menu', 'remove_customize_page');
-
-// HIDE ADMIN SUBMENU -- EDITOR
-function my_remove_menu_elements() {
-	remove_submenu_page( 'themes.php', 'theme-editor.php' );
-}
-add_action('admin_init', 'my_remove_menu_elements', 101);
-
-// HIDE ADMIN MENU ITEM -- TOOLS, CPT UI, and YOAST SEO
-function my_remove_menu_pages() {
-    remove_menu_page( 'tools.php' ); 
-    // remove_menu_page('cpt_main_menu');
-    remove_menu_page('wpseo_dashboard');
-}
-add_action('admin_init', 'my_remove_menu_pages');
 
 
 /************* OEMBED SIZE OPTIONS *************/
@@ -168,6 +139,33 @@ function bones_register_sidebars() {
 		'id' => 'sidebar-events',
 		'name' => __( 'Events – Sidebar', 'bonestheme' ),
 		'description' => __( 'The sidebar area on all Event pages. Ad space (336x280 px)', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// *******************************
+	// Registering FIND A TRAIL - BANNER 
+	// *******************************
+	register_sidebar(array(
+		'id' => 'banner-trail',
+		'name' => __( 'Find a Trail – Banner', 'bonestheme' ),
+		'description' => __( 'Member banner ad space (728x90 px) on all Find a Trail pages.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+
+	// ********************************
+	// Registering FIND A TRAIL - SIDEBAR 
+	// ********************************
+	register_sidebar(array(
+		'id' => 'sidebar-trail',
+		'name' => __( 'Find a Trail – Sidebar', 'bonestheme' ),
+		'description' => __( 'The sidebar area on all Find a Trail pages. Ad space (336x280 px)', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
