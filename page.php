@@ -8,7 +8,17 @@
 
 					<?php while (have_posts()) : the_post(); ?>
 					
-						<?php if ( (is_page('resources')) ) { // ----------- Resources Banner Ad -----------
+						<?php if ( (is_page('find-a-trail')) ) { // ----------- FIND A TRAIL Banner Ad -----------
+							if ( is_active_sidebar( 'banner-trail' ) ) : ?>
+						
+								<div class="banner-ad">
+									<?php dynamic_sidebar( 'banner-trail' ); ?>
+								</div>
+		
+							<?php endif; 
+						} // end FIND A TRAIL Banner ?>
+					
+						<?php if ( (is_page('resources')) ) { // ----------- RESOURCES Banner Ad -----------
 							if ( is_active_sidebar( 'banner-resources' ) ) : ?>
 						
 								<div class="banner-ad">
@@ -16,7 +26,7 @@
 								</div>
 		
 							<?php endif; 
-						} // end RESOURCES BANNER ?>
+						} // end RESOURCES Banner ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 

@@ -71,9 +71,9 @@
 				<div id="trails" class="trail-maps">
 
 					<h2>Find a trail to run</h2>
-					<p>Get in-depth information about each trail, amenities, and directions.</p>
-					<p><a href="<?php echo home_url(); ?>/find-a-trail/" class="btn">Find now!</a></p>
-					<p>You can also find international trails or submit a trail.</p>
+					<p>Get elevation profiles, trail ratings, 3-D flyovers &amp; more.</p>
+					<p><a href="<?php echo home_url(); ?>/find-a-trail/" class="btn">Find now</a></p>
+					<p>You can also add your own runs, photos &amp; videos.</p>
 
 				</div> <!-- end #trail-maps .hm-trail-maps -->
 				<div id="members" class="member-list">

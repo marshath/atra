@@ -244,19 +244,28 @@
 								
 							</div> <!-- end .content-photos -->
 							<div class="content-googlemap">
-							
+								
 								<h3>Map</h3>
 								<figure>
 									<div class="event-map"> <!-- delete to remove over-riding map -->
-										<iframe
-										  width="100%"
-										  height="300"
-										  frameborder="0" style="border:0"
-										  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC9cvNE5qB0ZeGAaxaHEAOnV8ynEebTASw&q=<?php echo the_field('event_city'); ?>+<?php echo $series; ?>+<?php echo the_field('event_zip'); ?>&maptype=satellite">
-										</iframe>
+										<iframe width="100%" height="410" frameborder="0" scrolling="no" style="border:0"
+									
+										<?php //******* RACE MAP TOGGLE *******
+											// Display the Trail Run Project map, if available
+											$trp_map = get_post_meta($post->ID, 'trailrunproject_map', true);
+											if ($trp_map) {
+												
+												echo 'src="'; echo $trp_map; echo '"'; ?>
+											
+											<?php } else { // else show a google map ?>
+											
+												src="https://www.google.com/maps/embed/v1/place?key=AIzaSyC9cvNE5qB0ZeGAaxaHEAOnV8ynEebTASw&q=<?php echo the_field('event_city'); ?>+<?php echo $series; ?>+<?php echo the_field('event_zip'); ?>&maptype=satellite"
+												
+											<?php } // end race map toggle ?>
+									
+										></iframe>
 									</div>
 								</figure>
-								
 							</div> <!-- end .content-googlemap -->
 							<div class="content-archive">
 								<div class="half">
