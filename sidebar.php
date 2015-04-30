@@ -21,7 +21,7 @@
 				//-------------------------------------------------
 				// ----------- Social Marketing Sidebar -----------
 				//-------------------------------------------------
-				if ( (is_page('resources')) ) { 
+				if ( (is_page (array('find-a-trail', 'resources')) ) ) { 
 					if ( is_active_sidebar('sidebar-marketing') ) : ?>
 				
 					<div class="sidebar-connect">
@@ -46,7 +46,7 @@
 				//------------------------------------------------
 				// ----------- Become a Member Sidebar -----------
 				//------------------------------------------------
-				if (!is_page (array('find-a-trail', 'membership', 'board-members-and-meeting-minutes', 'contact-us')) ) { 
+				if (!is_page (array('membership', 'board-members-and-meeting-minutes', 'contact-us')) ) { 
 					if ( is_active_sidebar('sidebar-members') ) : ?>
 				
 					<div class="sidebar-member">
@@ -85,6 +85,20 @@
 						</div>
 
 					<?php endif; 
+				} ?>
+			
+				<?php 
+				//---------------------------------------------
+				// ----------- Find a Trail Sidebar AD -----------
+				//---------------------------------------------
+				if ( (is_page('find-a-trail')) ) {
+					if ( is_active_sidebar('sidebar-trail') ) : ?>
+					
+						<div class="sidebar-ad">
+							<?php dynamic_sidebar('sidebar-trail'); ?>
+						</div>
+	
+					<?php endif;
 				} ?>
 			
 				<?php 
