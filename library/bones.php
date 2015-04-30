@@ -110,9 +110,9 @@ SCRIPTS & ENQUEUEING
 *********************/
 
 // loading modernizr and jquery, and reply script
-/* function bones_scripts_and_styles() {
+function bones_scripts_and_styles() {
 
-  global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
+/*   global $wp_styles; // call global $wp_styles variable to add conditional wrapper around ie stylesheet the WordPress way
 
   if (!is_admin()) {
 
@@ -143,8 +143,8 @@ SCRIPTS & ENQUEUEING
 		wp_enqueue_script( 'jquery' );
 		wp_enqueue_script( 'bones-js' );
 
-	}
-} */
+	} */
+}
 
 /*********************
 THEME SUPPORT
@@ -197,7 +197,8 @@ function bones_theme_support() {
 	register_nav_menus(
 		array(
 			'main-nav' => __( 'The Main Menu', 'bonestheme' ),   // main nav in header
-			'footer-links' => __( 'Footer Links', 'bonestheme' ) // secondary nav in footer
+			'footer-links' => __( 'Footer Links', 'bonestheme' ), // secondary nav in footer
+			'legal-links' => __( 'Legal Links', 'bonestheme' ) // legal links in footer
 		)
 	);
 } /* end bones theme support */

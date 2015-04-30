@@ -43,8 +43,23 @@
 					
 				</div>
 
-				<p class="copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo( 'description' ); ?>. All rights reserved.</p>
-
+				<div class="copyright">
+					<?php wp_nav_menu(array(
+					'container' => '',                              // remove nav container
+					'container_class' => '',         // class of container (should you choose to use it)
+					'menu' => __( 'Legal Links', 'bonestheme' ),   // nav name
+					'menu_class' => 'legal-links',           		 // adding custom nav class
+					'theme_location' => 'legal-links',             // where it's located in the theme
+					'before' => '',                                 // before the menu
+					'after' => '',                                  // after the menu
+					'link_before' => '',                            // before each link
+					'link_after' => '',                             // after each link
+					'depth' => 0,                                   // limit the depth of the nav
+					'fallback_cb' => 'bones_footer_links_fallback'  // fallback function
+					)); ?>
+					<p>&copy; <?php echo date('Y'); ?> <?php bloginfo( 'description' ); ?>. All rights reserved.</p>
+				</div>
+				
 			</div>
 
 		</div><!-- end .page-wrap -->
