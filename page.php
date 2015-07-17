@@ -8,7 +8,8 @@
 
 					<?php while (have_posts()) : the_post(); ?>
 					
-						<?php if ( (is_page('find-a-trail')) ) { // ----------- FIND A TRAIL Banner Ad -----------
+						<?php /********* BEGIN BANNER ADS ***********/
+						if ( (is_page('find-a-trail')) ) { // FIND A TRAIL
 							if ( is_active_sidebar( 'banner-trail' ) ) : ?>
 						
 								<div class="banner-ad">
@@ -16,9 +17,15 @@
 								</div>
 		
 							<?php endif; 
-						} // end FIND A TRAIL Banner ?>
-					
-						<?php if ( (is_page('resources')) ) { // ----------- RESOURCES Banner Ad -----------
+						} elseif ( (is_page('find-a-trail-shoe')) ) { // FIND A TRAIL SHOE
+							if ( is_active_sidebar( 'banner-trailshoe' ) ) : ?>
+						
+								<div class="banner-ad">
+									<?php dynamic_sidebar( 'banner-trailshoe' ); ?>
+								</div>
+		
+							<?php endif; 
+						} elseif ( (is_page('resources')) ) { // RESOURCES
 							if ( is_active_sidebar( 'banner-resources' ) ) : ?>
 						
 								<div class="banner-ad">
@@ -26,7 +33,7 @@
 								</div>
 		
 							<?php endif; 
-						} // end RESOURCES Banner ?>
+						} // end Banner Ads ?>
 
 					<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
@@ -36,6 +43,48 @@
 						
 						<section class="entry-content" itemprop="articleBody">
 							<?php the_content(); ?>
+									
+									
+							<?php 
+							//---------------------------------------------------------
+							// ----------- Find a Trail - Find a Trail Shoe -----------
+							//---------------------------------------------------------
+							if (is_page(array ('find-a-trail', 'find-a-trail-shoe') )) { ?>
+							
+								<?php // Go to www.addthis.com/dashboard to customize your tools ?>
+								<div class="addthis_native_toolbox"></div>
+
+									<?php if (is_page('find-a-trail')) { // BEGIN Trail Run Project ?>
+										<iframe style="width:100%; max-width:1200px; height:600px;" frameborder="0" scrolling="no" src="//www.trailrunproject.com/widget?v=2&type=map&base=Terrain&favs=1&searchBar=1&location=ip&x=-11839600&y=4718550&z=7&h=600"></iframe>
+									<?php } // END Trail Run Project ?>
+
+									<?php if (is_page('find-a-trail-shoe')) { // BEGIN Compare Shoes ?>
+										<iframe style="width: 100%; height: 700px; border: 1px solid #ccc;" src="http://runrepeat.com/c/?filter=terrain&type=Trail&hide_header=1&hide_social=1" width="1170" height="700"></iframe>
+									<?php } // END compare shoes ?>
+								
+								<div class="event-smedia">
+									<?php // Go to www.addthis.com/dashboard to customize your tools ?>
+									<div class="share-text">Share:</div> <div class="addthis_sharing_toolbox"></div>
+								</div>
+
+								<?php if (is_page('find-a-trail-shoe')) { // BEGIN Comments
+									comments_template();
+								} // END comments ?>
+								
+							<?php } ?>
+							
+
+							<?php 
+							//-----------------------------------------
+							// ----------- Finder callouts -----------
+							//-----------------------------------------
+							if (is_page('finders')) {
+								
+								// display the finder callouts
+								get_template_part('content', 'finders');
+								
+							} // end display finder callouts ?>
+							
 
 							<?php 
 							//---------------------------------------

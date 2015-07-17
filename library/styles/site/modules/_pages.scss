@@ -91,13 +91,31 @@ figure {
 /* ------- Home Page ------- */
 /* ------------------------- */
 
-.featured-events, .trail-maps {
+.featured-events, .finder {
 	@include column(6);
 	@include clearfix;
 	text-align: center;
 	margin-bottom: $base;
 	border: 8px solid lighten($tan,7);
 	box-shadow: 0 0 6px rgba(45,30,25,0.2);
+	h2 {
+		margin-top: $base;
+		&:after {
+			content: '';
+			width:56%;
+			display: block;
+			border-bottom: 1px solid black;
+			margin: 0 auto;
+		}
+	}
+	.btn {
+		width:56%;
+	}
+	@include bp(mobile-v) { /* mobile V and below layout */
+		h2 {
+			font-size: 1.5em;
+		}
+	}
 	@include bp(tablet-v) { /* tablet V and below layout */
 		@include column(12);
 		margin-bottom: ($base*2);
@@ -107,25 +125,33 @@ figure {
 }
 
 .featured-events {
-	h2 {
-		margin-top: $base;
-	}
 	table {
 		font-size:0.8em;
 	}
 }
 
-.trail-maps {
-	background: url('/wp-content/uploads/2014/07/home-maps.jpg') no-repeat top center;
-	padding-top: ($base*5);
+.finder {
+	color: white;
 	overflow: hidden;
-	h2 {
-		margin-top: ($base*2.5);
-		color: white;
-		text-shadow: 0 0 4px black;
+	&__trail, &__shoe {
+		h2, p {
+			text-shadow: 0 0 4px black;
+		}
+		h2:after {
+			border-bottom: 1px solid white;
+		}
+		p {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
 	}
-	.btn {
-		width: 50%;
+	&__trail {
+		background: url('/wp-content/uploads/2015/07/home-findtrail.jpg') no-repeat center;
+		background-size: cover;
+	}
+	&__shoe {
+		background: url('/wp-content/uploads/2015/07/home-findshoe.jpg') no-repeat center;
+		background-size: cover;
 	}
 }
 
@@ -171,6 +197,7 @@ figure {
 
 /* Social Sharing */
 .event-smedia {
+	@include clearfix;
 	.share-text, .addthis_sharing_toolbox { 
 		display: inline-block; 
 		margin-top: ($base*0.5);

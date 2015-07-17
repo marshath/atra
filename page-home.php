@@ -68,14 +68,16 @@
 					</table>
 
 				</div> <!-- end #events-featured .hm-event-featured -->
-				<div id="trails" class="trail-maps">
+					
+					
+				<?php  // display the finder callouts
+					get_template_part('content', 'finders'); ?>
 
-					<h2>Find a trail to run</h2>
-					<p>Get elevation profiles, trail ratings, 3-D flyovers &amp; more.</p>
-					<p><a href="<?php echo home_url(); ?>/find-a-trail/" class="btn">Find now</a></p>
-					<p>You can also add your own runs, photos &amp; videos.</p>
 
-				</div> <!-- end #trail-maps .hm-trail-maps -->
+				<?php 
+				//--------------------------------
+				// ----------- Members -----------
+				//-------------------------------- ?>
 				<div id="members" class="member-list">
 
 					<h2>ATRA Members</h2>

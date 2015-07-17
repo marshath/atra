@@ -103,6 +103,20 @@
 			
 				<?php 
 				//---------------------------------------------
+				// ----------- Find a Trail Shoe Sidebar AD -----------
+				//---------------------------------------------
+				if ( (is_page('find-a-trail-shoe')) ) {
+					if ( is_active_sidebar('sidebar-trailshoe') ) : ?>
+					
+						<div class="sidebar-ad">
+							<?php dynamic_sidebar('sidebar-trailshoe'); ?>
+						</div>
+	
+					<?php endif;
+				} ?>
+			
+				<?php 
+				//---------------------------------------------
 				// ----------- Resources Sidebar AD -----------
 				//---------------------------------------------
 				if ( (is_page('resources')) ) {

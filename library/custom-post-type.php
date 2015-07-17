@@ -152,7 +152,7 @@ function custom_post_boardmember() {
 			'show_ui' => true,
 			'query_var' => true,
 			'menu_position' => 24, /* this is what order you want it to appear in on the left hand side menu */ 
-			'menu_icon' => get_stylesheet_directory_uri() . '/library/images/custom-post-splash.png', /* the icon for the custom post type menu */
+			'menu_icon' => 'dashicons-images-alt', /* the icon for the custom post type menu */
 			'rewrite'	=> array( 'slug' => 'splash', 'with_front' => false ), /* you can specify its url slug */
 			'has_archive' => 'splash', /* you can rename the slug here */
 			'capability_type' => 'post',
