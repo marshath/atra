@@ -131,7 +131,6 @@ function bones_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 	
-
 	// ****************************
 	// Registering EVENTS - SIDEBAR 
 	// ****************************
@@ -158,7 +157,6 @@ function bones_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 
-
 	// ********************************
 	// Registering FIND A TRAIL - SIDEBAR 
 	// ********************************
@@ -166,6 +164,32 @@ function bones_register_sidebars() {
 		'id' => 'sidebar-trail',
 		'name' => __( 'Find a Trail – Sidebar', 'bonestheme' ),
 		'description' => __( 'The sidebar area on all Find a Trail pages. Ad space (336x280 px)', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// *******************************
+	// Registering FIND A TRAIL SHOE - BANNER 
+	// *******************************
+	register_sidebar(array(
+		'id' => 'banner-trailshoe',
+		'name' => __( 'Find a Trail Shoe – Banner', 'bonestheme' ),
+		'description' => __( 'Member banner ad space (728x90 px) on all Find a Trail Shoe pages.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// ********************************
+	// Registering FIND A TRAIL SHOE - SIDEBAR 
+	// ********************************
+	register_sidebar(array(
+		'id' => 'sidebar-trailshoe',
+		'name' => __( 'Find a Trail Shoe – Sidebar', 'bonestheme' ),
+		'description' => __( 'The sidebar area on all Find a Trail Shoe pages. Ad space (336x280 px)', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
@@ -184,7 +208,6 @@ function bones_register_sidebars() {
 		'before_title' => '<h4 class="widgettitle">',
 		'after_title' => '</h4>',
 	));
-
 
 	// ********************************
 	// Registering TRAIL NEWS - SIDEBAR 
