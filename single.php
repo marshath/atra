@@ -46,6 +46,9 @@
 										the_post_thumbnail("atra-700");
 										} ?>
 								</figure>
+								
+								<?php // Go to www.addthis.com/dashboard to customize your tools ?>
+								<div class="addthis_native_toolbox"></div>
 									
 								 <?php
 								   // the content (pretty self explanatory huh)
@@ -73,6 +76,9 @@
 							  </section> <?php // end .entry-content ?>
 			
 							   <footer class="article-footer">
+								   
+								   <?php // Go to www.addthis.com/dashboard to customize your tools ?>
+								   <div class="addthis_sharing_toolbox"></div>
 			
 								 <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
 			
