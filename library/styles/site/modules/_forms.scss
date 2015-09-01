@@ -277,7 +277,7 @@ textarea {
 	position: relative;
 	@include clearfix;
 }
-.gfield_select {
+.gfield_select, gfield_date_dropdown_month, gfield_date_dropdown_day, gfield_date_dropdown_year {
 	height: ($base*1.5);
 }
 
