@@ -144,7 +144,12 @@
 									<ul>
 									
 									<?php // ******** Display Board Members ******** 
-									$boardies = array('post_type' => 'boardmember', 'roles' => 'board-member'); 
+									$boardies = array(
+										'post_type' => 'boardmember', 
+										'roles' => 'board-member',
+										'orderby' => 'menu_order',
+										'order' => 'ASC'
+									); 
 									$boards = new WP_Query( $boardies );
 									while ( $boards->have_posts() ) : $boards->the_post(); ?>
 										<li>
