@@ -1,6 +1,6 @@
 {
 "CodeKitInfo": "This is a CodeKit 2.x project configuration file. It is designed to sync project settings across multiple machines. MODIFYING THE CONTENTS OF THIS FILE IS A POOR LIFE DECISION. If you do so, you will likely cause CodeKit to crash. This file is not useful unless accompanied by the project that created it in CodeKit 2. This file is not backwards-compatible with CodeKit 1.x. For more information, see: http:\/\/incident57.com\/codekit",
-"creatorBuild": "18493",
+"creatorBuild": "19115",
 "files": {
 	"\/404.php": {
 		"fileType": 8192,
@@ -34,6 +34,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/comments.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/content-author-bio.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/content-author-bio.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -79,6 +88,24 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/content-event-title.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/content-finders.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/content-finders.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/content-home.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/content-home.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -155,826 +182,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/library\/advanced-custom-fields\/acf.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/acf.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/actions\/export.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/actions\/export.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/api.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/api.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/addons.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/addons.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/everything_fields.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/everything_fields.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/export.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/export.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/field_group.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/field_group.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/field_groups.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/field_groups.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/input.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/input.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/location.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/location.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/post.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/post.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/revisions.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/revisions.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/third_party.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/third_party.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/controllers\/upgrade.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/controllers\/upgrade.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/_base.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/_base.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/_functions.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/_functions.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/checkbox.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/checkbox.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/color_picker.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/color_picker.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/date_picker.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/date_picker.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_0_aaaaaa_40x100.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 180,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_55_5bc6f5_40x100.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 213,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_55_5bc6f5_40x100.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_55_5bc6f5_40x100.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_75_ffffff_40x100.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 178,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_75_ffffff_40x100.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_flat_75_ffffff_40x100.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_65_ffffff_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 105,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_65_ffffff_1x400.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_65_ffffff_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_75_dadada_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 111,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_75_dadada_1x400.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_75_dadada_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_75_e6e6e6_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 110,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_95_fef1ec_1x400.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 119,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_95_fef1ec_1x400.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_glass_95_fef1ec_1x400.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_highlight-soft_0_444444_1x100.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 79,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_highlight-soft_0_444444_1x100.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-bg_highlight-soft_0_444444_1x100.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_222222_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4369,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_222222_256x240.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_222222_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_2e83ff_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4369,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_2e83ff_256x240.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_2e83ff_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_454545_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4369,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_454545_256x240.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_454545_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_888888_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4369,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_888888_256x240.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_888888_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_cd0a0a_256x240.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 4369,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_cd0a0a_256x240.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/images\/ui-icons_cd0a0a_256x240.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/jquery.ui.datepicker.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/jquery.ui.datepicker.js",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/min\/jquery.ui.datepicker-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/date_picker\/style.date_picker.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/date_picker\/style.date_picker.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/dummy.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/dummy.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/email.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/email.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/file.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/file.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/google-map.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/google-map.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/image.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/image.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/message.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/message.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/number.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/number.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/page_link.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/page_link.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/password.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/password.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/post_object.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/post_object.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/radio.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/radio.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/relationship.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/relationship.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/select.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/select.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/tab.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/tab.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/taxonomy.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/taxonomy.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/text.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/text.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/textarea.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/textarea.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/true_false.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/true_false.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/user.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/user.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/fields\/wysiwyg.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/fields\/wysiwyg.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/views\/meta_box_fields.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/views\/meta_box_fields.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/views\/meta_box_location.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/views\/meta_box_location.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/core\/views\/meta_box_options.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/core\/views\/meta_box_options.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/css\/acf.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/css\/acf.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/css\/field-group.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/css\/field-group.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/css\/global.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/css\/global.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/css\/input.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/css\/input.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/add-ons\/cf7-field-thumb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 22418,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/cf7-field-thumb.jpg",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/cf7-field-thumb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/add-ons\/date-time-field-thumb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5851,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/date-time-field-thumb.jpg",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/date-time-field-thumb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/add-ons\/flexible-content-field-thumb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 8488,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/flexible-content-field-thumb.jpg",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/flexible-content-field-thumb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/add-ons\/gallery-field-thumb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 24886,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/gallery-field-thumb.jpg",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/gallery-field-thumb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/add-ons\/google-maps-field-thumb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 18725,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/google-maps-field-thumb.jpg",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/google-maps-field-thumb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/add-ons\/gravity-forms-field-thumb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6230,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/gravity-forms-field-thumb.jpg",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/gravity-forms-field-thumb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/add-ons\/options-page-thumb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 16201,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/options-page-thumb.jpg",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/options-page-thumb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/add-ons\/repeater-field-thumb.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 19336,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/repeater-field-thumb.jpg",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/add-ons\/repeater-field-thumb.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/arrows.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 243,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/arrows.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/arrows.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/arrows@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 863,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/arrows@2x.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/arrows@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/sprite.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 6086,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/sprite.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/sprite.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/images\/sprite@2x.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 12829,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/sprite@2x.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/images\/sprite@2x.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/js\/field-group.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/field-group.js",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/min\/field-group-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/library\/advanced-custom-fields\/js\/field-group.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/field-group.min.js",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/min\/field-group.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/library\/advanced-custom-fields\/js\/input.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/input.js",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/min\/input-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/library\/advanced-custom-fields\/js\/input.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/input.min.js",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/min\/input.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/library\/advanced-custom-fields\/js\/tinymce.code.min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/tinymce.code.min.js",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/js\/min\/tinymce.code.min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/library\/advanced-custom-fields\/README.md": {
-		"enableFootnoteSupport": 0,
-		"enableSmartyPants": 1,
-		"expandTabs": 1,
-		"fileType": 4096,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/README.md",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/README.html",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/library\/advanced-custom-fields\/screenshot-1.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 46160,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/screenshot-1.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/screenshot-1.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/screenshot-2.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 56929,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/screenshot-2.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/screenshot-2.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/screenshot-3.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 39151,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/screenshot-3.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/screenshot-3.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/library\/advanced-custom-fields\/screenshot-4.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 25740,
-		"inputAbbreviatedPath": "\/library\/advanced-custom-fields\/screenshot-4.png",
-		"outputAbbreviatedPath": "\/library\/advanced-custom-fields\/screenshot-4.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/library\/bones.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1030,6 +237,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/library\/fonts\/icomoon80539\/selection.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/fonts\/icomoon80539\/selection.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/library\/fonts\/icomoon80539\/selection-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
 		},
 	"\/library\/fonts\/icomoon80539\/style.css": {
 		"fileType": 16,
@@ -1260,6 +478,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/library\/styles\/codekit-config.json": {
+		"fileType": 524288,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/styles\/codekit-config.json",
+		"orderOutput": 0,
+		"outputAbbreviatedPath": "\/library\/styles\/codekit-config-min.json",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1
+		},
 	"\/library\/styles\/site\/_base.scss": {
 		"createSourceMap": 1,
 		"debugStyle": 2,
@@ -1484,6 +713,22 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/library\/styles\/site\/modules\/_tables.scss": {
+		"createSourceMap": 1,
+		"debugStyle": 2,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/library\/styles\/site\/modules\/_tables.scss",
+		"outputAbbreviatedPath": "\/library\/styles\/site\/style.css\/_tables.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 1,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/library\/styles\/site\/modules\/_typography.scss": {
 		"createSourceMap": 1,
 		"debugStyle": 2,
@@ -1701,15 +946,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/page-find-a-trail.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/page-find-a-trail.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/page-home.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1784,6 +1020,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/single-event.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/single-event.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/single.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1801,11 +1046,20 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		}
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Theodore Marshall",
+"lastSavedByUser": "THEODORE MARSHALL",
 "manualImportLinks": {
 	},
 "projectAttributes": {
@@ -1905,8 +1159,16 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"no_nested_string_interpolation": {
+			"active": 1,
+			"flagValue": -1
+			},
 		"no_plusplus": {
 			"active": 0,
+			"flagValue": -1
+			},
+		"no_private_function_fat_arrows": {
+			"active": 1,
 			"flagValue": -1
 			},
 		"no_stand_alone_at": {
@@ -1915,6 +1177,10 @@
 			},
 		"no_tabs": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"no_this": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"no_throwing_strings": {
@@ -2076,6 +1342,10 @@
 			"active": 0,
 			"flagValue": -1
 			},
+		"futurehostile": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"globalstrict": {
 			"active": 0,
 			"flagValue": -1
@@ -2162,6 +1432,10 @@
 			},
 		"noarg": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"nocomma": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"node": {
@@ -2264,6 +1538,10 @@
 			"active": 1,
 			"flagValue": -1
 			},
+		"varstmt": {
+			"active": 0,
+			"flagValue": -1
+			},
 		"withstmt": {
 			"active": 0,
 			"flagValue": -1
@@ -2282,10 +1560,6 @@
 			}
 		},
 	"jsLintFlags2": {
-		"ass": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"bitwise": {
 			"active": 0,
 			"flagValue": -1
@@ -2294,15 +1568,7 @@
 			"active": 1,
 			"flagValue": -1
 			},
-		"closure": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"continue": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"debug": {
+		"couch": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -2310,75 +1576,27 @@
 			"active": 0,
 			"flagValue": -1
 			},
-		"eqeq": {
+		"es6": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"evil": {
+		"eval": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"forin": {
+		"for": {
 			"active": 0,
 			"flagValue": -1
-			},
-		"indent": {
-			"active": 0,
-			"flagValue": 4
 			},
 		"maxlen": {
 			"active": 0,
 			"flagValue": 150
 			},
-		"newcap": {
-			"active": 0,
-			"flagValue": -1
-			},
 		"node": {
 			"active": 0,
 			"flagValue": -1
 			},
-		"nomen": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"plusplus": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"properties": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"regexp": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"rhino": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"sloppy": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"stupid": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"sub": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"todo": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"unparam": {
-			"active": 0,
-			"flagValue": -1
-			},
-		"vars": {
+		"this": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -2387,6 +1605,14 @@
 			"flagValue": -1
 			}
 		},
+	"jsonAutoOutputPathEnabled": 0,
+	"jsonAutoOutputPathFilenamePattern": "*-min.json",
+	"jsonAutoOutputPathRelativePath": "",
+	"jsonAutoOutputPathReplace1": "",
+	"jsonAutoOutputPathReplace2": "",
+	"jsonAutoOutputPathStyle": 0,
+	"jsonOrderOutput": 0,
+	"jsonOutputStyle": 1,
 	"kitAutoOutputPathEnabled": 1,
 	"kitAutoOutputPathFilenamePattern": "*.html",
 	"kitAutoOutputPathRelativePath": "",
@@ -2414,9 +1640,18 @@
 	"markdownAutoOutputPathReplace1": "",
 	"markdownAutoOutputPathReplace2": "",
 	"markdownAutoOutputPathStyle": 0,
+	"markdownCriticStyle": 0,
 	"markdownEnableFootnotes": 0,
-	"markdownEnableSmartyPants": 1,
-	"markdownExpandTabs": 1,
+	"markdownEnableLabels": 1,
+	"markdownEnableSmartQuotes": 1,
+	"markdownEscapeLineBreaks": 0,
+	"markdownMaskEmailAddresses": 1,
+	"markdownOutputFormat": 0,
+	"markdownOutputStyle": 0,
+	"markdownParseMetadata": 1,
+	"markdownProcessHTML": 0,
+	"markdownRandomFootnoteNumbers": 0,
+	"markdownUseCompatibilityMode": 0,
 	"reloadFileURLs": 0,
 	"sassAutoOutputPathEnabled": 1,
 	"sassAutoOutputPathFilenamePattern": "*.css",
@@ -2462,7 +1697,9 @@
 	"typescriptAutoOutputPathStyle": 2,
 	"typescriptCreateDeclarationFile": 0,
 	"typescriptCreateSourceMap": 0,
+	"typescriptJSXMode": 0,
 	"typescriptMinifyOutput": 0,
+	"typescriptModuleResolutionType": 0,
 	"typescriptModuleType": 0,
 	"typescriptNoImplicitAny": 0,
 	"typescriptPreserveConstEnums": 0,
@@ -2472,6 +1709,10 @@
 	"uglifyDefinesString": "",
 	"uglifyFlags2": {
 		"ascii-only": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"bare-returns": {
 			"active": 0,
 			"flagValue": -1
 			},
@@ -2552,6 +1793,10 @@
 			"flagValue": -1
 			},
 		"keep_fargs": {
+			"active": 0,
+			"flagValue": -1
+			},
+		"keep_fnames": {
 			"active": 0,
 			"flagValue": -1
 			},

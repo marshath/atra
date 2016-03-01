@@ -34,55 +34,57 @@
 									</div>
 									
 									<div class="byline-cat">
-										<p class="footer-category"><?php printf( '' . __('Category', 'bonestheme' ) . ': %1$s</p>' , get_the_category_list(', ') ); ?></p>
+										<p class="footer-category"><?php printf( '' . __('Category', 'bonestheme' ) . ': %1$s' , get_the_category_list(', ') ); ?></p>
 									</div>
 								 
 								</header> <?php // end .article-header ?>
 			
 								<section class="entry-content" itemprop="articleBody">
 								 
-								<figure class="featured-image">
-									<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-										the_post_thumbnail("atra-700");
-										} ?>
-								</figure>
-								
-								<?php // Go to www.addthis.com/dashboard to customize your tools ?>
-								<div class="addthis_native_toolbox"></div>
+									<figure class="featured-image">
+										<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+											the_post_thumbnail("atra-700");
+											} ?>
+									</figure>
 									
-								 <?php
-								   // the content (pretty self explanatory huh)
-								   the_content();
+									<?php // Go to www.addthis.com/dashboard to customize your tools ?>
+									<div class="addthis_native_toolbox"></div>
+										
+									<?php
+									   // the content (pretty self explanatory huh)
+									   the_content();
+				
+									   /*
+										* Link Pages is used in case you have posts that are set to break into
+										* multiple pages. You can remove this if you don't plan on doing that.
+										*
+										* Also, breaking content up into multiple pages is a horrible experience,
+										* so don't do it. While there are SOME edge cases where this is useful, it's
+										* mostly used for people to get more ad views. It's up to you but if you want
+										* to do it, you're wrong and I hate you. (Ok, I still love you but just not as much)
+										*
+										* http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
+										*
+									   */
+									   wp_link_pages( array(
+										 'before'	   => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
+										 'after'	   => '</div>',
+										 'link_before' => '<span>',
+										 'link_after'  => '</span>',
+									   ) );
+									?>
+								</section> <?php // end .entry-content ?>
 			
-								   /*
-									* Link Pages is used in case you have posts that are set to break into
-									* multiple pages. You can remove this if you don't plan on doing that.
-									*
-									* Also, breaking content up into multiple pages is a horrible experience,
-									* so don't do it. While there are SOME edge cases where this is useful, it's
-									* mostly used for people to get more ad views. It's up to you but if you want
-									* to do it, you're wrong and I hate you. (Ok, I still love you but just not as much)
-									*
-									* http://gizmodo.com/5841121/google-wants-to-help-you-avoid-stupid-annoying-multiple-page-articles
-									*
-								   */
-								   wp_link_pages( array(
-									 'before'	   => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bonestheme' ) . '</span>',
-									 'after'	   => '</div>',
-									 'link_before' => '<span>',
-									 'link_after'  => '</span>',
-								   ) );
-								 ?>
-							  </section> <?php // end .entry-content ?>
-			
-							   <footer class="article-footer">
+								<footer class="article-footer">
 								   
 								   <?php // Go to www.addthis.com/dashboard to customize your tools ?>
 								   <div class="addthis_sharing_toolbox"></div>
 			
 								 <?php the_tags( '<p class="tags"><span class="tags-title">' . __( 'Tags:', 'bonestheme' ) . '</span> ', ', ', '</p>' ); ?>
+								 
+								<?php get_template_part('content', 'author-bio'); // about the author ?>
 			
-							   </footer> <?php // end .article-footer ?>
+								</footer> <?php // end .article-footer ?>
 			
 								<div class="featured-posts">
 									<h3>Recent News</h3>

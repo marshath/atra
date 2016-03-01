@@ -86,11 +86,13 @@ h4 {
 	font-size: 1.2em;
 	@include sans-serif;
 }
-h5 {
-	
+h5 {	
+	font-size: 1em;
+	color: #555;
 }
 h6 {
-	
+	font-size: 1em;
+	color: #999;
 }
 
 p { 
@@ -98,12 +100,11 @@ p {
 }
 
 blockquote {
-	color: $gray;
-	font-style: italic;
+	color: $gray-dark;
 	margin-bottom: $base;
 	padding-left:1em;
 	padding-right:1em;
-	border-left: 2px solid $gray;
+	border-left: 4px solid $orange;
 	cite {
 		width: 100%;
 		text-align: right;
@@ -113,7 +114,19 @@ blockquote {
 
 ul.bullets { /* Add bullets to a list */
 	margin-left: 1.5em;
-	 list-style: disc;
+	list-style: disc;
+}
+.list-spacing li { // adds bottom spacing to a list
+	margin-bottom: $base;
+}
+
+.single-post section ul { /* Blog post bullets */
+	list-style: disc;
+	padding-left: 1em;
+	margin-left: 1em;
+	ul {
+		list-style: circle;
+	}
 }
  
 .list-commas li { /* creates the commas after each distance */
@@ -140,11 +153,19 @@ hr { /* Horizontal Rule */
 }
 
 .uppercase { 
-	text-transform: uppercase; 
+	text-transform: uppercase;
 }
 
 .capitalize { 
 	text-transform:  capitalize; 
+}
+
+.underline { 
+	text-decoration: underline; 
+}
+
+.center {
+	text-align: center;
 }
 
 .font-secondary {
@@ -154,6 +175,10 @@ hr { /* Horizontal Rule */
 .intro {
 	font-size: $font20;
 	font-weight: bold;
+}
+
+.small {
+	font-size: $font8;
 }
 
 /* ----------------------------- */
@@ -172,6 +197,11 @@ hr { /* Horizontal Rule */
 /* ------- Screen Reader Text ------- */
 /* ---------------------------------- */
 
+/*******************************
+SCREEN READER TEXT 
+*******************************/
 .screen-reader-text {
-	display: none;
+	position: absolute !important;
+	clip: rect(0 0 0 0); /* IE6, IE7 */
+	clip: rect(0,0,0,0);
 }

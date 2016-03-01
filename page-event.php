@@ -10,9 +10,17 @@ Template Name: Event Calendar Pages
 
 				<div id="main" class="wrap-main" role="main">
 
+					<h1><?php if (is_page('race-calendar')) {				// Race Calendar
+							echo 'Race Calendar';
+						} else if (is_page('future-events')) {				// Race Calendar: Future Events
+							echo 'Race Calendar: Future Events';
+						} else if (is_page('historical-events-archive')) {	// Race Calendar: Historical Events Archive
+							echo'Race Calendar: Historical Events Archive';
+						} else {} ?></h1>
+
 					<div id="event-search" class="event-search">
 
-						<h1>Find a Trail Race</h1>
+						<h2>Find a Trail Race</h2>
 						<?php get_search_form(); ?>
 
 					</div> <!-- end #event-search .event-search -->

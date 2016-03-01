@@ -8,6 +8,10 @@
 	background: white;
 }
 
+.partners-footer { // the entire footer
+	background: darken($tan,10);
+	text-align: center;
+}
 
 /* ----------------------------- */
 /* ------- Social Footer ------- */
@@ -18,10 +22,7 @@
 /* -------------------------------- */
 /* ------- Parters Sponsors ------- */
 /* -------------------------------- */
-
-.partners-footer {
-	background: darken($tan,10);
-	text-align: center;
+.footer-partner { // partner logos
 	ul {
 		width:intrinsic;
 		margin: 0 auto;
@@ -44,14 +45,19 @@
 }
 
 
-
 /* ------------------------- */
 /* ------- Copyright ------- */
 /* ------------------------- */
+.legal-links {
+	display: flex;
+	justify-content: center;
+	li {
+		padding: 0 1em;
+	}
+}
 .copyright {
 	background: $text;
 	font-size: $font12;
-	text-align:center;
 	margin-bottom: 0;
 	padding: $base 0;
 	p {
@@ -67,23 +73,5 @@
 	}
 	ul {
 		color: $gray-light;
-		margin: 0 auto;
-		display: block;
-		clear:both;
-	}
-	li {
-		width: inherit;
-		padding: 0;
-		margin: 0;
-		display: inline-block;
-		&:after {
-			content: '|';
-			display: inline;
-			padding: 0 10px;
-		}
-		&:last-child:after {
-			content:'';
-			padding: 0;
-		}
 	}
 }

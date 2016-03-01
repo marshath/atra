@@ -141,7 +141,7 @@
 							if ( (is_page('board-members-and-meeting-minutes')) ) { ?>
 								<div class="board-members-wrap">
 									<h2>Board Member Profiles</h2>
-									<ul>
+									<ul class="members">
 									
 									<?php // ******** Display Board Members ******** 
 									$boardies = array(
@@ -283,12 +283,12 @@
 									<?php while ( $partners->have_posts() ) :
 									$partners->the_post(); ?>
 									<li>
-										<a href="<?php the_field('partner_website'); ?>" target="_blank">
+										<a href="<?php the_field('partner_website'); ?>" target="_blank" rel="external">
 											<figure><?php the_post_thumbnail("thumbnail"); ?></figure>
 										</a>
 										<h3><?php the_title(); ?></h3>
 										<p><?php the_field('partner_description'); ?><br>
-										<a href="<?php the_field('partner_website'); ?>" target="_blank"><?php the_field('partner_website'); ?></a></p>
+										<a href="<?php the_field('partner_website'); ?>" target="_blank" rel="external"><?php the_field('partner_website'); ?></a></p>
 									</li>
 								<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>

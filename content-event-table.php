@@ -37,13 +37,18 @@
 									<td><?php // Display the Event Name and Link ?>
 										<p class="<?php // Display the ATRA Approved Event
 										$certs = get_the_terms( $post->ID , 'qualifications' );
-										foreach ( $certs as $cert ) {
-											echo $cert->slug; echo "-icon ";
-										} ?>"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></p>
+										if ($certs) {
+											foreach ( $certs as $cert ) {
+												echo $cert->slug; echo "-icon ";
+											}
+										} else {
+											echo "";
+										} ?>"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></p>
 									</td><?php // end Event Name and Link ?>
 									<td>
 										<ul class="list-commas">
-											<?php $terms = get_the_terms( $post->ID, 'distances'); // Display the Event Distance
+											<?php // Display the Event Distance
+											$terms = get_the_terms( $post->ID, 'distances');
 										    if ($terms) {
 										        $terms_slugs = array();
 										        foreach ( $terms as $term ) {

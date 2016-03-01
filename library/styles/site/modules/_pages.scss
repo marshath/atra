@@ -53,7 +53,7 @@
 
 figure {
 	figcaption {
-		color: $gray-light;
+		color: $gray;
 		font-style: italic;
 	}
 }
@@ -91,7 +91,13 @@ figure {
 /* ------- Home Page ------- */
 /* ------------------------- */
 
-.featured-events, .finder {
+.home, .page-id-119, .page-id-6529, .page-id-6669 { // home, race-calendar, future-events, historical events
+	h1 {
+		@extend .screen-reader-text;
+	}
+}
+
+.featured-events, .finder, .hm-features {
 	@include column(6);
 	@include clearfix;
 	text-align: center;
@@ -124,13 +130,13 @@ figure {
 	}
 }
 
-.featured-events {
+.featured-events { // homepage featured events
 	table {
 		font-size:0.8em;
 	}
 }
 
-.finder {
+.finder { // finders, find a trail, find a trail shoe
 	color: white;
 	overflow: hidden;
 	&__trail, &__shoe {
@@ -155,18 +161,61 @@ figure {
 	}
 }
 
-.member-list {
+.hm-features { // homepage feature callouts
+	color: white;
+	overflow: hidden;
+	&__google, &__newsletter {
+		h2, p {
+			text-shadow: 0 0 4px black;
+		}
+		h2:after {
+			border-bottom: 1px solid white;
+		}
+		p {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
+	}
+	&__google {
+		background: url('http://ted-mbpro.local:5757/trailrunner.com/atra14/wp-content/uploads/2016/google.jpg') no-repeat center top;
+		background-size: cover;
+	}
+	&__newsletter {
+		background: url('http://ted-mbpro.local:5757/trailrunner.com/atra14/wp-content/uploads/2016/running.jpg') no-repeat center bottom;
+		background-size: cover;
+		input[type='text'] {
+			text-align: center;
+		}
+		label {
+			@extend .screen-reader-text;
+		}
+		.first-name, .last-name {
+			width:50%;
+			float:left;
+		}
+	}
+	@include bp('mobile-v') {
+		&__newsletter {
+			.first-name, .last-name {
+				width:100%;
+				float:none;
+			}
+		}
+	}
+}
+
+.member-list { // homepage ATRA members list
 	@include column(8);
 	margin-bottom: ($base*2);
 	ul {
 	}
-	@include bp(tablet-v) { /* tablet V and below layout */
+	@include bp('tablet-v') { /* tablet V and below layout */
 		@include column(12);
 	}
 }
 .member-list-corp, .member-list-club, .member-list-race {
 	@include column(6);
-	@include bp(mobile-h) { /* mobile and below layout */
+	@include bp('mobile-h') { /* mobile and below layout */
 		@include column(12);
 	}
 }
@@ -310,7 +359,7 @@ figure {
 /* --------------------------------- */
 
 
-h1.page-title, h1.entry-title { /* Post titles on Trail News */
+h1.page-title, h1.entry-title { /* Page and Post titles on Trail News */
 	width: intrinsic;
 	background: lighten($tan,5);
 	text-align: center;
@@ -320,8 +369,11 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 
 .entry-header { /* Post titles spacing on the margin bottom */
 	margin-bottom:$base;
+	text-align: left;
 	h2 {
-		margin-bottom: 0;
+		margin: $base 0 0;
+		padding: 0;
+		text-align: left;
 	}
 }
 
@@ -348,8 +400,69 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 	float: right;
 	text-align: right;
 	height: $base;
-	@include column(5);
+	@include column(6);
 }
+
+// About the Author box
+.post-author { 
+	@include column(12);
+	@include clearfix;
+	margin-top: ($base*2);
+	margin-bottom: ($base*2);
+	padding: $base 6% 0;
+	border: 8px solid lighten($tan,7);
+	box-shadow: 0 0 6px rgba(45,30,25,0.2);
+	h3 {
+		font-size: 1.5em;
+		margin-top: ($base*0.5);
+		span {
+			display: inline-block;
+		}
+	}
+	p {
+		font-size: 1em; // orverrides font size
+	}
+}
+.author-img { /* Author image */
+	 width: 100px;
+	 height: 100px;
+	 margin-right:1em;
+	 margin-left: -1em;
+	 float:left;
+	 border-radius: 50%;
+	 border: 4px solid darken($tan,10);
+	 overflow: hidden;
+}
+.author-social {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	p {
+		margin-top: ($base*0.4); // overrides default paragraph styles
+	}
+	.twitter a:before, .facebook a:before, .google a:before, .instagram a:before, .email a:before {
+		font: {
+			family: 'social';
+			style: normal;
+			size: 1em;
+			weight: normal;
+		}
+	}
+	li.twitter, li.facebook, li.google, li.instagram, li.email { /* social media icons */
+		width:2em;
+		height: 2em;
+		margin: 0 auto;
+		display: inline-block;
+		a {
+			height: 36px;
+		}
+	}
+	a {
+		padding: ($base*0.5) 0 !important;
+	}
+}
+
 @include bp(mobile-h) { /* mobile H format and below */
 	h1 {
 		font-size: 1.4em;
@@ -361,6 +474,9 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 	.byline-cat {
 		text-align: left;
 		padding-left: 50px;
+	}
+	.post-author {
+		padding: $base 4% 0; // override About the Author box
 	}
 }
 
@@ -490,23 +606,24 @@ h1.page-title, h1.entry-title { /* Post titles on Trail News */
 	}
 }
 .board-members-wrap {
-	li {
-		@include column(4);
-		height: ($base*24);
-		img {
-			width: 100%;
-		}
-	}
-	@include bp(tablet-h) { /* tablet H and below layout */
-		li {
-			@include column(6);
-		}
-	}
-	@include bp(mobile-h) { /* mobile H and below layout */
-		li {
-			@include column(12);
-			height:intrinsic;
-			margin-bottom: ($base*2);
+	.members {
+		display:flex;
+		flex-flow: row wrap;
+		justify-content: flex-start;
+		> li {
+			flex-basis: 33%; // three profiles per row
+			padding: 0 1% 4%;
+			img {
+				width: 100%;
+			}
+			@include bp(tablet-h) { /* tablet V and below layout */
+				flex-basis: 50%; // two profiles per row
+				padding: 0 2% 4%;
+			}
+			@include bp(mobile-v) { /* mobile V and below layout */
+				flex-basis: 100%; // one profile per row
+				padding: 0 3% 4%;
+			}
 		}
 	}
 }

@@ -34,7 +34,7 @@ function disable_default_dashboard_widgets() {
 	// remove_menu_page('users.php'); //users
 	remove_menu_page('tools.php'); //tools
 	// remove_menu_page('options-general.php'); // settings
-	remove_menu_page('wpseo_dashboard'); // Yoast SEO
+	// remove_menu_page('wpseo_dashboard'); // Yoast SEO
 }
 // removing the dashboard widgets
 add_action( 'admin_menu', 'disable_default_dashboard_widgets' );

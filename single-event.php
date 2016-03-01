@@ -69,7 +69,7 @@
 									</div>
 								</div> <!-- end .event-location -->
 								<div class="half">
-									<p><a href="<?php echo the_field('event_website'); ?>" target="_blank"><?php echo the_field('event_website'); ?></a></p>
+									<p><a href="<?php echo the_field('event_website'); ?>" target="_blank" rel="external"><?php echo the_field('event_website'); ?></a></p>
 									<p><a href="mailto:<?php echo the_field('rd_email'); ?>">Contact Race Director</a></p>
 								</div> <!-- end .event-contact -->
 							</div> <!-- end .content-venue -->

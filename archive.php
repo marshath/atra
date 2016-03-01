@@ -43,6 +43,10 @@
 								<h1 class="page-title"><?php _e( 'Yearly Archives:', 'bonestheme' ); ?> <?php the_time('Y'); ?></h1>
 								<?php } ?>
 							</header> <!-- end .page-header -->
+							
+							<?php if (is_author()) {
+								echo get_template_part('content', 'author-bio');
+							} ?>
 
 						<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
@@ -52,8 +56,12 @@
 	
 								<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 								<p class="byline">
-									<p class="byline">Posted <?php the_time('F j, Y'); ?> by <?php the_author_posts_link('author') ?></p>
-								</p>
+									<?php printf( __( '%1$s %2$s', 'bonestheme' ),
+										// the time the post was published
+										'Posted on <time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+										// the author of the post - hidden text
+										'by <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . get_the_author('ID') . '</a></span>' );
+									?></p>
 	
 							</header>
 						
