@@ -42,7 +42,7 @@
 								<?php } elseif (is_year()) { ?>
 								<h1 class="page-title"><?php _e( 'Yearly Archives:', 'bonestheme' ); ?> <?php the_time('Y'); ?></h1>
 								<?php } ?>
-							</header> <!-- end .page-header -->
+							</header> <?php // end .page-header ?>
 							
 							<?php if (is_author()) {
 								echo get_template_part('content', 'author-bio');

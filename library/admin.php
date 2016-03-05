@@ -9,7 +9,7 @@
 /************* DASHBOARD WIDGETS *****************/
 
 // LOAD ADVANCED CUSTOM FIELDS PLUGIN
-define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
+// define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
 
 
 function disable_default_dashboard_widgets() {

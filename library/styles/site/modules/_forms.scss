@@ -223,7 +223,7 @@ textarea {
 }
 
 @include bp(mobile-h) { /* mobile H and below layout */
-	p, .search-toggle {
+	.search-toggle {
 		font-size: $font14;
 	}
 }

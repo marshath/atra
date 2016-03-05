@@ -10,12 +10,14 @@
 
 				<div id="main" class="wrap-main" role="main">
 
+					<h1>Race Search Results</h1>
+
 					<div id="event-search" class="event-search">
 						
-						<h1>Find a Trail Race</h1>
+						<h2>Find a Trail Race</h2>
 						<?php get_search_form(); ?>
 					
-					</div> <!-- end #event-search .event-search -->
+					</div> <?php // end #event-search .event-search ?>
 						
 					<?php 
 					//---------------------------------------------

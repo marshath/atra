@@ -23,7 +23,7 @@
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
-					<article id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> role="article" itemscope itemtype="http://schema.org/SportsEvent">
+					<article id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> role="article" itemscope itemtype="http://schema.org/Event">
 					
 						<header class="event-header">
 							<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
@@ -38,22 +38,24 @@
 							</figure>
 						
 							<div class="content-top">
-								<div class="event-date half" itemprop="startDate" content="<?php $sDateText = date_i18n('m-d-y', strtotime(get_field('event_date'))); echo $sDateText; // echo mm-dd-yyyyT00:00:00 for semantic search ?>">
+								<div class="event-date half">
 									<p><?php // Display the Event Date
-										$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
-										echo $endDateText; // end Event Date ?> at <?php echo the_field('start_time'); ?></p>
+										$endDateText = date_i18n('M d, Y', strtotime(get_field('event_date')));
+										$dateDateText = date_i18n('m-d-y', strtotime(get_field('event_date')));
+										echo '<span itemprop="startDate" content="' . $dateDateText . '">' . $endDateText . '</span> at '; ?><?php the_field('start_time'); ?></p>
 								</div>
 								<div class="event-smedia half">
-									<!-- Go to www.addthis.com/dashboard to customize your tools -->
+									<?php // Go to www.addthis.com/dashboard to customize your tools ?>
 									<div class="share-text">Share: </div><div class="addthis_sharing_toolbox"></div>
 								</div>
-							</div> <!-- end .content-top -->
+							</div> <?php // end .content-top ?>
 							
 							<div class="content-venue">
 								<div class="half" itemprop="location" itemscope itemtype="http://schema.org/Place">
 									<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
-										<p><span itemprop="streetAddress"><?php echo the_field('event_street'); ?></span></p>
-										<p><span itemprop="addressLocality"><?php echo the_field('event_city'); ?></span><?php // Make the State Slug Uppercase
+										<?php if (the_field('event_street')) { ?>
+										<p class="capitalize"><span itemprop="streetAddress"><?php echo the_field('event_street'); ?></span></p><?php } ?>
+										<p><span itemprop="addressLocality"><?php echo the_field('event_city'); ?></span> <?php // Make the State Slug Uppercase
 												$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
 												if ($terms) {
 													$terms_slugs = array();
@@ -61,18 +63,19 @@
 														$terms_slugs[] = $term->slug;
 													}
 													$series = $terms_slugs[0];      
-													echo ", <span itemprop='addressRegion' class='uppercase'>{$series}</span>";
+											        $series = strtoupper($series); // make uppercase
+											        echo "<span itemprop='addressRegion'>{$series}</span>, ";
 												} else {
 													echo "";
 												} // end Display State?> <span itemprop="postalCode"><?php echo the_field('event_zip'); ?></span></p>
 										<p><?php echo the_field('event_country'); ?></p>
 									</div>
-								</div> <!-- end .event-location -->
+								</div> <?php // end .event-location ?>
 								<div class="half">
 									<p><a href="<?php echo the_field('event_website'); ?>" target="_blank" rel="external"><?php echo the_field('event_website'); ?></a></p>
 									<p><a href="mailto:<?php echo the_field('rd_email'); ?>">Contact Race Director</a></p>
-								</div> <!-- end .event-contact -->
-							</div> <!-- end .content-venue -->
+								</div> <?php // end .event-contact ?>
+							</div> <?php //  end .content-venue ?>
 							
 							<div class="content-details">
 								<div class="half">
@@ -123,7 +126,7 @@
 										} else {
 											echo "";
 										} // end Other Distances 2 ?>
-									</ul> <!-- end .list-commas -->
+									</ul> <?php // end .list-commas ?>
 								</div>
 								<div class="half">
 									<?php // Display the Event Series, if available
@@ -199,11 +202,11 @@
 											echo "";
 									} // end Masters Women Record ?>
 								</div>
-							</div> <!-- end .content-details -->
+							</div> <?php // end .content-details ?>
 							
 							<div class="content-desc" itemprop="description">
 								<p><b>Description:</b> <?php echo the_field('event_description'); ?></p>
-							</div> <!-- end .content-desc -->
+							</div> <?php // end .content-desc ?>
 							
 							<div class="content-photos">
 								<h3>Photos</h3>
@@ -242,12 +245,12 @@
 									echo "";
 								} // end third photo ?>
 								
-							</div> <!-- end .content-photos -->
+							</div> <?php // end .content-photos ?>
 							<div class="content-googlemap">
 								
 								<h3>Map</h3>
 								<figure>
-									<div class="event-map"> <!-- delete to remove over-riding map -->
+									<div class="event-map"> <?php // delete to remove over-riding map ?>
 										<iframe width="100%" height="410" frameborder="0" scrolling="no" style="border:0"
 									
 										<?php //******* RACE MAP TOGGLE *******
@@ -266,7 +269,7 @@
 										></iframe>
 									</div>
 								</figure>
-							</div> <!-- end .content-googlemap -->
+							</div> <?php // end .content-googlemap ?>
 							<div class="content-archive">
 								<div class="half">
 							
@@ -433,7 +436,7 @@
 										echo "";
 									} // end Event Date 1996 ?>
 									
-								</div> <!-- end .half -->
+								</div> <?php // end .half ?>
 								
 								<?php //-----------------------------
 									//-------- Event Results ----------//
@@ -604,14 +607,14 @@
 										echo "";
 									} // end Results 1996 ?>
 									
-								</div> <!-- end .half -->
-							</div> <!-- end .content-archive event_results -->
-						</section> <!-- end .entry-content -->
+								</div> <?php // end .half ?>
+							</div> <?php // end .content-archive event_results ?>
+						</section> <?php // end .entry-content ?>
 						
 						<?php comments_template(); ?>
 						
 						<footer class="article-footer">
-						</footer> <!-- end .article-footer -->
+						</footer> <?php // end .article-footer ?>
 
 					</article>
 

@@ -73,8 +73,56 @@
 					</div> <!-- end #events-featured .hm-event-featured -->
 						
 						
-					<?php  // display the finder callouts
-						get_template_part('content', 'home'); ?>
+					<?php 
+					//-------------------------------------
+					// ------- Western States Trail -------
+					//------------------------------------- ?>
+					<div id="google-tracker" class="hm-features hm-features__google">
+						
+						<?php $callout = get_field('home_callout_1');
+							if( $callout ) {
+								echo $callout;
+							} else {
+								// nothing found
+							}
+						?>
+	
+					</div> <?php // end #google-tracker .hm-features .hm-features__google ?>
+	
+	
+					<?php 
+					//------------------------------------------
+					// ------------ Newsletter Form ------------
+					//------------------------------------------ ?>
+					<div id="newsletter" class="hm-features hm-features__newsletter">
+						
+						<?php $callout = get_field('home_callout_2');
+							if( $callout ) {
+								echo $callout;
+							} else {
+								// nothing found
+							} ?>
+							
+						<?php // required script to make the sign-up form work ?>
+						<script type='text/javascript'>
+							var localizedErrMap = {};
+							localizedErrMap['required'] = 		'This field is required.';
+							localizedErrMap['ca'] = 			'An unexpected error occurred while attempting to send email.';
+							localizedErrMap['email'] = 			'Please enter your email address in name@email.com format.';
+							localizedErrMap['birthday'] = 		'Please enter birthday in MM/DD format.';
+							localizedErrMap['anniversary'] = 	'Please enter anniversary in MM/DD/YYYY format.';
+							localizedErrMap['custom_date'] = 	'Please enter this date in MM/DD/YYYY format.';
+							localizedErrMap['list'] = 			'Please select at least one email list.';
+							localizedErrMap['generic'] = 		'This field is invalid.';
+							localizedErrMap['shared'] = 		'Sorry, we could not complete your sign-up. Please contact us to resolve this.';
+							localizedErrMap['state_mismatch'] = 'Mismatched State/Province and Country.';
+							localizedErrMap['state_province'] = 'Select a state/province';
+							localizedErrMap['selectcountry'] = 	'Select a country';
+							var postURL = 'https://visitor2.constantcontact.com/api/signup';
+						</script>
+						<script type='text/javascript' src='https://static.ctctcdn.com/h/contacts-embedded-signup-assets/1.0.2/js/signup-form.js'></script>
+						
+					</div> <?php // end #newsletter .hm-features .hm-features__newsletter ?>
 	
 	
 					<?php 

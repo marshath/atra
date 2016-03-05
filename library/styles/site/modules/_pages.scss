@@ -91,7 +91,7 @@ figure {
 /* ------- Home Page ------- */
 /* ------------------------- */
 
-.home, .page-id-119, .page-id-6529, .page-id-6669 { // home, race-calendar, future-events, historical events
+.home, .page-id-119, .page-id-6529, .page-id-6669, .post-type-archive-event { // home, race-calendar, future-events, historical events
 	h1 {
 		@extend .screen-reader-text;
 	}

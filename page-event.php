@@ -62,7 +62,7 @@ Template Name: Event Calendar Pages
 									$today = date("Ymd");
 									//'BETWEEN' comparison with 'type' date only works with dates in format Ymd. 
 									//See http://codex.wordpress.org/Class_Reference/WP_Query#Custom_Field_Parameters 
-									$date1 = date("Ymd", strtotime($today . "-1 Week")); 
+									$date1 = date("Ymd", strtotime($today . "-1 Day")); 
 									$date2 = date("Ymd", strtotime($today . "+51 Weeks"));
 									
 									$query_args = array( 
