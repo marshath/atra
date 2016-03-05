@@ -29,8 +29,13 @@
 									
 									<div class="byline-group">
 										<figure class="byline-figure"><?php userphoto_the_author_photo(); ?></figure>
-										<p class="byline">Posted <?php the_time('F j, Y'); ?><br>
-										by <?php the_author_posts_link('author') ?></p>
+										<p class="byline"><?php 
+											printf( __( '%1$s %2$s', 'bonestheme' ),
+											// the time the post was published
+											'Posted on <time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time><br>',
+											// the author of the post - hidden text
+											'by <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author">' . get_the_author('ID') . '</a></span>' );
+										?></p>
 									</div>
 									
 									<div class="byline-cat">

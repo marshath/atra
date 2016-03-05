@@ -152,9 +152,9 @@
 									); 
 									$boards = new WP_Query( $boardies );
 									while ( $boards->have_posts() ) : $boards->the_post(); ?>
-										<li>
-											<figure><?php the_post_thumbnail("atra-300"); ?></figure>
-											<h3><?php the_title(); ?></h3>
+										<li itemprop="member" itemscope itemptype="http://schema.org/Person">
+											<figure itemprop="image"><?php the_post_thumbnail("atra-300"); ?></figure>
+											<h3 itemprop="name"><?php the_title(); ?></h3>
 											<h5><?php the_field('board_title'); ?></h5>
 											<div class="board-social">
 												<ul>
@@ -201,7 +201,7 @@
 													
 												</ul>
 											</div>
-											<p><?php the_field('member_description'); ?></p>
+											<p itemprop="description"><?php the_field('member_description'); ?></p>
 										</li>
 										<?php endwhile; ?>
 									<?php wp_reset_postdata(); // end Display Board Members ?>
