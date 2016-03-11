@@ -404,7 +404,7 @@ h1.page-title, h1.entry-title { /* Page and Post titles on Trail News */
 }
 
 // About the Author box
-.post-author { 
+.post-author-box { 
 	@include column(12);
 	@include clearfix;
 	margin-top: ($base*2);
@@ -736,3 +736,41 @@ h1.page-title, h1.entry-title { /* Page and Post titles on Trail News */
 		}
 	}
 }
+
+
+/* -------------------------------------- */
+/* ------- Western States Trekker ------- */
+/* -------------------------------------- */
+
+.trekker-sponsors { /* ------- Sidebar Sponsor Links ------- */
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	align-items: space-between;
+	li {
+		float: left; // flexbox fallback
+		width: 48%; // flexbox fallback
+		flex-basis: 48%;
+	}
+	img {
+		width: 100%;
+	}
+}
+.trekker-photos { /* ------- Sidebar Photo Gallery ------- */
+	display: flex;
+	flex-flow: row wrap;
+	align-items: space-between;
+	li {
+		float: left; // flexbox fallback
+		width: 25%; // flexbox fallback
+		flex-basis: 25%;
+	}
+	img {
+		width: 100%;
+		border: 2px solid $tan;
+		&:hover {
+			border-color: $orange;
+		}
+	}
+}
+

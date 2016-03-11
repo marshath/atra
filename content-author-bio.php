@@ -4,7 +4,7 @@
 	   *
 	   */ ?>
 				
-				<div id="post-author" class="vcard post-author" itemprop="author" itemscope itemptype="http://schema.org/Person">
+				<div id="post-author" class="post-author-box" itemprop="author" itemscope itemptype="http://schema.org/Person">
 						
 					<figure class="author-img" itemprop="image"><?php userphoto_the_author_photo(); ?></figure>
 						

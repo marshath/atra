@@ -58,9 +58,9 @@
 								<p class="byline">
 									<?php printf( __( '%1$s %2$s', 'bonestheme' ),
 										// the time the post was published
-										'Posted on <time class="updated entry-time" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+										'Posted on <time class="updated entry-time post-date" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
 										// the author of the post - hidden text
-										'by <span class="entry-author author" itemprop="author" itemscope itemptype="http://schema.org/Person"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author" itemprop="name">' . get_the_author('ID') . '</a></span>' );
+										'by <span class="entry-author author vcard post-author" itemprop="author" itemscope itemptype="http://schema.org/Person"><span class="fn"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author" itemprop="name">' . get_the_author('ID') . '</a></span></span>' );
 									?></p>
 	
 							</header>

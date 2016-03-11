@@ -14,7 +14,8 @@
 						<h2>Find a Trail Race</h2>
 						<?php get_search_form(); ?>
 						
-					</div> <!-- end #event-search .hm-event-search -->
+					</div> <?php // end #event-search .hm-event-search ?>
+					
 					<div id="featured" class="featured-events">
 	
 						<h2>Featured Events</h2>
@@ -39,7 +40,7 @@
 								
 								$boardies = array( 
 									'post_type' => 'event',
-									'posts_per_page' => 5,
+									'posts_per_page' => 9,
 									'orderby' => 'meta_value',
 									'order' => 'ASC',
 									'meta_query' => array( 
@@ -70,7 +71,7 @@
 							</tbody>
 						</table>
 	
-					</div> <!-- end #events-featured .hm-event-featured -->
+					</div> <?php // end #events-featured .hm-event-featured ?>
 						
 						
 					<?php 
@@ -124,7 +125,18 @@
 						
 					</div> <?php // end #newsletter .hm-features .hm-features__newsletter ?>
 	
-	
+
+					<?php 
+					//--------------------------------
+					// ----------- Content -----------
+					//-------------------------------- ?>	
+					<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+						<section class="entry-content" itemprop="articleBody">
+							<?php the_content(); ?>
+						</section>
+					</article>
+					
+					
 					<?php 
 					//--------------------------------
 					// ----------- Members -----------
