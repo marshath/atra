@@ -3,7 +3,7 @@
 <?php // Loads jQuery Minified 1.9.1 ?>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<?php /* Shrinks the header and navigation */ ?>
+<?php // Shrinks the header and navigation ?>
 <script>  $(function(){
 	var shrinkHeader = 170;
 	$(window).scroll(function() {
@@ -36,3 +36,9 @@
   })();
 
 </script>
+
+<?php // Fancybox Lightbox
+	if (is_page('western-states-trekker')) { // show if Western States Trekker page only ?>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/library/js/fancybox/jquery.fancybox.pack.js"></script>
+<link href='<?php echo get_template_directory_uri(); ?>/library/js/fancybox/fancybox.css' rel='stylesheet' type='text/css'>
+	<?php } else {} ?>

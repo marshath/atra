@@ -20,26 +20,40 @@
 						<header class="article-header">
 							<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
 						</header> <?php // end .article-header ?>
+								 
+						<figure class="featured-image">
+							<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+								the_post_thumbnail("atra-700");
+								} ?>
+						</figure>
+									
+						<?php // Go to www.addthis.com/dashboard to customize your tools ?>
+						<div class="addthis_native_toolbox"></div>
 						
 						<section class="entry-content" itemprop="articleBody">
 							<?php the_content(); ?>
 						</section> <?php // end .entry-content ?>
+								   
+					   <?php // Go to www.addthis.com/dashboard to customize your tools ?>
+					   <div class="addthis_sharing_toolbox"></div>
 						
 					</article>
 
 					<?php endwhile; ?>
 					
 					<?php 
-					//-------------------------------------
-					// ----------- Trail Finder -----------
-					//------------------------------------- ?>
-					<div id="find-a-trail" class="finder finder__trail">
-	
-						<h2>Find a Trail</h2>
-						<p>Get elevation profiles, trail ratings, 3-D flyovers &amp; more.</p>
-						<p><a href="<?php echo home_url(); ?>/find-a-trail/" class="btn">Find your trail</a></p>
-	
-					</div> <?php // end #find-a-trail .finder .finder__trail ?>
+					//------------------------------------------
+					// ----------- Trail Run Project -----------
+					//------------------------------------------ ?>
+					<div class="content-googlemap">
+						
+						<h3>Map</h3>
+						<figure>
+							<div class="event-map"> <?php // delete to remove over-riding map ?>
+								<iframe width="100%" height="410" frameborder="0" scrolling="no" style="border:0" src="http://www.trailrunproject.com/widget?v=2&type=trail&id=7002898&w=100%&h=380px"></iframe>
+							</div>
+						</figure>
+					</div> <?php // end .content-googlemap ?>
 
 				</div> <?php // end #main .wrap-main ?>
 				
@@ -83,7 +97,7 @@
 								$recent_posts = wp_get_recent_posts( $args );
 								if ($recent_posts) { // if trekker posts are available
 									foreach( $recent_posts as $recent ){
-										echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Read '.esc_attr($recent["post_title"]).'" ><figure>' .  get_the_post_thumbnail($recent["ID"], "thumbnail") . '</figure><p>' . $recent["post_title"] . '</p></a></li>';
+										echo '<li><a href="' . get_permalink($recent["ID"]) . '" title="Read '.esc_attr($recent["post_title"]).'"><figure>' .  get_the_post_thumbnail($recent["ID"], "thumbnail") . '</figure><p>' . $recent["post_title"] . '</p></a></li>';
 									}
 								} else { // if trekker posts are NOT available
 									echo 'Check back soon for the latest Trekker news!';
@@ -112,7 +126,7 @@
 						<ul class="trekker-photos">
 							<?php foreach( $images as $image ): ?>
 							<li>
-								<a href="<?php echo $image['url']; ?>" title="<?php echo $image['title']; ?>">
+								<a href="<?php echo $image['url']; ?>" title="<?php echo $image['title']; ?>" rel="gallery" class="gallery">
 									<img src="<?php echo $image['sizes']['thumbnail']; ?>" alt="<?php echo $image['alt']; ?>" />
 								</a>
 							</li>
