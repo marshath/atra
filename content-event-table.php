@@ -25,14 +25,14 @@
 											$eventdate = 'event_date_' . $date1;
 											
 											$endDateText = date_i18n("M d, Y", strtotime(get_field($eventdate)) );
-											$dateDateText = date_i18n("m-d-y", strtotime(get_field($eventdate)) );
-											echo '<span itemprop="startDate" content="' . $dateDateText . '">' . $endDateText . '</span>';
+											$dateDateText = date_i18n("Y-m-d", strtotime(get_field($eventdate)) );
+											echo '<meta itemprop="startDate" content="' . $dateDateText . '">' . $endDateText ;
 											
 										} else {
 											
 											$endDateText = date_i18n("M d, Y", strtotime(get_field('event_date')));
-											$dateDateText = date_i18n("m-d-y", strtotime(get_field('event_date')));
-											echo '<span itemprop="startDate" content="' . $dateDateText . '">' . $endDateText . '</span>'; 
+											$dateDateText = date_i18n("Y-m-d", strtotime(get_field('event_date')));
+											echo '<meta itemprop="startDate" content="' . $dateDateText . '">' . $endDateText ; 
 											
 										} // end Event Date ?>
 									</td>

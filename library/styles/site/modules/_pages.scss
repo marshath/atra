@@ -742,6 +742,12 @@ h1.page-title, h1.entry-title { /* Page and Post titles on Trail News */
 /* ------- Western States Trekker ------- */
 /* -------------------------------------- */
 
+.sidebar-trekker-sponsors { /* ------- Sidebar Trekker Sponsors ------- */
+	h4 {
+		margin-top: 0 !important; // remove top spacing
+	}
+}
+
 .trekker-sponsors { /* ------- Sidebar Sponsor Links ------- */
 	display: flex;
 	flex-flow: row wrap;

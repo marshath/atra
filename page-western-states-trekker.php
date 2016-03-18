@@ -9,9 +9,9 @@
 					<?php while (have_posts()) : the_post(); ?>
 					
 						<?php /********* BEGIN BANNER ADS ***********/
-							if ( is_active_sidebar( 'banner-trail' ) ) : ?>
+							if ( is_active_sidebar( 'banner-westernstates' ) ) : ?>
 								<div class="banner-ad">
-									<?php dynamic_sidebar( 'banner-trail' ); ?>
+									<?php dynamic_sidebar( 'banner-westernstates' ); ?>
 								</div>
 						<?php endif; // end Banner Ad ?>
 
@@ -47,7 +47,7 @@
 					//------------------------------------------ ?>
 					<div class="content-googlemap">
 						
-						<h3>Map</h3>
+						<h3>Western States Course Map</h3>
 						<figure>
 							<div class="event-map"> <?php // delete to remove over-riding map ?>
 								<iframe width="100%" height="410" frameborder="0" scrolling="no" style="border:0" src="http://www.trailrunproject.com/widget?v=2&type=trail&id=7002898&w=100%&h=380px"></iframe>
@@ -64,7 +64,7 @@
 					// ----------- Sponsors -----------
 					//--------------------------------- ?>
 					<div class="sidebar-trekker-sponsors">
-						<h4>Trekker Sponsors</h4>
+						<h4>Trekker Expedition Sponsors</h4>
 						<?php if( have_rows('wst_sponsor_list') ): ?>
 						<ul class="trekker-sponsors">
 							
@@ -109,9 +109,9 @@
 					//-----------------------------------
 					// ----------- Sidebar AD -----------
 					//-----------------------------------
-						if ( is_active_sidebar('sidebar-events') ) : ?>
+						if ( is_active_sidebar('sidebar-westernstates') ) : ?>
 					<div class="sidebar-ad">
-						<?php dynamic_sidebar('sidebar-events'); ?>
+						<?php dynamic_sidebar('sidebar-westernstates'); ?>
 					</div>
 						<?php endif; ?>
 					

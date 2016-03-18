@@ -41,8 +41,10 @@
 								<div class="event-date half">
 									<p><?php // Display the Event Date
 										$endDateText = date_i18n('M d, Y', strtotime(get_field('event_date')));
-										$dateDateText = date_i18n('m-d-y', strtotime(get_field('event_date')));
-										echo '<span itemprop="startDate" content="' . $dateDateText . '">' . $endDateText . '</span> at '; ?><?php the_field('start_time'); ?></p>
+										$dateDateText = date_i18n('Y-m-d', strtotime(get_field('event_date')));
+										$dateDateTime = get_field('start_time');
+										$dateDateTimer = substr( $dateDateTime, 0, -3);
+										echo '<meta itemprop="startDate" content="' . $dateDateText . 'T' . $dateDateTimer . '">' . $endDateText . ' at ' . $dateDateTime ; ?></p>
 								</div>
 								<div class="event-smedia half">
 									<?php // Go to www.addthis.com/dashboard to customize your tools ?>
@@ -52,6 +54,7 @@
 							
 							<div class="content-venue">
 								<div class="half" itemprop="location" itemscope itemtype="http://schema.org/Place">
+									<p class="screen-reader-text" itemprop="name"><?php the_title(); ?></p>
 									<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 										<?php if (the_field('event_street')) { ?>
 										<p class="capitalize"><span itemprop="streetAddress"><?php echo the_field('event_street'); ?></span></p><?php } ?>
@@ -93,8 +96,11 @@
 									} else {
 										echo "";
 									} // end Twitter feed ?>
-									<p><b>Entry Fee</b> <span itemprop="price">$<?php echo the_field('entry_fee'); ?></span><br>
-									<small>(Lowest or Early Registration)</small></p>
+									<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+										<p><b>Entry Fee</b> <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="<?php echo the_field('entry_fee'); ?>"><?php echo the_field('entry_fee'); ?></span><link itemprop="url" href="<?php echo the_field('event_website'); ?>" /><br>
+										<small>(Lowest or Early Registration)</small></p>
+										<p class="screen-reader-text"><link itemprop="availability" href="<?php echo the_field('event_website'); ?>" /></p>
+									</div>
 									<?php $entryfee2 = get_post_meta($post->ID, 'entry_fee_2', true); // Display the Entry Fee 2, if available
 										if ($entryfee2) { ?>
 											<p><b>Entry Fee 2</b> $<?php echo the_field('entry_fee_2'); ?><br>

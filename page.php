@@ -35,10 +35,10 @@
 							<?php endif; 
 						} // end Banner Ads ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+					<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article">
 
 						<header class="article-header">
-							<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
+							<h1 class="page-title"><?php the_title(); ?></h1>
 						</header> <!-- end .article-header -->
 						
 						<section class="entry-content" itemprop="articleBody">

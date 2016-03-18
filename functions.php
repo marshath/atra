@@ -223,7 +223,7 @@ function bones_register_sidebars() {
 	));
 
 	// *******************************
-	// Registering RESOURCES - SIDEBAR 
+	// Registering RESOURCES - BANNER 
 	// *******************************
 	register_sidebar(array(
 		'id' => 'banner-resources',
@@ -242,6 +242,32 @@ function bones_register_sidebars() {
 		'id' => 'sidebar-resources',
 		'name' => __( 'Resources – Sidebar', 'bonestheme' ),
 		'description' => __( 'The sidebar area on all Resource pages. Ad space (336x280 px)', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// *******************************
+	// Registering WESTERN STATES TRAIL - BANNER 
+	// *******************************
+	register_sidebar(array(
+		'id' => 'banner-westernstates',
+		'name' => __( 'Western States Trail – Banner', 'bonestheme' ),
+		'description' => __( 'Member banner ad space (728x90 px) on the Western States Trail pages.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// *******************************
+	// Registering WESTERN STATES TRAIL - SIDEBAR 
+	// *******************************
+	register_sidebar(array(
+		'id' => 'sidebar-westernstates',
+		'name' => __( 'Western States Trail – Sidebar', 'bonestheme' ),
+		'description' => __( 'The sidebar area on the Western States Trail pages. Ad space (336x280 px)', 'bonestheme' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h4 class="widgettitle">',
