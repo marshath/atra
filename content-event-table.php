@@ -95,7 +95,7 @@
 										        echo "";
 											} // end Display State 
 											// Display the Country
-											echo '<span class="uppercase" itemprop="addressCountry">'; echo get_field('event_country') . '</span>';
+											echo '<span itemprop="addressCountry">'; echo get_field('event_country') . '</span>';
 										?>
 									</td>
 								</tr>

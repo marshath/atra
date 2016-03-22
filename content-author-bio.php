@@ -4,7 +4,7 @@
 	   *
 	   */ ?>
 				
-				<div id="post-author" class="post-author-box" itemprop="author" itemscope itemptype="http://schema.org/Person">
+				<div id="post-author" class="post-author-box">
 						
 					<figure class="author-img" itemprop="image"><?php userphoto_the_author_photo(); ?></figure>
 						
@@ -15,10 +15,10 @@
 					<h3>About <span class="screen-reader-text">the author</span> <?php
 						if (is_archive()) {
 							// the author of the post - hidden text
-							printf ('<span rel="author" itemprop="name">' . get_the_author('ID') . '</span>' );
+							printf ('<span rel="author">' . get_the_author('ID') . '</span>' );
 						} else {
 							// the author of the post - hidden text
-							printf ('<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="Posts by ' . get_the_author('ID') . '" rel="author" itemprop="name">' . get_the_author('ID') . '</a>' );
+							printf ('<a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="Posts by ' . get_the_author('ID') . '" rel="author">' . get_the_author('ID') . '</a>' );
 						} ?></h3>
 						
 					<div class="author-social">
@@ -40,6 +40,6 @@
 					
 											
 					
-					<p class="author__desc" itemprop="description"><?php echo get_the_author_meta( 'description' ); ?></p>
+					<p class="author__desc"><?php echo get_the_author_meta( 'description' ); ?></p>
 
 				</div> <?php // end #post-author .vcard .post-author ?>

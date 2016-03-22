@@ -23,7 +23,7 @@
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
-					<article id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> role="article" itemscope itemtype="http://schema.org/Event">
+					<section id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> itemscope itemtype="http://schema.org/Event">
 					
 						<header class="event-header">
 							<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
@@ -57,7 +57,7 @@
 									<p class="screen-reader-text" itemprop="name"><?php the_title(); ?></p>
 									<div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
 										<?php if (the_field('event_street')) { ?>
-										<p class="capitalize"><span itemprop="streetAddress"><?php echo the_field('event_street'); ?></span></p><?php } ?>
+										<p><span itemprop="streetAddress"><?php echo the_field('event_street'); ?></span></p><?php } ?>
 										<p><span itemprop="addressLocality"><?php echo the_field('event_city'); ?></span> <?php // Make the State Slug Uppercase
 												$terms = get_the_terms( $post->ID, 'states'); // Display the State Slug
 												if ($terms) {
@@ -622,7 +622,7 @@
 						<footer class="article-footer">
 						</footer> <?php // end .article-footer ?>
 
-					</article>
+					</section>
 
 				<?php endwhile; ?>
 				<?php else : ?>
