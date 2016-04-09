@@ -2,7 +2,9 @@
 // Page Styles //
 /////////////////
 
-
+.clearfix {
+	@include clearfix;
+}
 /* ---------------------------- */
 /* ------- Generic Grid ------- */
 /* ---------------------------- */
@@ -152,11 +154,11 @@ figure {
 		}
 	}
 	&__trail {
-		background: url('/wp-content/uploads/2015/07/home-findtrail.jpg') no-repeat center;
+		background: url('http://trailrunner.com/wp-content/uploads/2015/07/home-findtrail.jpg') no-repeat center;
 		background-size: cover;
 	}
 	&__shoe {
-		background: url('/wp-content/uploads/2015/07/home-findshoe.jpg') no-repeat center;
+		background: url('http://trailrunner.com/wp-content/uploads/2015/07/home-findshoe.jpg') no-repeat center;
 		background-size: cover;
 	}
 }
@@ -177,11 +179,11 @@ figure {
 		}
 	}
 	&__google {
-		background: url('http://ted-mbpro.local:5757/trailrunner.com/atra14/wp-content/uploads/2016/google.jpg') no-repeat center top;
+		background: url('http://trailrunner.com/wp-content/uploads/2016/04/google.jpg') no-repeat center top;
 		background-size: cover;
 	}
 	&__newsletter {
-		background: url('http://ted-mbpro.local:5757/trailrunner.com/atra14/wp-content/uploads/2016/running.jpg') no-repeat center bottom;
+		background: url('http://trailrunner.com/wp-content/uploads/2016/04/running.jpg') no-repeat center bottom;
 		background-size: cover;
 		input[type='text'] {
 			text-align: center;
@@ -202,6 +204,16 @@ figure {
 			}
 		}
 	}
+}
+
+.signup-success {
+	font-size: 1.5em;
+	font-style: italic;
+	text-shadow: 0 0 20px yellow;
+	margin: ($base*2) auto ($base*4);
+}
+.homepage-about {
+	@include column(12);
 }
 
 .member-list { // homepage ATRA members list

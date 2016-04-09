@@ -23,7 +23,7 @@
 
 				<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 				
-					<section id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> itemscope itemtype="http://schema.org/Event">
+					<div id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> itemscope itemtype="http://schema.org/Event">
 					
 						<header class="event-header">
 							<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
@@ -615,14 +615,14 @@
 									
 								</div> <?php // end .half ?>
 							</div> <?php // end .content-archive event_results ?>
-						</section> <?php // end .entry-content ?>
+						</div> <?php // end .entry-content ?>
 						
 						<?php comments_template(); ?>
 						
 						<footer class="article-footer">
 						</footer> <?php // end .article-footer ?>
 
-					</section>
+					</article>
 
 				<?php endwhile; ?>
 				<?php else : ?>

@@ -382,5 +382,10 @@ function bones_comments( $comment, $args, $depth ) {
 <?php
 } // don't remove this bracket!
 
+add_action('pre_comment_on_post', 'block_wp_comments'); // block comments
+
+function block_wp_comments() { 
+	wp_die( __('Sorry, comments are closed for this item.') ); 
+}
 
 /* DON'T DELETE THIS CLOSING TAG */ ?>
