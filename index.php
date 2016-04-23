@@ -31,9 +31,15 @@
 	
 									<h2 class="entry-title"><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 									<p class="byline">
-										<?php printf( __( 'Posted', 'bonestheme' ) . ' <time class="updated" datetime="%1$s" pubdate>%2$s</time> ' . __('by', 'bonestheme' ) . ' <span class="author">%3$s</span>', get_the_time('Y-m-j'), get_the_time(get_option('date_format')), get_the_author_link( get_the_author_meta( 'ID' ) )); ?>
+										<?php printf( __( '%1$s %2$s', 'bonestheme' ),
+											// the time the post was published
+											'Posted on <time class="updated entry-time post-date" datetime="' . get_the_time('Y-m-d') . '" itemprop="datePublished">' . get_the_time(get_option('date_format')) . '</time>',
+											// the author of the post - hidden text
+											'by <span class="entry-author author post-author vcard" itemprop="author" itemscope itemptype="http://schema.org/Person"><span class="fn"><a href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '" title="" rel="author" itemprop="name">' . get_the_author('ID') . '</a></span></span>' );
+										?> 
 									</p>
-	
+									<?php edit_post_link( __( 'Edit Post &raquo;' ), '<p><span class="edit-link">', '</span></p>' ); ?>
+									
 								</header>
 							
 								<figure>

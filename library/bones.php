@@ -327,6 +327,19 @@ function bones_page_navi() {
 
 
 /*********************
+EXTEND MEDIA LIBRARY FILE TYPES
+*********************/
+// Added to extend allowed files types in Media upload
+add_filter('upload_mimes', 'custom_upload_mimes');
+function custom_upload_mimes ( $existing_mimes=array() ) {
+	
+	// Add *.GPX files to Media upload
+	$existing_mimes['gpx'] = 'application/postscript';
+	
+	return $existing_mimes;
+}
+
+/*********************
 RANDOM CLEANUP ITEMS
 *********************/
 

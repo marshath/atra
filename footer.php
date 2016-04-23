@@ -33,7 +33,7 @@
 						<?php while ( $partners->have_posts() ) :
 						$partners->the_post(); ?>
 						<li>
-							<a href="<?php the_field('partner_website'); ?>" target="_blank">
+							<a href="<?php the_field('partner_website'); ?>" target="_blank" rel="external">
 								<?php the_post_thumbnail("thumbnail"); ?>
 							</a>
 						</li>

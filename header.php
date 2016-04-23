@@ -38,7 +38,7 @@
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-	<?php get_template_part('header-social'); ?>
+	<?php // get_template_part('header-social'); ?>
 	<?php get_template_part('header-plugins'); ?>
 	
 	<?php // wordpress head functions ?>

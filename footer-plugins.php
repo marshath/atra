@@ -30,3 +30,26 @@ jQuery(document).ready(function($){
 
 });
 </script>
+
+
+<?php //---------- Fancybox Lightbox ---------// 
+	if (is_page('western-states-trekker')) { // show if Western States Trekker page only ?>
+<script> $(document).ready(function() {
+	
+	$("a.gallery").fancybox({
+		'transitionIn'	:	'elastic',
+		'transitionOut'	:	'elastic',
+		'speedIn'		:	600, 
+		'speedOut'		:	200,
+		'arrows'		:	true,
+		'maxWidth'		: 	800,
+		'maxHeight'		: 	600,
+		'fitToView'		: 	false,
+		'width'			: 	'70%',
+		'height'		: 	'70%'
+	});
+	
+});
+</script>
+
+<?php } else {} ?>

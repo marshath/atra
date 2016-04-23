@@ -10,12 +10,14 @@
 
 				<div id="main" class="wrap-main" role="main">
 
+					<h1>Race Search Results</h1>
+
 					<div id="event-search" class="event-search">
 						
-						<h1>Find a Trail Race</h1>
+						<h2>Find a Trail Race</h2>
 						<?php get_search_form(); ?>
 					
-					</div> <!-- end #event-search .event-search -->
+					</div> <?php // end #event-search .event-search ?>
 						
 					<?php 
 					//---------------------------------------------
@@ -44,7 +46,7 @@
 								</thead>
 								<tbody>
 									
-								<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=asc&posts_per_page=100'); // event archive sorting ?>
+								<?php query_posts($query_string . '&meta_key=event_date&orderby=meta_value&order=desc&posts_per_page=100'); // event archive sorting ?>
 								
 								<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 									<?php get_template_part('content', 'event-table'); // include the repeatable event list table rows ?>

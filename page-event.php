@@ -10,9 +10,17 @@ Template Name: Event Calendar Pages
 
 				<div id="main" class="wrap-main" role="main">
 
+					<h1><?php if (is_page('race-calendar')) {				// Race Calendar
+							echo 'Race Calendar';
+						} else if (is_page('future-events')) {				// Race Calendar: Future Events
+							echo 'Race Calendar: Future Events';
+						} else if (is_page('historical-events-archive')) {	// Race Calendar: Historical Events Archive
+							echo'Race Calendar: Historical Events Archive';
+						} else {} ?></h1>
+
 					<div id="event-search" class="event-search">
 
-						<h1>Find a Trail Race</h1>
+						<h2>Find a Trail Race</h2>
 						<?php get_search_form(); ?>
 
 					</div> <!-- end #event-search .event-search -->
@@ -54,7 +62,7 @@ Template Name: Event Calendar Pages
 									$today = date("Ymd");
 									//'BETWEEN' comparison with 'type' date only works with dates in format Ymd. 
 									//See http://codex.wordpress.org/Class_Reference/WP_Query#Custom_Field_Parameters 
-									$date1 = date("Ymd", strtotime($today . "-1 Week")); 
+									$date1 = date("Ymd", strtotime($today . "-1 Day")); 
 									$date2 = date("Ymd", strtotime($today . "+51 Weeks"));
 									
 									$query_args = array( 

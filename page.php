@@ -35,11 +35,11 @@
 							<?php endif; 
 						} // end Banner Ads ?>
 
-					<article id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+					<section id="post-<?php the_ID(); ?>" <?php post_class( '' ); ?>>
 
 						<header class="article-header">
-							<h1 class="page-title" itemprop="headline"><?php the_title(); ?></h1>
-						</header> <!-- end .article-header -->
+							<h1 class="page-title"><?php the_title(); ?></h1>
+						</header> <?php // end .article-header ?>
 						
 						<section class="entry-content" itemprop="articleBody">
 							<?php the_content(); ?>
@@ -141,7 +141,7 @@
 							if ( (is_page('board-members-and-meeting-minutes')) ) { ?>
 								<div class="board-members-wrap">
 									<h2>Board Member Profiles</h2>
-									<ul>
+									<ul class="members">
 									
 									<?php // ******** Display Board Members ******** 
 									$boardies = array(
@@ -152,9 +152,9 @@
 									); 
 									$boards = new WP_Query( $boardies );
 									while ( $boards->have_posts() ) : $boards->the_post(); ?>
-										<li>
-											<figure><?php the_post_thumbnail("atra-300"); ?></figure>
-											<h3><?php the_title(); ?></h3>
+										<li itemprop="member" itemscope itemptype="http://schema.org/Person">
+											<figure itemprop="image"><?php the_post_thumbnail("atra-300"); ?></figure>
+											<h3 itemprop="name"><?php the_title(); ?></h3>
 											<h5><?php the_field('board_title'); ?></h5>
 											<div class="board-social">
 												<ul>
@@ -201,7 +201,7 @@
 													
 												</ul>
 											</div>
-											<p><?php the_field('member_description'); ?></p>
+											<p itemprop="description"><?php the_field('member_description'); ?></p>
 										</li>
 										<?php endwhile; ?>
 									<?php wp_reset_postdata(); // end Display Board Members ?>
@@ -283,12 +283,12 @@
 									<?php while ( $partners->have_posts() ) :
 									$partners->the_post(); ?>
 									<li>
-										<a href="<?php the_field('partner_website'); ?>" target="_blank">
+										<a href="<?php the_field('partner_website'); ?>" target="_blank" rel="external">
 											<figure><?php the_post_thumbnail("thumbnail"); ?></figure>
 										</a>
 										<h3><?php the_title(); ?></h3>
 										<p><?php the_field('partner_description'); ?><br>
-										<a href="<?php the_field('partner_website'); ?>" target="_blank"><?php the_field('partner_website'); ?></a></p>
+										<a href="<?php the_field('partner_website'); ?>" target="_blank" rel="external"><?php the_field('partner_website'); ?></a></p>
 									</li>
 								<?php endwhile; ?>
 								<?php wp_reset_postdata(); ?>
@@ -342,7 +342,7 @@
 					
 						</section> <?php // end .entry-content ?>
 						
-					</article>
+					</section>
 
 					<?php endwhile; ?>
 

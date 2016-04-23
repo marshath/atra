@@ -9,7 +9,7 @@
 /************* DASHBOARD WIDGETS *****************/
 
 // LOAD ADVANCED CUSTOM FIELDS PLUGIN
-define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
+// define( 'ACF_LITE', true ); // hide the ACF menu item in the left sidebar of the Admin Area
 
 
 function disable_default_dashboard_widgets() {
@@ -34,7 +34,7 @@ function disable_default_dashboard_widgets() {
 	// remove_menu_page('users.php'); //users
 	remove_menu_page('tools.php'); //tools
 	// remove_menu_page('options-general.php'); // settings
-	remove_menu_page('wpseo_dashboard'); // Yoast SEO
+	// remove_menu_page('wpseo_dashboard'); // Yoast SEO
 }
 // removing the dashboard widgets
 add_action( 'admin_menu', 'disable_default_dashboard_widgets' );
