@@ -93,7 +93,7 @@
 							<p>The latest Western States Trekker news.</p>
 						</div> <?php // end .news-header ?>
 						<ul>
-							<?php $args = array( 'numberposts' => '4', 'post_status' => 'publish', 'category_name' => 'trekker' );
+							<?php $args = array( 'numberposts' => '4', 'post_status' => 'publish', 'category_name' => 'western-states-trekker' );
 								$recent_posts = wp_get_recent_posts( $args );
 								if ($recent_posts) { // if trekker posts are available
 									foreach( $recent_posts as $recent ){

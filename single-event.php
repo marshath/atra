@@ -8,7 +8,7 @@
 
 			<div id="inner-content" class="wrap">
 
-				<div id="main" class="wrap-main" role="main">
+				<div id="main" class="wrap-main" role="main" itemscope itemprop="mainContentOfPage">
 					
 				<?php 
 				//---------------------------------------------
@@ -26,10 +26,10 @@
 					<div id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> itemscope itemtype="http://schema.org/Event">
 					
 						<header class="event-header">
-							<h1 class="entry-title" itemprop="name"><?php the_title(); ?></h1>
+							<h1 class="event-title" itemprop="name"><?php the_title(); ?></h1>
 						</header><?php // end .event-header ?>
 						
-						<section class="entry-content">
+						<section class="event-content">
 								 
 							<figure class="featured-image">
 								<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
@@ -99,7 +99,6 @@
 									<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
 										<p><b>Entry Fee</b> <span itemprop="priceCurrency" content="USD">$</span><span itemprop="price" content="<?php echo the_field('entry_fee'); ?>"><?php echo the_field('entry_fee'); ?></span><link itemprop="url" href="<?php echo the_field('event_website'); ?>" /><br>
 										<small>(Lowest or Early Registration)</small></p>
-										<p class="screen-reader-text"><link itemprop="availability" href="<?php echo the_field('event_website'); ?>" /></p>
 									</div>
 									<?php $entryfee2 = get_post_meta($post->ID, 'entry_fee_2', true); // Display the Entry Fee 2, if available
 										if ($entryfee2) { ?>
@@ -615,14 +614,14 @@
 									
 								</div> <?php // end .half ?>
 							</div> <?php // end .content-archive event_results ?>
-						</div> <?php // end .entry-content ?>
+						</section> <?php // end .entry-content ?>
 						
 						<?php comments_template(); ?>
 						
 						<footer class="article-footer">
 						</footer> <?php // end .article-footer ?>
 
-					</article>
+					</div>
 
 				<?php endwhile; ?>
 				<?php else : ?>
