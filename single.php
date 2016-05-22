@@ -4,7 +4,7 @@
 
 			<div id="inner-content" class="wrap">
 
-				<div id="main" class="wrap-main" role="main">
+				<main id="main" class="wrap-main" role="main" itemscope itemprop="mainContentOfPage" itemtype="http://schema.org/Blog">
 
 					<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			
@@ -21,7 +21,7 @@
 		
 						<?php endif; ?>
 
-							<article id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
+							<article id="post-<?php the_ID(); ?>" <?php post_class('single-title'); ?> role="article" itemscope itemprop="blogPost" itemtype="http://schema.org/BlogPosting">
 			
 								<header class="article-header">
 							   
@@ -48,7 +48,7 @@
 								 
 									<figure class="featured-image">
 										<?php if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-											the_post_thumbnail("atra-700");
+											the_post_thumbnail('atra-700', array('itemprop' => 'image'));
 											} ?>
 									</figure>
 									
@@ -136,7 +136,7 @@
 					<?php endif; ?>
 					
 
-				</div> <?php // end #main ?>
+				</main> <?php // end #main .wrap-main ?>
 
 				<?php get_sidebar('single'); ?>
 
