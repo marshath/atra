@@ -28,7 +28,17 @@
 									<h1 class="entry-title" itemprop="headline"><?php the_title(); ?></h1>
 									
 									<div class="byline-group">
-										<figure class="byline-figure"><?php userphoto_the_author_photo(); ?></figure>
+										<figure class="byline-figure"><?php
+											//Assuming $post is in scope
+											if (function_exists ( 'mt_profile_img' ) ) {
+											    $author_id=$post->post_author;
+											    mt_profile_img( $author_id, array(
+											        'size' => 'thumbnail',
+											        'attr' => array( 'alt' => 'Alternative Text' ),
+											        'echo' => true )
+											    );
+											}
+											?></figure>
 										<p class="byline"><?php 
 											printf( __( '%1$s %2$s', 'bonestheme' ),
 											// the time the post was published
