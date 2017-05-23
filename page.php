@@ -57,10 +57,6 @@
 									<?php if (is_page('find-a-trail')) { // BEGIN Trail Run Project ?>
 										<iframe style="width:100%; max-width:1200px; height:600px;" frameborder="0" scrolling="no" src="//www.trailrunproject.com/widget?v=2&type=map&base=Terrain&favs=1&searchBar=1&location=ip&x=-11839600&y=4718550&z=7&h=600"></iframe>
 									<?php } // END Trail Run Project ?>
-
-									<?php if (is_page('find-a-trail-shoe')) { // BEGIN Compare Shoes ?>
-										<iframe style="width: 100%; height: 700px; border: 1px solid #ccc;" src="http://runrepeat.com/c/?filter=terrain&type=Trail&hide_header=1&hide_social=1" width="1170" height="700"></iframe>
-									<?php } // END compare shoes ?>
 								
 								<div class="event-smedia">
 									<?php // Go to www.addthis.com/dashboard to customize your tools ?>
@@ -76,14 +72,14 @@
 
 							<?php 
 							//-----------------------------------------
-							// ----------- Finder callouts -----------
+							// ----------- Explore callouts -----------
 							//-----------------------------------------
-							if (is_page('finders')) {
+							if (is_page('explore')) {
 								
-								// display the finder callouts
-								get_template_part('content', 'finders');
+								// display the explore callouts
+								get_template_part('content', 'explore');
 								
-							} // end display finder callouts ?>
+							} // end display explore callouts ?>
 							
 
 							<?php 
