@@ -1,6 +1,6 @@
 <?php /*
 	   *
-	   * FINDER WIDGETS 
+	   * EXPLORER WIDGETS 
 	   *
 	   */ ?>
 
@@ -12,7 +12,7 @@
 
 					<h2>Find a Trail</h2>
 					<p>Get elevation profiles, trail ratings, 3-D flyovers &amp; more.</p>
-					<p><a href="<?php echo home_url(); ?>/find-a-trail/" class="btn">Find your trail</a></p>
+					<p><a href="<?php echo home_url(); ?>/explorer/find-a-trail/" class="btn">Find your trail</a></p>
 
 				</div> <?php // end #find-a-trail .finder .finder__trail ?>
 
@@ -24,6 +24,6 @@
 
 					<h2>Find a Trail Shoe</h2>
 					<p>Search by terrain, support, gender, brand, pricing and reviews.</p>
-					<p><a href="<?php echo home_url(); ?>/find-a-trail-shoe/" class="btn">Find your trail shoe</a></p>
+					<p><a href="<?php echo home_url(); ?>/explorer/find-a-trail-shoe/" class="btn">Find your trail shoe</a></p>
 
 				</div> <?php // end #find-a-shoe .finder .finder__shoe ?>
