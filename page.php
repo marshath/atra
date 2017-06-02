@@ -57,10 +57,6 @@
 									<?php if (is_page('find-a-trail')) { // BEGIN Trail Run Project ?>
 										<iframe style="width:100%; max-width:1200px; height:600px;" frameborder="0" scrolling="no" src="//www.trailrunproject.com/widget?v=2&type=map&base=Terrain&favs=1&searchBar=1&location=ip&x=-11839600&y=4718550&z=7&h=600"></iframe>
 									<?php } // END Trail Run Project ?>
-
-									<?php if (is_page('find-a-trail-shoe')) { // BEGIN Compare Shoes ?>
-										<iframe style="width: 100%; height: 700px; border: 1px solid #ccc;" src="http://runrepeat.com/c/?filter=terrain&type=Trail&hide_header=1&hide_social=1" width="1170" height="700"></iframe>
-									<?php } // END compare shoes ?>
 								
 								<div class="event-smedia">
 									<?php // Go to www.addthis.com/dashboard to customize your tools ?>
@@ -76,14 +72,41 @@
 
 							<?php 
 							//-----------------------------------------
-							// ----------- Finder callouts -----------
+							// ----------- Explore callouts -----------
 							//-----------------------------------------
-							if (is_page('finders')) {
+							if (is_page('explore')) {
 								
-								// display the finder callouts
-								get_template_part('content', 'finders');
+								echo '<div id="find-a-trail" class="explore">';
 								
-							} // end display finder callouts ?>
+								// check if the repeater field has rows of data
+								if( have_rows('explore_callouts') ):
+								
+								 	// loop through the rows of data
+								    while ( have_rows('explore_callouts') ) : the_row();
+								
+								        // display a callout
+								        
+										echo '<div class="explore__callout" style="background-image: url(', the_sub_field('explore_callout_image'), '); background-size: cover;">
+											<div class="explore__gradient">
+						
+												<h2>', the_sub_field('explore_callout_title'), '</h2>
+												<p>', the_sub_field('explore_callout_content'), '</p>
+												<p><a href="', the_sub_field('explore_callout_link'), '" class="btn">', the_sub_field('explore_callout_button'), '</a></p>
+											
+											</div>
+										</div>';
+								        
+								    endwhile;
+								
+								else :
+								
+								    // no rows found
+								
+								endif;
+								
+							echo '</div>';
+							
+							} // end display explore callouts ?>
 							
 
 							<?php 

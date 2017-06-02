@@ -360,7 +360,7 @@ textarea {
 }
 @include bp(mobile-h) { /* mobile H and below layout */
 	.ginput_left, .ginput_right {
-		width: 100% !Important;
+		width: 100% !important;
 	}
 	.event-half {
 		width:100%;

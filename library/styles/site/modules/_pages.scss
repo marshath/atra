@@ -99,9 +99,7 @@ figure {
 	}
 }
 
-.featured-events, .finder, .hm-features {
-	@include column(6);
-	@include clearfix;
+.featured-events, .hm-features, .explore__callout {
 	text-align: center;
 	margin-bottom: $base;
 	border: 8px solid lighten($tan,7);
@@ -124,6 +122,10 @@ figure {
 			font-size: 1.5em;
 		}
 	}
+}
+.featured-events, .hm-features {
+	@include column(6);
+	@include clearfix;
 	@include bp(tablet-v) { /* tablet V and below layout */
 		@include column(12);
 		margin-bottom: ($base*2);
@@ -138,10 +140,14 @@ figure {
 	}
 }
 
-.finder { // finders, find a trail, find a trail shoe
-	color: white;
-	overflow: hidden;
-	&__trail, &__shoe {
+.explore { // explore callouts
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-between;
+	&__callout {
+		color: white;
+		flex-basis: 48.5%;
+		align-self: stretch;
 		h2, p {
 			text-shadow: 0 0 4px black;
 		}
@@ -153,34 +159,31 @@ figure {
 			padding-right: 1em;
 		}
 	}
-	&__trail {
-		background: url('http://trailrunner.com/wp-content/uploads/2015/07/home-findtrail.jpg') no-repeat center;
-		background-size: cover;
+	&__gradient {
+		background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.01) 80%);
+		@include clearfix;
 	}
-	&__shoe {
-		background: url('http://trailrunner.com/wp-content/uploads/2015/07/home-findshoe.jpg') no-repeat center;
-		background-size: cover;
+	@include bp('tablet-h') { /* tablet H and below layout */
+		flex-flow: row wrap;
+		&__callout {
+			color: white;
+			flex-basis: 100%;
+		}
 	}
 }
 
 .hm-features { // homepage feature callouts
 	color: white;
 	overflow: hidden;
-	&__google, &__newsletter {
-		h2, p {
-			text-shadow: 0 0 4px black;
-		}
-		h2:after {
-			border-bottom: 1px solid white;
-		}
-		p {
-			padding-left: 1em;
-			padding-right: 1em;
-		}
+	h2, p {
+		text-shadow: 0 0 4px black;
 	}
-	&__google {
-		background: url('http://trailrunner.com/wp-content/uploads/2016/04/google.jpg') no-repeat center top;
-		background-size: cover;
+	h2:after {
+		border-bottom: 1px solid white;
+	}
+	p {
+		padding-left: 1em;
+		padding-right: 1em;
 	}
 	&__newsletter {
 		background: url('http://trailrunner.com/wp-content/uploads/2016/04/running.jpg') no-repeat center bottom;

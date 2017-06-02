@@ -6,7 +6,17 @@
 				
 				<div id="post-author" class="post-author-box">
 						
-					<figure class="author-img" itemprop="image"><?php userphoto_the_author_photo(); ?></figure>
+					<figure class="author-img" itemprop="image"><?php
+											//Assuming $post is in scope
+											if (function_exists ( 'mt_profile_img' ) ) {
+											    $author_id=$post->post_author;
+											    mt_profile_img( $author_id, array(
+											        'size' => 'thumbnail',
+											        'attr' => array( 'alt' => 'Alternative Text' ),
+											        'echo' => true )
+											    );
+											}
+											?></figure>
 						
 					<?php // ABOUT THE AUTHOR
 						// vars

@@ -1,3 +1,7 @@
+<?php /*
+Template Name: Trekker Pages
+*/ ?>
+
 <?php get_header(); ?>
 
 		<div id="content">
@@ -46,13 +50,14 @@
 					// ----------- Trail Run Project -----------
 					//------------------------------------------ ?>
 					<div class="content-googlemap">
-						
-						<h3>Western States Course Map</h3>
+					
+						<h3><?php the_title(); ?> &ndash; Course Map</h3>
 						<figure>
 							<div class="event-map"> <?php // delete to remove over-riding map ?>
-								<iframe width="100%" height="410" frameborder="0" scrolling="no" style="border:0" src="http://www.trailrunproject.com/widget?v=2&type=trail&id=7002898&w=100%&h=380px"></iframe>
+								<iframe width="100%" height="410" frameborder="0" scrolling="no" style="border:0; max-width:1200px;" src="<?php echo 'http://www.trailrunproject.com/widget?v=3&type=trail&id=', get_field('trekker_map_id'), '&x=11686000&y=4700000&z=6' ?>"></iframe>
 							</div>
 						</figure>
+						
 					</div> <?php // end .content-googlemap ?>
 
 				</div> <?php // end #main .wrap-main ?>
@@ -90,10 +95,12 @@
 					<div class="sidebar-news">
 						<div class="news-header">
 							<h4>Trekker News</h4>
-							<p>The latest Western States Trekker news.</p>
+							<p>The latest <?php the_title(); ?> news.</p>
 						</div> <?php // end .news-header ?>
 						<ul>
-							<?php $args = array( 'numberposts' => '4', 'post_status' => 'publish', 'category_name' => 'western-states-trekker' );
+							<?php 
+								$post_slug = get_post_field( 'post_name', get_post() ); // use post title for category title
+								$args = array( 'numberposts' => '4', 'post_status' => 'publish', 'category_name' => $post_slug );
 								$recent_posts = wp_get_recent_posts( $args );
 								if ($recent_posts) { // if trekker posts are available
 									foreach( $recent_posts as $recent ){
@@ -101,7 +108,8 @@
 									}
 								} else { // if trekker posts are NOT available
 									echo 'Check back soon for the latest Trekker news!';
-								} ?>
+								} 
+							?>
 						</ul>
 					</div> <?php // end .sidebar-news ?>
 					
