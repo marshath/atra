@@ -76,19 +76,36 @@
 						
 					<?php 
 					//-------------------------------------
-					// ------- Western States Trail -------
+					// ------------- Trekker --------------
 					//------------------------------------- ?>
-					<div id="google-tracker" class="hm-features hm-features__google">
 						
-						<?php $callout = get_field('home_callout_1');
-							if( $callout ) {
-								echo $callout;
-							} else {
-								// nothing found
-							}
-						?>
-	
-					</div> <?php // end #google-tracker .hm-features .hm-features__google ?>
+					<?php // check if the repeater field has rows of data
+					if( have_rows('home_callout_1') ):
+					
+					 	// loop through the rows of data
+					    while ( have_rows('home_callout_1') ) : the_row();
+					
+					        // display a callout
+					        
+							echo '<div id="google-tracker" class="hm-features" style="background-image: url(', the_sub_field('home_callout_1_image'), '); background-size: cover;">
+								<div class="explore__gradient">
+			
+									<h2>', the_sub_field('home_callout_1_title'), '</h2>
+									<p>', the_sub_field('home_callout_1_content'), '</p>
+									<p><a href="', the_sub_field('home_callout_1_link'), '" class="btn">', the_sub_field('home_callout_1_button'), '</a></p>
+								
+								</div>
+							</div>';
+					        
+					    endwhile;
+					
+					else :
+					
+					    // no rows found
+					
+					endif; // end #google-tracker .hm-features ?>
+					
+					
 					<?php 
 					//------------------------------------------
 					// ------------ Newsletter Form ------------

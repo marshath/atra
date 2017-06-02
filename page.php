@@ -76,9 +76,36 @@
 							//-----------------------------------------
 							if (is_page('explore')) {
 								
-								// display the explore callouts
-								get_template_part('content', 'explore');
+								echo '<div id="find-a-trail" class="explore">';
 								
+								// check if the repeater field has rows of data
+								if( have_rows('explore_callouts') ):
+								
+								 	// loop through the rows of data
+								    while ( have_rows('explore_callouts') ) : the_row();
+								
+								        // display a callout
+								        
+										echo '<div class="explore__callout" style="background-image: url(', the_sub_field('explore_callout_image'), '); background-size: cover;">
+											<div class="explore__gradient">
+						
+												<h2>', the_sub_field('explore_callout_title'), '</h2>
+												<p>', the_sub_field('explore_callout_content'), '</p>
+												<p><a href="', the_sub_field('explore_callout_link'), '" class="btn">', the_sub_field('explore_callout_button'), '</a></p>
+											
+											</div>
+										</div>';
+								        
+								    endwhile;
+								
+								else :
+								
+								    // no rows found
+								
+								endif;
+								
+							echo '</div>';
+							
 							} // end display explore callouts ?>
 							
 
