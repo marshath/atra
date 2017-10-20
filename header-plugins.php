@@ -20,7 +20,7 @@
 }); </script>
 
 <?php // Custom Fonts ?>
-<link href='http://fonts.googleapis.com/css?family=Raleway:700|Codystar|Graduate|Rye|' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Raleway:700|Codystar|Graduate|Rye|' rel='stylesheet' type='text/css'>
 
 <?php // Google Analytics ?>
 <script type="text/javascript">

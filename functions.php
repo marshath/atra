@@ -4,8 +4,8 @@
 	- Sidebar widgets
 	- Custom fonts
 */
-// update_option('siteurl','http://localhost:8888/trailrunner.com/atra14/');
-// update_option('home','http://localhost:8888/trailrunner.com/atra14/');
+// update_option('siteurl','https://localhost:8888/trailrunner.com/atra14/');
+// update_option('home','https://localhost:8888/trailrunner.com/atra14/');
 
 // LOAD BONES CORE (if you remove this, the theme will break)
 require_once( 'library/bones.php' );
@@ -344,6 +344,35 @@ function buildSelect($tax){
 	return $x;
 }
 
+/************* INSERTED IMAGES AND FIGURES *********************/
+class CTF_Insert_Figure {
+
+	/**
+		* Initialize the class
+	*/
+	public function __construct() {
+		add_filter( 'image_send_to_editor', array( $this, 'insert_figure' ), 10, 9 );
+	}
+	
+	/**
+		* Insert the figure tag to attched images in posts
+		*
+		* @since  1.0.0
+		* @access public
+		* @return string return custom output for inserted images in posts
+	*/
+	public function insert_figure($html, $id, $caption, $title, $align, $url) {
+		// remove protocol
+		$url = str_replace(array('http://','https://'), '//', $url);
+		$html5 = "<figure id='post-$id' class='align-$align media-$id'>";
+		$html5 .= "<img src='$url' alt='$title' />";
+		if ($caption) {
+			$html5 .= "<figcaption>$caption</figcaption>";
+		}
+		$html5 .= "</figure>";
+		return $html5;
+	}
+}
 
 /************* COMMENT LAYOUT *********************/
 
@@ -362,7 +391,7 @@ function bones_comments( $comment, $args, $depth ) {
 				// create variable
 				$bgauthemail = get_comment_author_email();
 			?>
-			<img data-gravatar="http://www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
+			<img data-gravatar="//www.gravatar.com/avatar/<?php echo md5( $bgauthemail ); ?>?s=40" class="load-gravatar avatar avatar-48 photo" height="40" width="40" src="<?php echo get_template_directory_uri(); ?>/library/images/nothing.gif" />
 			<?php // end custom gravatar call ?>
 			<?php printf(__( '<cite class="fn">%1$s</cite> %2$s', 'bonestheme' ), get_comment_author_link(), edit_comment_link(__( '(Edit)', 'bonestheme' ),'  ','') ) ?>
 			<time datetime="<?php echo comment_time('Y-m-j'); ?>"><a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ) ?>"><?php comment_time(__( 'F jS, Y', 'bonestheme' )); ?> </a></time>

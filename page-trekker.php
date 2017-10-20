@@ -54,7 +54,7 @@ Template Name: Trekker Pages
 						<h3><?php the_title(); ?> &ndash; Course Map</h3>
 						<figure>
 							<div class="event-map"> <?php // delete to remove over-riding map ?>
-								<iframe width="100%" height="410" frameborder="0" scrolling="no" style="border:0; max-width:1200px;" src="<?php echo 'http://www.trailrunproject.com/widget?v=3&type=trail&id=', get_field('trekker_map_id'), '&x=11686000&y=4700000&z=6' ?>"></iframe>
+								<iframe style="width:100%; max-width:1200px; height:410px; border:0;" frameborder="0" scrolling="no" src="<?php echo 'https://www.trailrunproject.com/widget?v=3&map=1&type=trail&id=', get_field('trekker_map_id'), '&x=-11686000&y=4700000&z=6' ?>"></iframe>
 							</div>
 						</figure>
 						
