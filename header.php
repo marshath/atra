@@ -33,7 +33,7 @@
 	<?php // Loads IE Styles and HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
 	<!--[if lt IE 9]>
 			<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/style-ie.css" type="text/css" media="screen" />
-			<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+			<script src="//html5shiv.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
 	<![endif]-->
 
 	<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">

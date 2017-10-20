@@ -149,7 +149,7 @@
 							    <button type="submit" class="btn" data-enabled="enabled">Sign Up</button>
 							
 							    <?php // Fine Print ?>
-							    <p class="small">By submitting this form, you are granting: American Trail Running Assoc., PO Box 9454, Colorado Springs, Colorado, 80932, United States, http://www.trailrunner.com permission to email you. You may unsubscribe via the link found at the bottom of every email.  (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank" rel="external">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</p>
+							    <p class="small">By submitting this form, you are granting: American Trail Running Assoc., PO Box 9454, Colorado Springs, Colorado, 80932, United States, trailrunner.com permission to email you. You may unsubscribe via the link found at the bottom of every email.  (See our <a href="http://www.constantcontact.com/legal/privacy-statement" target="_blank" rel="external">Email Privacy Policy</a> for details.) Emails are serviced by Constant Contact.</p>
 							
 							</form>
 							<?php // required script to make the sign-up form work ?>
