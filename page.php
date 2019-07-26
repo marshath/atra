@@ -25,6 +25,14 @@
 								</div>
 		
 							<?php endif; 
+						} elseif ( (is_page('event-liability-insurance')) ) { // EVENT LIABILITY INSURANCE
+							if ( is_active_sidebar( 'banner-eli' ) ) : ?>
+						
+								<div class="banner-ad">
+									<?php dynamic_sidebar( 'banner-eli' ); ?>
+								</div>
+		
+							<?php endif; 
 						} elseif ( (is_page('resources')) ) { // RESOURCES
 							if ( is_active_sidebar( 'banner-resources' ) ) : ?>
 						

@@ -130,6 +130,21 @@
 				} ?>
 			
 				<?php 
+				//-------------------------------------------------
+				// ----------- Event Liability Insurance Sidebar -----------
+				//-------------------------------------------------
+				if ( (is_page ('event-liability-insurance') ) ) { 
+					if ( is_active_sidebar('sidebar-eli') ) : ?>
+				
+					<div class="sidebar-ad">
+						<?php dynamic_sidebar('sidebar-eli'); ?>
+					</div> <!-- end .sidebar-connect -->
+
+					<?php endif; 
+		
+				} ?>
+			
+				<?php 
 				//---------------------------------------------
 				// ----------- Trail News Blog Roll -----------
 				//---------------------------------------------
