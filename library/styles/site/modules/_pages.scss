@@ -178,8 +178,11 @@ figure {
 	h2, p {
 		text-shadow: 0 0 4px black;
 	}
-	h2:after {
-		border-bottom: 1px solid white;
+	h2 {
+		padding: 0 1em;
+		&:after {
+			border-bottom: 2px solid white;
+		}
 	}
 	p {
 		padding-left: 1em;

@@ -274,6 +274,32 @@ function bones_register_sidebars() {
 		'after_title' => '</h4>',
 	));
 
+	// *******************************
+	// Registering EVENT LIABILITY - BANNER 
+	// *******************************
+	register_sidebar(array(
+		'id' => 'banner-eli',
+		'name' => __( 'Event Liability – Banner', 'bonestheme' ),
+		'description' => __( 'Member banner ad space (728x90 px) on the Event Liability Insurance page.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
+	// ***************************************
+	// Registering EVENT LIABILITY - SIDEBAR 
+	// ***************************************
+	register_sidebar(array(
+		'id' => 'sidebar-eli',
+		'name' => __( 'Event Liability – Sidebar', 'bonestheme' ),
+		'description' => __( 'The sidebar area on for Event Liability Insurance.', 'bonestheme' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h4 class="widgettitle">',
+		'after_title' => '</h4>',
+	));
+
 	// ***************************************
 	// Registering BECOMING A MEMBER - SIDEBAR 
 	// ***************************************
